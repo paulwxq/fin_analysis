@@ -1,9 +1,8 @@
-"""Concurrent workflow execution for Step 1."""
+"""Concurrent workflow execution for Step 1 using OpenAI compatible mode."""
 from __future__ import annotations
-
+import os
 from agent_framework import ConcurrentBuilder
-
-from qwen3 import QwenChatClient, QwenVLChatClient
+from agent_framework.openai import OpenAIChatClient
 
 from . import config
 from .agents import create_kline_agent, create_news_agent, create_sector_agent
@@ -18,15 +17,35 @@ async def execute_step1(stock_code: str):
     if not stock_code:
         raise ValueError("stock_code is required")
 
-    # Initialize chat clients
-    news_client = QwenChatClient(model_id=config.MODEL_NEWS_AGENT)
-    sector_client = QwenChatClient(model_id=config.MODEL_SECTOR_AGENT)
-    kline_client = QwenVLChatClient(model_id=config.MODEL_KLINE_AGENT)
+    api_key = os.getenv("DASHSCOPE_API_KEY")
+    base_url = config.DASHSCOPE_BASE_URL
 
-    checker_client_news = QwenChatClient(model_id=config.MODEL_CHECKER_NEWS)
-    checker_client_sector = QwenChatClient(model_id=config.MODEL_CHECKER_SECTOR)
-    checker_client_kline = QwenChatClient(model_id=config.MODEL_CHECKER_KLINE)
+    # Initialize chat clients using MAF native OpenAIChatClient
+    # This works for both text (qwen-plus) and vision (qwen-vl-max) models
+    news_client = OpenAIChatClient(
+        model_id=config.MODEL_NEWS_AGENT,
+        api_key=api_key,
+        base_url=base_url
+    )
+    
+    sector_client = OpenAIChatClient(
+        model_id=config.MODEL_SECTOR_AGENT,
+        api_key=api_key,
+        base_url=base_url
+    )
+    
+    kline_client = OpenAIChatClient(
+        model_id=config.MODEL_KLINE_AGENT,
+        api_key=api_key,
+        base_url=base_url
+    )
 
+    # Note: Using the same client for checkers if needed, or separate instances
+    checker_client_news = OpenAIChatClient(model_id=config.MODEL_CHECKER_NEWS, api_key=api_key, base_url=base_url)
+    checker_client_sector = OpenAIChatClient(model_id=config.MODEL_CHECKER_SECTOR, api_key=api_key, base_url=base_url)
+    checker_client_kline = OpenAIChatClient(model_id=config.MODEL_CHECKER_KLINE, api_key=api_key, base_url=base_url)
+
+    # Create agents with the new clients
     news_agent = create_news_agent(news_client, checker_client_news)
     sector_agent = create_sector_agent(sector_client, checker_client_sector)
     kline_agent = create_kline_agent(kline_client, checker_client_kline)
@@ -37,6 +56,54 @@ async def execute_step1(stock_code: str):
         .build()
     )
 
-    logger.info("Step1 workflow started for %s", stock_code)
-    messages = await workflow.run(stock_code)
+    logger.info("Step1 workflow started for %s using OpenAI compatible mode", stock_code)
+    events = await workflow.run(stock_code)
+    
+    # Extract ChatMessages from workflow events
+    messages = []
+    logger.info("Traversing %d events...", len(events))
+    for i, event in enumerate(events):
+        event_type = type(event).__name__
+        
+        # 针对 ExecutorCompletedEvent 进行提取
+        if event_type == "ExecutorCompletedEvent":
+            # 检查 event.output (如果存在) 或 event.data
+            # 根据日志，attrs 包含 'data'，可能结果在 data 中
+            payload = getattr(event, "output", getattr(event, "data", None))
+            
+            logger.debug("Event %d payload type: %s", i, type(payload))
+            
+            # 尝试从 payload 中提取 messages
+            raw_msgs = []
+            if isinstance(payload, list):
+                raw_msgs = payload
+            elif hasattr(payload, "messages"):
+                raw_msgs = payload.messages
+            
+            for item in raw_msgs:
+                # 检查是否为 AgentExecutorResponse (根据调试日志，它有 agent_response 属性)
+                if hasattr(item, "agent_response"):
+                    resp = item.agent_response
+                    if hasattr(resp, "messages"):
+                        messages.extend(resp.messages)
+                elif hasattr(item, "messages"):
+                    # 备用：如果直接是 AgentResponse
+                    messages.extend(item.messages)
+                elif hasattr(item, "role") and hasattr(item, "text"): # 鸭子类型检查 ChatMessage
+                    messages.append(item)
+                elif isinstance(item, dict):
+                    # 如果是字典，尝试转换为 ChatMessage
+                    try:
+                        from agent_framework import ChatMessage
+                        messages.append(ChatMessage.from_dict(item))
+                    except Exception as e:
+                        logger.warning("Failed to convert dict to ChatMessage: %s", e)
+                else:
+                    logger.warning("Unknown item type in payload: %s, dir: %s", type(item), dir(item))
+
+    # Debug: Print extracted messages
+    logger.info("Extracted %d messages from events", len(messages))
+    for i, msg in enumerate(messages):
+        logger.debug("Message %d type: %s", i, type(msg))
+            
     return merge_results(messages)

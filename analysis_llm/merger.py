@@ -18,11 +18,17 @@ def merge_results(messages: List[ChatMessage]) -> Step1Output:
 
     parsing_errors: list[str] = []
     for msg in messages:
-        json_str = utils.extract_json_str(msg.text)
+        # 过滤非 ChatMessage 对象 (如 ExecutorInvokedEvent)
+        if not isinstance(msg, ChatMessage):
+            continue
+            
         try:
+            # 1. 提取 JSON 字符串
+            json_str = utils.extract_json_str(msg.text)
+            # 2. 解析为 Python 字典
             payload = json.loads(json_str)
         except Exception as exc:  # noqa: BLE001
-            parsing_errors.append(f"JSON解析失败: {exc}")
+            parsing_errors.append(f"解析失败: {exc}")
             continue
 
         data_type = payload.get("data_type")

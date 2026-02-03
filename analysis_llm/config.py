@@ -9,6 +9,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# API Configuration
+DASHSCOPE_BASE_URL = os.getenv("DASHSCOPE_BASE_URL", "https://dashscope.aliyuncs.com/compatible-mode/v1")
+
 # Model configuration
 MODEL_NEWS_AGENT = "qwen-plus"
 MODEL_SECTOR_AGENT = "qwen-plus"

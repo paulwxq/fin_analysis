@@ -41,11 +41,11 @@ def init_logging() -> logging.Logger:
     logger.addHandler(console_handler)
     logger.addHandler(file_handler)
 
-    # 同时也配置 qwen3 的日志，以便查看底层 payload
-    qwen3_logger = logging.getLogger("qwen3")
-    qwen3_logger.setLevel(logging.DEBUG)
-    qwen3_logger.addHandler(console_handler)
-    qwen3_logger.addHandler(file_handler)
+    # 配置 agent_framework 核心日志，以便查看工具调用和 OpenAI 交互过程
+    maf_logger = logging.getLogger("agent_framework")
+    maf_logger.setLevel(logging.DEBUG)
+    maf_logger.addHandler(console_handler)
+    maf_logger.addHandler(file_handler)
 
     return logger
 
@@ -92,9 +92,19 @@ def extract_json_str(raw_text: str) -> str:
     raise ValueError("Unbalanced JSON braces")
 
 
+import base64
+
 def load_image_content(image_path: Path) -> Content:
-    """Create Content from local image path with file:// URI."""
-    uri = f"file://{image_path}"
+    """Read local image and convert to Base64 Data URI Content."""
+    if not image_path.exists():
+        raise FileNotFoundError(f"Image not found: {image_path}")
+        
+    with open(image_path, "rb") as f:
+        image_data = f.read()
+        base64_str = base64.b64encode(image_data).decode("utf-8")
+        
+    # 构造 Data URI
+    uri = f"data:image/png;base64,{base64_str}"
     return Content.from_uri(uri=uri, media_type="image/png")
 
 

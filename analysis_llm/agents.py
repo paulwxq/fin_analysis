@@ -100,11 +100,8 @@ class DataCollectionAgent(AgentProtocol):
             tools=self._tools,
         )
 
-        checker = ChatAgent(
-            chat_client=self._checker_client,
-            name=f"{self.name}Checker",
-            instructions=CHECKER_SYSTEM,
-        )
+        # 确保有 Thread，否则重试反馈无效
+        active_thread = thread or agent.get_new_thread()
 
         feedback: str | None = None
         last_error: str | None = None
@@ -113,7 +110,7 @@ class DataCollectionAgent(AgentProtocol):
             prompt = self._message_builder(stock_code, feedback)
             logger.info("%s attempt %s/%s", self.name, attempt, self._max_retries)
 
-            response = await agent.run(prompt, thread=thread)
+            response = await agent.run(prompt, thread=active_thread)
             raw_text = response.text
             logger.debug("%s raw response: %s", self.name, raw_text)
             try:

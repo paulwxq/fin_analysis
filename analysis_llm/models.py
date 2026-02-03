@@ -60,6 +60,23 @@ class SectorData(StrictBaseModel):
     trend: TrendEnum = Field(..., description="趋势方向")
     capital_flow: str = Field(..., description="资金流向描述")
 
+    @field_validator("trend", mode="before")
+    @classmethod
+    def map_trend_text(cls, value: Any) -> str:
+        """映射英文趋势到中文枚举值。"""
+        if not isinstance(value, str):
+            return value
+        val_map = {
+            "neutral": "震荡",
+            "oscillate": "震荡",
+            "up": "上升",
+            "bullish": "上升",
+            "down": "下降",
+            "bearish": "下降"
+        }
+        low_val = value.lower().strip()
+        return val_map.get(low_val, value)
+
     @field_validator("capital_flow", mode="before")
     @classmethod
     def ensure_string(cls, value: Any) -> str:
