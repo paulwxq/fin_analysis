@@ -46,6 +46,8 @@ class QwenVLChatClient(BaseChatClient[QwenVLChatOptions]):
     """
     阿里云 Qwen 视觉语言模型封装 (qwen-vl-plus, qwen-vl-max)
     """
+    # 声明支持工具调用 (虽然 VL 模型目前主要用于视觉分析)
+    __function_invoking_chat_client__ = True
 
     def __init__(
         self,

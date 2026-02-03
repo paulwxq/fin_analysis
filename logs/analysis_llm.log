@@ -1,8 +1,119 @@
-2026-02-03 15:09:47,591 - INFO - analysis_llm - Step1 workflow started for 603080.SH
-2026-02-03 15:09:47,592 - INFO - analysis_llm - NewsAgent attempt 1/3
-2026-02-03 15:09:47,593 - INFO - analysis_llm - SectorAgent attempt 1/3
-2026-02-03 15:09:47,594 - INFO - analysis_llm - KLineAgent attempt 1/3
-2026-02-03 15:10:01,437 - INFO - analysis_llm - SectorAgent attempt 2/3
-2026-02-03 15:10:01,653 - INFO - analysis_llm - NewsAgent attempt 2/3
-2026-02-03 15:10:03,947 - INFO - analysis_llm - SectorAgent attempt 3/3
-2026-02-03 15:10:04,048 - INFO - analysis_llm - NewsAgent attempt 3/3
+2026-02-03 16:41:54,089 - INFO - qwen3.qwen_client - QwenChatClient 已初始化: model=qwen-plus
+2026-02-03 16:41:54,089 - INFO - qwen3.qwen_client - QwenChatClient 已初始化: model=qwen-plus
+2026-02-03 16:41:54,089 - INFO - qwen3.qwen_vl_client - QwenVLChatClient 已初始化: model=qwen-vl-max
+2026-02-03 16:41:54,089 - INFO - qwen3.qwen_client - QwenChatClient 已初始化: model=qwen-plus
+2026-02-03 16:41:54,089 - INFO - qwen3.qwen_client - QwenChatClient 已初始化: model=qwen-plus
+2026-02-03 16:41:54,089 - INFO - qwen3.qwen_client - QwenChatClient 已初始化: model=qwen-plus
+2026-02-03 16:41:54,090 - INFO - analysis_llm - Step1 workflow started for 603080.SH
+2026-02-03 16:41:54,090 - INFO - analysis_llm - NewsAgent attempt 1/3
+2026-02-03 16:41:54,091 - DEBUG - qwen3.qwen_client - QwenChatClient request messages: [{'role': 'user', 'content': '股票代码: 603080.SH'}]
+2026-02-03 16:41:54,091 - INFO - analysis_llm - SectorAgent attempt 1/3
+2026-02-03 16:41:54,091 - DEBUG - qwen3.qwen_client - QwenChatClient request messages: [{'role': 'user', 'content': '股票代码: 603080.SH'}]
+2026-02-03 16:41:54,092 - INFO - analysis_llm - KLineAgent attempt 1/3
+2026-02-03 16:42:08,420 - DEBUG - analysis_llm - SectorAgent raw response: 股票代码 `603080.SH` 对应的是 **新疆火炬燃气股份有限公司**（简称：新疆火炬），是一家在上海证券交易所上市的公司。
+
+根据最新可得信息（截至2026年1月31日前后）：
+
+- **最新股价（2025年12月31日数据）**：25.10元，跌幅 -1.76%  
+- **今开/最高/最低**：25.60 / 25.68 / 24.98 元  
+- **涨停价/跌停价**：28.11 / 23.00 元  
+- **总股本**：1.42亿股  
+- **总市值**：约35.52亿元  
+- **流通市值**：同为35.52亿元（全流通）  
+- **市盈率（TTM）**：19.34；**市净率**：2.33  
+- **每股净资产**：10.7663 元  
+- **换手率**：4.19%；**量比**：1.32  
+- **ESG评级**：华证指数最新评级为 **C级**，行业排名第17（2025年12月及2026年1月多次确认）  
+- **年报预告/披露时间**：预计于 **2026年4月25日** 披露2025年年度报告  
+- **控制权动态**：2025年12月初有市场消息称“控制权将生变”，但尚未公布具体方案（来源：证券时报·e公司，2025-12-02）
+
+⚠️ 注意：当前时间为 **2026年2月3日（星期二）**，但知识库中暂无该日盘中或收盘的实时行情数据（最近行情更新停留在2025年12月31日及2026年1月6日、1月9日等）。如需当日精确行情（如最新价、涨跌幅、成交量），建议通过交易软件（如东方财富、同花顺、券商APP）或上交所官网查询实时行情。
+
+如需我帮你分析其基本面、估值合理性、行业地位（城市燃气+综合能源服务）、或解读潜在控制权变更影响，也可继续提问。
+2026-02-03 16:42:08,421 - WARNING - analysis_llm - SectorAgent validation failed: 结构校验失败: No JSON object start found
+2026-02-03 16:42:08,421 - INFO - analysis_llm - SectorAgent attempt 2/3
+2026-02-03 16:42:08,421 - DEBUG - qwen3.qwen_client - QwenChatClient request messages: [{'role': 'user', 'content': '股票代码: 603080.SH\n请根据以下问题修正输出，仅返回修正后的JSON：结构校验失败: No JSON object start found'}]
+2026-02-03 16:42:12,237 - DEBUG - analysis_llm - NewsAgent raw response: 股票代码 `603080.SH` 对应的是 **新疆火炬燃气股份有限公司**（简称：新疆火炬），是一家在上海证券交易所上市的公司。
+
+### 基本信息（截至最近可得数据，2026年1月）：
+- **证券简称**：新疆火炬  
+- **上市地点**：上海证券交易所（A股）  
+- **主营业务**：城市燃气供应、燃气设施工程安装、燃气器具销售及售后服务等，主要覆盖新疆南疆地区（如喀什、和田、阿克苏等地）。  
+- **总股本**：约 1.42 亿股  
+- **总市值**：约 **35.52 亿元**（按2025年12月31日股价 25.10 元估算）  
+- **流通股本/流通市值**：均为 1.42 亿股 / 35.52 亿元（已全流通）  
+- **每股净资产（MRQ）**：10.7663 元  
+- **市盈率（TTM）**：19.34  
+- **市净率（PB）**：2.33  
+- **ESG评级（华证指数）**：C级（行业排名第17，2025年12月及2026年1月多次确认）  
+- **2025年年报预计披露时间**：**2026年4月25日**  
+
+### 近期行情摘要（参考2025年12月31日及2026年1月数据）：
+- 最近交易价区间（2025.12.31）：**24.98–25.68 元**  
+- 当日收盘价（2025.12.31）：**25.10 元**，跌幅 -1.76%  
+- 换手率：约 **4.19%**；量比：1.32；振幅：2.74%  
+- 成交额：约 **1.49 亿元**  
+
+> ⚠️ 注意：当前时间为 **2026年2月3日（星期二）16:41**，但知识库中暂无该时刻的实时行情。最新可用行情为2026年1月29日（-1.29%，报24.34元附近）及1月6日（+1.17%，报25.08元）。建议通过证券交易软件或上交所官网查询盘后/次日最新数据。
+
+如需以下内容，我可继续为你提供：
+- 财务摘要（营收/净利润趋势、毛利率等）  
+- 控股股东及控制权变动动态（注：2025年12月有“控制权将生变”相关报道）  
+- 行业对比（与昆仑能源、深圳燃气等）  
+- 技术面分析（支撑/压力位、MACD/KDJ等）  
+- ESG风险解读（C级含义及改进建议）
+
+是否需要进一步分析某一方面？
+2026-02-03 16:42:12,237 - WARNING - analysis_llm - NewsAgent validation failed: 结构校验失败: No JSON object start found
+2026-02-03 16:42:12,237 - INFO - analysis_llm - NewsAgent attempt 2/3
+2026-02-03 16:42:12,237 - DEBUG - qwen3.qwen_client - QwenChatClient request messages: [{'role': 'user', 'content': '股票代码: 603080.SH\n请根据以下问题修正输出，仅返回修正后的JSON：结构校验失败: No JSON object start found'}]
+2026-02-03 16:42:12,651 - DEBUG - analysis_llm - SectorAgent raw response: {"stock_code": "603080.SH"}
+2026-02-03 16:42:12,652 - WARNING - analysis_llm - SectorAgent validation failed: 结构校验失败: 5 validation errors for SectorData
+data_type
+  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+sector_name
+  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+heat_index
+  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+trend
+  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+capital_flow
+  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-03 16:42:12,652 - INFO - analysis_llm - SectorAgent attempt 3/3
+2026-02-03 16:42:12,652 - DEBUG - qwen3.qwen_client - QwenChatClient request messages: [{'role': 'user', 'content': "股票代码: 603080.SH\n请根据以下问题修正输出，仅返回修正后的JSON：结构校验失败: 5 validation errors for SectorData\ndata_type\n  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nsector_name\n  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nheat_index\n  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\ntrend\n  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\ncapital_flow\n  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing"}]
+2026-02-03 16:42:15,073 - DEBUG - analysis_llm - NewsAgent raw response: {"stock_code": "603080.SH"}
+2026-02-03 16:42:15,073 - WARNING - analysis_llm - NewsAgent validation failed: 结构校验失败: 5 validation errors for NewsData
+data_type
+  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+positive_news
+  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+negative_news
+  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+news_summary
+  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+sentiment_score
+  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-03 16:42:15,073 - INFO - analysis_llm - NewsAgent attempt 3/3
+2026-02-03 16:42:15,073 - DEBUG - qwen3.qwen_client - QwenChatClient request messages: [{'role': 'user', 'content': "股票代码: 603080.SH\n请根据以下问题修正输出，仅返回修正后的JSON：结构校验失败: 5 validation errors for NewsData\ndata_type\n  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\npositive_news\n  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nnegative_news\n  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nnews_summary\n  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nsentiment_score\n  Field required [type=missing, input_value={'stock_code': '603080.SH'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing"}]
+2026-02-03 16:42:15,788 - DEBUG - analysis_llm - SectorAgent raw response: {
+  "data_type": "sector",
+  "stock_code": "603080.SH",
+  "sector_name": "未知行业",
+  "heat_index": 0,
+  "trend": "neutral",
+  "capital_flow": 0
+}
+2026-02-03 16:42:15,801 - WARNING - analysis_llm - SectorAgent validation failed: 结构校验失败: 1 validation error for SectorData
+trend
+  Input should be '上升', '下降' or '震荡' [type=enum, input_value='neutral', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/enum

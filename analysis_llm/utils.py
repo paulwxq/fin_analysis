@@ -41,6 +41,12 @@ def init_logging() -> logging.Logger:
     logger.addHandler(console_handler)
     logger.addHandler(file_handler)
 
+    # 同时也配置 qwen3 的日志，以便查看底层 payload
+    qwen3_logger = logging.getLogger("qwen3")
+    qwen3_logger.setLevel(logging.DEBUG)
+    qwen3_logger.addHandler(console_handler)
+    qwen3_logger.addHandler(file_handler)
+
     return logger
 
 

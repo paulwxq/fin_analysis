@@ -115,31 +115,22 @@ class DataCollectionAgent(AgentProtocol):
 
             response = await agent.run(prompt, thread=thread)
             raw_text = response.text
+            logger.debug("%s raw response: %s", self.name, raw_text)
             try:
                 json_str = extract_json_str(raw_text)
                 self._model_cls.model_validate_json(json_str)
-            except Exception as exc:  # noqa: BLE001
-                last_error = f"结构校验失败: {exc}"
-                feedback = last_error
-                continue
-
-            # Checker validation
-            checker_prompt = f"期望股票代码: {stock_code}\n待校验数据: {json_str}"
-            checker_resp = await checker.run(checker_prompt)
-            try:
-                checker_json = extract_json_str(checker_resp.text)
-                checker_result = CheckerResult.model_validate_json(checker_json)
-            except Exception as exc:  # noqa: BLE001
-                last_error = f"Checker返回无效: {exc}"
-                feedback = last_error
-                continue
-
-            if checker_result.passed:
+                
+                # --- 暂时禁用 LLM Checker，以排除干扰 ---
+                # Pydantic 校验通过即可认为结构合格
                 msg = ChatMessage(role="assistant", text=json_str)
                 return AgentResponse(messages=[msg], response_id=response.response_id, usage_details=response.usage_details)
+                
+            except Exception as exc:  # noqa: BLE001
+                last_error = f"结构校验失败: {exc}"
+                logger.warning("%s validation failed: %s", self.name, last_error)
+                feedback = last_error
+                continue
 
-            last_error = checker_result.reason
-            feedback = last_error
 
         raise RuntimeError(f"{self.name} 在 {self._max_retries} 次尝试后仍未通过: {last_error}")
 

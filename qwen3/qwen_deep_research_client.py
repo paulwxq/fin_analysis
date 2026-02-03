@@ -42,6 +42,8 @@ class QwenDeepResearchClient(QwenChatClient):
     2. 超时时间极长: 默认为 30 分钟
     3. 流式参数敏感: 必须严格控制 incremental_output
     """
+    # 继承自 QwenChatClient，由于 QwenChatClient 已有标记，这里显式声明以确保万一
+    __function_invoking_chat_client__ = True
 
     def __init__(
         self,

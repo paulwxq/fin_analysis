@@ -9,6 +9,7 @@ dependencies = [
     "httpx[socks]>=0.28.1",
     "mplfinance>=0.12.7",
     "numpy>=1.24.0",
+    "openai>=2.16.0",
     "pandas>=2.3.3",
     "pillow>=12.1.0",
     "psycopg2-binary>=2.9.11",

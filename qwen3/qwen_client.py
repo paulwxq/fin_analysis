@@ -44,6 +44,8 @@ class QwenChatClient(BaseChatClient[QwenChatOptions]):
     """
     阿里云 Qwen 推理模型封装 (qwen-plus, qwen-max)
     """
+    # 声明支持工具调用
+    __function_invoking_chat_client__ = True
 
     def __init__(
         self,
@@ -72,17 +74,69 @@ class QwenChatClient(BaseChatClient[QwenChatOptions]):
         
         logger.info(f"QwenChatClient 已初始化: model={model_id}")
 
-    def _convert_messages(self, messages: Sequence[ChatMessage]) -> List[Dict[str, str]]:
+    def _convert_messages(self, messages: Sequence[ChatMessage]) -> List[Dict[str, Any]]:
         """
         将 MAF 的 ChatMessage 转换为 DashScope 的消息格式
+        增强对 FunctionCall 的支持
         """
         converted = []
         for msg in messages:
-            # 使用 ChatMessage.text 属性直接获取聚合后的文本
-            converted.append({
-                "role": msg.role.value,
-                "content": msg.text
-            })
+            dashscope_msg = {"role": msg.role.value}
+            
+            # 1. 尝试提取工具调用结果 (Tool Role)
+            if msg.role == Role.TOOL:
+                # MAF 的 Tool 消息通常包含 function_result 类型的 Content
+                for content in msg.contents:
+                    if content.type == "function_result":
+                        # DashScope 格式:
+                        # {"role": "tool", "content": "result", "name": "func_name", "tool_call_id": "id"}
+                        
+                        dashscope_msg["content"] = str(content.result)
+                        if content.call_id:
+                             dashscope_msg["tool_call_id"] = content.call_id
+                        
+                        # Content 对象中可能没有 name 属性 (如果是 function_result 类型)
+                        # 如果需要 name，可能需要从 content.name 获取 (如果存在)
+                        if hasattr(content, "name") and content.name:
+                             dashscope_msg["name"] = content.name
+                        
+                        break
+                
+                # 如果没有找到 function_result，尝试直接取 text
+                if "content" not in dashscope_msg:
+                    dashscope_msg["content"] = msg.text
+
+            # 2. 尝试提取工具调用请求 (Assistant Role)
+            elif msg.role == Role.ASSISTANT:
+                content_str = ""
+                tool_calls = []
+                
+                for content in msg.contents:
+                    if content.type == "function_call":
+                        # 转换为 DashScope tool_calls 格式
+                        tool_calls.append({
+                            "type": "function",
+                            "function": {
+                                "name": content.name,
+                                "arguments": content.arguments if isinstance(content.arguments, str) else str(content.arguments)
+                            },
+                            "id": content.call_id or "call_default" 
+                        })
+                    elif content.type == "text":
+                        content_str += (content.text or "")
+                
+                if content_str:
+                    dashscope_msg["content"] = content_str
+                
+                if tool_calls:
+                    dashscope_msg["tool_calls"] = tool_calls
+            
+            # 3. 普通文本消息 (User/System Role)
+            else:
+                dashscope_msg["content"] = msg.text
+
+            converted.append(dashscope_msg)
+            
         return converted
 
     def _build_request_params(self, messages: Sequence[ChatMessage], **options: Any) -> Dict[str, Any]:
@@ -99,6 +153,8 @@ class QwenChatClient(BaseChatClient[QwenChatOptions]):
             "api_key": self.api_key,
             "result_format": "message",
         }
+
+        logger.debug("QwenChatClient request messages: %s", params["messages"])
 
         # 映射参数
         if "temperature" in merged_options:
@@ -222,6 +278,19 @@ class QwenChatClient(BaseChatClient[QwenChatOptions]):
             if content:
                 updates.append(Content.from_text(text=content))
 
+            # 处理 Tool Calls (流式)
+            # 注意: Qwen 流式返回 tool_calls 可能是在最后一个包，也可能是分片的
+            # 这里简化处理：假设 tool_calls 是一次性返回完整的 (DashScope特性)
+            tool_calls = message.get("tool_calls")
+            if tool_calls:
+                for tc in tool_calls:
+                    func = tc.get("function", {})
+                    updates.append(Content.from_function_call(
+                        name=func.get("name"),
+                        arguments=func.get("arguments"),
+                        call_id=tc.get("id")
+                    ))
+
             if updates:
                 yield ChatResponseUpdate(contents=updates)
 
@@ -250,7 +319,19 @@ class QwenChatClient(BaseChatClient[QwenChatOptions]):
             contents.append(Content.from_text(text=f"<thinking>{reasoning}</thinking>"))
         
         content = message.get("content") or ""
-        contents.append(Content.from_text(text=content))
+        if content:
+            contents.append(Content.from_text(text=content))
+
+        # 处理 Tool Calls (非流式)
+        tool_calls = message.get("tool_calls")
+        if tool_calls:
+            for tc in tool_calls:
+                func = tc.get("function", {})
+                contents.append(Content.from_function_call(
+                    name=func.get("name"),
+                    arguments=func.get("arguments"),
+                    call_id=tc.get("id")
+                ))
 
         msg = ChatMessage(
             role=Role.ASSISTANT,

@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from enum import Enum
-from typing import Annotated, List, Literal
+from typing import Annotated, List, Literal, Any
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
@@ -60,6 +60,14 @@ class SectorData(StrictBaseModel):
     trend: TrendEnum = Field(..., description="趋势方向")
     capital_flow: str = Field(..., description="资金流向描述")
 
+    @field_validator("capital_flow", mode="before")
+    @classmethod
+    def ensure_string(cls, value: Any) -> str:
+        """确保字段为字符串，防止模型输出数字。"""
+        if value is None:
+            return "暂无数据"
+        return str(value)
+
 
 class TechnicalIndicators(StrictBaseModel):
     MACD: float = Field(..., description="MACD指标值")
@@ -84,6 +92,7 @@ class Step1Output(StrictBaseModel):
     kline: KLineData = Field(..., description="K线分析单元结果")
 
 
-class CheckerResult(StrictBaseModel):
+class CheckerResult(BaseModel):
+    model_config = ConfigDict(extra="ignore")
     passed: bool
     reason: str
