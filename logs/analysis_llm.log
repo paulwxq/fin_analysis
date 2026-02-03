@@ -1,0 +1,8 @@
+2026-02-03 15:09:47,591 - INFO - analysis_llm - Step1 workflow started for 603080.SH
+2026-02-03 15:09:47,592 - INFO - analysis_llm - NewsAgent attempt 1/3
+2026-02-03 15:09:47,593 - INFO - analysis_llm - SectorAgent attempt 1/3
+2026-02-03 15:09:47,594 - INFO - analysis_llm - KLineAgent attempt 1/3
+2026-02-03 15:10:01,437 - INFO - analysis_llm - SectorAgent attempt 2/3
+2026-02-03 15:10:01,653 - INFO - analysis_llm - NewsAgent attempt 2/3
+2026-02-03 15:10:03,947 - INFO - analysis_llm - SectorAgent attempt 3/3
+2026-02-03 15:10:04,048 - INFO - analysis_llm - NewsAgent attempt 3/3

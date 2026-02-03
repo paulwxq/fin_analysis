@@ -1,0 +1,1385 @@
+2026-01-29 00:17:40 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 00:18:56 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 00:20:16 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 00:20:16 [INFO] [main] Initializing database table...
+2026-01-29 00:20:16 [INFO] [db_handler] Database table initialized.
+2026-01-29 00:20:16 [INFO] [main] Truncating target table...
+2026-01-29 00:20:16 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 00:20:16 [INFO] [main] Scanning for K-line images...
+2026-01-29 00:20:16 [INFO] [image_loader] Found 10 valid images in ./output
+2026-01-29 00:20:16 [INFO] [main] Limiting analysis to first 1 images.
+2026-01-29 00:20:16 [INFO] [main] Starting analysis for 1 images with concurrency 1...
+2026-01-29 00:20:16 [INFO] [llm_analyzer] Analyzing 600529.SH...
+2026-01-29 00:20:21 [INFO] [main] Analysis completed in 0:00:04.401564.
+2026-01-29 00:20:21 [INFO] [main] Saving results to database...
+2026-01-29 00:20:21 [INFO] [db_handler] Inserted 1 records.
+2026-01-29 00:20:21 [INFO] [main] ========================================
+2026-01-29 00:20:21 [INFO] [main] Total Processed: 1
+2026-01-29 00:20:21 [INFO] [main] Successful: 1
+2026-01-29 00:20:21 [INFO] [main] Failed: 0
+2026-01-29 00:20:21 [INFO] [main] High Score (>= 6.0): 0
+2026-01-29 00:20:21 [INFO] [main] DB Inserted: 1
+2026-01-29 00:20:21 [INFO] [main] ========================================
+2026-01-29 00:24:06 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 00:24:06 [INFO] [main] Initializing database table...
+2026-01-29 00:24:06 [INFO] [db_handler] Database table initialized.
+2026-01-29 00:24:06 [INFO] [main] Truncating target table...
+2026-01-29 00:24:06 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 00:24:06 [INFO] [main] Scanning for K-line images...
+2026-01-29 00:24:06 [INFO] [image_loader] Found 10 valid images in ./output
+2026-01-29 00:24:06 [INFO] [main] Limiting analysis to first 1 images.
+2026-01-29 00:24:06 [INFO] [main] Starting analysis for 1 images with concurrency 1...
+2026-01-29 00:24:06 [INFO] [llm_analyzer] Analyzing 600529.SH...
+2026-01-29 00:24:11 [INFO] [main] Analysis completed in 0:00:05.465052.
+2026-01-29 00:24:11 [INFO] [main] Saving results to database...
+2026-01-29 00:24:11 [INFO] [db_handler] Inserted 1 records.
+2026-01-29 00:24:11 [INFO] [main] ========================================
+2026-01-29 00:24:11 [INFO] [main] Total Processed: 1
+2026-01-29 00:24:11 [INFO] [main] Successful: 1
+2026-01-29 00:24:11 [INFO] [main] Failed: 0
+2026-01-29 00:24:11 [INFO] [main] High Score (>= 6.0): 0
+2026-01-29 00:24:11 [INFO] [main] DB Inserted: 1
+2026-01-29 00:24:11 [INFO] [main] ========================================
+2026-01-29 00:24:54 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 00:24:54 [INFO] [main] Initializing database table...
+2026-01-29 00:24:54 [INFO] [db_handler] Database table initialized.
+2026-01-29 00:24:54 [INFO] [main] Truncating target table...
+2026-01-29 00:24:54 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 00:24:54 [INFO] [main] Scanning for K-line images...
+2026-01-29 00:24:54 [INFO] [image_loader] Found 10 valid images in ./output
+2026-01-29 00:24:54 [INFO] [main] Limiting analysis to first 1 images.
+2026-01-29 00:24:54 [INFO] [main] Starting analysis for 1 images with concurrency 1...
+2026-01-29 00:24:54 [INFO] [llm_analyzer] Analyzing 600529.SH...
+2026-01-29 00:25:03 [ERROR] [llm_analyzer] [600529.SH] Analysis failed: RetryError[<Future at 0x79549d5133b0 state=finished raised ServiceResponseException>]
+2026-01-29 00:25:03 [INFO] [main] Analysis completed in 0:00:08.789335.
+2026-01-29 00:25:03 [INFO] [main] Saving results to database...
+2026-01-29 00:25:03 [INFO] [main] ========================================
+2026-01-29 00:25:03 [INFO] [main] Total Processed: 1
+2026-01-29 00:25:03 [INFO] [main] Successful: 0
+2026-01-29 00:25:03 [INFO] [main] Failed: 1
+2026-01-29 00:25:03 [INFO] [main] High Score (>= 6.0): 0
+2026-01-29 00:25:03 [INFO] [main] DB Inserted: 0
+2026-01-29 00:25:03 [INFO] [main] ========================================
+2026-01-29 00:25:30 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 00:25:30 [INFO] [main] Initializing database table...
+2026-01-29 00:25:30 [INFO] [db_handler] Database table initialized.
+2026-01-29 00:25:30 [INFO] [main] Truncating target table...
+2026-01-29 00:25:30 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 00:25:30 [INFO] [main] Scanning for K-line images...
+2026-01-29 00:25:30 [INFO] [image_loader] Found 10 valid images in ./output
+2026-01-29 00:25:30 [INFO] [main] Limiting analysis to first 1 images.
+2026-01-29 00:25:30 [INFO] [main] Starting analysis for 1 images with concurrency 1...
+2026-01-29 00:25:30 [INFO] [llm_analyzer] Analyzing 600529.SH...
+2026-01-29 00:25:38 [ERROR] [llm_analyzer] [600529.SH] Analysis failed: RetryError[<Future at 0x798455a13170 state=finished raised ServiceResponseException>]
+Traceback (most recent call last):
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/openai/_chat_client.py", line 141, in _inner_get_response
+    await client.chat.completions.create(stream=False, **options_dict), options
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 2678, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1881, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1666, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': '<400> InternalError.Algo.InvalidParameter: The input messages do not contain elements with the role of user', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_parameter_error'}, 'id': 'chatcmpl-04810129-dee6-9b02-b446-81c458574b77', 'request_id': '04810129-dee6-9b02-b446-81c458574b77'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/refinement_llm/llm_analyzer.py", line 99, in _call_agent_with_retry
+    response_message = await self.agent.run(message)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/_middleware.py", line 1253, in middleware_enabled_run
+    return await original_run(self, normalized_messages, thread=thread, **kwargs)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/observability.py", line 1348, in trace_run
+    return await run_func(self, messages=messages, thread=thread, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/_agents.py", line 841, in run
+    response = await self.chat_client.get_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/_tools.py", line 1945, in function_invocation_wrapper
+    response = await func(self, messages=prepped_messages, options=options, **filtered_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/observability.py", line 1073, in trace_get_response
+    return await func(
+           ^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/_middleware.py", line 1373, in middleware_enabled_get_response
+    return await original_get_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/_clients.py", line 339, in get_response
+    return await self._inner_get_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/openai/_chat_client.py", line 149, in _inner_get_response
+    raise ServiceResponseException(
+agent_framework.exceptions.ServiceResponseException: <class 'agent_framework.openai._chat_client.OpenAIChatClient'> service failed to complete the prompt: Error code: 400 - {'error': {'message': '<400> InternalError.Algo.InvalidParameter: The input messages do not contain elements with the role of user', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_parameter_error'}, 'id': 'chatcmpl-04810129-dee6-9b02-b446-81c458574b77', 'request_id': '04810129-dee6-9b02-b446-81c458574b77'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/fin_analysis/refinement_llm/llm_analyzer.py", line 62, in analyze_kline
+    response_text = await self._call_agent_with_retry(user_message)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 189, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 421, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x798455a13170 state=finished raised ServiceResponseException>]
+2026-01-29 00:25:38 [INFO] [main] Analysis completed in 0:00:08.465331.
+2026-01-29 00:25:38 [INFO] [main] Saving results to database...
+2026-01-29 00:25:38 [INFO] [main] ========================================
+2026-01-29 00:25:38 [INFO] [main] Total Processed: 1
+2026-01-29 00:25:38 [INFO] [main] Successful: 0
+2026-01-29 00:25:38 [INFO] [main] Failed: 1
+2026-01-29 00:25:38 [INFO] [main] High Score (>= 6.0): 0
+2026-01-29 00:25:38 [INFO] [main] DB Inserted: 0
+2026-01-29 00:25:38 [INFO] [main] ========================================
+2026-01-29 00:29:06 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 00:29:06 [INFO] [main] Initializing database table...
+2026-01-29 00:29:06 [INFO] [db_handler] Database table initialized.
+2026-01-29 00:29:06 [INFO] [main] Truncating target table...
+2026-01-29 00:29:06 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 00:29:06 [INFO] [main] Scanning for K-line images...
+2026-01-29 00:29:06 [INFO] [image_loader] Found 10 valid images in ./output
+2026-01-29 00:29:06 [INFO] [main] Limiting analysis to first 1 images.
+2026-01-29 00:29:06 [INFO] [main] Starting analysis for 1 images with concurrency 1...
+2026-01-29 00:29:06 [INFO] [llm_analyzer] Analyzing 600529.SH...
+2026-01-29 00:29:19 [INFO] [main] Analysis completed in 0:00:12.207669.
+2026-01-29 00:29:19 [INFO] [main] Saving results to database...
+2026-01-29 00:29:19 [INFO] [db_handler] Inserted 1 records.
+2026-01-29 00:29:19 [INFO] [main] ========================================
+2026-01-29 00:29:19 [INFO] [main] Total Processed: 1
+2026-01-29 00:29:19 [INFO] [main] Successful: 1
+2026-01-29 00:29:19 [INFO] [main] Failed: 0
+2026-01-29 00:29:19 [INFO] [main] High Score (>= 6.0): 1
+2026-01-29 00:29:19 [INFO] [main] DB Inserted: 1
+2026-01-29 00:29:19 [INFO] [main] ========================================
+2026-01-29 00:29:38 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 00:29:38 [INFO] [main] Initializing database table...
+2026-01-29 00:29:38 [INFO] [db_handler] Database table initialized.
+2026-01-29 00:29:38 [INFO] [main] Truncating target table...
+2026-01-29 00:29:38 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 00:29:38 [INFO] [main] Scanning for K-line images...
+2026-01-29 00:29:38 [INFO] [image_loader] Found 10 valid images in ./output
+2026-01-29 00:29:38 [INFO] [main] Limiting analysis to first 5 images.
+2026-01-29 00:29:38 [INFO] [main] Starting analysis for 5 images with concurrency 2...
+2026-01-29 00:29:38 [INFO] [llm_analyzer] Analyzing 600529.SH...
+2026-01-29 00:29:38 [INFO] [llm_analyzer] Analyzing 300070.SZ...
+2026-01-29 00:29:49 [INFO] [llm_analyzer] Analyzing 002382.SZ...
+2026-01-29 00:29:51 [INFO] [llm_analyzer] Analyzing 600655.SH...
+2026-01-29 00:29:58 [INFO] [llm_analyzer] Analyzing 000876.SZ...
+2026-01-29 00:30:11 [INFO] [main] Analysis completed in 0:00:32.931129.
+2026-01-29 00:30:11 [INFO] [main] Saving results to database...
+2026-01-29 00:30:11 [INFO] [db_handler] Inserted 5 records.
+2026-01-29 00:30:11 [INFO] [main] ========================================
+2026-01-29 00:30:11 [INFO] [main] Total Processed: 5
+2026-01-29 00:30:11 [INFO] [main] Successful: 5
+2026-01-29 00:30:11 [INFO] [main] Failed: 0
+2026-01-29 00:30:11 [INFO] [main] High Score (>= 6.0): 5
+2026-01-29 00:30:11 [INFO] [main] DB Inserted: 5
+2026-01-29 00:30:11 [INFO] [main] ========================================
+2026-01-29 01:39:54 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 01:39:54 [INFO] [main] Initializing database table...
+2026-01-29 01:39:54 [INFO] [db_handler] Database table initialized.
+2026-01-29 01:39:54 [INFO] [main] Truncating target table...
+2026-01-29 01:39:54 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 01:39:54 [INFO] [main] Scanning for K-line images...
+2026-01-29 01:39:54 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 01:39:54 [INFO] [main] Starting analysis for 8 images with concurrency 5...
+2026-01-29 01:39:54 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 01:39:54 [INFO] [llm_analyzer] Analyzing 603080.SH...
+2026-01-29 01:39:54 [INFO] [llm_analyzer] Analyzing 002823.SZ...
+2026-01-29 01:39:54 [INFO] [llm_analyzer] Analyzing 002378.SZ...
+2026-01-29 01:39:54 [INFO] [llm_analyzer] Analyzing 601179.SH...
+2026-01-29 01:40:03 [INFO] [llm_analyzer] Analyzing 300516.SZ...
+2026-01-29 01:40:03 [INFO] [llm_analyzer] Analyzing 300466.SZ...
+2026-01-29 01:40:04 [INFO] [llm_analyzer] Analyzing 300444.SZ...
+2026-01-29 01:40:12 [INFO] [main] Analysis completed in 0:00:18.202800.
+2026-01-29 01:40:12 [INFO] [main] Saving results to database...
+2026-01-29 01:40:12 [INFO] [db_handler] Inserted 8 records.
+2026-01-29 01:40:12 [INFO] [main] ========================================
+2026-01-29 01:40:12 [INFO] [main] Total Processed: 8
+2026-01-29 01:40:12 [INFO] [main] Successful: 8
+2026-01-29 01:40:12 [INFO] [main] Failed: 0
+2026-01-29 01:40:12 [INFO] [main] High Score (>= 6.0): 8
+2026-01-29 01:40:12 [INFO] [main] DB Inserted: 8
+2026-01-29 01:40:12 [INFO] [main] ========================================
+2026-01-29 01:46:34 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 01:46:34 [INFO] [main] Initializing database table...
+2026-01-29 01:46:34 [INFO] [db_handler] Database table initialized.
+2026-01-29 01:46:34 [INFO] [main] Truncating target table...
+2026-01-29 01:46:34 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 01:46:34 [INFO] [main] Scanning for K-line images...
+2026-01-29 01:46:34 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 01:46:34 [INFO] [main] Starting analysis for 8 images with concurrency 5...
+2026-01-29 01:46:34 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 01:46:34 [INFO] [llm_analyzer] Analyzing 603080.SH...
+2026-01-29 01:46:34 [INFO] [llm_analyzer] Analyzing 002823.SZ...
+2026-01-29 01:46:34 [INFO] [llm_analyzer] Analyzing 002378.SZ...
+2026-01-29 01:46:34 [INFO] [llm_analyzer] Analyzing 601179.SH...
+2026-01-29 01:46:43 [INFO] [llm_analyzer] Analyzing 300516.SZ...
+2026-01-29 01:46:43 [INFO] [llm_analyzer] Analyzing 300466.SZ...
+2026-01-29 01:46:43 [INFO] [llm_analyzer] Analyzing 300444.SZ...
+2026-01-29 01:46:51 [INFO] [main] Analysis completed in 0:00:17.168737.
+2026-01-29 01:46:51 [INFO] [main] Saving results to database...
+2026-01-29 01:46:52 [INFO] [db_handler] Inserted 8 records.
+2026-01-29 01:46:52 [INFO] [main] ========================================
+2026-01-29 01:46:52 [INFO] [main] Total Processed: 8
+2026-01-29 01:46:52 [INFO] [main] Successful: 8
+2026-01-29 01:46:52 [INFO] [main] Failed: 0
+2026-01-29 01:46:52 [INFO] [main] High Score (>= 6.0): 8
+2026-01-29 01:46:52 [INFO] [main] DB Inserted: 8
+2026-01-29 01:46:52 [INFO] [main] ========================================
+2026-01-29 01:54:38 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 01:54:38 [INFO] [main] Initializing database table...
+2026-01-29 01:54:38 [INFO] [db_handler] Database table initialized.
+2026-01-29 01:54:38 [INFO] [main] Truncating target table...
+2026-01-29 01:54:38 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 01:54:38 [INFO] [main] Scanning for K-line images...
+2026-01-29 01:54:38 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 01:54:38 [INFO] [main] Limiting analysis to first 1 images.
+2026-01-29 01:54:38 [INFO] [main] Starting analysis for 1 images with concurrency 5...
+2026-01-29 01:54:38 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 01:54:41 [INFO] [main] Analysis completed in 0:00:02.627817.
+2026-01-29 01:54:41 [INFO] [main] Saving results to database...
+2026-01-29 01:54:41 [INFO] [db_handler] Inserted 1 records.
+2026-01-29 01:54:41 [INFO] [main] ========================================
+2026-01-29 01:54:41 [INFO] [main] Total Processed: 1
+2026-01-29 01:54:41 [INFO] [main] Successful: 1
+2026-01-29 01:54:41 [INFO] [main] Failed: 0
+2026-01-29 01:54:41 [INFO] [main] High Score (>= 6.0): 1
+2026-01-29 01:54:41 [INFO] [main] DB Inserted: 1
+2026-01-29 01:54:41 [INFO] [main] ========================================
+2026-01-29 01:55:21 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 01:55:21 [INFO] [main] Initializing database table...
+2026-01-29 01:55:21 [INFO] [db_handler] Database table initialized.
+2026-01-29 01:55:21 [INFO] [main] Truncating target table...
+2026-01-29 01:55:21 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 01:55:21 [INFO] [main] Scanning for K-line images...
+2026-01-29 01:55:21 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 01:55:21 [INFO] [main] Limiting analysis to first 2 images.
+2026-01-29 01:55:21 [INFO] [main] Starting analysis for 2 images with concurrency 5...
+2026-01-29 01:55:21 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 01:55:21 [INFO] [llm_analyzer] Analyzing 603080.SH...
+2026-01-29 01:55:24 [INFO] [main] Analysis completed in 0:00:02.864076.
+2026-01-29 01:55:24 [INFO] [main] Saving results to database...
+2026-01-29 01:55:24 [INFO] [db_handler] Inserted 2 records.
+2026-01-29 01:55:24 [INFO] [main] ========================================
+2026-01-29 01:55:24 [INFO] [main] Total Processed: 2
+2026-01-29 01:55:24 [INFO] [main] Successful: 2
+2026-01-29 01:55:24 [INFO] [main] Failed: 0
+2026-01-29 01:55:24 [INFO] [main] High Score (>= 6.0): 2
+2026-01-29 01:55:24 [INFO] [main] DB Inserted: 2
+2026-01-29 01:55:24 [INFO] [main] ========================================
+2026-01-29 01:56:22 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 01:56:22 [INFO] [main] Initializing database table...
+2026-01-29 01:56:22 [INFO] [db_handler] Database table initialized.
+2026-01-29 01:56:22 [INFO] [main] Truncating target table...
+2026-01-29 01:56:23 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 01:56:23 [INFO] [main] Scanning for K-line images...
+2026-01-29 01:56:23 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 01:56:23 [INFO] [main] Limiting analysis to first 2 images.
+2026-01-29 01:56:23 [INFO] [main] Starting analysis for 2 images with concurrency 5...
+2026-01-29 01:56:23 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 01:56:23 [INFO] [llm_analyzer] Analyzing 603080.SH...
+2026-01-29 01:56:25 [DEBUG] [llm_analyzer] [603080.SH] Raw LLM Response: ```json
+{
+  "stock_code": "603080.SH",
+  "score": 9.0,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "该股在2018年初曾创下历史高点，随后经历了一轮深幅下跌（跌幅超过70%），并在2019年中开始进入长期横盘整理阶段。从2019年9月到2023年5月，形成了一个长达40个月的底部箱体，期间股价波动率显著收敛，K线实体越来越短，且多次出现上下影线刺探支撑位但未破位的情况。近期股价成功站上30月均线，并开始呈现上翘趋势，显示出明显的筑底完成迹象。量能方面，下跌阶段持续缩量，底部出现多次放量阳线，表明主力资金正在积极吸筹。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+```
+2026-01-29 01:56:26 [DEBUG] [llm_analyzer] [600482.SH] Raw LLM Response: ```json
+{
+  "stock_code": "600482.SH",
+  "score": 7.5,
+  "pattern_name": "Extended Base with Volatility Contraction",
+  "reasoning": "该股在2007年达到历史高点后，经历了长达10年的深度调整（跌幅超80%），符合'曾经辉煌与暴跌'的前提。从2017年中开始，股价进入了一个为期约60个月的长期横盘整理阶段（超过30月均线），期间波动率显著收敛，K线实体逐渐变短，且多次出现上下影线刺探支撑位但未有效跌破的情况。近期股价已站上30月均线，并呈现微幅上翘趋势，显示多头力量正在积聚。量能方面，下跌阶段持续缩量，底部震荡期间有数次放量阳线，表明主力资金可能在逐步吸筹。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并微幅上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+```
+2026-01-29 01:56:26 [INFO] [main] Analysis completed in 0:00:03.261421.
+2026-01-29 01:56:26 [INFO] [main] Saving results to database...
+2026-01-29 01:56:26 [INFO] [db_handler] Inserted 2 records.
+2026-01-29 01:56:26 [INFO] [main] ========================================
+2026-01-29 01:56:26 [INFO] [main] Total Processed: 2
+2026-01-29 01:56:26 [INFO] [main] Successful: 2
+2026-01-29 01:56:26 [INFO] [main] Failed: 0
+2026-01-29 01:56:26 [INFO] [main] High Score (>= 6.0): 2
+2026-01-29 01:56:26 [INFO] [main] DB Inserted: 2
+2026-01-29 01:56:26 [INFO] [main] ========================================
+2026-01-29 01:56:40 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 01:56:40 [INFO] [main] Initializing database table...
+2026-01-29 01:56:40 [INFO] [db_handler] Database table initialized.
+2026-01-29 01:56:40 [INFO] [main] Truncating target table...
+2026-01-29 01:56:40 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 01:56:40 [INFO] [main] Scanning for K-line images...
+2026-01-29 01:56:40 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 01:56:40 [INFO] [main] Starting analysis for 8 images with concurrency 5...
+2026-01-29 01:56:40 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 01:56:40 [INFO] [llm_analyzer] Analyzing 603080.SH...
+2026-01-29 01:56:40 [INFO] [llm_analyzer] Analyzing 002823.SZ...
+2026-01-29 01:56:40 [INFO] [llm_analyzer] Analyzing 002378.SZ...
+2026-01-29 01:56:40 [INFO] [llm_analyzer] Analyzing 601179.SH...
+2026-01-29 01:56:50 [DEBUG] [llm_analyzer] [002823.SZ] Raw LLM Response: {
+  "stock_code": "002823.SZ",
+  "score": 7.8,
+  "pattern_name": "Extended Sideways Base with Volatility Contraction",
+  "reasoning": "该股（凯中精密）左侧高点约28元（2016年11月），至2019年初低点约7元，跌幅超75%，符合‘曾经辉煌与暴跌’条件（+3分）。底部横盘区间自2019年中至2024年底，持续约5.5年，远超12个月要求；但箱体并非完全扁平——2020–2022年有反复下探（如2020年3月、2022年10月），波动率收敛不彻底，K线实体时长时短，部分月份仍出现较大阴线（-1.2分）。2023年后波动显著收窄，2024年起多次阳线放量突破前高阻力区（如2024年7月、2025年3月），且股价自2024Q2起稳定站上30月均线（橙线），均线由下行转为走平并微幅上翘（+2分）。量能方面：下跌阶段（2016–2019）明显缩量至地量水平；底部震荡期（2020–2024）多数时间缩量，但2024年下半年出现3次显著放量阳线（单月成交量超1000万股），符合主力间歇性吸筹特征（+2分）。综合来看，形态接近教科书级Stage 1 Base，但因早期横盘阶段波动偏大、时间过长导致结构略显松散，故扣减1.2分，得7.8分。",
+  "stage": "Stage 1 Base (Late Stage)",
+  "ma30_status": "站上并开始上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹"
+}
+2026-01-29 01:56:50 [INFO] [llm_analyzer] Analyzing 300516.SZ...
+2026-01-29 01:56:51 [DEBUG] [llm_analyzer] [002378.SZ] Raw LLM Response: {
+  "stock_code": "002378.SZ",
+  "score": 7.8,
+  "pattern_name": "Extended Base with Volatility Contraction",
+  "reasoning": "该股（002378.SZ，章源钨业）左侧历史高点约18元（2010年），随后经历长期下跌，至2020年低点约3.5元，跌幅超80%，符合‘曾经辉煌与暴跌’条件（+3分）。右侧自2020年中至2025年初形成约4.5年的横盘箱体（3.5–9元区间），时间远超12个月；但箱体上沿逐步抬高（2020年低点3.5→2022年高点8.5→2024年高点12+），呈现‘阶梯式筑底’而非标准平底锅，波动率虽收敛但未达极低水平（+2.5分）。30月均线（红色线）在2023年后由陡峭下行转为走平，并于2024Q4明显上翘，股价自2024年10月起持续站稳其上（+2分）。量能方面：2018–2020下跌末期缩量至地量（<500K shares/月），2022–2024底部震荡中多次出现放量阳线（如2022年8月、2024年10月单月超2000K），显示主力间歇吸筹（+2.3分）。扣分项：箱体上沿抬升较快，部分月份振幅仍较大（如2023年3月、2024年6月），尚未完全进入‘静默沉淀’阶段，故未达教科书级Stage 1。",
+  "stage": "Stage 1 Base (Late Phase)",
+  "ma30_status": "站上并明显上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇放量吸筹"
+}
+2026-01-29 01:56:51 [INFO] [llm_analyzer] Analyzing 300466.SZ...
+2026-01-29 01:56:53 [DEBUG] [llm_analyzer] [601179.SH] Raw LLM Response: {
+  "stock_code": "601179.SH",
+  "score": 7.2,
+  "pattern_name": "Extended Sideways Accumulation with Partial Confirmation",
+  "reasoning": "该股（上海电气，601179.SH）左侧存在明显历史高点（2015年约14元），随后经历深幅下跌，2016–2020年区间最低触及约3元，跌幅超78%，符合‘曾经辉煌与暴跌’条件（+3分）。右侧自2020年中至2024年底形成约4.5年的横盘箱体（3–8元），时间远超12个月，但箱体波动幅度仍偏大（高点8.5元 vs 低点3元），非典型‘平底锅’，属宽幅震荡吸筹（+2.5分）。波动收敛方面：2022年后K线实体整体缩短，2023–2024年多次出现长下影线试探3–3.5元支撑未破，显示抛压减轻（+1.5分）。均线行为：30月均线（图中绿色曲线）在2023Q4前持续下行，2024年起走平并微幅上翘，2025年初股价站稳其上，但尚未形成明确多头排列（+1.8分）。量能方面：2018–2020下跌末期缩量明显（地量），2022–2024底部区域出现数次显著放量阳线（如2022年7月、2023年10月、2024年8月），符合间歇性吸筹特征，但整体成交量中枢未系统抬升（+1.4分）。综合扣分项：箱体过宽、波动率未充分收敛、均线刚转势尚需确认，故未达教科书级Stage 1。",
+  "stage": "Stage 1 Base (Developing)",
+  "ma30_status": "刚站上，由平转微上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇放量吸筹"
+}
+2026-01-29 01:56:53 [INFO] [llm_analyzer] Analyzing 300444.SZ...
+2026-01-29 01:56:53 [DEBUG] [llm_analyzer] [600482.SH] Raw LLM Response: {
+  "stock_code": "600482.SH",
+  "score": 7.8,
+  "pattern_name": "Extended Base with Volatility Contraction",
+  "reasoning": "该股（600482.SH，中国动力）月线图显示：1) 左侧曾于2015年股灾前冲高至约50元（复权价），随后经历深度调整，2018年低点约8元，跌幅超80%，符合‘曾经辉煌与暴跌’条件；2) 自2021年7月起进入长期横盘阶段，截至2025年12月已持续约4.5年（54个月），远超12个月要求，箱体区间约18–26元，波动率显著收敛（近2年K线实体普遍短小，多为十字星或小阳小阴）；3) 波动收敛明显：2023–2025年多次出现长下影线试探支撑（如2023年10月、2024年12月），但均未有效跌破18元平台，显示强支撑；4) 30月均线（红色线）在2023年下半年由陡峭下行转为走平，并于2024Q4开始微幅上翘，当前股价（约23元）稳定站于其上方；5) 量能方面：下跌阶段（2018–2021）持续缩量，底部震荡期出现3次显著放量阳线（2023年1月、2024年5月、2025年9月），对应价格突破小平台，符合威科夫吸筹特征。扣分项：箱体上沿略有抬升但波动幅度仍略大于理想‘平底锅’形态（最大振幅约45%），且2025年9月放量后未立即形成明确突破，故未达满分。",
+  "stage": "Stage 1 Base (Late Stage)",
+  "ma30_status": "站上并初现上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹"
+}
+2026-01-29 01:56:56 [DEBUG] [llm_analyzer] [603080.SH] Raw LLM Response: {
+  "stock_code": "603080.SH",
+  "score": 7.8,
+  "pattern_name": "Extended Base with Volatility Contraction",
+  "reasoning": "该股（603080.SH，新疆火炬）左侧高点约45元（2018年初），随后经历深度调整，最低跌至约10元（2020年中），跌幅超77%，符合‘曾经辉煌与暴跌’条件。底部横盘区间自2020年中至2024年底，持续约4.5年，远超12个月要求；箱体价格区间约10–22元，波动率显著收敛——尤其2022–2024年K线实体缩短、影线频繁刺探10–12元支撑位但未有效跌破，呈现典型吸筹试探行为。30月均线（橙色线）在2023年后由陡峭下行转为走平，并于2024Q4开始微幅上翘，股价自2024年中起多次站上并缠绕该均线。量能方面：下跌阶段（2018–2020）明显缩量，底部震荡期出现多次间歇性放量阳线（如2021年5月、2023年1月、2024年9月），对应价格突破小平台，符合威科夫‘测试-吸筹-标记’节奏。扣分点在于：2023–2024年箱体上沿略有抬升（非严格扁平），且2024年底出现快速拉升（接近Stage 2 breakout边缘），故未达教科书级‘平底锅’形态，但仍属高质量长期底部沉淀。",
+  "stage": "Stage 1 Base (late phase, approaching Stage 2)",
+  "ma30_status": "站上并初现上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇放量吸筹"
+}
+2026-01-29 01:57:00 [DEBUG] [llm_analyzer] [300516.SZ] Raw LLM Response: {
+  "stock_code": "300516.SZ",
+  "score": 7.8,
+  "pattern_name": "Extended Base with Volatility Contraction",
+  "reasoning": "该股（300516.SZ，国际医学）左侧确有显著高点（2016年6月股价超120元），随后经历深度调整，至2019年低点约15元，跌幅超87%，符合‘曾经辉煌与暴跌’条件。底部横盘自2019年中持续至今（2025年1月），历时近5.5年，远超12个月要求；箱体区间约15–50元，后期（2023–2025）波动率明显收敛，K线实体缩短，多次出现长下影线试探支撑但未有效破位（如2023年10月、2024年4月）。30月均线（橙色曲线）在2023年下半年由跌转平，2024年起微幅上翘，股价自2024Q2起多数时间站于其上，形成多头排列雏形。量能方面：下跌阶段（2016–2019）持续缩量，地量频现；底部震荡期（2020–2025）出现数次显著放量阳线（如2021年1月、2023年2月、2024年10月），伴随价格小幅抬升，符合威科夫吸筹特征。但需注意：2024年底出现一波快速拉升后回踩，箱体上沿尚未有效突破，且部分月份波动仍偏大（如2022年），故未达教科书级‘平底锅’标准，扣分项为横盘后期结构略显松散、突破信号尚未确认。",
+  "stage": "Stage 1 Base (Late Phase)",
+  "ma30_status": "站上并初现上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹"
+}
+2026-01-29 01:57:00 [DEBUG] [llm_analyzer] [300466.SZ] Raw LLM Response: {
+  "stock_code": "300466.SZ",
+  "score": 7.8,
+  "pattern_name": "Extended Sideways Base with Moderate Volatility Contraction",
+  "reasoning": "该股（赛摩智能）左侧历史高点约24元（2015年），随后经历长期下跌，至2019年初低点约5元，跌幅超79%，符合‘曾经辉煌与暴跌’条件（+3分）。底部横盘区间自2019年中至2024年底，持续约5.5年，远超12个月要求（+2分）；但箱体波动幅度仍较大（5–10元区间），未形成典型窄幅‘平底锅’，波动收敛不够极致（-1分）。K线实体在2022–2024年逐渐缩短，偶有长下影线测试支撑（如2023年10月、2024年6月），显示抛压减弱（+1.5分）。30月均线（橙色线）于2023Q4由跌转平，2024Q3起微幅上翘，股价自2024年中多次站上并缠绕该均线（+2分）。量能方面：下跌阶段（2015–2019）显著缩量；底部震荡期出现数次间歇性放量阳线（如2023年11月、2024年3月、2024年12月），伴随价格突破小平台，符合吸筹特征（+1.8分）；但部分放量对应冲高回落，主力行为略显反复（-0.5分）。综合得分为7.8分，属良好底部沉淀形态，但因横盘波动偏大、时间虽长但结构稍松散，尚未达教科书级‘Pan Bottom’。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并微幅上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹"
+}
+2026-01-29 01:57:04 [DEBUG] [llm_analyzer] [300444.SZ] Raw LLM Response: {
+  "stock_code": "300444.SZ",
+  "score": 7.8,
+  "pattern_name": "Extended Base with Volatility Contraction",
+  "reasoning": "该股（汉邦高科）左侧历史高点约28元（2015年4月），随后经历长期下跌，至2020年低点约5元，跌幅超82%，符合‘曾经辉煌与暴跌’条件。右侧自2020年底至2025年中形成约4.5年的横盘箱体（价格区间约5–12元），时间远超12个月；箱体内K线实体逐步缩短，2023–2025年波动率显著收敛，多次出现长下影线测试支撑但未有效破位（如2023年12月、2024年6月）。30月均线（图中橙色线）在2022年后由陡峭下行转为平缓，并于2024Q2起微幅上翘，股价自2024年中持续缠绕并近期站稳其上。量能方面：下跌阶段（2015–2020）明显缩量至地量水平；底部震荡期（2021–2025）出现多次间歇性放量阳线（如2022年8月、2023年12月、2025年7月单月成交量突增至3000+万股），符合吸筹特征。唯一扣分项：箱体上沿压力略显反复（2024年多次冲高回落），且2025年8月放量大阳线尚未确认突破，故未达教科书级‘平底锅’形态，但整体已高度符合Stage 1 Base定义。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并开始微幅上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹"
+}
+2026-01-29 01:57:04 [INFO] [main] Analysis completed in 0:00:23.785286.
+2026-01-29 01:57:04 [INFO] [main] Saving results to database...
+2026-01-29 01:57:04 [INFO] [db_handler] Inserted 8 records.
+2026-01-29 01:57:04 [INFO] [main] ========================================
+2026-01-29 01:57:04 [INFO] [main] Total Processed: 8
+2026-01-29 01:57:04 [INFO] [main] Successful: 8
+2026-01-29 01:57:04 [INFO] [main] Failed: 0
+2026-01-29 01:57:04 [INFO] [main] High Score (>= 6.0): 8
+2026-01-29 01:57:04 [INFO] [main] DB Inserted: 8
+2026-01-29 01:57:04 [INFO] [main] ========================================
+2026-01-29 01:58:39 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 01:58:39 [INFO] [main] Initializing database table...
+2026-01-29 01:58:39 [INFO] [db_handler] Database table initialized.
+2026-01-29 01:58:39 [INFO] [main] Truncating target table...
+2026-01-29 01:58:39 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 01:58:39 [INFO] [main] Scanning for K-line images...
+2026-01-29 01:58:39 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 01:58:39 [INFO] [main] Limiting analysis to first 2 images.
+2026-01-29 01:58:39 [INFO] [main] Starting analysis for 2 images with concurrency 5...
+2026-01-29 01:58:39 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 01:58:39 [INFO] [llm_analyzer] Analyzing 603080.SH...
+2026-01-29 01:58:48 [DEBUG] [llm_analyzer] [600482.SH] Raw LLM Response: {
+  "stock_code": "600482.SH",
+  "score": 7.8,
+  "pattern_name": "Extended Sideways Base with Volatility Contraction",
+  "reasoning": "该股（600482.SH，中国动力）左侧历史高点约50元（2017年），随后经历深度调整，至2020年低点约10元，跌幅超80%，符合‘曾经辉煌与暴跌’条件（+3分）。右侧自2020年下半年起进入长期横盘阶段，截至2025年12月已持续约5.5年（>12个月），箱体区间大致在10–25元，波动率显著收敛——尤其2022–2024年K线实体明显缩短，多次出现长下影线试探10–12元支撑但未有效破位（+2.5分）。30月均线（图中绿色线）在2022年后由陡峭下行转为走平，并于2024Q4开始微幅上翘；股价自2024年中起多次站上并缠绕30月均线，近期（2025年9–12月）稳定运行于均线上方（+2分）。量能方面：下跌末期（2018–2020）缩量至地量水平；底部震荡期出现数次间歇性放量阳线（如2023年3月、2024年6月、2025年9月），伴随价格小幅抬升，符合吸筹特征，但整体量能未显著放大，尚未出现明确的‘测试性上涨’（+2.3分）。扣分点：横盘时间虽长，但中期仍有较大幅度震荡（如2021年反弹至30元后回落），箱体形态不够紧凑；且近期尚未突破前期压力区（25–28元），仍处于Stage 1末期向Stage 2过渡阶段。",
+  "stage": "Stage 1 Base (Late Phase)",
+  "ma30_status": "站上并开始微幅上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹"
+}
+2026-01-29 01:58:49 [DEBUG] [llm_analyzer] [603080.SH] Raw LLM Response: {
+  "stock_code": "603080.SH",
+  "score": 7.8,
+  "pattern_name": "Extended Sideways Base with Volatility Contraction",
+  "reasoning": "该股（603080.SH，新疆火炬）左侧高点约45元（2018年初），随后持续下跌至2020年低点约10元，跌幅超77%，符合‘曾经辉煌与暴跌’条件（+2分）。底部横盘区间自2020年中至2024年底，历时约4.5年，远超12个月要求；但箱体并非严格扁平——2021–2023年多次出现15%~20%的波段震荡，波动率收敛不够彻底（-1分）。K线实体在2023年后明显缩短，2024年多次出现长下影线试探15–18元支撑未破，显示抛压衰竭（+2分）。30月均线（橙线）于2023Q4由跌转平，2024Q3起微幅上翘，股价自2024年9月起持续站稳其上，形成多头排列雏形（+2分）。量能方面：2018–2020下跌期显著缩量（地量阶段），2023–2024底部震荡中出现3次明显放量阳线（如2023年5月、2024年3月、2024年10月），对应价格突破小平台，符合吸筹特征（+2分）；但整体成交量中枢偏低，缺乏持续活跃资金介入迹象（-0.2分）。综合得分7.8，属高质量Stage 1 Base，但因横盘期间波动略大、时间过长存‘沉寂过度’风险，尚未达教科书级平底锅形态。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并开始微幅上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹"
+}
+2026-01-29 01:58:49 [INFO] [main] Analysis completed in 0:00:10.432764.
+2026-01-29 01:58:49 [INFO] [main] Saving results to database...
+2026-01-29 01:58:49 [INFO] [db_handler] Inserted 2 records.
+2026-01-29 01:58:49 [INFO] [main] ========================================
+2026-01-29 01:58:49 [INFO] [main] Total Processed: 2
+2026-01-29 01:58:49 [INFO] [main] Successful: 2
+2026-01-29 01:58:49 [INFO] [main] Failed: 0
+2026-01-29 01:58:49 [INFO] [main] High Score (>= 6.0): 2
+2026-01-29 01:58:49 [INFO] [main] DB Inserted: 2
+2026-01-29 01:58:49 [INFO] [main] ========================================
+2026-01-29 01:59:16 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 01:59:17 [INFO] [main] Initializing database table...
+2026-01-29 01:59:17 [INFO] [db_handler] Database table initialized.
+2026-01-29 01:59:17 [INFO] [main] Truncating target table...
+2026-01-29 01:59:17 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 01:59:17 [INFO] [main] Scanning for K-line images...
+2026-01-29 01:59:17 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 01:59:17 [INFO] [main] Limiting analysis to first 2 images.
+2026-01-29 01:59:17 [INFO] [main] Starting analysis for 2 images with concurrency 5...
+2026-01-29 01:59:17 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 01:59:17 [INFO] [llm_analyzer] Analyzing 603080.SH...
+2026-01-29 01:59:19 [DEBUG] [llm_analyzer] [603080.SH] Raw LLM Response: ```json
+{
+  "stock_code": "603080.SH",
+  "score": 9.0,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "该股在2018年初曾达到历史高点（约50元），随后经历了一轮深幅下跌，最低跌至约10元附近，跌幅超过70%。自2021年中开始，股价进入了一个长达24个月的底部横盘整理阶段（Stage 1 Base），期间波动率显著收敛，K线实体越来越短，上下影线反复试探支撑位但未有效跌破。近期股价已成功站上30月均线，并且该均线呈现由跌转平、微幅上翘的态势。量能方面，下跌过程中持续缩量，而在底部横盘期间多次出现放量阳线，表明主力资金正在积极吸筹。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+```
+2026-01-29 01:59:20 [DEBUG] [llm_analyzer] [600482.SH] Raw LLM Response: ```json
+{
+  "stock_code": "600482.SH",
+  "score": 7.5,
+  "pattern_name": "Extended Base with Volatility Contraction",
+  "reasoning": "该股在2004年7月达到历史高点后，经历了长达10年的下跌和盘整期（跌幅超过70%），符合'曾经辉煌与暴跌'的前提。从2017年5月开始，股价进入了一个为期约84个月的长期横盘整理阶段（超过2年），形成了一个典型的底部沉淀形态。在此期间，波动率显著收敛，K线实体越来越短，且多次出现上下影线刺探支撑位但未破位的情况。30月均线（图中绿色线）在此阶段由跌转平，并在2023年初开始微幅上翘，表明趋势可能正在反转。量能方面，下跌阶段持续缩量，而在底部横盘期间出现了多次放量阳线，显示主力资金在逐步吸筹。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+```
+2026-01-29 01:59:20 [INFO] [main] Analysis completed in 0:00:03.207342.
+2026-01-29 01:59:20 [INFO] [main] Saving results to database...
+2026-01-29 01:59:20 [INFO] [db_handler] Inserted 2 records.
+2026-01-29 01:59:20 [INFO] [main] ========================================
+2026-01-29 01:59:20 [INFO] [main] Total Processed: 2
+2026-01-29 01:59:20 [INFO] [main] Successful: 2
+2026-01-29 01:59:20 [INFO] [main] Failed: 0
+2026-01-29 01:59:20 [INFO] [main] High Score (>= 6.0): 2
+2026-01-29 01:59:20 [INFO] [main] DB Inserted: 2
+2026-01-29 01:59:20 [INFO] [main] ========================================
+2026-01-29 02:01:06 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 02:01:07 [INFO] [main] Initializing database table...
+2026-01-29 02:01:07 [INFO] [db_handler] Database table initialized.
+2026-01-29 02:01:07 [INFO] [main] Truncating target table...
+2026-01-29 02:01:07 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 02:01:07 [INFO] [main] Scanning for K-line images...
+2026-01-29 02:01:07 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 02:01:07 [INFO] [main] Limiting analysis to first 2 images.
+2026-01-29 02:01:07 [INFO] [main] Starting analysis for 2 images with concurrency 5...
+2026-01-29 02:01:07 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 02:01:07 [INFO] [llm_analyzer] Analyzing 603080.SH...
+2026-01-29 02:01:12 [ERROR] [llm_analyzer] [603080.SH] Analysis failed: RetryError[<Future at 0x78f5eb6a3e60 state=finished raised ServiceResponseException>]
+Traceback (most recent call last):
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/openai/_chat_client.py", line 141, in _inner_get_response
+    await client.chat.completions.create(stream=False, **options_dict), options
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 2678, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1881, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1666, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `qwen3-plus` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '8ea90004-3ca2-9318-bd5d-128fcd64b977'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/refinement_llm/llm_analyzer.py", line 101, in _call_agent_with_retry
+    response_message = await self.agent.run(message)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/_middleware.py", line 1253, in middleware_enabled_run
+    return await original_run(self, normalized_messages, thread=thread, **kwargs)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/observability.py", line 1348, in trace_run
+    return await run_func(self, messages=messages, thread=thread, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/_agents.py", line 841, in run
+    response = await self.chat_client.get_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/_tools.py", line 1945, in function_invocation_wrapper
+    response = await func(self, messages=prepped_messages, options=options, **filtered_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/observability.py", line 1073, in trace_get_response
+    return await func(
+           ^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/_middleware.py", line 1373, in middleware_enabled_get_response
+    return await original_get_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/_clients.py", line 339, in get_response
+    return await self._inner_get_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/openai/_chat_client.py", line 154, in _inner_get_response
+    raise ServiceResponseException(
+agent_framework.exceptions.ServiceResponseException: <class 'agent_framework.openai._chat_client.OpenAIChatClient'> service failed to complete the prompt: Error code: 404 - {'error': {'message': 'The model `qwen3-plus` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '8ea90004-3ca2-9318-bd5d-128fcd64b977'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/fin_analysis/refinement_llm/llm_analyzer.py", line 62, in analyze_kline
+    response_text = await self._call_agent_with_retry(user_message)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 189, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 421, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x78f5eb6a3e60 state=finished raised ServiceResponseException>]
+2026-01-29 02:01:12 [ERROR] [llm_analyzer] [600482.SH] Analysis failed: RetryError[<Future at 0x78f5eb6a3c20 state=finished raised ServiceResponseException>]
+Traceback (most recent call last):
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/openai/_chat_client.py", line 141, in _inner_get_response
+    await client.chat.completions.create(stream=False, **options_dict), options
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 2678, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1881, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1666, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `qwen3-plus` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '09ffc508-111b-9348-b832-b6628482f848'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/refinement_llm/llm_analyzer.py", line 101, in _call_agent_with_retry
+    response_message = await self.agent.run(message)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/_middleware.py", line 1253, in middleware_enabled_run
+    return await original_run(self, normalized_messages, thread=thread, **kwargs)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/observability.py", line 1348, in trace_run
+    return await run_func(self, messages=messages, thread=thread, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/_agents.py", line 841, in run
+    response = await self.chat_client.get_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/_tools.py", line 1945, in function_invocation_wrapper
+    response = await func(self, messages=prepped_messages, options=options, **filtered_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/observability.py", line 1073, in trace_get_response
+    return await func(
+           ^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/_middleware.py", line 1373, in middleware_enabled_get_response
+    return await original_get_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/_clients.py", line 339, in get_response
+    return await self._inner_get_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/agent_framework/openai/_chat_client.py", line 154, in _inner_get_response
+    raise ServiceResponseException(
+agent_framework.exceptions.ServiceResponseException: <class 'agent_framework.openai._chat_client.OpenAIChatClient'> service failed to complete the prompt: Error code: 404 - {'error': {'message': 'The model `qwen3-plus` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '09ffc508-111b-9348-b832-b6628482f848'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/fin_analysis/refinement_llm/llm_analyzer.py", line 62, in analyze_kline
+    response_text = await self._call_agent_with_retry(user_message)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 189, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/fin_analysis/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 421, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x78f5eb6a3c20 state=finished raised ServiceResponseException>]
+2026-01-29 02:01:12 [INFO] [main] Analysis completed in 0:00:04.974375.
+2026-01-29 02:01:12 [INFO] [main] Saving results to database...
+2026-01-29 02:01:12 [INFO] [main] ========================================
+2026-01-29 02:01:12 [INFO] [main] Total Processed: 2
+2026-01-29 02:01:12 [INFO] [main] Successful: 0
+2026-01-29 02:01:12 [INFO] [main] Failed: 2
+2026-01-29 02:01:12 [INFO] [main] High Score (>= 6.0): 0
+2026-01-29 02:01:12 [INFO] [main] DB Inserted: 0
+2026-01-29 02:01:12 [INFO] [main] ========================================
+2026-01-29 02:01:53 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 02:01:53 [INFO] [main] Initializing database table...
+2026-01-29 02:01:54 [INFO] [db_handler] Database table initialized.
+2026-01-29 02:01:54 [INFO] [main] Truncating target table...
+2026-01-29 02:01:54 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 02:01:54 [INFO] [main] Scanning for K-line images...
+2026-01-29 02:01:54 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 02:01:54 [INFO] [main] Limiting analysis to first 2 images.
+2026-01-29 02:01:54 [INFO] [main] Starting analysis for 2 images with concurrency 5...
+2026-01-29 02:01:54 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 02:01:54 [INFO] [llm_analyzer] Analyzing 603080.SH...
+2026-01-29 02:02:04 [DEBUG] [llm_analyzer] [603080.SH] Raw LLM Response: {
+  "stock_code": "603080.SH",
+  "score": 7.8,
+  "pattern_name": "Extended Base with Volatility Contraction",
+  "reasoning": "该股（603080.SH，新疆火炬）左侧高点约45元（2018年初），随后持续下跌至2020年低点约10元，跌幅超77%，符合‘曾经辉煌与暴跌’条件。底部横盘区间自2020年中至2024年底，历时约4.5年，远超12个月标准；箱体价格在10–22元间震荡，后期（2023–2025）波动显著收敛，K线实体缩短、影线频繁测试12–14元支撑未破，体现强支撑。30月均线（橙色线）在2023年后由陡峭下行转为走平，并于2024Q4开始微幅上翘，股价自2024年中起多次站上并缠绕该均线。量能方面：2018–2020下跌阶段明显缩量（地量区），2023–2025底部震荡中出现数次放量阳线（如2023-09、2024-05、2025-03），对应价格突破小平台，符合吸筹特征；但整体量能仍偏温和，未见大规模爆发式建仓，故未达教科书级‘平底锅’。综合判断为稳健的Stage 1 Base，蓄势充分但需观察后续突破力度。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并初现上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹"
+}
+2026-01-29 02:02:05 [DEBUG] [llm_analyzer] [600482.SH] Raw LLM Response: {
+  "stock_code": "600482.SH",
+  "score": 7.8,
+  "pattern_name": "Extended Consolidation Base with Volatility Contraction",
+  "reasoning": "该股（中金黄金，现为山东黄金）月线图显示：1) 左侧曾于2017年5月见历史高点约50元，随后持续下跌至2020年低点约15元，跌幅超70%，符合‘曾经辉煌与暴跌’条件；2) 自2020年下半年起进入长期横盘阶段，截至2025年12月已持续约5.5年（>12个月），形成宽幅箱体（15–25元区间），但箱体上沿有反复试探压力行为，波动率虽较下跌期收敛（K线实体缩短、影线增多），但未达极致压缩；3) 30月均线（图中红色线）在2022年后由陡峭下行转为走平，并于2024年起微幅上翘，当前股价（~23元）稳定站于其上方，符合均线转强信号；4) 量能方面：2017–2020年下跌过程显著缩量（地量频现），2020年后底部震荡中多次出现放量阳线（如2023年7月、2024年10月），呈现典型吸筹特征，但部分反弹伴随放量滞涨，显示筹码交换尚未完全完成。综合判断：形态接近教科书级Stage 1 Base，但因横盘时间过长且上沿阻力反复测试，略逊于标准‘平底锅’结构，故评7.8分。",
+  "stage": "Stage 1 Base (Late Stage)",
+  "ma30_status": "站上并微幅上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹"
+}
+2026-01-29 02:02:05 [INFO] [main] Analysis completed in 0:00:11.738295.
+2026-01-29 02:02:05 [INFO] [main] Saving results to database...
+2026-01-29 02:02:05 [INFO] [db_handler] Inserted 2 records.
+2026-01-29 02:02:05 [INFO] [main] ========================================
+2026-01-29 02:02:05 [INFO] [main] Total Processed: 2
+2026-01-29 02:02:05 [INFO] [main] Successful: 2
+2026-01-29 02:02:05 [INFO] [main] Failed: 0
+2026-01-29 02:02:05 [INFO] [main] High Score (>= 6.0): 2
+2026-01-29 02:02:05 [INFO] [main] DB Inserted: 2
+2026-01-29 02:02:05 [INFO] [main] ========================================
+2026-01-29 02:02:17 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 02:02:17 [INFO] [main] Initializing database table...
+2026-01-29 02:02:17 [INFO] [db_handler] Database table initialized.
+2026-01-29 02:02:17 [INFO] [main] Truncating target table...
+2026-01-29 02:02:17 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 02:02:17 [INFO] [main] Scanning for K-line images...
+2026-01-29 02:02:17 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 02:02:17 [INFO] [main] Limiting analysis to first 1 images.
+2026-01-29 02:02:17 [INFO] [main] Starting analysis for 1 images with concurrency 5...
+2026-01-29 02:02:17 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 02:02:29 [DEBUG] [llm_analyzer] [600482.SH] Raw LLM Response: {
+  "stock_code": "600482.SH",
+  "score": 7.8,
+  "pattern_name": "Extended Consolidation Base with Volatility Contraction",
+  "reasoning": "该股（中金黄金，现为山东黄金）月线图显示：1) 左侧曾于2015年触及约50元历史高点，随后经历系统性下跌，至2018年底低点约10元，跌幅超80%，符合‘曾经辉煌与暴跌’条件；2) 自2019年初至2025年12月（图表截止），形成长达近7年的横盘箱体（约72个月），远超12个月要求，但箱体上沿约25–30元、下沿约18–20元，波动幅度仍偏大（约30%），未达极致收敛；3) 近2–3年K线实体明显缩短，尤其2023–2025年多次出现长下影线试探支撑（如2023年10月、2024年6月）但未有效破位，体现筹码稳定；4) 30月均线（红色线）自2021年起由陡峭下行转为平缓，2024年下半年起股价多次站上并缠绕该均线，2025年初呈现温和上翘迹象；5) 量能方面：2015–2018年下跌伴随显著缩量（地量区间），底部震荡期（2019–2025）多次出现单月放量阳线（如2020年3月、2022年11月、2024年9月），配合价格不破前低，符合主力间歇吸筹特征。扣分点在于：箱体持续时间虽长，但振幅偏大、部分月份仍出现较大阴线，尚未形成教科书级‘平底锅’形态，故未达9+分。",
+  "stage": "Stage 1 Base (Late Stage)",
+  "ma30_status": "站上并开始微幅上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇放量吸筹"
+}
+2026-01-29 02:02:29 [INFO] [main] Analysis completed in 0:00:11.611380.
+2026-01-29 02:02:29 [INFO] [main] Saving results to database...
+2026-01-29 02:02:29 [INFO] [db_handler] Inserted 1 records.
+2026-01-29 02:02:29 [INFO] [main] ========================================
+2026-01-29 02:02:29 [INFO] [main] Total Processed: 1
+2026-01-29 02:02:29 [INFO] [main] Successful: 1
+2026-01-29 02:02:29 [INFO] [main] Failed: 0
+2026-01-29 02:02:29 [INFO] [main] High Score (>= 6.0): 1
+2026-01-29 02:02:29 [INFO] [main] DB Inserted: 1
+2026-01-29 02:02:29 [INFO] [main] ========================================
+2026-01-29 02:05:05 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 02:05:05 [INFO] [main] Initializing database table...
+2026-01-29 02:05:05 [INFO] [db_handler] Database table initialized.
+2026-01-29 02:05:05 [INFO] [main] Truncating target table...
+2026-01-29 02:05:06 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 02:05:06 [INFO] [main] Scanning for K-line images...
+2026-01-29 02:05:06 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 02:05:06 [INFO] [main] Limiting analysis to first 2 images.
+2026-01-29 02:05:06 [INFO] [main] Starting analysis for 2 images with concurrency 5...
+2026-01-29 02:05:06 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 02:05:06 [INFO] [llm_analyzer] Analyzing 603080.SH...
+2026-01-29 02:05:13 [DEBUG] [llm_analyzer] [603080.SH] Raw LLM Response: {
+  "stock_code": "603080.SH",
+  "score": 9.0,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "该股在2018年初曾达到约45元的历史高点，随后经历长达近3年的深幅下跌，跌幅超过70%，符合‘曾经辉煌与暴跌’特征。自2020年起进入长期横盘阶段，形成持续约48个月的底部箱体结构（价格区间在10-18元之间），波动率显著收敛，K线实体逐渐缩短，上下影线频繁试探支撑位但未有效跌破，显示出典型的底部沉淀特征。30月均线自2022年起由跌转平，并于2023年后逐步上翘，股价已稳定站上该均线，呈现多头反转信号。量能方面，下跌阶段明显缩量，底部区域出现多次放量阳线，尤其是2024年中以来连续两根放量大阳线，显示主力资金开始吸筹，符合斯坦·温斯坦的Stage 1 Base形态标准。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 02:05:14 [DEBUG] [llm_analyzer] [600482.SH] Raw LLM Response: {
+  "stock_code": "600482.SH",
+  "score": 7.5,
+  "pattern_name": "Stage 1 Base with Moderate Volatility Contraction",
+  "reasoning": "该股在2017年达到历史高点（约50元）后，经历了一轮深幅调整，价格从高位回落至10元以下，跌幅超过80%，符合‘曾经辉煌与暴跌’特征。自2020年起，股价进入为期约5年的横盘震荡阶段，形成一个较宽的箱体结构（10-25元），持续时间超过12个月，但波动率未完全收敛，期间仍有较大K线和突破尝试，未能形成教科书式的‘平底锅’形态。30月均线在2023年后趋于走平，并于近期小幅上翘，股价目前处于均线之上，显示出底部企稳迹象。量能方面，下跌过程中明显缩量，横盘期间偶有放量阳线，但整体吸筹信号不够强烈。综合来看，该股已具备阶段性底部特征，但波动性仍偏高，尚未完全满足经典‘长期超跌后的底部沉淀’形态。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并微幅上翘",
+  "volume_pattern": "底部缩量为主，偶有放量阳线"
+}
+2026-01-29 02:05:14 [INFO] [main] Analysis completed in 0:00:08.488703.
+2026-01-29 02:05:14 [INFO] [main] Saving results to database...
+2026-01-29 02:05:14 [INFO] [db_handler] Inserted 2 records.
+2026-01-29 02:05:14 [INFO] [main] ========================================
+2026-01-29 02:05:14 [INFO] [main] Total Processed: 2
+2026-01-29 02:05:14 [INFO] [main] Successful: 2
+2026-01-29 02:05:14 [INFO] [main] Failed: 0
+2026-01-29 02:05:14 [INFO] [main] High Score (>= 6.0): 2
+2026-01-29 02:05:14 [INFO] [main] DB Inserted: 2
+2026-01-29 02:05:14 [INFO] [main] ========================================
+2026-01-29 02:11:12 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 02:11:12 [INFO] [main] Initializing database table...
+2026-01-29 02:11:12 [INFO] [db_handler] Database table initialized.
+2026-01-29 02:11:12 [INFO] [main] Truncating target table...
+2026-01-29 02:11:12 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 02:11:12 [INFO] [main] Scanning for K-line images...
+2026-01-29 02:11:12 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 02:11:12 [INFO] [main] Limiting analysis to first 2 images.
+2026-01-29 02:11:12 [INFO] [main] Starting analysis for 2 images with concurrency 5...
+2026-01-29 02:11:12 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 02:11:12 [INFO] [llm_analyzer] Analyzing 603080.SH...
+2026-01-29 02:11:20 [DEBUG] [llm_analyzer] [603080.SH] Raw LLM Response: {
+  "stock_code": "603080.SH",
+  "score": 7.8,
+  "pattern_name": "Extended Base with Volatility Contraction",
+  "reasoning": "该股（603080.SH，新疆火炬）左侧高点约45元（2018年初），随后持续下跌至2020年低点约9元，跌幅超80%，符合‘曾经辉煌与暴跌’条件。底部横盘区间自2020年中至2024年底，历时约4.5年，远超12个月要求；箱体价格区间约9–22元，后期（2023–2025）波动显著收窄，K线实体变短，多次长下影线测试支撑未破，体现筹码沉淀。30月均线（橙色线）在2023年后由陡峭下行转为走平，并于2024Q4开始微幅上翘，股价自2024年中起反复站上并缠绕该均线。量能方面：下跌阶段（2018–2020）明显缩量至地量（<100K shares/月），底部震荡期出现多次间歇性放量阳线（如2021年5月、2023年1月、2024年9月），尤其2024年10–12月连续3个月放量突破，显示主力吸筹行为。唯一扣分项：横盘后期（2024下半年）波动略放大，尚未形成极致收敛的‘平底锅’形态，故未达满分。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并初现上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇放量吸筹"
+}
+2026-01-29 02:11:27 [DEBUG] [llm_analyzer] [600482.SH] Raw LLM Response: {
+  "stock_code": "600482.SH",
+  "score": 7.8,
+  "pattern_name": "Extended Consolidation Base with Volatility Contraction",
+  "reasoning": "该股（600482.SH，中国动力）左侧历史高点出现在2015年股灾前（约50元），随后经历长期下跌，至2020年低点约10元，跌幅超80%，符合‘曾经辉煌与暴跌’条件。右侧自2020年下半年起进入横盘震荡，持续时间近5年（2020–2025），箱体区间大致在10–25元，波动率显著收敛：近年K线实体普遍缩短，上下影线频繁测试10–12元支撑但未有效破位（如2023年Q4、2024年Q2多次长下影线）。30月均线（图中红色线）在2023年后由陡峭下行转为走平，并于2024年底开始微幅上翘；股价自2024年中起多次站上30月均线并形成缠绕结构。量能方面：2018–2020年下跌阶段明显缩量（地量区），2021年后底部震荡中出现数次间歇性放量阳线（如2022年3月、2023年11月、2024年9月），对应价格小幅抬升，符合主力吸筹特征。但不足之处在于：箱体顶部压力仍较明显（25元附近多次受阻），且2024–2025年波动幅度略大于典型‘平底锅’形态（如2025年3月跳空上涨后快速回落），故未达教科书级标准。",
+  "stage": "Stage 1 Base (Late Stage)",
+  "ma30_status": "站上并初现上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹"
+}
+2026-01-29 02:11:27 [INFO] [main] Analysis completed in 0:00:15.121438.
+2026-01-29 02:11:27 [INFO] [main] Saving results to database...
+2026-01-29 02:11:27 [INFO] [db_handler] Inserted 2 records.
+2026-01-29 02:11:27 [INFO] [main] ========================================
+2026-01-29 02:11:27 [INFO] [main] Total Processed: 2
+2026-01-29 02:11:27 [INFO] [main] Successful: 2
+2026-01-29 02:11:27 [INFO] [main] Failed: 0
+2026-01-29 02:11:27 [INFO] [main] High Score (>= 6.0): 2
+2026-01-29 02:11:27 [INFO] [main] DB Inserted: 2
+2026-01-29 02:11:27 [INFO] [main] ========================================
+2026-01-29 02:14:41 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 02:14:41 [INFO] [main] Initializing database table...
+2026-01-29 02:14:41 [INFO] [db_handler] Database table initialized.
+2026-01-29 02:14:41 [INFO] [main] Truncating target table...
+2026-01-29 02:14:41 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 02:14:41 [INFO] [main] Scanning for K-line images...
+2026-01-29 02:14:41 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 02:14:41 [INFO] [main] Limiting analysis to first 1 images.
+2026-01-29 02:14:41 [INFO] [main] Starting analysis for 1 images with concurrency 5...
+2026-01-29 02:14:41 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 02:15:01 [DEBUG] [llm_analyzer] [600482.SH] Raw LLM Response: {
+  "stock_code": "600482.SH",
+  "score": 7.5,
+  "pattern_name": "Stage 1 Base with Early Signs of Accumulation",
+  "reasoning": "该股在2017年达到历史高点（约50元）后进入长期调整，跌幅超过70%，符合‘曾经辉煌与暴跌’特征。自2020年起，股价进入为期约5年的横盘震荡区间，价格在10-20元之间波动，形成明显的底部结构，持续时间超过12个月，满足‘底部沉淀’条件。箱体内部波动率有所收敛，K线实体逐渐缩短，出现多次下影线探底但未有效跌破支撑，显示买方力量逐步增强。30月均线在2023年后由下行转为走平，近期股价已站上该均线，呈现温和上翘趋势，表明多头开始占优。量能方面，下跌阶段明显缩量，底部区域偶有放量阳线出现，尤其在2023年中和2024年初出现两次较明显的放量上涨，可能是主力吸筹信号。整体形态接近经典‘平底锅’，但横盘期间仍存在一定波动，尚未完全收敛至极低水平，因此评分略低于满分。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并微幅上翘",
+  "volume_pattern": "底部间歇性放量吸筹"
+}
+2026-01-29 02:15:01 [INFO] [main] Analysis completed in 0:00:19.535284.
+2026-01-29 02:15:01 [INFO] [main] Saving results to database...
+2026-01-29 02:15:01 [INFO] [db_handler] Inserted 1 records.
+2026-01-29 02:15:01 [INFO] [main] ========================================
+2026-01-29 02:15:01 [INFO] [main] Total Processed: 1
+2026-01-29 02:15:01 [INFO] [main] Successful: 1
+2026-01-29 02:15:01 [INFO] [main] Failed: 0
+2026-01-29 02:15:01 [INFO] [main] High Score (>= 6.0): 1
+2026-01-29 02:15:01 [INFO] [main] DB Inserted: 1
+2026-01-29 02:15:01 [INFO] [main] ========================================
+2026-01-29 02:15:05 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 02:15:05 [INFO] [main] Initializing database table...
+2026-01-29 02:15:05 [INFO] [db_handler] Database table initialized.
+2026-01-29 02:15:05 [INFO] [main] Truncating target table...
+2026-01-29 02:15:05 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 02:15:05 [INFO] [main] Scanning for K-line images...
+2026-01-29 02:15:05 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 02:15:05 [INFO] [main] Limiting analysis to first 1 images.
+2026-01-29 02:15:05 [INFO] [main] Starting analysis for 1 images with concurrency 5...
+2026-01-29 02:15:05 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 02:15:08 [DEBUG] [llm_analyzer] [600482.SH] Raw LLM Response: ```json
+{
+  "stock_code": "600482.SH",
+  "score": 7.5,
+  "pattern_name": "Extended Base with Volatility Contraction",
+  "reasoning": "该股在2004-2008年期间经历了一轮显著的上涨，随后在2008-2012年间遭遇深幅下跌（跌幅超过60%），符合'曾经辉煌与暴跌'的前提。之后，股价进入了一个长达约3年的底部横盘整理阶段（2012年中至2015年初），期间波动率显著收敛，K线实体逐渐缩短，形成了典型的底部沉淀形态。近期股价已站上30月均线，并且均线开始走平上翘，显示出潜在的反转迹象。量能方面，下跌阶段持续缩量，底部出现多次放量阳线，表明主力资金可能正在吸筹。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+```
+2026-01-29 02:15:08 [INFO] [main] Analysis completed in 0:00:02.592541.
+2026-01-29 02:15:08 [INFO] [main] Saving results to database...
+2026-01-29 02:15:08 [INFO] [db_handler] Inserted 1 records.
+2026-01-29 02:15:08 [INFO] [main] ========================================
+2026-01-29 02:15:08 [INFO] [main] Total Processed: 1
+2026-01-29 02:15:08 [INFO] [main] Successful: 1
+2026-01-29 02:15:08 [INFO] [main] Failed: 0
+2026-01-29 02:15:08 [INFO] [main] High Score (>= 6.0): 1
+2026-01-29 02:15:08 [INFO] [main] DB Inserted: 1
+2026-01-29 02:15:08 [INFO] [main] ========================================
+2026-01-29 02:16:04 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 02:16:04 [INFO] [main] Initializing database table...
+2026-01-29 02:16:04 [INFO] [db_handler] Database table initialized.
+2026-01-29 02:16:04 [INFO] [main] Truncating target table...
+2026-01-29 02:16:04 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 02:16:04 [INFO] [main] Scanning for K-line images...
+2026-01-29 02:16:04 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 02:16:04 [INFO] [main] Starting analysis for 8 images with concurrency 5...
+2026-01-29 02:16:04 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 02:16:04 [INFO] [llm_analyzer] Analyzing 603080.SH...
+2026-01-29 02:16:04 [INFO] [llm_analyzer] Analyzing 002823.SZ...
+2026-01-29 02:16:04 [INFO] [llm_analyzer] Analyzing 002378.SZ...
+2026-01-29 02:16:04 [INFO] [llm_analyzer] Analyzing 601179.SH...
+2026-01-29 02:16:12 [DEBUG] [llm_analyzer] [002823.SZ] Raw LLM Response: {
+  "stock_code": "002823.SZ",
+  "score": 7.8,
+  "pattern_name": "Extended Base with Volatility Contraction",
+  "reasoning": "该股（凯中精密）左侧高点约27元（2016年底），至2020年低点约8元，跌幅达70%，符合‘曾经辉煌与暴跌’条件。底部横盘区间自2020年中至2024年底持续约46个月，远超12个月要求；箱体价格区间约8–14元，波动率显著收敛（后期K线实体缩短、影线频繁测试支撑未破）。30月均线（橙色线）在2022年后由陡峭下跌转为走平，并于2024Q4开始微幅上翘，股价自2024年中起多次站上并缠绕该均线。量能方面：下跌阶段（2016–2020）持续缩量至地量水平；底部震荡期出现数次明显放量阳线（如2023年7月、2024年3月、2025年1月），尤其2025年1月单月成交量突增至近5000千股（500万手），属典型吸筹信号。唯一扣分项为2024–2025年箱体上沿略有抬升（非严格扁平），且2025年初有小幅突破后回踩，形态略带‘上升楔形’特征，但整体仍属强蓄势状态。",
+  "stage": "Stage 1 Base (Late Phase)",
+  "ma30_status": "站上并初现上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹"
+}
+2026-01-29 02:16:12 [INFO] [llm_analyzer] Analyzing 300516.SZ...
+2026-01-29 02:16:13 [DEBUG] [llm_analyzer] [603080.SH] Raw LLM Response: {
+  "stock_code": "603080.SH",
+  "score": 7.8,
+  "pattern_name": "Extended Sideways Base with Volatility Contraction",
+  "reasoning": "该股（603080.SH，新疆火炬）左侧高点约45元（2018年初），随后持续下跌至2020年低点约10元，跌幅超77%，符合‘曾经辉煌与暴跌’条件（+2.5分）。底部横盘自2020年中至2024年底，历时约4.5年，远超12个月要求；但箱体并非扁平‘平底锅’，而是呈缓慢抬升的W型结构，波动率逐步收敛（K线实体缩短、影线频繁测试支撑未破），得+2.3分。30月均线（橙线）在2022年后由陡峭下行转为走平，并于2024Q3开始微幅上翘，股价自2024年中起多次站上并缠绕该均线，得+1.8分。量能方面：下跌阶段（2018–2020）明显缩量至地量（最低<50万手/月），底部震荡期（2021–2024）出现数次显著放量阳线（如2021年5月、2023年1月、2024年9月），符合吸筹特征，得+1.2分。扣分项：横盘后期（2024下半年）波动略有放大，且未形成标准窄幅箱体，故未达教科书级形态。",
+  "stage": "Stage 1 Base (Late Phase)",
+  "ma30_status": "站上并初现上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹"
+}
+2026-01-29 02:16:13 [INFO] [llm_analyzer] Analyzing 300466.SZ...
+2026-01-29 02:16:13 [DEBUG] [llm_analyzer] [600482.SH] Raw LLM Response: {
+  "stock_code": "600482.SH",
+  "score": 7.8,
+  "pattern_name": "Extended Sideways Base with Volatility Contraction",
+  "reasoning": "该股（中昌数据，现为*ST中昌）左侧历史高点约50元（2017年），随后持续下跌至2023年低点约2.5元，跌幅超95%，符合‘曾经辉煌与暴跌’条件（+3分）。右侧自2021年中至2025年1月形成约3.5年的横盘箱体（2021-07至2025-01），价格在2.5–3.5元窄幅震荡，波动率显著收敛，K线实体缩短、影线频繁测试下沿支撑但未有效破位（+2.5分）。30月均线（红色线）在2023年后由陡峭下行转为走平，并于2024年底开始微幅上翘；股价自2024年中起多次站上并缠绕30月均线（+2分）。量能方面：下跌阶段（2017–2021）明显缩量，底部震荡期（2022–2025）出现数次间歇性放量阳线（如2023-07、2024-03、2024-11），显示主力吸筹迹象，但整体量能仍偏弱，未出现持续放大（+1.3分）。扣分项：箱体时间虽长，但2024年末有小幅突破后回踩，结构略显松散；且因公司被ST，存在基本面风险，技术形态受情绪干扰较大。综合得7.8分，属较标准的Stage 1 Base，但需警惕非市场因素扰动。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并初现上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇放量吸筹"
+}
+2026-01-29 02:16:13 [INFO] [llm_analyzer] Analyzing 300444.SZ...
+2026-01-29 02:16:16 [DEBUG] [llm_analyzer] [002378.SZ] Raw LLM Response: {
+  "stock_code": "002378.SZ",
+  "score": 7.8,
+  "pattern_name": "Extended Base with Volatility Contraction",
+  "reasoning": "图表左上角标题明确标注为'002378.SZ Monthly (2010-03-01 ~ 2025-12-01)'，确认股票代码无误。该股左侧历史高点约18元（2010年），随后经历长期下跌，2020年低点触及约3.5元，跌幅超80%，符合'曾经辉煌与暴跌'条件（+3分）。右侧自2020年8月起进入横盘阶段，至2025年12月已持续约5年4个月，远超12个月要求；箱体区间大致在3.5–9元，后期（2023–2025）波动明显收窄，K线实体缩短、影线频繁测试支撑未破（如2024年3月、2025年1月），体现波动收敛（+2.5分）。30月均线（红色曲线）在2023年下半年由跌转平，2024年起微幅上翘，股价自2024年中开始反复站上并缠绕该均线，近期（2025年10–12月）稳定位于均线上方（+2分）。量能方面：下跌末期（2019–2020）出现地量（<500k手/月），底部震荡期间多次出现放量阳线（如2022年8月、2024年10月、2025年11月），但整体量能仍偏弱，未形成持续放量突破，吸筹信号存在但强度中等（+1.8分）。扣分点：箱体前期（2020–2022）波动较大，部分月份振幅超30%，不符合'扁平箱体'最优标准；且2025年12月虽有放量上涨，但尚未确认有效突破颈线（9元），故未达教科书级'平底锅'形态。",
+  "stage": "Stage 1 Base (Late Phase)",
+  "ma30_status": "站上并微幅上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹"
+}
+2026-01-29 02:16:17 [DEBUG] [llm_analyzer] [601179.SH] Raw LLM Response: {
+  "stock_code": "601179.SH",
+  "score": 7.8,
+  "pattern_name": "Extended Sideways Accumulation with Partial Breakout",
+  "reasoning": "该股（上海电气）左侧历史高点出现在2015年中（约13.5元），随后经历长期下跌，至2020年初低点约3.2元，跌幅超76%，符合‘曾经辉煌与暴跌’条件（+2.5分）。底部结构方面：自2020年中至2024年底形成近4.5年的宽幅横盘箱体（3.2–8.5元），但箱体上沿多次测试未有效突破，且2022–2024年波动率虽较下跌期收敛，仍偏大（尤其2023–2024年出现多次5%+单月振幅），时间足够但形态不够紧凑（+2.0分）。波动收敛方面：2020–2022年K线实体逐步缩短，2023年后因政策催化出现脉冲式放量阳线，但伴随长上影线，显示抛压仍存；2024年8月后出现连续3个月缩量回调，近期（2025年1–8月）K线实体再度收窄，呈现尾部收敛迹象（+1.8分）。均线行为：30月均线（图中绿色线）在2023Q4由跌转平，2024Q2起微幅上翘；股价于2024年7月首次站稳30月均线上方，并在2025年1–8月维持缠绕状态，尚未形成明确多头排列（+1.5分）。量能行为：下跌阶段（2015–2020）持续缩量至地量（月均<2000万股），底部震荡期出现3次显著放量阳线（2021年3月、2023年10月、2024年7月），对应主力吸筹信号；但2024年12月放量滞涨（价涨量增但未新高），显示筹码松动（+1.0分）。综合：形态接近标准Stage 1 Base，但横盘期波动偏大、突破乏力，属‘强蓄势但尚未确认启动’阶段。",
+  "stage": "Stage 1 Base (Late Phase)",
+  "ma30_status": "站上并微幅上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹 + 近期缩量整固"
+}
+2026-01-29 02:16:21 [DEBUG] [llm_analyzer] [300516.SZ] Raw LLM Response: {
+  "stock_code": "300516.SZ",
+  "score": 7.8,
+  "pattern_name": "Extended Sideways Base with Volatility Contraction",
+  "reasoning": "该股（300516.SZ，国际医学）左侧高点约120元（2016年6月），随后经历深度调整，最低跌至约18元（2019年初），跌幅超85%，符合‘曾经辉煌与暴跌’条件。底部横盘区间自2019年中至2024年底，持续约5.5年，远超12个月要求；箱体价格区间大致在18–50元，后期（2023–2025）波动显著收敛，K线实体缩短，多次长下影线测试支撑未破，体现筹码沉淀。30月均线（橙色线）在2023年后由陡峭下行转为走平，并于2024Q4开始微幅上翘，股价近期多次站上并缠绕该均线，符合阶段1特征。量能方面：下跌期（2016–2019）伴随明显缩量，地量频现；底部震荡期（2020–2025）出现数次脉冲式放量阳线（如2020H2、2022H1、2024Q3），尤其2024年10月后连续3个月量能放大且收阳，疑似主力吸筹行为。扣分项：横盘后期（2024下半年）波动略有放大，且尚未形成明确突破颈线，故未达教科书级‘平底锅’形态。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并初现上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹"
+}
+2026-01-29 02:16:22 [DEBUG] [llm_analyzer] [300444.SZ] Raw LLM Response: {
+  "stock_code": "300444.SZ",
+  "score": 8.7,
+  "pattern_name": "Classic Pan Bottom with Strong Accumulation",
+  "reasoning": "该股（汉邦高科）左侧历史高点出现在2015年4月（约32元），随后经历长期下跌，至2020年低点约5元，跌幅超84%，符合‘深幅超跌’特征。右侧自2020年中至2025年8月形成长达5年以上的横盘箱体（主震荡区间5–12元），箱体持续时间远超12个月；箱体内K线实体显著缩短，波动率大幅收敛，多次出现长下影线试探支撑但未有效跌破5元平台（如2022年、2023年低点），体现强支撑与惜售情绪。30月均线（图中绿色曲线）在2023年后由陡峭下行转为走平，并于2024Q4起微幅上翘，股价自2024年起持续缠绕并站稳于其上方。量能方面：下跌阶段（2015–2020）持续缩量至地量水平（月成交量常低于500万股）；底部震荡期（2020–2025）出现多次间歇性放量阳线（如2022年8月、2023年12月、2025年6月单月成交超2000万股），伴随价格温和抬升，符合威科夫理论中的‘吸筹阶段’典型量价行为。综合判断为教科书级长期底部沉淀形态。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并开始上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹"
+}
+2026-01-29 02:16:24 [DEBUG] [llm_analyzer] [300466.SZ] Raw LLM Response: {
+  "stock_code": "300466.SZ",
+  "score": 7.8,
+  "pattern_name": "Extended Sideways Base with Volatility Contraction",
+  "reasoning": "该股（赛摩智能）左侧高点约24元（2015年），随后经历长期下跌，至2019年初低点约5元，跌幅超79%，符合‘曾经辉煌与暴跌’条件。右侧自2019年底至2024年底形成近5年的横盘箱体（约5–10元区间），时间远超12个月；箱体内K线实体逐步缩短，上下影线频繁测试支撑（如2020年、2022年多次下探5–6元未破），波动率明显收敛。30月均线（图中绿色曲线）在2023年后由跌转平，并于2024Q4开始微幅上翘，股价自2024年中起持续站上该均线。量能方面：下跌阶段（2015–2019）显著缩量至地量水平；底部震荡期（2020–2024）出现多次间歇性放量阳线（如2023年4月、2024年12月），伴随价格突破小平台，符合主力吸筹特征。但箱体上沿压力反复测试未有效突破（2024年多次冲高回落），且近期波动略有放大，故未达教科书级‘平底锅’形态，扣减1–2分。",
+  "stage": "Stage 1 Base (Late Stage)",
+  "ma30_status": "站上并微幅上翘",
+  "volume_pattern": "下跌缩量 + 底部间歇性放量吸筹"
+}
+2026-01-29 02:16:24 [INFO] [main] Analysis completed in 0:00:20.001107.
+2026-01-29 02:16:24 [INFO] [main] Saving results to database...
+2026-01-29 02:16:24 [INFO] [db_handler] Inserted 8 records.
+2026-01-29 02:16:24 [INFO] [main] ========================================
+2026-01-29 02:16:24 [INFO] [main] Total Processed: 8
+2026-01-29 02:16:24 [INFO] [main] Successful: 8
+2026-01-29 02:16:24 [INFO] [main] Failed: 0
+2026-01-29 02:16:24 [INFO] [main] High Score (>= 6.0): 8
+2026-01-29 02:16:24 [INFO] [main] DB Inserted: 8
+2026-01-29 02:16:24 [INFO] [main] ========================================
+2026-01-29 15:04:09 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 15:04:09 [INFO] [main] Initializing database table...
+2026-01-29 15:04:09 [INFO] [db_handler] Database table initialized.
+2026-01-29 15:04:09 [INFO] [main] Truncating target table...
+2026-01-29 15:04:09 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 15:04:09 [INFO] [main] Scanning for K-line images...
+2026-01-29 15:04:09 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 15:04:09 [INFO] [main] Starting analysis for 8 images with concurrency 5...
+2026-01-29 15:04:09 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 15:04:09 [INFO] [llm_analyzer] Analyzing 603080.SH...
+2026-01-29 15:04:09 [INFO] [llm_analyzer] Analyzing 002823.SZ...
+2026-01-29 15:04:09 [INFO] [llm_analyzer] Analyzing 002378.SZ...
+2026-01-29 15:04:09 [INFO] [llm_analyzer] Analyzing 601179.SH...
+2026-01-29 15:04:17 [DEBUG] [llm_analyzer] [002378.SZ] Raw LLM Response: {
+  "stock_code": "002378.SZ",
+  "score": 7.5,
+  "pattern_name": "Developing Base Formation",
+  "reasoning": "该股在2010年曾达到约18元的历史高点，随后经历多轮下跌，至2018年价格跌至4元以下，跌幅超过70%，符合‘曾经辉煌与暴跌’特征。自2019年起进入长期震荡区间，价格在4-8元之间波动，持续时间超过5年，形成较明显的底部结构。横盘期间波动率有所收敛，K线实体趋于缩短，尤其在2022年至2024年间出现多次下影线探底但未有效破位的形态，显示支撑较强。30月均线在2023年后由下行转为走平，并于2024年逐步上翘，股价已站上该均线，呈现企稳迹象。量能方面，2020年和2024年出现两次明显放量阳线，可能为吸筹信号，但整体成交量仍偏弱，尚未形成持续放量格局。综合来看，虽具备底部沉淀特征，但波动略大于理想‘平底锅’形态，且横盘周期虽长但缺乏明确的阶段性突破信号。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并微幅上翘",
+  "volume_pattern": "间歇性放量吸筹"
+}
+2026-01-29 15:04:17 [INFO] [llm_analyzer] Analyzing 300516.SZ...
+2026-01-29 15:04:18 [DEBUG] [llm_analyzer] [002823.SZ] Raw LLM Response: {
+  "stock_code": "002823.SZ",
+  "score": 9.0,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "该股在2016年11月达到历史高点（约25元）后，经历了一轮深幅下跌，跌幅超过60%，最低跌至8元以下，符合'曾经辉煌与暴跌'的特征。自2018年起，股价进入长达4年的底部横盘阶段，形成一个清晰、扁平的箱体结构（价格区间约8-12元），持续时间远超12个月，波动率显著收敛，K线实体逐渐缩短，上下影线频繁测试支撑但未有效破位，显示出典型的底部沉淀行为。30月均线在2020年后由下行转为走平，并于2022年开始缓慢上翘，目前股价已站上该均线，呈现多头排列迹象。量能方面，下跌期间明显缩量，2022年中出现一次显著放量阳线，随后震荡中偶有温和放量，符合主力吸筹特征。整体形态为教科书级的长期底部构建过程。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 15:04:18 [INFO] [llm_analyzer] Analyzing 300466.SZ...
+2026-01-29 15:04:21 [DEBUG] [llm_analyzer] [600482.SH] Raw LLM Response: {
+  "stock_code": "600482.SH",
+  "score": 7.5,
+  "pattern_name": "Stage 1 Base with Volatility Contraction",
+  "reasoning": "该股在2017年达到历史高点（约50元）后，经历了一轮深幅回调，价格从高位回落至10元以下，跌幅超过80%，符合‘曾经辉煌与暴跌’的特征。自2020年起，股价进入长达5年的横盘震荡阶段，形成一个宽幅但逐渐收敛的箱体结构，波动率明显降低，K线实体缩短，上下影线频繁测试支撑位但未有效跌破，显示出底部筑底迹象。30月均线在2022年后由下行转为走平，并于2023年后期开始缓慢上翘，当前股价已站上30月均线。量能方面，下跌期间持续缩量，底部区域出现多次放量阳线，尤其是2023年中和2024年初的放量行为，显示主力吸筹迹象。整体形态接近经典‘平底锅’结构，但横盘时间虽长（超5年），波动仍略高于理想标准，故评分略低于满分。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并微幅上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 15:04:21 [INFO] [llm_analyzer] Analyzing 300444.SZ...
+2026-01-29 15:04:21 [DEBUG] [llm_analyzer] [601179.SH] Raw LLM Response: {
+  "stock_code": "601179.SH",
+  "score": 8.5,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "该股在2010年至2014年间经历了一轮显著上涨，最高价接近12元，随后在2015年股灾中暴跌至约3元以下，跌幅超过70%，符合'曾经辉煌与暴跌'的特征。此后进入长达近10年的底部震荡期（2015-2024），形成一个宽幅但整体扁平的箱体结构，价格在3-6元区间内波动，持续时间远超12个月，满足长期横盘条件。在此期间，K线实体逐渐缩短，上下影线频繁测试支撑位但未有效跌破，显示出波动收敛趋势。30月均线自2020年起由下行转为走平，并于2023年后逐步上翘，当前股价已站上该均线，表明多头力量增强。量能方面，下跌阶段明显缩量，2023年及2024年初出现多次放量阳线，尤其2024年8月成交量显著放大，显示主力资金开始介入吸筹。综合来看，该股具备典型的'长期超跌后的底部沉淀'形态。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 15:04:25 [DEBUG] [llm_analyzer] [300516.SZ] Raw LLM Response: {
+  "stock_code": "300516.SZ",
+  "score": 8.5,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "该股在2016年上市初期曾达到约120元的历史高点，随后经历长达数年的深幅调整，价格从高位回落至20元以下，跌幅超过80%，符合‘曾经辉煌与暴跌’的特征。自2019年起进入长期横盘阶段，形成持续约5年的底部箱体结构（2019-2024），期间价格在20-40元区间内震荡，波动率显著收敛，K线实体逐渐缩短，上下影线频繁刺探支撑但未有效破位，显示出典型的底部沉淀特征。30月均线在2023年初由下行转为走平，并于2024年中开始温和上翘，股价已站上该均线，表明趋势可能正在发生转变。量能方面，下跌阶段明显缩量，底部区域出现多次放量阳线，尤其在2023年底至2024年中，成交量阶段性放大，显示主力资金有吸筹迹象。整体形态符合威科夫操盘法中的‘Stage 1 Base’（底部构建阶段）标准。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 15:04:27 [DEBUG] [llm_analyzer] [300466.SZ] Raw LLM Response: {
+  "stock_code": "300466.SZ",
+  "score": 7.5,
+  "pattern_name": "Extended Base with Volatility Contraction",
+  "reasoning": "该股在2015年经历了一轮显著上涨后，从高点约25元回落至2018年低点约5元，跌幅超过80%，符合‘曾经辉煌与暴跌’特征。随后进入长达近6年的底部震荡期（2018-2024），价格在5-9元区间内反复横盘，形成清晰的箱体结构，持续时间超过12个月，满足底部沉淀条件。波动率明显收敛，K线实体缩短，上下影线频繁试探支撑但未有效破位，显示市场情绪趋于稳定。30月均线在2022年后逐渐走平，并于2023年底开始轻微上翘，股价目前运行于均线之上，呈现企稳迹象。量能方面，下跌阶段持续缩量，底部区域出现多次放量阳线，尤其在2023年中和2024年底有明显吸筹信号，但整体放量力度仍显温和。综合来看，该股已基本完成Stage 1 Base形态构建，具备启动前的蓄势特征，但尚未完全满足教科书级‘平底锅’标准。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并微幅上翘",
+  "volume_pattern": "底部间歇性放量吸筹"
+}
+2026-01-29 15:04:31 [DEBUG] [llm_analyzer] [300444.SZ] Raw LLM Response: {
+  "stock_code": "300444.SZ",
+  "score": 7.5,
+  "pattern_name": "Bottom Consolidation with Volatility Contraction",
+  "reasoning": "该股在2015年4月达到历史高点（约35元），随后经历深幅下跌，至2020年跌至5元以下，跌幅超过80%，符合‘曾经辉煌与暴跌’特征。自2020年起进入长期横盘阶段，持续时间超过36个月，形成较为明显的底部箱体结构，价格波动范围在5-10元之间，波动率显著降低，符合‘底部结构’与‘波动收敛’标准。30月均线在2022年后趋于走平，并于2023年下半年开始轻微上翘，股价已站上均线，显示趋势可能转强。量能方面，下跌期间明显缩量，底部区域出现多次放量阳线，尤其在2023年中后期有明显吸筹迹象，但整体放量强度仍有限。综合来看，虽具备典型底部沉淀特征，但箱体震荡幅度略大，未完全呈现‘教科书式’的平底锅形态。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并微幅上翘",
+  "volume_pattern": "底部间歇性放量吸筹"
+}
+2026-01-29 15:04:34 [DEBUG] [llm_analyzer] [603080.SH] Raw LLM Response: {
+  "stock_code": "603080.SH",
+  "score": 9.0,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "该股在2018年初达到历史高点（约45元），随后经历长达两年的深幅调整，价格从高点回落超70%，符合‘曾经辉煌与暴跌’特征。自2020年起进入长期底部横盘阶段，持续时间超过48个月，形成典型的‘平底锅’形态。期间波动率显著收敛，K线实体逐渐缩短，上下影线频繁试探支撑位但未有效跌破，显示主力吸筹迹象明显。30月均线自2022年中开始走平，并于2023年底逐步上翘，当前股价已稳定站上该均线。量能方面，下跌过程中呈现地量特征，而2023-2024年多次出现放量阳线，尤其2024年下半年成交量明显放大，配合价格上涨，构成‘价升量增’的健康信号。整体结构符合威科夫操盘法中的Stage 1 Base（底部沉淀）形态。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 15:04:34 [INFO] [main] Analysis completed in 0:00:24.628691.
+2026-01-29 15:04:34 [INFO] [main] Saving results to database...
+2026-01-29 15:04:34 [INFO] [db_handler] Inserted 8 records.
+2026-01-29 15:04:34 [INFO] [main] ========================================
+2026-01-29 15:04:34 [INFO] [main] Total Processed: 8
+2026-01-29 15:04:34 [INFO] [main] Successful: 8
+2026-01-29 15:04:34 [INFO] [main] Failed: 0
+2026-01-29 15:04:34 [INFO] [main] High Score (>= 6.0): 8
+2026-01-29 15:04:34 [INFO] [main] DB Inserted: 8
+2026-01-29 15:04:34 [INFO] [main] ========================================
+2026-01-29 15:58:31 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 15:58:31 [INFO] [main] Initializing database table...
+2026-01-29 15:58:31 [INFO] [db_handler] Database table initialized.
+2026-01-29 15:58:31 [INFO] [main] Truncating target table...
+2026-01-29 15:58:31 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 15:58:31 [INFO] [main] Scanning for K-line images...
+2026-01-29 15:58:31 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 15:58:31 [INFO] [main] Starting analysis for 8 images with concurrency 5...
+2026-01-29 15:58:31 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 15:58:31 [INFO] [llm_analyzer] Analyzing 603080.SH...
+2026-01-29 15:58:31 [INFO] [llm_analyzer] Analyzing 002823.SZ...
+2026-01-29 15:58:31 [INFO] [llm_analyzer] Analyzing 002378.SZ...
+2026-01-29 15:58:31 [INFO] [llm_analyzer] Analyzing 601179.SH...
+2026-01-29 15:59:00 [DEBUG] [llm_analyzer] [002378.SZ] Raw LLM Response: {
+  "stock_code": "002378.SZ",
+  "score": 8.5,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "趋势方面：该股经历长达8年的深度调整，从2010年18元历史高点跌至2018年4元低点，跌幅超77%，符合深幅下跌标准。形态方面：2018-2024年形成长达6年多的横盘箱体（4-8元区间），虽波动幅度略大但持续时间远超12个月要求，箱体内部多次出现下影线测试4元支撑位未破，显示底部结构稳固。均线行为：近期股价已明确站上30月均线，且30月均线由长期下跌转为走平并开始微幅上翘，反映趋势正在由跌转稳。量能方面：下跌阶段成交量持续萎缩至地量水平，底部震荡期间多次出现间歇性放量阳线（如2023-2024年），特别是2024年放量突破时量能显著放大，符合主力吸筹特征。综合来看，该股已完成长期超跌后的底部沉淀，技术面蓄势充分。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 15:59:00 [INFO] [llm_analyzer] Analyzing 300516.SZ...
+2026-01-29 15:59:04 [DEBUG] [llm_analyzer] [603080.SH] Raw LLM Response: {
+  "stock_code": "603080.SH",
+  "score": 8.5,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "趋势维度：该股在2018年1月创下历史高点（约48元），随后经历持续3年的深度调整，至2020年12月低点跌至10元附近，跌幅达79%，完全符合'深幅下跌>50%'的超跌标准。形态维度：自2021年5月起形成长达48个月的横盘箱体（10-25元区间），箱体波动率显著收敛，后期K线实体持续缩短，多次出现上下影线刺探箱体上下沿但未有效突破，呈现典型的'平底锅'结构。均线维度：30月均线在2020年后由加速下行转为走平，2023年起开始微幅上翘，当前股价稳定站上均线并形成多头排列，显示趋势反转信号。量能维度：下跌阶段（2018-2020）成交量萎缩至地量水平（最低不足50k shares），箱体震荡期间（2021-2025）出现5次以上间歇性放量阳线（如2021年5月、2023年9月），伴随缩量阴线，符合主力吸筹特征。综合来看，该形态完全符合Stage 1 Base的'长期超跌+底部沉淀'核心特征。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 15:59:04 [INFO] [llm_analyzer] Analyzing 300466.SZ...
+2026-01-29 15:59:13 [DEBUG] [llm_analyzer] [600482.SH] Raw LLM Response: {
+  "stock_code": "600482.SH",
+  "score": 8.5,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "趋势维度：该股左侧存在显著历史高点（2015年约50元），经历深幅下跌至2018年低点10元，跌幅超80%，完全符合超跌标准。形态维度：右侧自2018年起形成长达72个月的横盘箱体（10-25元），箱体波动率较下跌阶段降低60%以上，K线实体持续缩短且频繁出现长下影线测试10元支撑位，显示多空平衡状态。均线维度：30月均线自2020年触底后由陡峭下跌转为走平，2023年起呈现温和上翘态势，当前股价稳定运行于均线上方15%区域，形成有效支撑。量能维度：下跌阶段成交量萎缩至峰值的1/5（地量水平），底部震荡期出现7次显著放量阳线（2022年Q3、2024年Q1等），单月成交量突破均值200%，典型呈现主力吸筹特征。综合来看，该形态完全符合威科夫理论中'长期沉淀'的核心要素，但箱体波动幅度略大于理想状态。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 15:59:13 [INFO] [llm_analyzer] Analyzing 300444.SZ...
+2026-01-29 15:59:15 [DEBUG] [llm_analyzer] [601179.SH] Raw LLM Response: {
+  "stock_code": "601179.SH",
+  "score": 9.2,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "趋势维度：左侧可见2015年历史高点（约12元），随后经历深幅下跌至2016年低点（约3元），跌幅达75%，远超50%标准，符合超跌特征。2020年后进入长期筑底阶段，趋势由下跌转为横盘震荡。形态维度：右侧形成长达48个月（2020-2024）的扁平箱体，价格在3-6元区间窄幅波动，波动率显著降低；K线实体持续缩短，上下影线多次刺探3元支撑位未破位（如2022年低点），显示筹码沉淀充分。均线维度：30月均线（图中红色线）在2022年后由陡峭下跌转为走平，2023-2024年股价稳定站上均线，且均线呈现微幅上翘趋势，确认底部支撑有效。量能维度：下跌阶段（2016-2020）量能萎缩至地量水平，底部震荡期出现多次间歇性放量阳线（如2022年Q4、2024年8月），量能放大但价格未破箱体，符合主力吸筹信号。综合来看，该形态时间充足、波动极小、量价配合完美，属教科书级底部结构。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 15:59:17 [DEBUG] [llm_analyzer] [002823.SZ] Raw LLM Response: {
+  "stock_code": "002823.SZ",
+  "score": 8.5,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "1.趋势维度：左侧2016-2017年形成30元历史高点，经历3年深幅下跌至8元（跌幅73%），完全符合超跌条件；2.形态维度：底部横盘长达48个月（2021-2025），虽2023-2024年出现两次冲高回落，但箱体中枢稳定在10-15元区间，波动率较下跌期显著降低，且多次在10元关键位形成下影线支撑；3.均线维度：30月均线自2022年起由陡峭下行转为走平，2024年Q3后股价持续站上均线，均线斜率呈现温和上翘态势，形成有效支撑；4.量能维度：下跌阶段量能萎缩至峰值1/5，底部震荡期出现5次显著放量阳线（如2023年7月、2024年3月），配合缩量回调，符合威科夫理论中的'吸筹-测试'典型量能结构。综合判定为标准Stage 1 Base形态，但因横盘期间存在两次冲高回落，扣0.5分。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 15:59:25 [DEBUG] [llm_analyzer] [300466.SZ] Raw LLM Response: {
+  "stock_code": "300466.SZ",
+  "score": 8.7,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "1. 趋势维度：左侧2015年历史高点达25元以上，经历3年深幅下跌至5元附近，跌幅超80%，符合'深幅调整'核心特征。2. 形态维度：2019-2024年形成长达60个月的扁平箱体（远超12个月标准），箱体波动区间收窄至5-10元，近期K线实体持续缩短，上下影线多次测试5元支撑位未破，显示多空平衡状态。3. 均线维度：30月均线（绿色线）自2022年起由陡峭下跌转为走平，2024年股价稳定站上均线并推动均线微幅上翘，形成典型底部支撑结构。4. 量能维度：下跌阶段成交量萎缩至地量水平，箱体震荡期间出现7次显著放量阳线（如2023年12月、2024年6月），量价配合呈现主力吸筹特征，且最近三次放量均未突破箱体上沿，符合蓄势待发信号。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 15:59:38 [DEBUG] [llm_analyzer] [300516.SZ] Raw LLM Response: {
+  "stock_code": "300516.SZ",
+  "score": 8.2,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "1. 趋势维度：左侧存在显著历史高点（2016年约120元），经历连续3年深幅调整至2018年低点20元，跌幅达83%，符合超跌标准。2. 形态维度：2018-2025年形成长达7年的底部箱体，虽中间有3次小幅突破（2020/2023/2024年），但整体价格区间稳定在20-40元，近期12个月波动率明显收窄，K线实体长度缩短30%以上，多次出现长下影线测试支撑未破位。3. 均线维度：30月均线自2021年起由陡峭下跌转为走平，2024年Q4开始微幅上翘，当前股价持续缠绕并多次站上均线，形成多头排列雏形。4. 量能维度：下跌阶段成交量萎缩至峰值1/5（2018年地量），底部震荡期出现5次放量阳线（2020Q3/2023Q2/2024Q1等），量能与价格形成背离，符合主力吸筹特征。综合来看，虽存在中期波动，但核心要素完全符合威科夫理论的阶段1底部特征。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "缠绕并微幅上翘",
+  "volume_pattern": "下跌缩量+底部间歇性放量吸筹"
+}
+2026-01-29 15:59:39 [DEBUG] [llm_analyzer] [300444.SZ] Raw LLM Response: {
+  "stock_code": "300444.SZ",
+  "score": 8.5,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "趋势方面：该股2015年4月见顶于35元附近，经历长达10年的深幅调整，最低下探至5元区域，跌幅超85%，符合'曾经辉煌与暴跌'的核心特征。形态方面：自2020年起形成持续5年的横盘箱体（5-10元区间），箱体波动率显著低于前期下跌阶段，K线实体逐渐缩短，多次出现下影线测试5元支撑但未有效破位，呈现典型的'平底锅'结构。均线方面：30月均线已由长期下跌转为走平，近期股价反复缠绕并站上该均线，均线系统开始呈现微幅上翘态势，显示长期趋势可能转变。量能方面：下跌阶段成交量持续萎缩至地量水平（10K股以下），横盘期间出现多次间歇性放量阳线（如2023-2025年多次单月成交量超3000K股），符合威科夫理论中的'吸筹阶段'量能特征，主力资金在底部区间持续收集筹码。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 15:59:39 [INFO] [main] Analysis completed in 0:01:07.287426.
+2026-01-29 15:59:39 [INFO] [main] Saving results to database...
+2026-01-29 15:59:39 [INFO] [db_handler] Inserted 8 records.
+2026-01-29 15:59:39 [INFO] [main] ========================================
+2026-01-29 15:59:39 [INFO] [main] Total Processed: 8
+2026-01-29 15:59:39 [INFO] [main] Successful: 8
+2026-01-29 15:59:39 [INFO] [main] Failed: 0
+2026-01-29 15:59:39 [INFO] [main] High Score (>= 6.0): 8
+2026-01-29 15:59:39 [INFO] [main] DB Inserted: 8
+2026-01-29 15:59:39 [INFO] [main] ========================================
+2026-01-29 16:01:22 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 16:01:22 [INFO] [main] Config -> Model: qwen3-vl-plus | Enable Thinking: True
+2026-01-29 16:01:22 [INFO] [main] Initializing database table...
+2026-01-29 16:01:22 [INFO] [db_handler] Database table initialized.
+2026-01-29 16:01:22 [INFO] [main] Truncating target table...
+2026-01-29 16:01:22 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 16:01:22 [INFO] [main] Scanning for K-line images...
+2026-01-29 16:01:22 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 16:01:22 [INFO] [main] Starting analysis for 8 images with concurrency 5...
+2026-01-29 16:01:22 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 16:01:22 [INFO] [llm_analyzer] Analyzing 603080.SH...
+2026-01-29 16:01:22 [INFO] [llm_analyzer] Analyzing 002823.SZ...
+2026-01-29 16:01:22 [INFO] [llm_analyzer] Analyzing 002378.SZ...
+2026-01-29 16:01:22 [INFO] [llm_analyzer] Analyzing 601179.SH...
+2026-01-29 16:01:44 [DEBUG] [llm_analyzer] [603080.SH] Raw LLM Response: {
+  "stock_code": "603080.SH",
+  "score": 8.7,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "1. 趋势维度：该股2018年1月创下50元历史高点后经历深幅下跌，最低跌至10元附近，跌幅超80%，符合'深幅下跌>50%'的核心条件。2. 形态维度：2021年5月至2025年12月形成长达54个月的横盘箱体（15-25元区间），箱体波动率显著降低，K线实体持续收窄并多次出现长下影线测试支撑位，未有效跌破15元关键支撑。3. 均线维度：30月均线在2023年后由陡峭下行转为走平，2024年9月起股价持续站上均线并推动均线微幅上翘，形成多头排列雏形。4. 量能维度：下跌阶段（2018-2020）成交量萎缩至峰值1/5，底部震荡期出现7次明显放量阳线（如2024年3月/11月），伴随缩量阴线，典型主力吸筹特征。综合显示已形成标准长期底部沉淀结构。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 16:01:44 [INFO] [llm_analyzer] Analyzing 300516.SZ...
+2026-01-29 16:01:51 [DEBUG] [llm_analyzer] [600482.SH] Raw LLM Response: {
+  "stock_code": "600482.SH",
+  "score": 9.5,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "趋势方面：该股经历2017年历史高点45元至2019年低点10元的深幅调整，跌幅超75%，符合深跌标准；形态上，2019-2025年形成长达6年的横盘箱体（10-25元区间），波动率显著收敛，K线实体持续缩短，多次下探10元支撑未破，形成典型平底锅结构；均线行为显示30月均线自2019年转平，2024年后微幅上翘，股价近期反复站上均线并缠绕运行；量能特征表现为下跌阶段持续缩量至地量，箱体震荡期间出现2020年、2022年、2024年多次间歇性放量阳线，配合缩量回调，清晰呈现主力吸筹痕迹。四大维度均高度符合Stage 1 Base标准，仅箱体波动幅度略大于理论最小值，故扣0.5分。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 16:01:51 [INFO] [llm_analyzer] Analyzing 300466.SZ...
+2026-01-29 16:01:54 [DEBUG] [llm_analyzer] [002823.SZ] Raw LLM Response: {
+  "stock_code": "002823.SZ",
+  "score": 9.2,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "趋势维度：左侧2016-2017年形成30元历史高点后，经历长达4年深幅调整（2017-2021），跌幅达66.7%，符合深幅下跌标准。形态维度：2020年3月至2025年12月形成57个月横盘箱体（远超12个月要求），价格区间稳定在10-15元，波动率显著降低，K线实体持续收窄且多次测试10元支撑未破。均线维度：30月均线自2021年触底后由陡峭下跌转为走平，2023年起呈现温和上翘趋势，当前股价持续运行于均线之上形成有效支撑。量能维度：下跌阶段量能萎缩至地量水平（2019-2020年日均量<200万），底部震荡期出现7次明显放量阳线（如2023年7月、2025年3月），量价配合显示主力吸筹特征，完全符合威科夫阶段分析理论中Stage 1的积累特征。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并温和上翘",
+  "volume_pattern": "下跌缩量+底部间歇性放量吸筹"
+}
+2026-01-29 16:01:54 [INFO] [llm_analyzer] Analyzing 300444.SZ...
+2026-01-29 16:01:57 [DEBUG] [llm_analyzer] [002378.SZ] Raw LLM Response: {
+  "stock_code": "002378.SZ",
+  "score": 8.2,
+  "pattern_name": "Pan Bottom with Volatility Contraction",
+  "reasoning": "趋势维度：左侧2010-2015年形成18元历史高点，随后经历78%深幅下跌至2020年4元低点，完全符合'曾经辉煌与暴跌'特征。形态维度：2020-2023年形成36个月横盘箱体（4-8元区间），箱体后期K线实体明显缩短，2022年后上下影线频繁测试支撑位但未破前低，波动率较前期下降40%以上。均线维度：30月均线在2022年触底走平，2023年Q4股价首次站上均线并推动均线微幅上翘（斜率由-0.8转为+0.3），形成关键支撑。量能维度：下跌周期成交量萎缩至峰值15%，2021-2023年箱体震荡期间出现5次单月放量阳线（量能达均值1.8倍），典型吸筹信号。唯一瑕疵是2024年突破后波动率有所回升，但整体仍符合Stage 1 Base核心特征。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并微幅上翘",
+  "volume_pattern": "下跌缩量+底部间歇性放量"
+}
+2026-01-29 16:02:00 [DEBUG] [llm_analyzer] [601179.SH] Raw LLM Response: {
+  "stock_code": "601179.SH",
+  "score": 9.0,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "趋势维度：该股在2010-2011年形成历史高点（14元以上），随后经历长达12年的下跌周期，从高点跌至2020年低点约3.5元，跌幅超75%，完全符合'深幅下跌'标准。形态维度：2021-2025年形成48个月的横盘箱体，价格稳定在4-8元区间，箱体波动率显著低于前期下跌阶段，K线实体持续缩短且多次出现下影线测试支撑位但未破位，呈现典型波动收敛特征。均线维度：30月均线（红色线）已由长期下行转为走平，并在2023年后开始微幅上翘，当前股价持续站上该均线，显示长期趋势可能正在转变。量能维度：下跌阶段（2016-2020）成交量萎缩至地量水平，底部震荡期间（2022-2025）多次出现放量阳线，尤其2024年8月放量突破，符合威科夫理论中的'吸筹'量能特征。整体形态完全符合Stage 1 Base的教科书标准。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 16:02:10 [DEBUG] [llm_analyzer] [300516.SZ] Raw LLM Response: {
+  "stock_code": "300516.SZ",
+  "score": 8.5,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "1. 趋势维度：左侧历史高点达120元（2016年），经历长达3年的深幅调整至20元附近，跌幅超83%，完全符合'深幅下跌'标准。2. 形态维度：自2019年10月起形成持续66个月的横盘箱体（20-40元区间），箱体波动率显著收敛，K线实体长度较下跌阶段缩短50%以上，且多次出现下影线测试20元支撑位后快速收回的吸筹特征。3. 均线维度：30月均线自2021年触底后由陡峭下跌转为水平震荡，2024年Q4开始呈现温和上翘趋势，当前股价稳定运行在均线之上15%区域。4. 量能维度：下跌周期伴随持续缩量（地量阶段日均成交量萎缩至高峰的1/10），箱体震荡期出现5次明显放量阳线（2022Q2、2023Q1、2024Q3等），量能柱与价格突破形成正向背离，确认主力吸筹行为。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 16:02:19 [DEBUG] [llm_analyzer] [300466.SZ] Raw LLM Response: {
+  "stock_code": "300466.SZ",
+  "score": 8.7,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "1. 趋势维度：左侧2015年历史高点超20元，经历3年深幅调整至5元以下，跌幅达75%，符合超跌标准。2. 形态维度：2019-2025年形成长达6年的横盘箱体（84个月），价格在5-10元区间窄幅震荡，波动率较前期下跌阶段显著收敛，K线实体持续缩短且多次出现下影线测试支撑后快速收回。3. 均线维度：30月均线（图中红色线）自2022年起由陡峭下行转为走平，2024年Q4股价稳定站上均线并带动均线微幅上翘，形成有效支撑。4. 量能维度：下跌阶段（2015-2019）成交量萎缩至地量水平，底部震荡期（2020-2025）出现7次明显放量阳线（如2023年Q2、2024年Q3），伴随量比突破1.5倍，典型主力吸筹特征。综合来看，该形态完全符合威科夫理论中'长期吸筹'的Stage 1 Base标准。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并微幅上翘",
+  "volume_pattern": "下跌缩量+底部间歇性放量吸筹"
+}
+2026-01-29 16:02:28 [DEBUG] [llm_analyzer] [300444.SZ] Raw LLM Response: {
+  "stock_code": "300444.SZ",
+  "score": 9.2,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "趋势维度：该股2015年4月触及35元历史高点后经历深度调整，至2020年低点5元附近，跌幅达85.7%，符合'曾经辉煌与暴跌'的核心特征。形态维度：2020-2025年形成长达5年的扁平箱体（5-10元区间），箱体波动率较前期下跌阶段显著收敛，K线实体持续缩短且多次出现下影线刺探5元支撑位但未破位，呈现典型的底部沉淀结构。均线维度：30月均线（红色线）自2020年起由陡峭下跌转为走平，2024年后开始微幅上翘，当前股价已稳定站上30月均线，符合威科夫理论中'价格与均线关系改善'的关键信号。量能维度：下跌阶段（2015-2020）成交量持续萎缩至地量水平，箱体震荡期（2020-2025）出现7次以上间歇性放量阳线（如2022年8月、2023年12月），量价配合显示主力吸筹行为，完全符合Stage 1 Base的量能特征。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+2026-01-29 16:02:28 [INFO] [main] Analysis completed in 0:01:06.318816.
+2026-01-29 16:02:28 [INFO] [main] Saving results to database...
+2026-01-29 16:02:28 [INFO] [db_handler] Inserted 8 records.
+2026-01-29 16:02:28 [INFO] [main] ========================================
+2026-01-29 16:02:28 [INFO] [main] Total Processed: 8
+2026-01-29 16:02:28 [INFO] [main] Successful: 8
+2026-01-29 16:02:28 [INFO] [main] Failed: 0
+2026-01-29 16:02:28 [INFO] [main] High Score (>= 6.0): 8
+2026-01-29 16:02:28 [INFO] [main] DB Inserted: 8
+2026-01-29 16:02:28 [INFO] [main] ========================================
+2026-01-29 16:09:32 [INFO] [main] Starting Refinement LLM Module...
+2026-01-29 16:09:32 [INFO] [main] Config -> Model: qwen-vl-plus | Enable Thinking: False
+2026-01-29 16:09:32 [INFO] [main] Initializing database table...
+2026-01-29 16:09:32 [INFO] [db_handler] Database table initialized.
+2026-01-29 16:09:32 [INFO] [main] Truncating target table...
+2026-01-29 16:09:32 [INFO] [db_handler] Table public.stock_flatbottom_refinement truncated.
+2026-01-29 16:09:32 [INFO] [main] Scanning for K-line images...
+2026-01-29 16:09:32 [INFO] [image_loader] Found 8 valid images in ./output
+2026-01-29 16:09:32 [INFO] [main] Starting analysis for 8 images with concurrency 5...
+2026-01-29 16:09:32 [INFO] [llm_analyzer] Analyzing 600482.SH...
+2026-01-29 16:09:32 [INFO] [llm_analyzer] Analyzing 603080.SH...
+2026-01-29 16:09:32 [INFO] [llm_analyzer] Analyzing 002823.SZ...
+2026-01-29 16:09:32 [INFO] [llm_analyzer] Analyzing 002378.SZ...
+2026-01-29 16:09:32 [INFO] [llm_analyzer] Analyzing 601179.SH...
+2026-01-29 16:09:36 [DEBUG] [llm_analyzer] [601179.SH] Raw LLM Response: ```json
+{
+  "stock_code": "601179.SH",
+  "score": 8.5,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "该股在2010-2014年间经历了一轮显著的上涨，最高点接近14元，随后在2015年出现深幅调整，跌幅超过70%，最低跌至约3元。此后，股价进入长达约24个月的底部横盘整理阶段（2016年中至2018年底），期间波动率显著收敛，K线实体逐渐变短，上下影线刺探支撑位但未有效跌破，形成了典型的平底锅形态。从均线来看，股价已成功站上30月均线，并且该均线由下跌趋势转为走平甚至微幅上翘，显示出明显的筑底迹象。量能方面，下跌过程中持续缩量，底部区域多次出现放量阳线，表明主力资金正在积极吸筹。综合判断，该股完全符合'长期超跌后的底部沉淀'（Stage 1 Base）特征。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+```
+2026-01-29 16:09:36 [INFO] [llm_analyzer] Analyzing 300516.SZ...
+2026-01-29 16:09:36 [DEBUG] [llm_analyzer] [002378.SZ] Raw LLM Response: ```json
+{
+  "stock_code": "002378.SZ",
+  "score": 9.0,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "该股在2010年3月达到历史高点后，经历了长达5年的深幅调整，股价从最高点18元跌至最低点约2元，跌幅超过88%，完全符合'曾经辉煌与暴跌'的前提条件。随后，股价进入为期24个月的底部横盘整理阶段（2016年6月至2018年6月），形成了一个标准的平底锅形态：波动率显著收敛，K线实体越来越短，上下影线反复试探支撑位但未有效跌破。长期均线（30月均线）在此期间由持续下跌转为走平，并在2018年6月开始微幅上翘，表明市场抛压减弱、买盘力量增强。量能方面，下跌阶段成交量持续萎缩至地量水平，而底部横盘期间多次出现放量阳线，显示主力资金在低位积极吸筹。整体来看，该股已成功完成'长期超跌后的底部沉淀'形态，处于典型的Stage 1 Base阶段。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+```
+2026-01-29 16:09:36 [INFO] [llm_analyzer] Analyzing 300466.SZ...
+2026-01-29 16:09:36 [DEBUG] [llm_analyzer] [603080.SH] Raw LLM Response: ```json
+{
+  "stock_code": "603080.SH",
+  "score": 9.0,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "该股在2018年初曾创下约50元的历史高点，随后经历了一轮深幅下跌，最低跌至2021年中旬的不足10元，跌幅超过70%，符合'曾经辉煌与暴跌'的前提条件。从2021年中至2024年底，股价形成了一个长达24个月的底部横盘区域，期间波动率显著收敛，K线实体越来越短，且多次出现上下影线刺探支撑位但未有效跌破的情况，表明市场处于筹码沉淀阶段。均线方面，股价已成功站上30月均线（绿色线），且该均线自2022年起由下降趋势转为走平甚至微幅上翘，显示多头力量正在积聚。量能表现上，下跌过程中持续缩量，而底部横盘期间多次出现放量阳线，尤其是2024年下半年的几次放量拉升，明确指示主力资金正在进行吸筹操作。综合来看，该股完全符合'长期超跌后的底部沉淀'（Stage 1 Base）形态。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+```
+2026-01-29 16:09:36 [INFO] [llm_analyzer] Analyzing 300444.SZ...
+2026-01-29 16:09:37 [DEBUG] [llm_analyzer] [002823.SZ] Raw LLM Response: ```json
+{
+  "stock_code": "002823.SZ",
+  "score": 7.5,
+  "pattern_name": "Developing Pan Bottom",
+  "reasoning": "该股在2016年11月达到历史高点后，经历了一轮深幅下跌（跌幅超60%），符合'曾经辉煌与暴跌'的前提。随后进入长期横盘整理阶段，从2019年初至2023年中期形成一个为期约48个月的底部箱体，期间波动率显著收敛，K线实体逐渐缩短，且多次出现上下影线试探支撑位但未有效跌破的情况，表明主力资金在底部区域进行筹码收集。均线方面，股价已成功站上30月均线（绿色线），且该均线由持续下跌转为走平，显示出趋势反转的迹象。量能表现上，下跌阶段成交量持续萎缩，而底部横盘期间多次出现放量阳线，尤其是2023年下半年以来的放量拉升，进一步验证了主力吸筹和准备突破的意图。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并走平",
+  "volume_pattern": "底部放量吸筹"
+}
+```
+2026-01-29 16:09:38 [DEBUG] [llm_analyzer] [600482.SH] Raw LLM Response: ```json
+{
+  "stock_code": "600482.SH",
+  "score": 7.5,
+  "pattern_name": "Extended Base Formation",
+  "reasoning": "该股在2004-2008年期间曾经历显著上涨，最高点接近30元（图左侧历史高点），随后于2008-2012年期间遭遇深幅下跌，跌幅超过60%，符合'曾经辉煌与暴跌'的前提条件。此后，股价进入长期横盘整理阶段，从2012年底至2023年初形成一个长达约12个月的底部箱体，期间波动率明显收敛，K线实体逐渐缩短，且多次出现上下影线试探支撑位但未有效跌破的情况，表明市场处于筹码沉淀阶段。均线方面，股价近期已站上30月均线，并呈现走平上翘趋势，显示多头力量开始增强。量能表现上，下跌阶段持续缩量，而底部横盘期间多次出现放量阳线，特别是2022-2023年的阶段性反弹，暗示主力资金可能已在低位吸筹。综合来看，该股基本符合'长期超跌后的底部沉淀'形态，但整体调整时间稍短，且近期涨幅较大，需警惕短期回调风险。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+```
+2026-01-29 16:09:40 [DEBUG] [llm_analyzer] [300466.SZ] Raw LLM Response: ```json
+{
+  "stock_code": "300466.SZ",
+  "score": 8.2,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "该股在2015年5月达到历史高点后，经历了长达3年的深幅调整，跌幅超过70%，符合'曾经辉煌与暴跌'的前提条件。从2019年中开始，股价进入为期约24个月的底部横盘整理阶段，形成了典型的'平底锅'形态。在此期间，波动率显著收敛，K线实体逐渐缩短，且多次出现上下影线刺探支撑位但未有效跌破的情况，表明市场抛压减弱。均线方面，股价已成功站上30月均线（绿色线），且该均线由持续下跌转为走平并微幅上翘，显示出趋势反转的迹象。量能表现上，下跌阶段成交量持续萎缩至地量水平，而在底部横盘期间，多次出现放量阳线，特别是2023年下半年以来的几次放量拉升，明显是主力吸筹的表现。综合来看，该股完全符合'长期超跌后的底部沉淀'（Stage 1 Base）特征。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+```
+2026-01-29 16:09:40 [DEBUG] [llm_analyzer] [300444.SZ] Raw LLM Response: ```json
+{
+  "stock_code": "300444.SZ",
+  "score": 8.0,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "该股300444.SZ在2015年4月曾创下历史高点（约35元），随后经历了一轮深幅下跌，最低跌至2019年1月的约4元，跌幅超过80%，符合'曾经辉煌与暴跌'的前提条件。从2019年1月到2022年12月，股价形成了一个长达24个月的底部横盘箱体，期间波动率显著收敛，K线实体逐渐缩短，且多次出现上下影线刺探支撑位但未有效跌破的特征，表明市场处于主力吸筹阶段。均线方面，股价已成功站上30月均线（图中绿色线），且该均线由持续下跌转为走平并微幅上翘，显示长期趋势可能企稳。量能方面，下跌阶段成交量持续萎缩，底部区域则多次出现放量阳线，尤其是2023年12月和2024年6月的两波放量拉升，进一步验证了主力吸筹的迹象。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+```
+2026-01-29 16:09:41 [DEBUG] [llm_analyzer] [300516.SZ] Raw LLM Response: ```json
+{
+  "stock_code": "300516.SZ",
+  "score": 8.0,
+  "pattern_name": "Classic Pan Bottom",
+  "reasoning": "该股在2016年6月达到历史高点后，经历了一轮深幅下跌（跌幅超70%），随后进入长达约24个月的底部横盘整理阶段（2018年3月至2020年3月）。在此期间，股价波动率显著收敛，K线实体逐渐缩短，上下影线反复试探支撑位但未有效跌破。30月均线（图中绿色曲线）在此阶段由持续下跌转为走平，并在2020年初开始微幅上翘。量能方面，下跌阶段呈现持续缩量特征，而底部横盘期间多次出现放量阳线，表明主力资金在低位积极吸筹。近期股价突破前期横盘区域并站上30月均线，形态标准且具备较强上涨潜力。",
+  "stage": "Stage 1 Base",
+  "ma30_status": "站上并上翘",
+  "volume_pattern": "底部放量吸筹"
+}
+```
+2026-01-29 16:09:41 [INFO] [main] Analysis completed in 0:00:09.324136.
+2026-01-29 16:09:41 [INFO] [main] Saving results to database...
+2026-01-29 16:09:41 [INFO] [db_handler] Inserted 8 records.
+2026-01-29 16:09:41 [INFO] [main] ========================================
+2026-01-29 16:09:41 [INFO] [main] Total Processed: 8
+2026-01-29 16:09:41 [INFO] [main] Successful: 8
+2026-01-29 16:09:41 [INFO] [main] Failed: 0
+2026-01-29 16:09:41 [INFO] [main] High Score (>= 6.0): 8
+2026-01-29 16:09:41 [INFO] [main] DB Inserted: 8
+2026-01-29 16:09:41 [INFO] [main] ========================================

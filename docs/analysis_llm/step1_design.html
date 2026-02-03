@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>股票推荐系统 - Step 1 设计文档</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        /* 流程图样式 */
+        .flowchart {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .flow-level {
+            margin: 30px 0;
+        }
+
+        .flow-title {
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            background: #667eea;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            margin: 0 auto 30px;
+            max-width: 300px;
+        }
+
+        .parallel-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .unit {
+            flex: 1;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .unit-header {
+            background: #667eea;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .unit-step {
+            background: #f0f0f0;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .unit-step.agent {
+            border-left-color: #48bb78;
+        }
+
+        .unit-step.checker {
+            border-left-color: #ed8936;
+        }
+
+        .unit-step.decision {
+            border-left-color: #e53e3e;
+            font-weight: bold;
+        }
+
+        .arrow {
+            text-align: center;
+            font-size: 2em;
+            color: #667eea;
+            margin: 10px 0;
+        }
+
+        .merger-box {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 30px auto;
+            max-width: 400px;
+            font-weight: bold;
+        }
+
+        .output-box {
+            background: #f7fafc;
+            border: 2px solid #48bb78;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        /* 要点卡片 */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .card-content {
+            color: #666;
+        }
+
+        /* 检查标准表格 */
+        .check-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .check-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .check-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .check-table tr:hover {
+            background: #f7fafc;
+        }
+
+        .check-yes {
+            color: #48bb78;
+            font-weight: bold;
+        }
+
+        .check-no {
+            color: #e53e3e;
+            font-weight: bold;
+        }
+
+        /* 代码块 */
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .code-comment {
+            color: #68d391;
+        }
+
+        /* 时间线 */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #667eea;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 20px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 41px;
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #667eea;
+        }
+
+        .timeline-time {
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .timeline-content {
+            background: #f7fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        /* 对比表格 */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+        /* 标签 */
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin: 2px;
+        }
+
+        .badge-success {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .badge-warning {
+            background: #feebc8;
+            color: #744210;
+        }
+
+        .badge-error {
+            background: #fed7d7;
+            color: #742a2a;
+        }
+
+        .badge-info {
+            background: #bee3f8;
+            color: #2c5282;
+        }
+
+        /* 高亮框 */
+        .highlight-box {
+            background: #fef5e7;
+            border-left: 4px solid #f39c12;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .highlight-box strong {
+            color: #d68910;
+        }
+
+        .config-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .config-box strong {
+            color: #1565c0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .parallel-container {
+                flex-direction: column;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <h1>📊 股票推荐系统</h1>
+            <p>Step 1: 数据收集阶段 - 设计文档</p>
+        </div>
+
+        <!-- 内容区 -->
+        <div class="content">
+            
+            <!-- 概述 -->
+            <div class="section">
+                <h2 class="section-title">📋 概述</h2>
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-icon">🎯</div>
+                        <div class="card-title">核心目标</div>
+                        <div class="card-content">
+                            收集高质量的原始数据，包括新闻、板块热度、K线分析。确保数据格式正确、完整，但<strong>不判断业务逻辑</strong>。
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">⚡</div>
+                        <div class="card-title">技术方案</div>
+                        <div class="card-content">
+                            使用 <strong>ConcurrentBuilder</strong> 实现真正的并行执行，三个数据收集单元同时运行，提高整体响应速度。
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🔄</div>
+                        <div class="card-title">质量保证</div>
+                        <div class="card-content">
+                            每个单元内部实现 <strong>Agent → Checker → 循环重试</strong>，<strong>最大重试次数可配置</strong>（默认3次），确保输出数据的格式正确性。
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🎨</div>
+                        <div class="card-title">设计原则</div>
+                        <div class="card-content">
+                            <strong>职责单一</strong>、<strong>独立重试</strong>、<strong>保留矛盾</strong>。数据之间的矛盾是有价值的信息，留给Step 2分析。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 新增：配置说明 -->
+                <div class="config-box" style="margin-top: 30px;">
+                    <h3 style="color: #1565c0; margin-bottom: 10px;">⚙️ 重要配置参数</h3>
+                    <ul style="margin-left: 20px; line-height: 2;">
+                        <li><strong>最大重试次数 (max_retries)</strong>：可配置，默认值为 <strong>3</strong>。当 Agent 执行失败或 Checker 检查不通过时，单元会自动重试，最多重试该参数指定的次数（即“Agent → Checker”循环的最大次数）。</li>
+                        <li><strong>新闻数量限制</strong>：Agent 1 返回的正面新闻和负面新闻<strong>各最多 5 条</strong>（可配置）。超过5条时，Agent 需要筛选最重要的5条。</li>
+                        <li><strong>新闻内容处理</strong>：Agent 1 必须<strong>生成摘要</strong>而非直接放入搜索的原文。<strong>每条新闻字符长度 ≤ 500</strong>（可配置）。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 完整流程图 -->
+            <div class="section">
+                <h2 class="section-title">🔄 完整流程图</h2>
+                
+                <div class="flowchart">
+                    <!-- 输入 -->
+                    <div class="input-box">
+                        输入：股票代码 (例: TSLA)
+                    </div>
+                    
+                    <div class="arrow">↓</div>
+                    
+                    <div class="flow-title">ConcurrentBuilder 并行执行</div>
+                    
+                    <!-- 三个并行单元 -->
+                    <div class="parallel-container">
+                        <!-- 单元1 -->
+                        <div class="unit">
+                            <div class="unit-header">单元1: NewsSearchUnit</div>
+                            <div class="unit-step agent">
+                                <strong>Agent 1 - 新闻搜索</strong><br>
+                                • 搜索最近12个月的新闻<br>
+                                • 正面新闻最多5条<br>
+                                • 负面新闻最多5条<br>
+                                • <strong>生成摘要</strong>（非原文，单条≤500字符）
+                            </div>
+                            <div class="arrow">↓</div>
+                            <div class="unit-step checker">
+                                <strong>Checker 1 - 格式检查</strong><br>
+                                • JSON格式正确<br>
+                                • 必需字段存在<br>
+                                • 情绪得分在 -1 到 1<br>
+                                • 正面新闻 ≤ 5条<br>
+                                • 负面新闻 ≤ 5条<br>
+                                • 每条新闻字符长度 ≤ 500
+                            </div>
+                            <div class="arrow">↓</div>
+                            <div class="unit-step decision">
+                                判断：通过？<br>
+                                ❌ NO → 循环重试<br>
+                                ✅ YES → 输出结果
+                            </div>
+                            <div style="text-align: center; margin-top: 10px; color: #666; font-size: 0.9em;">
+                                <strong>(最大重试次数: 可配置，默认3次)</strong>
+                            </div>
+                        </div>
+
+                        <!-- 单元2 -->
+                        <div class="unit">
+                            <div class="unit-header">单元2: SectorAnalysisUnit</div>
+                            <div class="unit-step agent">
+                                <strong>Agent 2 - 板块分析</strong><br>
+                                • 分析股票所属板块<br>
+                                • 板块热度指数<br>
+                                • 趋势判断
+                            </div>
+                            <div class="arrow">↓</div>
+                            <div class="unit-step checker">
+                                <strong>Checker 2 - 格式检查</strong><br>
+                                • JSON格式正确<br>
+                                • 必需字段存在<br>
+                                • 热度指数在 0-100
+                            </div>
+                            <div class="arrow">↓</div>
+                            <div class="unit-step decision">
+                                判断：通过？<br>
+                                ❌ NO → 循环重试<br>
+                                ✅ YES → 输出结果
+                            </div>
+                            <div style="text-align: center; margin-top: 10px; color: #666; font-size: 0.9em;">
+                                <strong>(最大重试次数: 可配置，默认3次)</strong>
+                            </div>
+                        </div>
+
+                        <!-- 单元3 -->
+                        <div class="unit">
+                            <div class="unit-header">单元3: KLineAnalysisUnit</div>
+                            <div class="unit-step agent">
+                                <strong>Agent 3 - K线分析</strong><br>
+                                • 分析月K线图<br>
+                                • 技术指标<br>
+                                • 购买建议
+                            </div>
+                            <div class="arrow">↓</div>
+                            <div class="unit-step checker">
+                                <strong>Checker 3 - 格式检查</strong><br>
+                                • JSON格式正确<br>
+                                • 必需字段存在<br>
+                                • 建议格式正确
+                            </div>
+                            <div class="arrow">↓</div>
+                            <div class="unit-step decision">
+                                判断：通过？<br>
+                                ❌ NO → 循环重试<br>
+                                ✅ YES → 输出结果
+                            </div>
+                            <div style="text-align: center; margin-top: 10px; color: #666; font-size: 0.9em;">
+                                <strong>(最大重试次数: 可配置，默认3次)</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="arrow">↓</div>
+
+                    <!-- 合并器 -->
+                    <div class="merger-box">
+                        <div style="font-size: 1.5em; margin-bottom: 10px;">🔀 SimpleMerger</div>
+                        简单合并器<br>
+                        只合并，不做任何业务判断
+                    </div>
+
+                    <div class="arrow">↓</div>
+
+                    <!-- 输出 -->
+                    <div class="output-box">
+                        <div style="font-weight: bold; margin-bottom: 10px; color: #48bb78;">输出：合并后的数据</div>
+                        <div class="code-block">
+{
+  "news": { 新闻数据 (摘要形式，各最多5条) },
+  "sector": { 板块数据 },
+  "kline": { K线数据 },
+  "timestamp": "2026-02-02T10:30:00Z"
+}
+                        </div>
+                    </div>
+
+                    <div class="arrow">↓</div>
+
+                    <div style="text-align: center; font-size: 1.3em; font-weight: bold; color: #764ba2;">
+                        传递给 Step 2
+                    </div>
+                </div>
+            </div>
+
+            <!-- 核心设计原则 -->
+            <div class="section">
+                <h2 class="section-title">💡 核心设计原则</h2>
+                
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-icon">⚡</div>
+                        <div class="card-title">1. 真正的并行执行</div>
+                        <div class="card-content">
+                            三个单元<strong>同时</strong>运行，互不干扰：
+                            <ul style="margin-top: 10px; padding-left: 20px;">
+                                <li>NewsSearchUnit 并行执行</li>
+                                <li>SectorAnalysisUnit 并行执行</li>
+                                <li>KLineAnalysisUnit 并行执行</li>
+                            </ul>
+                            <div style="margin-top: 10px;">
+                                <span class="badge badge-success">并行提速</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🔄</div>
+                        <div class="card-title">2. 可配置的重试机制</div>
+                        <div class="card-content">
+                            每个单元内部独立循环：
+                            <ul style="margin-top: 10px; padding-left: 20px;">
+                                <li><strong>max_retries 可配置</strong>（默认3次）</li>
+                                <li>失败自动重试</li>
+                                <li>不影响其他单元</li>
+                                <li>单元间互不干扰</li>
+                            </ul>
+                            <div style="margin-top: 10px;">
+                                <span class="badge badge-info">灵活可配置</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">✅</div>
+                        <div class="card-title">3. 只检查格式质量</div>
+                        <div class="card-content">
+                            Checker 职责单一：
+                            <ul style="margin-top: 10px; padding-left: 20px;">
+                                <li>✅ 检查 JSON 格式</li>
+                                <li>✅ 检查必需字段</li>
+                                <li>✅ 检查数值范围</li>
+                                <li>✅ 检查数量限制（如新闻≤5条）</li>
+                                <li>❌ 不检查业务逻辑</li>
+                            </ul>
+                            <div style="margin-top: 10px;">
+                                <span class="badge badge-warning">职责清晰</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🎯</div>
+                        <div class="card-title">4. 保留数据矛盾</div>
+                        <div class="card-content">
+                            不强制数据一致：
+                            <ul style="margin-top: 10px; padding-left: 20px;">
+                                <li>新闻可能偏正面</li>
+                                <li>板块可能热度低</li>
+                                <li>K线可能建议卖出</li>
+                            </ul>
+                            <div style="margin-top: 10px;">
+                                <span class="badge badge-info">矛盾是信息</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent 1 详细说明 -->
+            <div class="section">
+                <h2 class="section-title">📰 Agent 1 (新闻搜索) 详细说明</h2>
+                
+                <div class="config-box">
+                    <h3 style="color: #1565c0; margin-bottom: 15px;">Agent 1 的特殊要求</h3>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #1976d2; margin-bottom: 10px;">1. 新闻数量限制</h4>
+                        <ul style="margin-left: 20px; line-height: 1.8;">
+                            <li><strong>正面新闻</strong>：最多返回 <strong>5 条</strong></li>
+                            <li><strong>负面新闻</strong>：最多返回 <strong>5 条</strong></li>
+                            <li>如果搜索结果超过5条，Agent 应筛选<strong>最重要、最具代表性</strong>的5条</li>
+                            <li>筛选标准：影响力大、来源权威、时间最近</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #1976d2; margin-bottom: 10px;">2. 新闻内容处理</h4>
+                        <ul style="margin-left: 20px; line-height: 1.8;">
+                            <li><strong>必须生成摘要</strong>：不能直接放入搜索的原文</li>
+                            <li><strong>摘要长度</strong>：每条新闻字符长度 ≤ 500</li>
+                            <li><strong>摘要内容</strong>：提取核心信息，保留关键事实</li>
+                            <li><strong>信息完整性</strong>：包含时间、事件、影响</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 style="color: #1976d2; margin-bottom: 10px;">3. Agent 1 Instructions 示例</h4>
+                        <div class="code-block">
+你是专业的财经新闻分析师。
+
+任务：搜索股票最近12个月的新闻
+
+输出要求：
+1. 正面新闻：最多5条，生成摘要（每条≤500字符）
+2. 负面新闻：最多5条，生成摘要（每条≤500字符）
+3. 综合摘要：整体新闻面分析
+4. 情绪得分：-1（极度负面）到 1（极度正面）
+
+注意：
+- 不要直接复制原文，必须生成摘要
+- 摘要要简洁、准确、突出核心信息
+- 筛选最重要的新闻，不要把所有新闻都放进去
+- 如果新闻数量不足5条，返回实际数量即可
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Checker 检查标准 -->
+            <div class="section">
+                <h2 class="section-title">🔍 Checker 检查标准</h2>
+                
+                <table class="check-table">
+                    <thead>
+                        <tr>
+                            <th>Checker</th>
+                            <th>检查项（✅ 应该检查）</th>
+                            <th>不检查项（❌ 不应该检查）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Checker 1<br>(新闻)</strong></td>
+                            <td>
+                                <div class="check-yes">✅ JSON 格式正确</div>
+                                <div class="check-yes">✅ positive_news 字段存在</div>
+                                <div class="check-yes">✅ negative_news 字段存在</div>
+                                <div class="check-yes">✅ sentiment_score 在 -1 到 1</div>
+                                <div class="check-yes">✅ positive_news 长度 ≤ 5</div>
+                                <div class="check-yes">✅ negative_news 长度 ≤ 5</div>
+                                <div class="check-yes">✅ 每条新闻字符长度 ≤ 500</div>
+                            </td>
+                            <td>
+                                <div class="check-no">❌ 新闻内容是否真实</div>
+                                <div class="check-no">❌ 与板块是否一致</div>
+                                <div class="check-no">❌ 情绪得分是否"合理"</div>
+                                <div class="check-no">❌ 摘要质量是否"好"</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Checker 2<br>(板块)</strong></td>
+                            <td>
+                                <div class="check-yes">✅ JSON 格式正确</div>
+                                <div class="check-yes">✅ sector_name 存在</div>
+                                <div class="check-yes">✅ heat_index 在 0-100</div>
+                                <div class="check-yes">✅ trend 是有效值</div>
+                            </td>
+                            <td>
+                                <div class="check-no">❌ 板块分析是否准确</div>
+                                <div class="check-no">❌ 热度是否"合理"</div>
+                                <div class="check-no">❌ 与新闻是否一致</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Checker 3<br>(K线)</strong></td>
+                            <td>
+                                <div class="check-yes">✅ JSON 格式正确</div>
+                                <div class="check-yes">✅ buy_suggestion 是预定义值（强烈买入/买入/持有/卖出/强烈卖出）</div>
+                                <div class="check-yes">✅ technical_indicators 存在</div>
+                            </td>
+                            <td>
+                                <div class="check-no">❌ 技术分析是否正确</div>
+                                <div class="check-no">❌ 建议是否"合理"</div>
+                                <div class="check-no">❌ 与新闻/板块是否一致</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <strong>关键原则：</strong> Checker 是"质检员"，只检查产品（数据）的规格和完整性，不判断产品的市场价值或合理性。业务逻辑判断由 Step 2 负责。
+                </div>
+            </div>
+
+            <!-- 数据流示例 -->
+            <div class="section">
+                <h2 class="section-title">📊 数据流示例</h2>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">输入</h3>
+                    <div class="code-block">
+股票代码: "TSLA"
+                    </div>
+
+                    <h3 style="color: #667eea; margin: 20px 0 15px;">输出（注意新闻格式）</h3>
+                    <div class="code-block">
+{
+  "news": {
+    "stock_code": "TSLA",
+    "positive_news": [
+      "Q3交付量达43.5万辆超预期，同比增长27%，市场反应积极",
+      "上海超级工厂二期项目顺利投产，年产能提升至100万辆",
+      "与多家矿业公司签订锂资源长期供应协议，保障电池原料",
+      "FSD完全自动驾驶技术获得美国多州测试许可，推进顺利",
+      "欧洲市场销量同比增长35%，德国工厂产能利用率达95%"
+    ],
+    "negative_news": [
+      "CEO马斯克因社交媒体言论引发争议，部分用户表示抵制",
+      "因零部件供应问题，部分订单交付延期1-2个月",
+      "美国国家公路交通安全管理局对自动驾驶系统展开调查"
+    ],
+    "news_summary": "特斯拉Q3表现强劲，交付量和产能均超预期，欧洲市场增长显著。技术研发持续推进，FSD获得多州许可。但面临CEO言论争议和监管调查压力，部分订单延期交付。整体新闻偏正面，基本面良好。",
+    "sentiment_score": 0.5
+  },
+  "sector": {
+    "stock_code": "TSLA",
+    "sector_name": "新能源汽车",
+    "heat_index": 78.5,
+    "trend": "上升",
+    "capital_flow": "大额资金持续流入，北向资金本周增持2.3亿"
+  },
+  "kline": {
+    "stock_code": "TSLA",
+    "technical_indicators": {
+      "MACD": 0.35,
+      "RSI": 62.8,
+      "KDJ_K": 68.5
+    },
+    "support_level": 220.0,
+    "resistance_level": 265.0,
+    "trend_analysis": "短期上升趋势明确，MACD金叉，成交量配合良好",
+    "buy_suggestion": "强烈买入"
+  },
+  "timestamp": "2026-02-02T10:30:00Z"
+}
+                    </div>
+
+                    <div class="highlight-box" style="margin-top: 20px;">
+                        <strong>注意新闻处理：</strong><br>
+                        • 正面新闻：<strong>5条</strong>（达到上限）<br>
+                        • 负面新闻：<strong>3条</strong>（实际数量）<br>
+                        • 每条新闻都是<strong>摘要形式</strong>，不是原文<br>
+                        • 每条新闻字符长度 ≤ 500<br>
+                        • 还包含综合摘要 (news_summary) 提供整体视图
+                    </div>
+                </div>
+            </div>
+
+            <!-- 字段说明（必选） -->
+            <div class="section">
+                <h2 class="section-title">🧾 字段说明（必选）</h2>
+                <div class="highlight-box">
+                    <strong>说明：</strong>以下字段均为必选项，用于 Step 2 的统一分析与决策。
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>字段</th>
+                            <th>含义</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>news_summary</strong></td>
+                            <td>正/负新闻的整体概括摘要，提供全局视角。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>sentiment_score</strong></td>
+                            <td>新闻整体情绪得分，范围 -1 到 1，用于量化情绪倾向。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>sector_name</strong></td>
+                            <td>股票所属板块名称，用于建立行业背景。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>trend</strong></td>
+                            <td>板块趋势方向（如“上升/震荡/下降”）。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>capital_flow</strong></td>
+                            <td>板块资金流向的描述性摘要（流入/流出/中性等）。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>technical_indicators</strong></td>
+                            <td>月 K 线技术指标集合（如 MACD/RSI/KDJ 等），用于量化技术面信号。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>support_level</strong></td>
+                            <td>技术分析中的支撑位价格。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>resistance_level</strong></td>
+                            <td>技术分析中的阻力位价格。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>timestamp</strong></td>
+                            <td>Step 1 输出时间戳（建议 ISO 8601，UTC）。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 实现架构 -->
+            <div class="section">
+                <h2 class="section-title">🏗️ 实现架构</h2>
+                
+                <div class="code-block">
+<span class="code-comment"># 1. 定义单元基类（支持可配置重试次数）</span>
+class DataCollectionUnit(Executor):
+    agent: ChatAgent
+    checker: ChatAgent
+    max_retries: int  <span class="code-comment"># 可配置的最大重试次数</span>
+    
+    def __init__(self, chat_client, max_retries=3):
+        self.max_retries = max_retries  <span class="code-comment"># 默认3次，可自定义</span>
+        # 初始化 agent 和 checker
+    
+    async def handle(self, stock_code, ctx):
+        for attempt in range(self.max_retries):
+            <span class="code-comment"># 执行数据收集</span>
+            result = await self.agent.run(stock_code)
+            
+            <span class="code-comment"># 检查质量</span>
+            check = await self.checker.run(result)
+            
+            <span class="code-comment"># 判断</span>
+            if check.passed:
+                await ctx.send_message(result)
+                return
+        
+        raise Exception(f"经过{self.max_retries}次尝试仍未通过")
+
+
+<span class="code-comment"># 2. 创建 NewsSearchUnit（包含特殊的新闻处理逻辑）</span>
+class NewsSearchUnit(DataCollectionUnit):
+    def __init__(self, chat_client, max_retries=3):
+        super().__init__(chat_client, max_retries)
+        
+        self.agent = ChatAgent(
+            chat_client=chat_client,
+            name="NewsAgent",
+            instructions="""
+你是专业的财经新闻分析师。
+
+任务：搜索股票最近12个月的新闻
+
+输出要求（JSON格式）：
+{
+  "positive_news": [最多5条摘要],
+  "negative_news": [最多5条摘要],
+  "news_summary": "综合摘要",
+  "sentiment_score": -1到1的数字
+}
+
+重要：
+- 正面/负面新闻各最多5条
+- 必须生成摘要（每条≤500字符），不要原文
+- 摘要包含：时间、事件、影响
+- 筛选最重要的新闻
+            """
+        )
+        
+        self.checker = ChatAgent(
+            chat_client=chat_client,
+            name="NewsChecker",
+            instructions="""
+检查新闻数据格式：
+1. JSON格式正确
+2. positive_news 存在且长度 ≤ 5
+3. negative_news 存在且长度 ≤ 5
+4. sentiment_score 在 -1 到 1
+5. 每条新闻字符长度 ≤ 500
+
+返回：{"passed": true/false, "issues": [...]}
+            """
+        )
+
+
+<span class="code-comment"># 3. 创建其他单元（可自定义重试次数）</span>
+news_unit = NewsSearchUnit(
+    chat_client=chat_client,
+    max_retries=3  <span class="code-comment"># 默认3次</span>
+)
+
+sector_unit = SectorAnalysisUnit(
+    chat_client=chat_client,
+    max_retries=3  <span class="code-comment"># 默认3次</span>
+)
+
+kline_unit = KLineAnalysisUnit(
+    chat_client=chat_client,
+    max_retries=3  <span class="code-comment"># 默认3次</span>
+)
+
+
+<span class="code-comment"># 4. 并行执行</span>
+workflow = (
+    ConcurrentBuilder()
+    .participants([
+        news_unit,
+        sector_unit,
+        kline_unit
+    ])
+    .build()
+)
+
+
+<span class="code-comment"># 5. 执行并获取结果</span>
+results = await workflow.run(stock_code)
+
+
+<span class="code-comment"># 6. 合并结果</span>
+merged = SimpleMerger.merge(results)
+
+
+<span class="code-comment"># 7. 传递给 Step 2</span>
+step2_input = merged
+                </div>
+            </div>
+
+            <!-- 关键特点总结 -->
+            <div class="section">
+                <h2 class="section-title">⭐ 关键特点总结</h2>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>特点</th>
+                            <th>说明</th>
+                            <th>优势</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>并行执行</strong></td>
+                            <td>三个单元真正同时运行</td>
+                            <td><span class="badge badge-success">并行提速</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>可配置重试</strong></td>
+                            <td>max_retries 参数可自定义，默认3次</td>
+                            <td><span class="badge badge-success">灵活可配置</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>新闻数量限制</strong></td>
+                            <td>正面/负面新闻各最多5条</td>
+                            <td><span class="badge badge-info">数据简洁</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>摘要生成</strong></td>
+                            <td>新闻必须生成摘要，不放原文</td>
+                            <td><span class="badge badge-info">信息提炼</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>职责单一</strong></td>
+                            <td>Checker 只检查格式，不判断业务</td>
+                            <td><span class="badge badge-info">易于维护</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>保留矛盾</strong></td>
+                            <td>不强制数据一致，矛盾是信息</td>
+                            <td><span class="badge badge-info">信息完整</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>易于扩展</strong></td>
+                            <td>加新数据源只需添加新单元</td>
+                            <td><span class="badge badge-success">可扩展性强</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 常见问题 -->
+            <div class="section">
+                <h2 class="section-title">❓ 常见问题</h2>
+                
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-title">Q1: 为什么限制新闻数量为5条？</div>
+                        <div class="card-content">
+                            <strong>答：</strong>（1）控制数据量，避免信息过载；（2）强制Agent筛选最重要的新闻；（3）提高后续处理效率；（4）便于人工review。5条是经验值，可根据实际调整。
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Q2: 如何判断新闻是摘要还是原文？</div>
+                        <div class="card-content">
+                            <strong>答：</strong>Checker 可以通过字符长度判断。统一规则：每条新闻字符长度 ≤ 500 视为摘要，超过则判为不合格（疑似原文）。
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Q3: 不同单元的重试次数应该如何设置？</div>
+                        <div class="card-content">
+                            <strong>答：</strong>默认每个单元为 3 次（max_retries=3）。如需调整，可根据稳定性与失败率进行配置。
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Q4: 如果3次重试后仍失败怎么办？</div>
+                        <div class="card-content">
+                            <strong>答：</strong>默认采用<strong>严格模式</strong>：任一单元失败则 Step 1 失败并记录日志；可选配置<strong>降级模式</strong>：允许部分单元失败，失败字段标记为 <strong>null</strong>，Step 2 继续分析并注明数据不完整。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 页脚 -->
+        <div style="background: #f8f9fa; padding: 30px; text-align: center; color: #666; border-top: 1px solid #e2e8f0;">
+            <p style="margin-bottom: 10px;">
+                <strong>股票推荐系统 - Step 1 设计文档</strong>
+            </p>
+            <p style="font-size: 0.9em;">
+                基于 Microsoft Agent Framework (Python) | 使用 ConcurrentBuilder 并行编排
+            </p>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                📅 设计日期：2026-02-02 | 版本：v1.1（更新：添加配置参数说明）
+            </p>
+        </div>
+    </div>
+</body>
+</html>

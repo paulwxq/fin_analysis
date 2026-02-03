@@ -1,0 +1,42 @@
+# ========== 核心框架 ==========
+# Microsoft Agent Framework (Magentic编排支持)
+agent-framework-python==1.0.0b260128
+
+# ========== LLM Provider ==========
+# OpenAI客户端
+openai>=1.10.0
+
+# ========== 数据库 ==========
+# PostgreSQL异步驱动
+asyncpg>=0.29.0
+
+# ========== 数据处理 ==========
+# 数据分析
+pandas>=2.1.0
+numpy>=1.24.0
+
+# ========== 异步支持 ==========
+# asyncio工具
+aiofiles>=23.2.0
+
+# ========== 配置管理 ==========
+# 环境变量加载
+python-dotenv>=1.0.0
+
+# ========== 可观测性（可选） ==========
+# OpenTelemetry (如果启用遥测)
+# opentelemetry-api>=1.20.0
+# opentelemetry-sdk>=1.20.0
+# opentelemetry-exporter-otlp>=1.20.0
+
+# ========== 开发工具（可选） ==========
+# 代码格式化
+# black>=23.0.0
+# ruff>=0.1.0
+
+# 类型检查
+# mypy>=1.7.0
+
+# 测试
+# pytest>=7.4.0
+# pytest-asyncio>=0.21.0
