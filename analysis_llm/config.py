@@ -22,11 +22,14 @@ MODEL_CHECKER_NEWS = "qwen-plus"
 MODEL_CHECKER_SECTOR = "qwen-plus"
 MODEL_CHECKER_KLINE = "qwen-plus"
 
-# Business constraints
 MAX_RETRIES = 3
 NEWS_LIMIT_POS = 5
 NEWS_LIMIT_NEG = 5
-NEWS_ITEM_MAX_CHARS = 500
+NEWS_ITEM_MAX_CHARS = 800
+
+# Search Configuration
+SERPER_API_KEY = os.getenv("SERPER_API_KEY")
+SEARCH_PROVIDER = "serper"  # Options: "tavily", "serper"
 
 # Paths
 PROJECT_ROOT = Path(__file__).resolve().parents[1]

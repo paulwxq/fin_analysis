@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 from agent_framework import ConcurrentBuilder
 from agent_framework.openai import OpenAIChatClient
+from openai import AsyncOpenAI
 
 from . import config
 from .agents import create_kline_agent, create_news_agent, create_sector_agent
@@ -18,32 +19,40 @@ async def execute_step1(stock_code: str):
         raise ValueError("stock_code is required")
 
     api_key = os.getenv("DASHSCOPE_API_KEY")
+    if not api_key:
+        raise EnvironmentError("环境变量 'DASHSCOPE_API_KEY' 未配置，请在 .env 文件中设置。")
+
     base_url = config.DASHSCOPE_BASE_URL
+
+    # Create a shared AsyncOpenAI client with timeout configuration
+    # Set a generous timeout (60s) to handle network latency and long generation times
+    openai_client = AsyncOpenAI(
+        api_key=api_key,
+        base_url=base_url,
+        timeout=60.0
+    )
 
     # Initialize chat clients using MAF native OpenAIChatClient
     # This works for both text (qwen-plus) and vision (qwen-vl-max) models
     news_client = OpenAIChatClient(
         model_id=config.MODEL_NEWS_AGENT,
-        api_key=api_key,
-        base_url=base_url
+        async_client=openai_client
     )
     
     sector_client = OpenAIChatClient(
         model_id=config.MODEL_SECTOR_AGENT,
-        api_key=api_key,
-        base_url=base_url
+        async_client=openai_client
     )
     
     kline_client = OpenAIChatClient(
         model_id=config.MODEL_KLINE_AGENT,
-        api_key=api_key,
-        base_url=base_url
+        async_client=openai_client
     )
 
     # Note: Using the same client for checkers if needed, or separate instances
-    checker_client_news = OpenAIChatClient(model_id=config.MODEL_CHECKER_NEWS, api_key=api_key, base_url=base_url)
-    checker_client_sector = OpenAIChatClient(model_id=config.MODEL_CHECKER_SECTOR, api_key=api_key, base_url=base_url)
-    checker_client_kline = OpenAIChatClient(model_id=config.MODEL_CHECKER_KLINE, api_key=api_key, base_url=base_url)
+    checker_client_news = OpenAIChatClient(model_id=config.MODEL_CHECKER_NEWS, async_client=openai_client)
+    checker_client_sector = OpenAIChatClient(model_id=config.MODEL_CHECKER_SECTOR, async_client=openai_client)
+    checker_client_kline = OpenAIChatClient(model_id=config.MODEL_CHECKER_KLINE, async_client=openai_client)
 
     # Create agents with the new clients
     news_agent = create_news_agent(news_client, checker_client_news)
