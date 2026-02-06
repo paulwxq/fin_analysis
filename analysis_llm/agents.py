@@ -12,9 +12,9 @@ from . import config
 from .models import CheckerResult, KLineData, NewsData, SectorData
 from .prompts import KLINE_AGENT_SYSTEM, KLINE_CHECKER_SYSTEM, NEWS_AGENT_SYSTEM, NEWS_CHECKER_SYSTEM, SECTOR_AGENT_SYSTEM, SECTOR_CHECKER_SYSTEM
 from .tools import web_search
-from .utils import extract_json_str, init_logging, load_image_content
+from .utils import extract_json_str, load_image_content
 
-logger = init_logging()
+logger = logging.getLogger("analysis_llm")
 
 
 MessageBuilder = Callable[[str, str | None], str | ChatMessage | Sequence[ChatMessage]]
@@ -39,23 +39,32 @@ def _extract_stock_code(messages: str | ChatMessage | Sequence[str | ChatMessage
     raise ValueError("无法从 messages 中解析 stock_code")
 
 
-def _build_text_prompt(stock_code: str, feedback: str | None) -> str:
+def _build_news_prompt(stock_code: str, feedback: str | None) -> str:
     if feedback:
         return f"股票代码: {stock_code}\n请根据以下问题修正输出，仅返回修正后的JSON：{feedback}"
     return (
         f"请对股票 {stock_code} 进行深度新闻挖掘。\n"
-        f"1. 务必使用搜索工具查询“{stock_code} 最近12个月业绩”、“{stock_code} 重大公告”、“{stock_code} 负面新闻”等组合关键词。\n"
+        f"1. 请利用搜索工具，重点查询“{stock_code} 最近12个月业绩”、“{stock_code} 重大公告”、“{stock_code} 负面新闻”等关键维度。\n"
         f"2. 请仔细阅读搜索结果，提取其中的营收数据、利润增长、股权变动等实质性信息。\n"
         f"3. 不要因为信息零散就放弃，请尽力拼凑出完整的事件脉络。"
     )
 
+def _build_sector_prompt(stock_code: str, feedback: str | None) -> str:
+    if feedback:
+        return f"股票代码: {stock_code}\n请根据以下问题修正输出，仅返回修正后的JSON：{feedback}"
+    return f"请分析股票 {stock_code} 的所属板块、资金流向及板块热度。"
+
+def _build_kline_prompt(stock_code: str, feedback: str | None) -> str:
+    if feedback:
+        return f"股票代码: {stock_code}\n请根据以下问题修正输出，仅返回修正后的JSON：{feedback}"
+    return f"请根据提供的月K线图，分析股票 {stock_code} 的技术走势、支撑/阻力位及买卖建议。"
 
 def _build_kline_messages(stock_code: str, feedback: str | None) -> Sequence[ChatMessage]:
     image_path = config.IMAGE_DIR / f"{stock_code}_kline.png"
     if not image_path.exists():
         raise FileNotFoundError(f"未找到K线图片: {image_path}")
 
-    prompt = _build_text_prompt(stock_code, feedback)
+    prompt = _build_kline_prompt(stock_code, feedback)
     contents = [Content.from_text(prompt), load_image_content(image_path)]
     return [ChatMessage(role="user", contents=contents)]
 
@@ -205,7 +214,7 @@ def create_news_agent(chat_client, checker_client) -> DataCollectionAgent:
         instructions_template=NEWS_AGENT_SYSTEM,
         checker_instructions_template=NEWS_CHECKER_SYSTEM,
         model_cls=NewsData,
-        message_builder=lambda stock_code, feedback: _build_text_prompt(stock_code, feedback),
+        message_builder=lambda stock_code, feedback: _build_news_prompt(stock_code, feedback),
         tools=[web_search],
         max_retries=config.MAX_RETRIES,
     )
@@ -221,7 +230,7 @@ def create_sector_agent(chat_client, checker_client) -> DataCollectionAgent:
         instructions_template=SECTOR_AGENT_SYSTEM,
         checker_instructions_template=SECTOR_CHECKER_SYSTEM,
         model_cls=SectorData,
-        message_builder=lambda stock_code, feedback: _build_text_prompt(stock_code, feedback),
+        message_builder=lambda stock_code, feedback: _build_sector_prompt(stock_code, feedback),
         tools=[web_search],
         max_retries=config.MAX_RETRIES,
     )

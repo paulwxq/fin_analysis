@@ -69,6 +69,7 @@ from . import config  # 引入配置模块
 class NewsData(BaseModel):
     data_type: Literal["news"] = Field(..., description="数据类型标识")
     stock_code: str
+    stock_name: str = Field(..., description="股票名称")
     # 使用 Annotated 明确列表项数限制，并关联配置项
     # 注意: 在 Pydantic V2 中，List 类型的 max_length 参数表示列表的最大项数
     positive_news: Annotated[List[str], Field(..., max_length=config.NEWS_LIMIT_POS, description=f"正面新闻列表 (最多{config.NEWS_LIMIT_POS}项)")]
@@ -90,6 +91,7 @@ class NewsData(BaseModel):
 class SectorData(BaseModel):
     data_type: Literal["sector"] = Field(..., description="数据类型标识")
     stock_code: str
+    stock_name: str = Field(..., description="股票名称")
     sector_name: str = Field(..., description="板块名称")
     heat_index: float = Field(..., ge=0, le=100, description="热度指数 0-100")
     trend: TrendEnum = Field(..., description="趋势方向")
@@ -422,4 +424,65 @@ async def execute_step1(stock_code: str):
 *   **严格模式**：`ConcurrentBuilder` 运行过程中，如果任一 Unit 抛出未捕获异常（如重试耗尽），Workflow 应捕获并根据策略终止，避免输出不完整数据。
 
 ---
-*文档生成时间：2026-02-02*
+
+## 10. 数据接口规范 (Output JSON Specification)
+
+Step 1 最终输出一个标准的 JSON 对象，该对象通过 Pydantic 校验，确保所有必填字段的存在性和类型的正确性。
+
+### 10.1 完整示例
+```json
+{
+  "timestamp": "2026-02-02T10:30:00.123456+00:00",
+  "news": {
+    "data_type": "news",
+    "stock_code": "603080.SH",
+    "stock_name": "新疆火炬",
+    "positive_news": [
+      "2025-Q3营收增长15%，净利润超预期；具体数值为..."
+    ],
+    "negative_news": [
+      "部分原材料价格上涨导致毛利微降，影响了..."
+    ],
+    "news_summary": "深度分析摘要（300-800字），涵盖基本面变化、市场情绪及潜在治理风险...",
+    "sentiment_score": 0.5
+  },
+  "sector": {
+    "data_type": "sector",
+    "stock_code": "603080.SH",
+    "stock_name": "新疆火炬",
+    "sector_name": "燃气板块",
+    "heat_index": 75.0,
+    "trend": "上升",
+    "capital_flow": "资金流向深度描述（200字以上），包含主力净流入额、大单占比及板块联动分析..."
+  },
+  "kline": {
+    "data_type": "kline",
+    "stock_code": "603080.SH",
+    "technical_indicators": {
+      "MACD": 1.2,
+      "RSI": 55.0,
+      "KDJ_K": 60.0
+    },
+    "support_level": 10.5,
+    "resistance_level": 15.0,
+    "trend_analysis": "K线走势深度解读（200字以上），结合关键点位、成交量及技术形态...",
+    "buy_suggestion": "持有"
+  }
+}
+```
+
+### 10.2 核心字段约束对照表
+
+| 路径 | 类型 | 核心约束 | 业务说明 |
+| :--- | :--- | :--- | :--- |
+| `timestamp` | string | ISO 8601 (UTC) | 结果生成的精确时间。 |
+| `news.positive_news` | list[str] | 1-5 项, 单条 100-800 字 | 深度正面新闻摘要。 |
+| `news.negative_news` | list[str] | 1-5 项, 单条 100-800 字 | 深度负面新闻摘要。 |
+| `news.news_summary` | string | 100-800 字 | 过去 12 个月的深度综合概括。 |
+| `news.sentiment_score`| float | -1.0 到 1.0 | 新闻面量化情绪分。 |
+| `sector.heat_index` | float | 0.0 到 100.0 | 板块活跃度量化分。 |
+| `sector.trend` | enum | 上升 / 下降 / 震荡 | 仅限中文枚举。 |
+| `kline.buy_suggestion` | enum | 强烈买入 / 买入 / 持有 / 卖出 / 强烈卖出 | 仅限中文枚举。 |
+
+---
+*文档生成时间：2026-02-03*

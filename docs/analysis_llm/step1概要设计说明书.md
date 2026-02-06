@@ -197,7 +197,7 @@ graph TD
 | `max_retries` | 3 | 每个单元内部“Agent → Checker”循环的最大重试次数（含 Checker 不通过或 Agent 失败）。超过次数将抛出异常。 |
 | `news_limit_pos` | 5 | 正面新闻最大条数。 |
 | `news_limit_neg` | 5 | 负面新闻最大条数。 |
-| `news_item_max_chars` | 500 | 每条新闻字符长度上限。 |
+| `news_item_max_chars` | 800 | 每条新闻字符长度上限。 |
 
 ## 6. 异常处理策略
 
