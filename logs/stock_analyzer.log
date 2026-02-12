@@ -1249,3 +1249,93 @@ summary
     For further information visit https://errors.pydantic.dev/2.12/v/missing
 2026-02-12 01:06:41 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
 2026-02-12 01:07:12 - INFO - stock_analyzer - module_c_technical:710 - Technical analysis completed for 600519: score=6.2, signal=中性, confidence=0.68
+2026-02-12 11:15:29 - INFO - stock_analyzer - module_b_websearch:130 - Starting web research for 600000.SH 浦发银行 (金融)
+2026-02-12 11:15:29 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='浦发银行（股票代码600000.SH）近期重大新闻，包括正面和负面影响股价的事件'
+2026-02-12 11:15:29 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='浦发银行 核心竞争力分析，护城河类型，在金融行业中的市场地位和竞争优势'
+2026-02-12 11:15:29 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='金融行业发展前景，政策环境，市场趋势，行业增长驱动力和主要风险'
+2026-02-12 11:17:20 - INFO - stock_analyzer - module_b_websearch:130 - Starting web research for 600519.SH 贵州茅台 (白酒)
+2026-02-12 11:17:20 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台（股票代码600519.SH）近期重大新闻，包括正面和负面影响股价的事件'
+2026-02-12 11:17:20 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台 核心竞争力分析，护城河类型，在白酒行业中的市场地位和竞争优势'
+2026-02-12 11:17:20 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='白酒行业发展前景，政策环境，市场趋势，行业增长驱动力和主要风险'
+2026-02-12 11:21:54 - INFO - stock_analyzer - module_b_websearch:130 - Starting web research for 600519.SH 贵州茅台 (白酒)
+2026-02-12 11:21:54 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台（股票代码600519.SH）近期重大新闻，包括正面和负面影响股价的事件'
+2026-02-12 11:21:54 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台 核心竞争力分析，护城河类型，在白酒行业中的市场地位和竞争优势'
+2026-02-12 11:21:54 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='白酒行业发展前景，政策环境，市场趋势，行业增长驱动力和主要风险'
+2026-02-12 11:22:02 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 600519.SH 2024年7月 重大事项公告 酒精度调整或价格政策变动' returned 5 results
+2026-02-12 11:22:02 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年一季报后 机构调研纪要 飞天批价走势 经销商库存水平' returned 5 results
+2026-02-12 11:22:02 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 品牌溢价率 与 五粮液 洋河对比 数据来源 年报或券商研报' returned 5 results
+2026-02-12 11:22:02 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 股价异动 2024年6月-7月 监管问询函 或 涉嫌违规减持 新闻报道' returned 5 results
+2026-02-12 11:22:03 - INFO - stock_analyzer - tavily_client:81 - Tavily search '白酒行业高端化与年轻化消费趋势 2023-2024尼尔森/凯度/欧睿市场报告数据' returned 5 results
+2026-02-12 11:22:03 - INFO - stock_analyzer - tavily_client:81 - Tavily search '2024年白酒行业最新政策解读 工信部 商务部 税务总局联合文件' returned 5 results
+2026-02-12 11:22:04 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 酱香型工艺壁垒 微生物菌群 独特性 科学研究论文 或 贵州省科技厅项目报告' returned 5 results
+2026-02-12 11:22:04 - INFO - stock_analyzer - tavily_client:81 - Tavily search '白酒行业主要风险分析 原粮价格波动 酱香酒产能过剩 库存周期 头部企业年报风险提示' returned 5 results
+2026-02-12 11:22:11 - INFO - stock_analyzer - tavily_client:81 - Tavily search '2020–2024年 贵州茅台 经销商配额变动 与 飞天茅台批价稳定性 关系 数据分析 报告' returned 5 results
+2026-02-12 11:22:12 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 识别近期（2024年6–7月）是否出现引发股价异常波动的负面事件，如交易所问询、高管/股东违规减持、税务稽查、舆...'
+2026-02-12 11:22:14 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 挖掘反映基本面真实压力或韧性的高频信号，包括核心产品批价趋势、渠道库存变化及机构最新调研中管理层对增长可持续性的...'
+2026-02-12 11:22:14 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 查找2024年7月以来贵州茅台官方发布的重大事项公告，重点关注可能影响市场预期的经营政策变化（如出厂价、渠道改革...'
+2026-02-12 11:22:14 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取当前年度国家层面针对白酒行业的监管政策、税收调整、产能控制或绿色生产等最新官方文件及权威解读，识别政策环境变...'
+2026-02-12 11:22:16 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 量化评估茅台品牌护城河强度，通过横向比较头部白酒企业品牌溢价能力，识别其定价权和消费者心智占位的实证依据
+Fol...'
+2026-02-12 11:22:16 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 聚焦行业结构性风险，通过上市公司年报（如贵州茅台、五粮液、山西汾酒）及券商深度研报，识别原材料依赖、区域产能失衡...'
+2026-02-12 11:22:17 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 挖掘第三方机构发布的最新消费行为数据，验证白酒在价格带升级、Z世代渗透率、低度酒/果味白酒增长等市场趋势中的实际...'
+2026-02-12 11:22:18 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年6月下旬至7月上旬 临时公告 批价管控 渠道整顿 直营体系调整' returned 5 results
+2026-02-12 11:22:19 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 探究茅台核心工艺（如高温大曲、窖池微生物生态）是否构成难以复制的技术型护城河，寻找权威科研证据支撑其‘不可复制性...'
+2026-02-12 11:22:20 - INFO - stock_analyzer - tavily_client:81 - Tavily search '工信部 商务部 税务总局 2024 白酒行业 专项政策文件 全称 编号' returned 5 results
+2026-02-12 11:22:20 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年一季报附注 经销商库存天数 库存周转率 业绩说明会问答记录' returned 5 results
+2026-02-12 11:22:20 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年7月 代售 寄售 合作方名单 签约公告 官网披露' returned 5 results
+2026-02-12 11:22:23 - INFO - stock_analyzer - tavily_client:81 - Tavily search '尼尔森IQ 2024 白酒 Z世代 18-35岁 价格带细分 客单价 复购率 直播搜索种草渠道偏好' returned 5 results
+2026-02-12 11:22:24 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 验证渠道控制力作为关键护城河维度的有效性，考察其终端价格管控能力和渠道议价权在行业周期波动中的实际表现
+Foll...'
+2026-02-12 11:22:25 - INFO - stock_analyzer - tavily_client:81 - Tavily search '仁怀市2024年酱香型白酒基酒投产率官方统计数据 金沙酒业 珍酒 停产公告 资产处置' returned 5 results
+2026-02-12 11:22:25 - INFO - stock_analyzer - tavily_client:81 - Tavily search '洋河股份 梦之蓝手工班 M6+ 2023-2025 出厂价 批价 终端价 券商研报 中信证券 国泰君...' returned 5 results
+2026-02-12 11:22:25 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州省科技厅 2020-2024年 省级科技计划项目 茅台镇微生物菌群特异性 酱香型白酒 功能微生物...' returned 5 results
+2026-02-12 11:22:27 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 11:22:28 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 11:22:30 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 经销商管理办法 2023年修订版 配额提前释放 审批条件 回款约束 跨期调剂' returned 5 results
+2026-02-12 11:22:30 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 11:22:32 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-12 11:22:32 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=27
+2026-02-12 11:22:32 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台 风险事件，包括监管处罚、诉讼纠纷、管理层变动、财务风险等负面信息'
+2026-02-12 11:22:34 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 11:22:35 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 11:22:36 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 11:22:36 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=29
+2026-02-12 11:22:36 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台 券商研报、机构评级、目标价、分析师对该股的投资观点和评级变化'
+2026-02-12 11:22:37 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 11:22:42 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 11:22:42 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=30
+2026-02-12 11:22:42 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 高管变动 2023-2024 董事会成员 离职原因 任职资格异议' returned 5 results
+2026-02-12 11:22:43 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 近三年监管处罚记录 中国证监会 银保监会' returned 5 results
+2026-02-12 11:22:43 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 诉讼纠纷案由 中国裁判文书网 2020-2024' returned 5 results
+2026-02-12 11:22:45 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年 券商研报汇总 中信证券 中金公司 华泰证券 目标价评级变化' returned 5 results
+2026-02-12 11:22:46 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 机构评级变动历史 东方财富网/同花顺iFinD 近三年 评级调高/调低次数 统计' returned 5 results
+2026-02-12 11:22:46 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 分析师分歧度 2023-2024年 最高目标价与最低目标价差值 市盈率假设差异' returned 5 results
+2026-02-12 11:22:52 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 检索贵州茅台自2021年以来是否受到证监会、市场监管总局或金融监管部门的正式行政处罚，包括事由、文号及整改情况
+...'
+2026-02-12 11:22:54 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 核实2023–2024年贵州茅台董事会、监事会及高级管理人员（尤其是董事长、总经理、财务总监、董秘）的变动情况，...'
+2026-02-12 11:22:56 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 梳理近三年公募基金、保险资管等主流机构对贵州茅台的评级变动频率与趋势，识别是否存在系统性乐观或谨慎转向
+Foll...'
+2026-02-12 11:22:56 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 查找贵州茅台在2020–2024年间作为被告/原告的重大民商事或刑事案件，重点关注经销商合同纠纷、知识产权侵权、...'
+2026-02-12 11:22:57 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取2024年以来头部券商对贵州茅台的最新研报核心结论，重点关注目标价区间、评级调整（如‘买入’→‘增持’）及调...'
+2026-02-12 11:22:57 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 评估不同券商对贵州茅台估值的分歧程度，重点提取各研报采用的核心假设（如2024年EPS预测、PE倍数、永续增长率...'
+2026-02-12 11:22:57 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国证监会官网 监管措施决定 贵州茅台 2022年 2023年 2024年 警示函 限制交易 决定书' returned 5 results
+2026-02-12 11:23:00 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 丁雄军 调查期间 张德芹 辞职时间线 关联性分析 监委通报 媒体报道' returned 5 results
+2026-02-12 11:23:01 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中信证券 贵州茅台 3000元目标价 研报原文 发布时间 2023年 或 2024年初 是否修正 撤...' returned 5 results
+2026-02-12 11:23:03 - INFO - stock_analyzer - tavily_client:81 - Tavily search '同花顺iFinD 贵州茅台 评级变动时间序列 API 导出 CSV 格式说明' returned 5 results
+2026-02-12 11:23:05 - INFO - stock_analyzer - tavily_client:81 - Tavily search '太平洋证券 贵州茅台 2025年4月3日 研报 ROE预测 2026-2027年 税率 非经常性损益' returned 5 results
+2026-02-12 11:23:06 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 商标无效宣告 2020-2024 中国商标网 裁定书 理由 缺乏显著性 通用名称化' returned 5 results
+2026-02-12 11:23:08 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 11:23:13 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-12 11:23:14 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=8
+2026-02-12 11:23:15 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 11:23:22 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 11:23:22 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=29
+2026-02-12 11:23:22 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 11:23:22 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=28
+2026-02-12 11:23:22 - INFO - stock_analyzer - module_b_websearch:186 - Topic 1 completed: 30 learnings, 27 urls
+2026-02-12 11:23:22 - INFO - stock_analyzer - module_b_websearch:186 - Topic 2 completed: 30 learnings, 30 urls
+2026-02-12 11:23:22 - INFO - stock_analyzer - module_b_websearch:186 - Topic 3 completed: 30 learnings, 29 urls
+2026-02-12 11:23:22 - INFO - stock_analyzer - module_b_websearch:186 - Topic 4 completed: 30 learnings, 28 urls
+2026-02-12 11:23:22 - INFO - stock_analyzer - module_b_websearch:186 - Topic 5 completed: 30 learnings, 29 urls
+2026-02-12 11:23:22 - INFO - stock_analyzer - module_b_websearch:210 - All topics done: 150 unique learnings, 142 unique urls, 5/5 topics succeeded
+2026-02-12 11:24:19 - INFO - stock_analyzer - module_b_websearch:266 - Web research completed in 145.8s

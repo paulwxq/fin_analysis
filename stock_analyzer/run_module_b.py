@@ -6,27 +6,42 @@ Usage (from project root):
 """
 
 import asyncio
-import json
 import sys
 from pathlib import Path
 
 # Allow running from any working directory
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from stock_analyzer.module_b_websearch import run_web_research  # noqa: E402
+from stock_analyzer.module_b_websearch import (  # noqa: E402
+    dump_web_research_result_json,
+    run_web_research,
+)
 
 
 async def main() -> None:
-    # Default stock; override via CLI: symbol name industry
-    symbol = sys.argv[1] if len(sys.argv) > 1 else "600000.SH"
-    name = sys.argv[2] if len(sys.argv) > 2 else "浦发银行"
-    industry = sys.argv[3] if len(sys.argv) > 3 else "金融"
+    if len(sys.argv) != 4:
+        print(
+            "Usage: .venv/bin/python3 stock_analyzer/run_module_b.py "
+            "<symbol> <name> <industry>",
+            file=sys.stderr,
+        )
+        raise SystemExit(2)
+
+    symbol = sys.argv[1]
+    name = sys.argv[2]
+    industry = sys.argv[3]
 
     print(f"[module B] 开始研究: {symbol} {name} ({industry})\n")
 
     result = await run_web_research(symbol=symbol, name=name, industry=industry)
+    json_str = dump_web_research_result_json(result)
+    print(json_str)
 
-    print(json.dumps(result.model_dump(), ensure_ascii=False, indent=2))
+    output_dir = Path("output")
+    output_dir.mkdir(exist_ok=True)
+    output_path = output_dir / f"{symbol}_web_research.json"
+    output_path.write_text(json_str, encoding="utf-8")
+    print(f"\n[module B] 结果已保存到 {output_path}")
 
 
 if __name__ == "__main__":

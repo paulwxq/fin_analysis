@@ -2,6 +2,7 @@
 
 import asyncio
 from datetime import datetime
+import json
 import re
 
 from stock_analyzer.agents import (
@@ -264,6 +265,15 @@ async def run_web_research(
     elapsed = (datetime.now() - start_time).total_seconds()
     logger.info(f"Web research completed in {elapsed:.1f}s")
     return final_result
+
+
+def dump_web_research_result_json(result: WebResearchResult) -> str:
+    """Serialize final web research result with meta first for readability."""
+    output_dict = {
+        "meta": result.meta.model_dump(),
+        **result.model_dump(exclude={"meta"}),
+    }
+    return json.dumps(output_dict, ensure_ascii=False, indent=2)
 
 
 def _create_fallback_report(learnings: list[str], error_message: str) -> dict:

@@ -1,7 +1,6 @@
 """Quick runner for module A AKShare data collection.
 
 Usage (from project root):
-    .venv/bin/python3 stock_analyzer/run_module_a.py
     .venv/bin/python3 stock_analyzer/run_module_a.py 600519 贵州茅台
     .venv/bin/python3 stock_analyzer/run_module_a.py 600519.SH 贵州茅台
 """
@@ -18,8 +17,16 @@ from stock_analyzer.utils import normalize_symbol  # noqa: E402
 
 
 def main() -> None:
-    raw_symbol = sys.argv[1] if len(sys.argv) > 1 else "000001"
-    name = sys.argv[2] if len(sys.argv) > 2 else "平安银行"
+    if len(sys.argv) != 3:
+        print(
+            "Usage: .venv/bin/python3 stock_analyzer/run_module_a.py "
+            "<symbol> <name>",
+            file=sys.stderr,
+        )
+        raise SystemExit(2)
+
+    raw_symbol = sys.argv[1]
+    name = sys.argv[2]
 
     symbol = normalize_symbol(raw_symbol)
 

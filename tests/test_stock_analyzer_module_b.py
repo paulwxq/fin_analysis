@@ -1,13 +1,16 @@
 """Unit tests for stock_analyzer module B core helpers."""
 
+import json
+
 import pytest
 
 from stock_analyzer.llm_helpers import extract_json_str
-from stock_analyzer.models import AnalystReport, ResearchResult
+from stock_analyzer.models import AnalystReport, ResearchResult, WebResearchResult
 from stock_analyzer.module_b_websearch import (
     _count_successful_topics,
     _create_fallback_report,
     _normalize_report_dict,
+    dump_web_research_result_json,
 )
 
 
@@ -120,3 +123,62 @@ def test_normalize_report_dict_converts_recent_report_strings() -> None:
     assert reports[0]["target_price"] == 2200.0
     assert reports[1]["broker"] == "中金公司"
     assert reports[1]["rating"] == "买入"
+
+
+def test_dump_web_research_result_json_meta_first() -> None:
+    """JSON dump should keep meta at top-level for readability."""
+    result = WebResearchResult.model_validate(
+        {
+            "meta": {
+                "symbol": "600519.SH",
+                "name": "贵州茅台",
+                "search_time": "2026-02-12T10:00:00",
+                "search_config": {
+                    "topics_count": 5,
+                    "breadth": 3,
+                    "depth": 2,
+                    "successful_topics": 4,
+                },
+                "total_learnings": 28,
+                "total_sources_consulted": 19,
+                "raw_learnings": None,
+            },
+            "news_summary": {
+                "positive": [],
+                "negative": [],
+                "neutral": [],
+            },
+            "competitive_advantage": {
+                "description": "品牌和渠道优势明显",
+                "moat_type": "品牌护城河",
+                "market_position": "行业龙头",
+            },
+            "industry_outlook": {
+                "industry": "白酒",
+                "outlook": "中长期需求稳定",
+                "key_drivers": ["高端消费"],
+                "key_risks": ["宏观波动"],
+            },
+            "risk_events": {
+                "regulatory": "暂无重大监管事件",
+                "litigation": "暂无重大诉讼",
+                "management": "管理层稳定",
+                "other": "",
+            },
+            "analyst_opinions": {
+                "buy_count": 8,
+                "hold_count": 2,
+                "sell_count": 0,
+                "average_target_price": 1850.0,
+                "recent_reports": [],
+            },
+            "search_confidence": "中",
+        }
+    )
+
+    json_str = dump_web_research_result_json(result)
+    assert json_str.startswith('{\n  "meta":')
+
+    parsed = json.loads(json_str)
+    assert parsed["meta"]["symbol"] == "600519.SH"
+    assert parsed["search_confidence"] == "中"
