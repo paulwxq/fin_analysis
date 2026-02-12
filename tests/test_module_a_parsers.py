@@ -105,6 +105,46 @@ def test_safe_call_retries_on_requests_style_timeout_exception(mocker) -> None:
     assert execute_mock.call_count == 4
 
 
+def test_safe_call_retries_on_connection_error_then_succeeds(mocker) -> None:
+    collector = AKShareCollector("000001", "平安银行")
+    mocker.patch.object(module_a_akshare, "AKSHARE_TIMEOUT_RETRIES", 3)
+    mocker.patch.object(collector, "_wait_interval", return_value=None)
+    execute_mock = mocker.patch.object(
+        collector,
+        "_execute_with_timeout",
+        side_effect=[
+            ConnectionError(
+                "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+            ),
+            pd.DataFrame([{"x": 1}]),
+        ],
+    )
+
+    result = collector.safe_call("topic_conn", lambda: None)
+    assert result is not None
+    assert len(result) == 1
+    assert execute_mock.call_count == 2
+    assert collector.errors == []
+
+
+def test_safe_call_connection_error_retry_exhausted_records_error(mocker) -> None:
+    collector = AKShareCollector("000001", "平安银行")
+    mocker.patch.object(module_a_akshare, "AKSHARE_TIMEOUT_RETRIES", 2)
+    mocker.patch.object(collector, "_wait_interval", return_value=None)
+    execute_mock = mocker.patch.object(
+        collector,
+        "_execute_with_timeout",
+        side_effect=ConnectionError(
+            "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+        ),
+    )
+
+    result = collector.safe_call("topic_conn", lambda: None)
+    assert result is None
+    assert execute_mock.call_count == 3
+    assert any("topic_conn: ConnectionError" in msg for msg in collector.errors)
+
+
 def test_safe_float_normal() -> None:
     assert AKShareCollector._safe_float(3.14) == 3.14
 

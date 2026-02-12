@@ -4,6 +4,7 @@ from agent_framework import ChatAgent
 from agent_framework.openai import OpenAIChatClient
 
 from stock_analyzer.prompts import (
+    CHIEF_ANALYST_SYSTEM_PROMPT,
     EXTRACT_AGENT_SYSTEM_PROMPT,
     QUERY_AGENT_SYSTEM_PROMPT,
     REPORT_AGENT_SYSTEM_PROMPT,
@@ -56,6 +57,19 @@ def create_technical_agent(chat_client: OpenAIChatClient) -> ChatAgent:
         chat_client=chat_client,
         name="technical_analyst",
         instructions=TECHNICAL_AGENT_SYSTEM_PROMPT,
+        default_options={
+            "temperature": 0.2,
+            "response_format": {"type": "json_object"},
+        },
+    )
+
+
+def create_chief_agent(chat_client: OpenAIChatClient) -> ChatAgent:
+    """Create chief analyst agent for module D."""
+    return ChatAgent(
+        chat_client=chat_client,
+        name="chief_analyst",
+        instructions=CHIEF_ANALYST_SYSTEM_PROMPT,
         default_options={
             "temperature": 0.2,
             "response_format": {"type": "json_object"},

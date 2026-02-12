@@ -94,3 +94,16 @@ class TechnicalIndicatorError(Exception):
 
 class TechnicalAnalysisError(Exception):
     """Top-level technical analysis workflow failed."""
+
+
+# ============================================================
+# Module D: chief analyst exceptions
+# ============================================================
+
+
+class ChiefInputError(Exception):
+    """Module D input is missing or invalid."""
+
+
+class ChiefAnalysisError(Exception):
+    """Module D chief analysis failed after retries."""

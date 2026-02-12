@@ -14,6 +14,8 @@ from pathlib import Path
 # Allow running from any working directory.
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+from stock_analyzer.exceptions import TechnicalAnalysisError  # noqa: E402
+from stock_analyzer.logger import logger  # noqa: E402
 from stock_analyzer.module_c_technical import (  # noqa: E402
     dump_technical_result_json,
     run_technical_analysis,
@@ -32,19 +34,38 @@ async def main() -> None:
 
     raw_symbol = sys.argv[1]
     name = sys.argv[2]
-    symbol = normalize_symbol(raw_symbol)
+    try:
+        symbol = normalize_symbol(raw_symbol)
+        if not name.strip():
+            raise ValueError("name cannot be empty")
 
-    print(f"[module C] 开始技术分析: {symbol} {name}\n")
+        print(f"[module C] 开始技术分析: {symbol} {name}\n")
 
-    result = await run_technical_analysis(symbol=symbol, name=name)
-    json_str = dump_technical_result_json(result)
-    print(json_str)
+        result = await run_technical_analysis(symbol=symbol, name=name)
+        json_str = dump_technical_result_json(result)
+        print(json_str)
 
-    output_dir = Path("output")
-    output_dir.mkdir(exist_ok=True)
-    output_path = output_dir / f"{symbol}_technical_analysis.json"
-    output_path.write_text(json_str, encoding="utf-8")
-    print(f"\n[module C] 结果已保存到 {output_path}")
+        output_dir = Path("output")
+        output_dir.mkdir(exist_ok=True)
+        output_path = output_dir / f"{symbol}_technical_analysis.json"
+        output_path.write_text(json_str, encoding="utf-8")
+        print(f"\n[module C] 结果已保存到 {output_path}")
+    except ValueError as e:
+        logger.error(f"Module C input error: {e}")
+        print(f"[module C] 输入错误: {e}", file=sys.stderr)
+        raise SystemExit(2) from e
+    except TechnicalAnalysisError as e:
+        logger.error(f"Module C failed: {e}")
+        print(f"[module C] 运行失败: {e}", file=sys.stderr)
+        raise SystemExit(1) from e
+    except Exception as e:
+        logger.exception(f"Module C unexpected failure: {type(e).__name__}: {e}")
+        print(f"[module C] 未预期错误: {type(e).__name__}: {e}", file=sys.stderr)
+        print(
+            "[module C] 详细信息请查看 logs/stock_analyzer.log",
+            file=sys.stderr,
+        )
+        raise SystemExit(1) from e
 
 
 if __name__ == "__main__":

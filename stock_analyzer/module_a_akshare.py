@@ -117,6 +117,13 @@ class AKShareCollector:
                     if self._handle_timeout(topic, func_name, attempt, attempts):
                         continue
                     return None
+                if self._is_retryable_connection_exception(exc):
+                    if attempt < attempts:
+                        logger.warning(
+                            f"{topic}: 连接异常（{type(exc).__name__}）({func_name})，"
+                            f"准备重试 {attempt}/{AKSHARE_TIMEOUT_RETRIES}"
+                        )
+                        continue
 
                 msg = f"{topic}: {type(exc).__name__} - {str(exc)[:200]} ({func_name})"
                 self.errors.append(msg)
@@ -162,6 +169,22 @@ class AKShareCollector:
         if "timeout" in name:
             return True
         return "timed out" in message or "timeout" in message
+
+    @staticmethod
+    def _is_retryable_connection_exception(exc: Exception) -> bool:
+        """Detect transient connection errors worth retrying."""
+        name = type(exc).__name__.lower()
+        message = str(exc).lower()
+        if "connectionerror" in name:
+            return True
+        transient_markers = (
+            "connection aborted",
+            "remote end closed connection without response",
+            "connection reset by peer",
+            "temporarily unavailable",
+            "max retries exceeded with url",
+        )
+        return any(marker in message for marker in transient_markers)
 
     @staticmethod
     def _execute_with_timeout(func, *args, **kwargs):

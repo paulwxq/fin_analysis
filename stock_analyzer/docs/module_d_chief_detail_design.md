@@ -174,7 +174,7 @@ class FinalMeta(BaseModel):
 
 class DimensionBrief(BaseModel):
     score: float = Field(ge=0, le=10)
-    brief: str = Field(max_length=80)
+    brief: str = Field(max_length=200)
 
 
 class DimensionScores(BaseModel):

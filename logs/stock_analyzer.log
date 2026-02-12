@@ -1339,3 +1339,596 @@ Foll...'
 2026-02-12 11:23:22 - INFO - stock_analyzer - module_b_websearch:186 - Topic 5 completed: 30 learnings, 29 urls
 2026-02-12 11:23:22 - INFO - stock_analyzer - module_b_websearch:210 - All topics done: 150 unique learnings, 142 unique urls, 5/5 topics succeeded
 2026-02-12 11:24:19 - INFO - stock_analyzer - module_b_websearch:266 - Web research completed in 145.8s
+2026-02-12 14:01:27 - INFO - stock_analyzer - module_d_chief:208 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 14:01:27 - WARNING - stock_analyzer - module_d_chief:252 - Chief analysis attempt 1/2 failed: Business rule violation: veto_triggered=true but veto_reason is too short. Retrying...
+2026-02-12 14:01:27 - INFO - stock_analyzer - module_d_chief:242 - Chief analysis completed for 600519: overall_score=6.40, confidence=中
+2026-02-12 14:01:27 - INFO - stock_analyzer - module_d_chief:208 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 14:01:34 - WARNING - stock_analyzer - module_c_technical:71 - fetch_monthly_kline failed for 600519 with adjust='qfq': RuntimeError: first call failed
+2026-02-12 14:01:34 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 14:01:34 - WARNING - stock_analyzer - module_c_technical:603 - 样本不足：仅 12 个月，小于 TECH_MIN_MONTHS=24
+2026-02-12 14:01:34 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 14:01:34 - INFO - stock_analyzer - module_c_technical:710 - Technical analysis completed for 600519: score=8.2, signal=看多, confidence=0.65
+2026-02-12 14:01:34 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 14:01:34 - ERROR - stock_analyzer - module_c_technical:665 - Technical agent call failed: Agent 'technical_analyst' call failed: bad llm output
+2026-02-12 14:01:34 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 14:01:34 - ERROR - stock_analyzer - module_c_technical:689 - Final technical result construction failed for 600519: ValidationError: 9 validation errors for TechnicalAnalysisResult
+score
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='bad', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/float_parsing
+signal
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+confidence
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+trend_analysis
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+momentum
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+volatility
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+volume_analysis
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+key_levels
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+summary
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-12 14:01:55 - INFO - stock_analyzer - module_d_chief:208 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 14:01:55 - WARNING - stock_analyzer - module_d_chief:252 - Chief analysis attempt 1/2 failed: Business rule violation: veto_triggered=true but veto_reason is too short. Retrying...
+2026-02-12 14:01:55 - INFO - stock_analyzer - module_d_chief:242 - Chief analysis completed for 600519: overall_score=6.40, confidence=中
+2026-02-12 14:01:55 - INFO - stock_analyzer - module_d_chief:208 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:10:58 - INFO - stock_analyzer - module_d_chief:232 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:10:58 - WARNING - stock_analyzer - module_d_chief:277 - Chief analysis attempt 1/2 failed: Business rule violation: veto_triggered=true but veto_reason is too short. Retrying...
+2026-02-12 16:10:58 - INFO - stock_analyzer - module_d_chief:267 - Chief analysis completed for 600519: overall_score=6.40, confidence=中
+2026-02-12 16:10:58 - INFO - stock_analyzer - module_d_chief:232 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:10:58 - INFO - stock_analyzer - module_d_chief:232 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:10:58 - INFO - stock_analyzer - module_d_chief:267 - Chief analysis completed for 600519: overall_score=6.40, confidence=低
+2026-02-12 16:11:02 - WARNING - stock_analyzer - module_c_technical:71 - fetch_monthly_kline failed for 600519 with adjust='qfq': RuntimeError: first call failed
+2026-02-12 16:11:02 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 16:11:02 - WARNING - stock_analyzer - module_c_technical:603 - 样本不足：仅 12 个月，小于 TECH_MIN_MONTHS=24
+2026-02-12 16:11:02 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 16:11:02 - INFO - stock_analyzer - module_c_technical:710 - Technical analysis completed for 600519: score=8.2, signal=看多, confidence=0.65
+2026-02-12 16:11:02 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 16:11:02 - ERROR - stock_analyzer - module_c_technical:665 - Technical agent call failed: Agent 'technical_analyst' call failed: bad llm output
+2026-02-12 16:11:02 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 16:11:02 - ERROR - stock_analyzer - module_c_technical:689 - Final technical result construction failed for 600519: ValidationError: 9 validation errors for TechnicalAnalysisResult
+score
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='bad', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/float_parsing
+signal
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+confidence
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+trend_analysis
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+momentum
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+volatility
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+volume_analysis
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+key_levels
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+summary
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-12 16:12:44 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:12:44 - WARNING - stock_analyzer - module_d_chief:278 - Chief analysis attempt 1/2 failed: Business rule violation: veto_triggered=true but veto_reason is too short. Retrying...
+2026-02-12 16:12:44 - INFO - stock_analyzer - module_d_chief:268 - Chief analysis completed for 600519: overall_score=6.40, confidence=中
+2026-02-12 16:12:44 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:12:44 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:12:44 - INFO - stock_analyzer - module_d_chief:268 - Chief analysis completed for 600519: overall_score=6.40, confidence=低
+2026-02-12 16:21:52 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:21:52 - WARNING - stock_analyzer - module_d_chief:278 - Chief analysis attempt 1/2 failed: Business rule violation: veto_triggered=true but veto_reason is too short. Retrying...
+2026-02-12 16:21:52 - INFO - stock_analyzer - module_d_chief:268 - Chief analysis completed for 600519: overall_score=6.40, confidence=中
+2026-02-12 16:21:52 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:21:52 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:21:52 - INFO - stock_analyzer - module_d_chief:268 - Chief analysis completed for 600519: overall_score=6.40, confidence=低
+2026-02-12 16:32:09 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:32:09 - WARNING - stock_analyzer - module_d_chief:278 - Chief analysis attempt 1/2 failed: Business rule violation: veto_triggered=true but veto_reason is too short. Retrying...
+2026-02-12 16:32:09 - INFO - stock_analyzer - module_d_chief:268 - Chief analysis completed for 600519: overall_score=6.40, confidence=中
+2026-02-12 16:32:09 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:32:09 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:32:09 - INFO - stock_analyzer - module_d_chief:268 - Chief analysis completed for 600519: overall_score=6.40, confidence=低
+2026-02-12 16:33:57 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:33:57 - WARNING - stock_analyzer - module_d_chief:285 - Chief analysis attempt 1/2 failed: Business rule violation: veto_triggered=true but veto_reason is too short. Retrying...
+2026-02-12 16:33:57 - INFO - stock_analyzer - module_d_chief:275 - Chief analysis completed for 600519: overall_score=6.40, confidence=中
+2026-02-12 16:33:57 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:33:57 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:33:57 - ERROR - stock_analyzer - module_d_chief:242 - Failed to build chief prompt for 600519: RuntimeError: context failed
+2026-02-12 16:33:57 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:33:57 - ERROR - stock_analyzer - module_d_chief:242 - Failed to build chief prompt for 600519: ValueError: message failed
+2026-02-12 16:33:57 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:33:57 - INFO - stock_analyzer - module_d_chief:275 - Chief analysis completed for 600519: overall_score=6.40, confidence=低
+2026-02-12 16:38:42 - ERROR - stock_analyzer - run_module_d:78 - Module D input error: FileNotFoundError: Input JSON not found: output/not_found_a.json
+2026-02-12 16:38:51 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:38:51 - WARNING - stock_analyzer - module_d_chief:285 - Chief analysis attempt 1/2 failed: Business rule violation: veto_triggered=true but veto_reason is too short. Retrying...
+2026-02-12 16:38:51 - INFO - stock_analyzer - module_d_chief:275 - Chief analysis completed for 600519: overall_score=6.40, confidence=中
+2026-02-12 16:38:51 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:38:51 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:38:51 - ERROR - stock_analyzer - module_d_chief:242 - Failed to build chief prompt for 600519: RuntimeError: context failed
+2026-02-12 16:38:51 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:38:51 - ERROR - stock_analyzer - module_d_chief:242 - Failed to build chief prompt for 600519: ValueError: message failed
+2026-02-12 16:38:51 - INFO - stock_analyzer - module_d_chief:233 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:38:51 - INFO - stock_analyzer - module_d_chief:275 - Chief analysis completed for 600519: overall_score=6.40, confidence=低
+2026-02-12 16:43:23 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:43:23 - WARNING - stock_analyzer - module_d_chief:289 - Chief analysis attempt 1/2 failed: Business rule violation: veto_triggered=true but veto_reason is too short. Retrying...
+2026-02-12 16:43:23 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 600519: overall_score=6.40, confidence=中
+2026-02-12 16:43:23 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:43:23 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:43:23 - ERROR - stock_analyzer - module_d_chief:246 - Failed to build chief prompt for 600519: RuntimeError: context failed
+2026-02-12 16:43:23 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:43:23 - ERROR - stock_analyzer - module_d_chief:246 - Failed to build chief prompt for 600519: ValueError: message failed
+2026-02-12 16:43:23 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:43:23 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 600519: overall_score=6.40, confidence=低
+2026-02-12 16:47:39 - ERROR - stock_analyzer - run_module_a:53 - Module A input error: Cannot normalize symbol: 'bad_symbol'. Expected formats: 600519 / 600519.SH / SH600519
+2026-02-12 16:47:39 - ERROR - stock_analyzer - run_module_a:57 - Module A failed: AKShare collection aborted for 600519: 1 errors
+2026-02-12 16:47:39 - ERROR - stock_analyzer - run_module_b:56 - Module B input error: industry cannot be empty
+2026-02-12 16:47:39 - ERROR - stock_analyzer - run_module_b:60 - Module B failed: deep research failed
+2026-02-12 16:47:39 - ERROR - stock_analyzer - run_module_c:54 - Module C input error: Cannot normalize symbol: 'bad_symbol'. Expected formats: 600519 / 600519.SH / SH600519
+2026-02-12 16:47:39 - ERROR - stock_analyzer - run_module_c:58 - Module C failed: technical failed
+2026-02-12 16:47:39 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:47:39 - WARNING - stock_analyzer - module_d_chief:289 - Chief analysis attempt 1/2 failed: Business rule violation: veto_triggered=true but veto_reason is too short. Retrying...
+2026-02-12 16:47:39 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 600519: overall_score=6.40, confidence=中
+2026-02-12 16:47:39 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:47:39 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:47:39 - ERROR - stock_analyzer - module_d_chief:246 - Failed to build chief prompt for 600519: RuntimeError: context failed
+2026-02-12 16:47:39 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:47:39 - ERROR - stock_analyzer - module_d_chief:246 - Failed to build chief prompt for 600519: ValueError: message failed
+2026-02-12 16:47:39 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 16:47:39 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 600519: overall_score=6.40, confidence=低
+2026-02-12 16:47:46 - WARNING - stock_analyzer - module_c_technical:71 - fetch_monthly_kline failed for 600519 with adjust='qfq': RuntimeError: first call failed
+2026-02-12 16:47:46 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 16:47:46 - WARNING - stock_analyzer - module_c_technical:603 - 样本不足：仅 12 个月，小于 TECH_MIN_MONTHS=24
+2026-02-12 16:47:46 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 16:47:46 - INFO - stock_analyzer - module_c_technical:710 - Technical analysis completed for 600519: score=8.2, signal=看多, confidence=0.65
+2026-02-12 16:47:46 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 16:47:46 - ERROR - stock_analyzer - module_c_technical:665 - Technical agent call failed: Agent 'technical_analyst' call failed: bad llm output
+2026-02-12 16:47:46 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 16:47:46 - ERROR - stock_analyzer - module_c_technical:689 - Final technical result construction failed for 600519: ValidationError: 9 validation errors for TechnicalAnalysisResult
+score
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='bad', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/float_parsing
+signal
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+confidence
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+trend_analysis
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+momentum
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+volatility
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+volume_analysis
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+key_levels
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+summary
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-12 17:11:59 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 17:12:28 - ERROR - stock_analyzer - llm_helpers:69 - Agent 'chief_analyst' validation failed: 3 errors; first={'type': 'string_too_long', 'loc': ('dimension_scores', 'technical', 'brief'), 'msg': 'String should have at most 80 characters', 'input': '技术面中性偏谨慎：月线空头排列压制明显，价格站上MA20提供短期支撑，MACD与KDJ低位金叉释放修复信号，但价涨量缩削弱上攻持续性，关键压力1568需放量突破方可扭转格局。', 'ctx': {'max_length': 80}, 'url': 'https://errors.pydantic.dev/2.12/v/string_too_long'}
+2026-02-12 17:12:28 - WARNING - stock_analyzer - module_d_chief:289 - Chief analysis attempt 1/2 failed: Agent 'chief_analyst' call failed: 3 validation errors for LLMChiefOutput
+dimension_scores.technical.brief
+  String should have at most 80 characters [type=string_too_long, input_value='技术面中性偏谨慎...方可扭转格局。', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long
+dimension_scores.fundamental.brief
+  String should have at most 80 characters [type=string_too_long, input_value='基本面极为扎实：...质量边际承压。', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long
+dimension_scores.valuation.brief
+  String should have at most 80 characters [type=string_too_long, input_value='估值极具吸引力：...安全边际充足。', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long. Retrying...
+2026-02-12 17:12:58 - ERROR - stock_analyzer - llm_helpers:69 - Agent 'chief_analyst' validation failed: 5 errors; first={'type': 'string_too_long', 'loc': ('dimension_scores', 'technical', 'brief'), 'msg': 'String should have at most 80 characters', 'input': '技术面中性偏谨慎：月线空头排列压制明显，MA60与1568压力位构成双重阻力；MACD/KDJ释放弱修复信号，但价涨量缩削弱上攻持续性；布林中上轨运行提供温和上行空间。', 'ctx': {'max_length': 80}, 'url': 'https://errors.pydantic.dev/2.12/v/string_too_long'}
+2026-02-12 17:12:58 - ERROR - stock_analyzer - run_module_d:86 - Module D chief analysis failed: Chief analysis failed after 2 attempts: Agent 'chief_analyst' call failed: 5 validation errors for LLMChiefOutput
+dimension_scores.technical.brief
+  String should have at most 80 characters [type=string_too_long, input_value='技术面中性偏谨慎...温和上行空间。', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long
+dimension_scores.fundamental.brief
+  String should have at most 80 characters [type=string_too_long, input_value='基本面强劲但边际...渠道动销放缓。', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long
+dimension_scores.valuation.brief
+  String should have at most 80 characters [type=string_too_long, input_value='估值极具吸引力：...安全边际充足。', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long
+dimension_scores.capital_flow.brief
+  String should have at most 80 characters [type=string_too_long, input_value='资金面短期扰动：...未系统性撤离。', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long
+dimension_scores.sentiment.brief
+  String should have at most 80 characters [type=string_too_long, input_value='情绪面分化显著：...压制市场信心。', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_too_long
+2026-02-12 17:16:08 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 17:16:08 - WARNING - stock_analyzer - module_d_chief:289 - Chief analysis attempt 1/2 failed: Business rule violation: veto_triggered=true but veto_reason is too short. Retrying...
+2026-02-12 17:16:08 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 600519: overall_score=6.40, confidence=中
+2026-02-12 17:16:08 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 17:16:08 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 17:16:08 - ERROR - stock_analyzer - module_d_chief:246 - Failed to build chief prompt for 600519: RuntimeError: context failed
+2026-02-12 17:16:08 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 17:16:08 - ERROR - stock_analyzer - module_d_chief:246 - Failed to build chief prompt for 600519: ValueError: message failed
+2026-02-12 17:16:08 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 17:16:08 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 600519: overall_score=6.40, confidence=低
+2026-02-12 17:16:17 - ERROR - stock_analyzer - run_module_a:53 - Module A input error: Cannot normalize symbol: 'bad_symbol'. Expected formats: 600519 / 600519.SH / SH600519
+2026-02-12 17:16:17 - ERROR - stock_analyzer - run_module_a:57 - Module A failed: AKShare collection aborted for 600519: 1 errors
+2026-02-12 17:16:17 - ERROR - stock_analyzer - run_module_b:56 - Module B input error: industry cannot be empty
+2026-02-12 17:16:17 - ERROR - stock_analyzer - run_module_b:60 - Module B failed: deep research failed
+2026-02-12 17:16:17 - ERROR - stock_analyzer - run_module_c:54 - Module C input error: Cannot normalize symbol: 'bad_symbol'. Expected formats: 600519 / 600519.SH / SH600519
+2026-02-12 17:16:17 - ERROR - stock_analyzer - run_module_c:58 - Module C failed: technical failed
+2026-02-12 17:16:50 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 17:17:21 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 600519: overall_score=7.30, confidence=高
+2026-02-12 17:24:36 - INFO - stock_analyzer - module_a_akshare:1428 - Starting AKShare data collection for 600583 (海油工程)
+2026-02-12 17:24:36 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [company_info] via stock_individual_info_em...
+2026-02-12 17:24:36 - INFO - stock_analyzer - module_a_akshare:103 - [company_info] fetched successfully: 9 rows via stock_individual_info_em
+2026-02-12 17:24:36 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-12 17:24:39 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [realtime_quote] via stock_zh_a_spot_em...
+2026-02-12 17:24:45 - ERROR - stock_analyzer - module_a_akshare:123 - realtime_quote: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_zh_a_spot_em)
+2026-02-12 17:24:45 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via stock_financial_analysis_indicator_em...
+2026-02-12 17:24:45 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 100 rows via stock_financial_analysis_indicator_em
+2026-02-12 17:24:45 - WARNING - stock_analyzer - module_a_akshare:534 - valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu
+2026-02-12 17:24:45 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.7s before next AKShare call
+2026-02-12 17:24:48 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via stock_zh_valuation_baidu...
+2026-02-12 17:24:48 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-12 17:24:48 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-12 17:24:49 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via stock_zh_valuation_baidu...
+2026-02-12 17:24:49 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-12 17:24:49 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-12 17:24:52 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_vs_industry] via stock_zh_valuation_comparison_em...
+2026-02-12 17:24:52 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_vs_industry] fetched successfully: 8 rows via stock_zh_valuation_comparison_em
+2026-02-12 17:24:52 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-12 17:24:55 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [fund_flow] via stock_individual_fund_flow...
+2026-02-12 17:24:55 - INFO - stock_analyzer - module_a_akshare:103 - [fund_flow] fetched successfully: 121 rows via stock_individual_fund_flow
+2026-02-12 17:24:55 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-12 17:24:58 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_industry] via stock_sector_fund_flow_rank...
+2026-02-12 17:24:58 - ERROR - stock_analyzer - module_a_akshare:123 - sector_flow_industry: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_sector_fund_flow_rank)
+2026-02-12 17:24:58 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-12 17:25:01 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_concept] via stock_sector_fund_flow_rank...
+2026-02-12 17:25:01 - ERROR - stock_analyzer - module_a_akshare:123 - sector_flow_concept: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_sector_fund_flow_rank)
+2026-02-12 17:25:01 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-12 17:25:04 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [northbound] via stock_hsgt_hold_stock_em...
+2026-02-12 17:25:07 - INFO - stock_analyzer - module_a_akshare:103 - [northbound] fetched successfully: 2767 rows via stock_hsgt_hold_stock_em
+2026-02-12 17:25:07 - INFO - stock_analyzer - module_a_akshare:201 - [northbound] cache set: stock_hsgt_hold_stock_em:北向:今日排行, rows=2767
+2026-02-12 17:25:07 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.4s before next AKShare call
+2026-02-12 17:25:07 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [shareholder_count] via stock_zh_a_gdhs_detail_em...
+2026-02-12 17:25:07 - INFO - stock_analyzer - module_a_akshare:103 - [shareholder_count] fetched successfully: 64 rows via stock_zh_a_gdhs_detail_em
+2026-02-12 17:25:07 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.7s before next AKShare call
+2026-02-12 17:25:10 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [dividend_history_detail] via stock_history_dividend_detail...
+2026-02-12 17:25:10 - INFO - stock_analyzer - module_a_akshare:103 - [dividend_history_detail] fetched successfully: 24 rows via stock_history_dividend_detail
+2026-02-12 17:25:10 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-12 17:25:13 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-12 17:25:17 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 7673 rows via stock_yjyg_em
+2026-02-12 17:25:17 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20251231, rows=7673
+2026-02-12 17:25:17 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-12 17:25:17 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 493 rows via stock_yjyg_em
+2026-02-12 17:25:17 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250930, rows=493
+2026-02-12 17:25:17 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.5s before next AKShare call
+2026-02-12 17:25:20 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-12 17:25:21 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 4304 rows via stock_yjyg_em
+2026-02-12 17:25:21 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250630, rows=4304
+2026-02-12 17:25:21 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.2s before next AKShare call
+2026-02-12 17:25:23 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-12 17:25:23 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 712 rows via stock_yjyg_em
+2026-02-12 17:25:23 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250331, rows=712
+2026-02-12 17:25:23 - INFO - stock_analyzer - module_a_akshare:1253 - earnings_forecast: 最近 4 个季度均未找到 600583 的业绩预告（API 正常，该股票无预告）
+2026-02-12 17:25:23 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.5s before next AKShare call
+2026-02-12 17:25:26 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [pledge_ratio] via stock_gpzy_pledge_ratio_em...
+2026-02-12 17:25:28 - INFO - stock_analyzer - module_a_akshare:103 - [pledge_ratio] fetched successfully: 2322 rows via stock_gpzy_pledge_ratio_em
+2026-02-12 17:25:28 - INFO - stock_analyzer - module_a_akshare:201 - [pledge_ratio] cache set: stock_gpzy_pledge_ratio_em, rows=2322
+2026-02-12 17:25:28 - INFO - stock_analyzer - module_a_akshare:1401 - AKShare collection completed for 600583: 10/12 topics succeeded (2 failed, 4 errors)
+2026-02-12 17:25:28 - INFO - stock_analyzer - module_a_akshare:1431 - AKShare data collection finished for 600583: 10/12 topics, 4 errors
+2026-02-12 17:29:51 - INFO - stock_analyzer - module_b_websearch:130 - Starting web research for 600583 海油工程 (石油工程)
+2026-02-12 17:29:51 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='海油工程（股票代码600583）近期重大新闻，包括正面和负面影响股价的事件'
+2026-02-12 17:29:52 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='海油工程 核心竞争力分析，护城河类型，在石油工程行业中的市场地位和竞争优势'
+2026-02-12 17:29:52 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='石油工程行业发展前景，政策环境，市场趋势，行业增长驱动力和主要风险'
+2026-02-12 17:30:00 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国石油工程行业十四五规划重点政策解读 2023-2025年监管变化' returned 5 results
+2026-02-12 17:30:00 - INFO - stock_analyzer - tavily_client:81 - Tavily search '石油工程行业主要风险分析 技术替代风险（电驱压裂/数字孪生应用）、地缘政治对海外项目影响、碳中和背景...' returned 5 results
+2026-02-12 17:30:00 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 EPC总承包项目毛利率 vs 行业均值 近五年趋势 同期中海油资本开支结构变化 对海油工程...' returned 5 results
+2026-02-12 17:30:00 - INFO - stock_analyzer - tavily_client:81 - Tavily search '全球油气资本开支趋势 2024 石油工程服务市场规模增长驱动因素 油田技术服务公司订单 backlo...' returned 5 results
+2026-02-12 17:30:01 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 600583 2024年Q1-Q2业绩预告 亏损原因 海外项目风险' returned 5 results
+2026-02-12 17:30:01 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 与中海油服 中石化石油工程 中石油工程公司 在FPSO总包、海底管道铺设、LNG模块建造等...' returned 5 results
+2026-02-12 17:30:01 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 600583 2024年重大合同中标公告 股价影响' returned 5 results
+2026-02-12 17:30:04 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 600583 近期股东减持公告 大股东质押率 变更董监高 澎湃新闻/财新网报道' returned 5 results
+2026-02-12 17:30:10 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 识别行业面临的结构性风险，特别是技术迭代、ESG合规压力、海外项目执行风险等非传统经营风险，并评估其对头部企业盈...'
+2026-02-12 17:30:10 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 2023年深水装备作业能力 自主核心技术清单 深水铺管船/钻井平台关键设备国产化率' returned 5 results
+2026-02-12 17:30:10 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 检索公司2024年一季度及半年度业绩预告/快报原文，重点关注是否提及汇兑损失、海外项目延期、成本超支或减值计提等...'
+2026-02-12 17:30:12 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取国际权威机构（如IEA、Rystad Energy、Wood Mackenzie）发布的最新市场数据，识别影...'
+2026-02-12 17:30:13 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 挖掘2024年6月以来公司层面非经营性重大变动，包括主要股东（如中海油集团以外股东）减持、股份质押比例异常上升、...'
+2026-02-12 17:30:13 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 查找2024年以来公司披露的重大工程项目中标信息（如深水装备、FPSO总包等），并分析相关公告发布后3个交易日内...'
+2026-02-12 17:30:14 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 评估其商业模式护城河（客户绑定+EPC一体化）的财务体现及抗周期能力，验证资源依赖型护城河的稳定性
+Follow...'
+2026-02-12 17:30:15 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 梳理当前国家层面针对石油工程行业的最新产业政策、能源安全战略导向及监管动态，识别政策红利与合规约束
+Follow...'
+2026-02-12 17:30:15 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 量化海油工程在核心业务板块的市场地位及相对竞争优势，识别其主导性业务与薄弱环节
+Follow-up resear...'
+2026-02-12 17:30:17 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国石油大学（北京）数字孪生钻井示范项目 预测准确率 故障预警提前时间 中石油工业互联网平台 接入情...' returned 5 results
+2026-02-12 17:30:17 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 尼日利亚丹格特项目 合同金额 付款条件 2024年减值计提 公告' returned 5 results
+2026-02-12 17:30:19 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 600583 2025年4月8日增持计划进展公告 中国海油集团 实际增持数量 均价 日期' returned 5 results
+2026-02-12 17:30:20 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 2024年 海外EPCI总包项目 超100亿元 合同公告 原文 中海油能源发展 康菲中国' returned 5 results
+2026-02-12 17:30:21 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 2024年境外工程毛利率下降7.05个百分点 具体项目名称 国家分布 合同类型（EPC/E...' returned 5 results
+2026-02-12 17:30:24 - INFO - stock_analyzer - tavily_client:81 - Tavily search '哈里伯顿 Technip FMC NOV 斯伦贝谢 2024年Q1-Q2订单结构 breakdown...' returned 5 results
+2026-02-12 17:30:25 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 识别海油工程在深水油气工程领域的实质性技术壁垒和装备自主可控程度，判断其是否具备技术型护城河
+Follow-up...'
+2026-02-12 17:30:25 - INFO - stock_analyzer - tavily_client:81 - Tavily search '2023-2025年油气工程EPC总承包资质管理新规 分包合规性 安全环保责任追溯 案例通报 处罚决...' returned 5 results
+2026-02-12 17:30:27 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 17:30:29 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中石化油服 600871.SH 2022-2023年 FPSO上部模块 EPCI 海底管道EPC L...' returned 5 results
+2026-02-12 17:30:29 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=8
+2026-02-12 17:30:29 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=5, total_urls=10
+2026-02-12 17:30:30 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-12 17:30:31 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 海洋石油201 张紧器 国产化率 液压张紧系统 供应商名单' returned 5 results
+2026-02-12 17:30:30 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=8
+2026-02-12 17:30:30 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=8
+2026-02-12 17:30:30 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=22
+2026-02-12 17:30:30 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='海油工程 风险事件，包括监管处罚、诉讼纠纷、管理层变动、财务风险等负面信息'
+2026-02-12 17:30:35 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 17:30:35 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=25, total_urls=30
+2026-02-12 17:30:35 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='海油工程 券商研报、机构评级、目标价、分析师对该股的投资观点和评级变化'
+2026-02-12 17:30:40 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 诉讼纠纷 招标合同纠纷 海事法院 判决书 2023 site:gov.cn' returned 5 results
+2026-02-12 17:30:40 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 近三年 中国证监会 处罚决定书 公告' returned 5 results
+2026-02-12 17:30:40 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 17:30:41 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 高管变动 董事会公告 离职原因 2024年 财务总监 副总经理 site:www.cnin...' returned 5 results
+2026-02-12 17:30:41 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 17:30:41 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=26
+2026-02-12 17:30:44 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 近6个月 机构评级变动 中信证券 国泰君安 海通证券 目标价调整' returned 5 results
+2026-02-12 17:30:45 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 2024年 券商研报汇总 site:gov.cn OR site:cs.com.cn' returned 5 results
+2026-02-12 17:30:45 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 分析师观点 业绩预期 估值逻辑 海工装备 新能源转型 海外订单' returned 5 results
+2026-02-12 17:30:51 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 检索海油工程是否在2021–2024年间因信息披露违规、财务造假或内幕交易等被证监会正式处罚，获取处罚事由、金额...'
+2026-02-12 17:30:52 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 核实2024年以来关键高管（尤其是财务、运营条线）异常离职情况，通过巨潮资讯网原始公告判断是否存在主动辞职、任期...'
+2026-02-12 17:30:53 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 查找海油工程作为被告或原告涉及的重大工程合同、EPC项目或海上施工相关的已公开判决/裁定文书，聚焦2023年及近...'
+2026-02-12 17:30:55 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取权威渠道（如证监会备案网站、中国证券业协会官网）发布的2024年关于海油工程的最新券商研报摘要或评级汇总
+F...'
+2026-02-12 17:30:56 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 追踪头部券商在近半年内对海油工程的评级（如买入/增持/中性/减持）及目标价的具体调整记录，识别评级变化趋势和驱动...'
+2026-02-12 17:30:57 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 挖掘分析师对海油工程核心投资逻辑的深度解读，特别是其传统海工业务复苏、新能源（如海上风电、LNG模块）布局、海外...'
+2026-02-12 17:30:58 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 2019-2024 天津证监局 警示函 责令改正 信息披露违规' returned 5 results
+2026-02-12 17:30:59 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 2024年年度报告 娄东阳 财务总监 任职起始时间 连任情况' returned 5 results
+2026-02-12 17:31:01 - INFO - stock_analyzer - tavily_client:81 - Tavily search 'site:gov.cn "海油工程" ("建设工程施工合同纠纷" OR "海上作业服务合同纠纷") ...' returned 5 results
+2026-02-12 17:31:00 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 2024年半年报 新签合同金额 陆丰流花垦利项目进度 官网公告' returned 5 results
+2026-02-12 17:31:01 - INFO - stock_analyzer - tavily_client:81 - Tavily search '国泰君安 海通证券 合并后 研究报告整合 进展 公告 2024年10月 之后 海油工程 600583...' returned 5 results
+2026-02-12 17:31:02 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=5, total_urls=10
+2026-02-12 17:31:03 - INFO - stock_analyzer - tavily_client:81 - Tavily search '海油工程 浮式风电 CCUS 订单金额 2023-2024年 年报/半年报附注 具体项目名称 渤海 ...' returned 5 results
+2026-02-12 17:31:05 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 17:31:10 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-12 17:31:11 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=8
+2026-02-12 17:31:11 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=25, total_urls=28
+2026-02-12 17:31:13 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-12 17:31:13 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-12 17:31:13 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=26
+2026-02-12 17:31:13 - INFO - stock_analyzer - module_b_websearch:186 - Topic 1 completed: 30 learnings, 22 urls
+2026-02-12 17:31:13 - INFO - stock_analyzer - module_b_websearch:186 - Topic 2 completed: 30 learnings, 26 urls
+2026-02-12 17:31:13 - INFO - stock_analyzer - module_b_websearch:186 - Topic 3 completed: 25 learnings, 30 urls
+2026-02-12 17:31:13 - INFO - stock_analyzer - module_b_websearch:186 - Topic 4 completed: 25 learnings, 28 urls
+2026-02-12 17:31:13 - INFO - stock_analyzer - module_b_websearch:186 - Topic 5 completed: 30 learnings, 26 urls
+2026-02-12 17:31:13 - INFO - stock_analyzer - module_b_websearch:210 - All topics done: 140 unique learnings, 109 unique urls, 5/5 topics succeeded
+2026-02-12 17:32:13 - INFO - stock_analyzer - module_b_websearch:266 - Web research completed in 141.9s
+2026-02-12 17:32:29 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600583 海油工程
+2026-02-12 17:32:55 - INFO - stock_analyzer - module_c_technical:710 - Technical analysis completed for 600583: score=8.2, signal=看多, confidence=0.87
+2026-02-12 17:33:12 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600583 海油工程
+2026-02-12 17:33:39 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 600583: overall_score=7.30, confidence=高
+2026-02-12 17:41:00 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600583 海油工程
+2026-02-12 17:41:59 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 600583: overall_score=7.30, confidence=中
+2026-02-12 18:29:26 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600583 海油工程
+2026-02-12 18:29:26 - ERROR - stock_analyzer - llm_helpers:75 - Agent 'chief_analyst' call failed: <class 'agent_framework.openai._chat_client.OpenAIChatClient'> service failed to complete the prompt: Error code: 404 - {'error': {'message': 'The model `DeepSeek-V3.2` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'ee2903f5-5c96-998d-b649-d3c193d9fbb5'}
+2026-02-12 18:29:26 - WARNING - stock_analyzer - module_d_chief:289 - Chief analysis attempt 1/2 failed: Agent 'chief_analyst' call failed: <class 'agent_framework.openai._chat_client.OpenAIChatClient'> service failed to complete the prompt: Error code: 404 - {'error': {'message': 'The model `DeepSeek-V3.2` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'ee2903f5-5c96-998d-b649-d3c193d9fbb5'}. Retrying...
+2026-02-12 18:29:26 - ERROR - stock_analyzer - llm_helpers:75 - Agent 'chief_analyst' call failed: <class 'agent_framework.openai._chat_client.OpenAIChatClient'> service failed to complete the prompt: Error code: 404 - {'error': {'message': 'The model `DeepSeek-V3.2` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '17dba176-d6eb-9738-93fd-f371b9501fcb'}
+2026-02-12 18:29:26 - ERROR - stock_analyzer - run_module_d:86 - Module D chief analysis failed: Chief analysis failed after 2 attempts: Agent 'chief_analyst' call failed: <class 'agent_framework.openai._chat_client.OpenAIChatClient'> service failed to complete the prompt: Error code: 404 - {'error': {'message': 'The model `DeepSeek-V3.2` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '17dba176-d6eb-9738-93fd-f371b9501fcb'}
+2026-02-12 18:30:00 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600583 海油工程
+2026-02-12 18:30:47 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 600583: overall_score=7.60, confidence=中
+2026-02-12 18:31:12 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600583 海油工程
+2026-02-12 18:31:35 - INFO - stock_analyzer - module_c_technical:710 - Technical analysis completed for 600583: score=7.5, signal=看多, confidence=0.72
+2026-02-12 21:05:57 - INFO - stock_analyzer - module_a_akshare:1428 - Starting AKShare data collection for 600583 (海油工程)
+2026-02-12 21:05:57 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [company_info] via stock_individual_info_em...
+2026-02-12 21:05:58 - INFO - stock_analyzer - module_a_akshare:103 - [company_info] fetched successfully: 9 rows via stock_individual_info_em
+2026-02-12 21:05:58 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.8s before next AKShare call
+2026-02-12 21:05:58 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [realtime_quote] via stock_zh_a_spot_em...
+2026-02-12 21:06:09 - ERROR - stock_analyzer - module_a_akshare:123 - realtime_quote: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_zh_a_spot_em)
+2026-02-12 21:06:09 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via stock_financial_analysis_indicator_em...
+2026-02-12 21:06:09 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 100 rows via stock_financial_analysis_indicator_em
+2026-02-12 21:06:09 - WARNING - stock_analyzer - module_a_akshare:534 - valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu
+2026-02-12 21:06:09 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-12 21:06:12 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via stock_zh_valuation_baidu...
+2026-02-12 21:06:12 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-12 21:06:12 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-12 21:06:15 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via stock_zh_valuation_baidu...
+2026-02-12 21:06:15 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-12 21:06:15 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-12 21:06:18 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_vs_industry] via stock_zh_valuation_comparison_em...
+2026-02-12 21:06:18 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_vs_industry] fetched successfully: 8 rows via stock_zh_valuation_comparison_em
+2026-02-12 21:06:18 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-12 21:06:21 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [fund_flow] via stock_individual_fund_flow...
+2026-02-12 21:06:21 - INFO - stock_analyzer - module_a_akshare:103 - [fund_flow] fetched successfully: 121 rows via stock_individual_fund_flow
+2026-02-12 21:06:21 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-12 21:06:24 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_industry] via stock_sector_fund_flow_rank...
+2026-02-12 21:06:24 - ERROR - stock_analyzer - module_a_akshare:123 - sector_flow_industry: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_sector_fund_flow_rank)
+2026-02-12 21:06:24 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.6s before next AKShare call
+2026-02-12 21:06:27 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_concept] via stock_sector_fund_flow_rank...
+2026-02-12 21:06:27 - ERROR - stock_analyzer - module_a_akshare:123 - sector_flow_concept: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_sector_fund_flow_rank)
+2026-02-12 21:06:27 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-12 21:06:30 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [northbound] via stock_hsgt_hold_stock_em...
+2026-02-12 21:06:30 - INFO - stock_analyzer - module_a_akshare:103 - [northbound] fetched successfully: 2767 rows via stock_hsgt_hold_stock_em
+2026-02-12 21:06:30 - INFO - stock_analyzer - module_a_akshare:201 - [northbound] cache set: stock_hsgt_hold_stock_em:北向:今日排行, rows=2767
+2026-02-12 21:06:30 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.3s before next AKShare call
+2026-02-12 21:06:31 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [shareholder_count] via stock_zh_a_gdhs_detail_em...
+2026-02-12 21:06:31 - INFO - stock_analyzer - module_a_akshare:103 - [shareholder_count] fetched successfully: 64 rows via stock_zh_a_gdhs_detail_em
+2026-02-12 21:06:31 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.7s before next AKShare call
+2026-02-12 21:06:34 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [dividend_history_detail] via stock_history_dividend_detail...
+2026-02-12 21:06:34 - INFO - stock_analyzer - module_a_akshare:103 - [dividend_history_detail] fetched successfully: 24 rows via stock_history_dividend_detail
+2026-02-12 21:06:34 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.6s before next AKShare call
+2026-02-12 21:06:37 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-12 21:06:43 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 7673 rows via stock_yjyg_em
+2026-02-12 21:06:43 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20251231, rows=7673
+2026-02-12 21:06:43 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-12 21:06:43 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 493 rows via stock_yjyg_em
+2026-02-12 21:06:43 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250930, rows=493
+2026-02-12 21:06:43 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.7s before next AKShare call
+2026-02-12 21:06:46 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-12 21:06:47 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 4304 rows via stock_yjyg_em
+2026-02-12 21:06:47 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250630, rows=4304
+2026-02-12 21:06:47 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.3s before next AKShare call
+2026-02-12 21:06:49 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-12 21:06:49 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 712 rows via stock_yjyg_em
+2026-02-12 21:06:49 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250331, rows=712
+2026-02-12 21:06:49 - INFO - stock_analyzer - module_a_akshare:1253 - earnings_forecast: 最近 4 个季度均未找到 600583 的业绩预告（API 正常，该股票无预告）
+2026-02-12 21:06:49 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.5s before next AKShare call
+2026-02-12 21:06:52 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [pledge_ratio] via stock_gpzy_pledge_ratio_em...
+2026-02-12 21:06:53 - INFO - stock_analyzer - module_a_akshare:103 - [pledge_ratio] fetched successfully: 2322 rows via stock_gpzy_pledge_ratio_em
+2026-02-12 21:06:53 - INFO - stock_analyzer - module_a_akshare:201 - [pledge_ratio] cache set: stock_gpzy_pledge_ratio_em, rows=2322
+2026-02-12 21:06:53 - INFO - stock_analyzer - module_a_akshare:1401 - AKShare collection completed for 600583: 10/12 topics succeeded (2 failed, 4 errors)
+2026-02-12 21:06:53 - INFO - stock_analyzer - module_a_akshare:1431 - AKShare data collection finished for 600583: 10/12 topics, 4 errors
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-12 21:14:11 - WARNING - stock_analyzer - module_a_akshare:144 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-12 21:14:11 - WARNING - stock_analyzer - module_a_akshare:144 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-12 21:14:11 - WARNING - stock_analyzer - module_a_akshare:144 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-12 21:14:11 - WARNING - stock_analyzer - module_a_akshare:144 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-12 21:14:11 - WARNING - stock_analyzer - module_a_akshare:144 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-12 21:14:11 - WARNING - stock_analyzer - module_a_akshare:144 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-12 21:14:11 - ERROR - stock_analyzer - module_a_akshare:156 - topic_x: 调用超时（>30.0s）(<lambda>) [连续超时 1/3]
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-12 21:14:11 - WARNING - stock_analyzer - module_a_akshare:144 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-12 21:14:11 - WARNING - stock_analyzer - module_a_akshare:144 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-12 21:14:11 - WARNING - stock_analyzer - module_a_akshare:144 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_conn] via <lambda>...
+2026-02-12 21:14:11 - WARNING - stock_analyzer - module_a_akshare:122 - topic_conn: 连接异常（ConnectionError）(<lambda>)，准备重试 1/3
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_conn] via <lambda> (attempt 2/4)...
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:103 - [topic_conn] fetched successfully: 1 rows via <lambda>
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_conn] via <lambda>...
+2026-02-12 21:14:11 - WARNING - stock_analyzer - module_a_akshare:122 - topic_conn: 连接异常（ConnectionError）(<lambda>)，准备重试 1/2
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_conn] via <lambda> (attempt 2/3)...
+2026-02-12 21:14:11 - WARNING - stock_analyzer - module_a_akshare:122 - topic_conn: 连接异常（ConnectionError）(<lambda>)，准备重试 2/2
+2026-02-12 21:14:11 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_conn] via <lambda> (attempt 3/3)...
+2026-02-12 21:14:11 - ERROR - stock_analyzer - module_a_akshare:130 - topic_conn: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (<lambda>)
+2026-02-12 21:14:11 - WARNING - stock_analyzer - module_a_akshare:973 - sector_flow_industry: 行业 '有色金属' 在板块数据中精确和模糊匹配均未命中
+2026-02-12 21:14:22 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_conn] via <lambda>...
+2026-02-12 21:14:22 - WARNING - stock_analyzer - module_a_akshare:122 - topic_conn: 连接异常（ConnectionError）(<lambda>)，准备重试 1/3
+2026-02-12 21:14:22 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_conn] via <lambda> (attempt 2/4)...
+2026-02-12 21:14:22 - INFO - stock_analyzer - module_a_akshare:103 - [topic_conn] fetched successfully: 1 rows via <lambda>
+2026-02-12 21:14:22 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_conn] via <lambda>...
+2026-02-12 21:14:22 - WARNING - stock_analyzer - module_a_akshare:122 - topic_conn: 连接异常（ConnectionError）(<lambda>)，准备重试 1/2
+2026-02-12 21:14:22 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_conn] via <lambda> (attempt 2/3)...
+2026-02-12 21:14:22 - WARNING - stock_analyzer - module_a_akshare:122 - topic_conn: 连接异常（ConnectionError）(<lambda>)，准备重试 2/2
+2026-02-12 21:14:22 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_conn] via <lambda> (attempt 3/3)...
+2026-02-12 21:14:22 - ERROR - stock_analyzer - module_a_akshare:130 - topic_conn: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (<lambda>)
+2026-02-12 21:14:27 - ERROR - stock_analyzer - run_module_a:53 - Module A input error: Cannot normalize symbol: 'bad_symbol'. Expected formats: 600519 / 600519.SH / SH600519
+2026-02-12 21:14:27 - ERROR - stock_analyzer - run_module_a:57 - Module A failed: AKShare collection aborted for 600519: 1 errors
+2026-02-12 21:14:27 - ERROR - stock_analyzer - run_module_b:56 - Module B input error: industry cannot be empty
+2026-02-12 21:14:27 - ERROR - stock_analyzer - run_module_b:60 - Module B failed: deep research failed
+2026-02-12 21:14:27 - ERROR - stock_analyzer - run_module_c:54 - Module C input error: Cannot normalize symbol: 'bad_symbol'. Expected formats: 600519 / 600519.SH / SH600519
+2026-02-12 21:14:27 - ERROR - stock_analyzer - run_module_c:58 - Module C failed: technical failed
+2026-02-12 21:14:35 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 21:14:35 - WARNING - stock_analyzer - module_d_chief:289 - Chief analysis attempt 1/2 failed: Business rule violation: veto_triggered=true but veto_reason is too short. Retrying...
+2026-02-12 21:14:35 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 600519: overall_score=6.40, confidence=中
+2026-02-12 21:14:35 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 21:14:35 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 21:14:35 - ERROR - stock_analyzer - module_d_chief:246 - Failed to build chief prompt for 600519: RuntimeError: context failed
+2026-02-12 21:14:35 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 21:14:35 - ERROR - stock_analyzer - module_d_chief:246 - Failed to build chief prompt for 600519: ValueError: message failed
+2026-02-12 21:14:35 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-12 21:14:35 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 600519: overall_score=6.40, confidence=低
+2026-02-12 21:15:56 - INFO - stock_analyzer - module_a_akshare:1451 - Starting AKShare data collection for 600583 (海油工程)
+2026-02-12 21:15:56 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [company_info] via stock_individual_info_em...
+2026-02-12 21:15:56 - INFO - stock_analyzer - module_a_akshare:103 - [company_info] fetched successfully: 9 rows via stock_individual_info_em
+2026-02-12 21:15:56 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-12 21:15:57 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [realtime_quote] via stock_zh_a_spot_em...
+2026-02-12 21:16:02 - WARNING - stock_analyzer - module_a_akshare:122 - realtime_quote: 连接异常（ConnectionError）(stock_zh_a_spot_em)，准备重试 1/3
+2026-02-12 21:16:02 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [realtime_quote] via stock_zh_a_spot_em (attempt 2/4)...
+2026-02-12 21:16:07 - WARNING - stock_analyzer - module_a_akshare:122 - realtime_quote: 连接异常（ConnectionError）(stock_zh_a_spot_em)，准备重试 2/3
+2026-02-12 21:16:07 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [realtime_quote] via stock_zh_a_spot_em (attempt 3/4)...
+2026-02-12 21:16:13 - WARNING - stock_analyzer - module_a_akshare:122 - realtime_quote: 连接异常（ConnectionError）(stock_zh_a_spot_em)，准备重试 3/3
+2026-02-12 21:16:13 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [realtime_quote] via stock_zh_a_spot_em (attempt 4/4)...
+2026-02-12 21:16:18 - ERROR - stock_analyzer - module_a_akshare:130 - realtime_quote: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_zh_a_spot_em)
+2026-02-12 21:16:18 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via stock_financial_analysis_indicator_em...
+2026-02-12 21:16:18 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 100 rows via stock_financial_analysis_indicator_em
+2026-02-12 21:16:18 - WARNING - stock_analyzer - module_a_akshare:557 - valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu
+2026-02-12 21:16:18 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-12 21:16:21 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via stock_zh_valuation_baidu...
+2026-02-12 21:16:21 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-12 21:16:21 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-12 21:16:24 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via stock_zh_valuation_baidu...
+2026-02-12 21:16:24 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-12 21:16:24 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-12 21:16:27 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_vs_industry] via stock_zh_valuation_comparison_em...
+2026-02-12 21:16:27 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_vs_industry] fetched successfully: 8 rows via stock_zh_valuation_comparison_em
+2026-02-12 21:16:27 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-12 21:16:28 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [fund_flow] via stock_individual_fund_flow...
+2026-02-12 21:16:28 - INFO - stock_analyzer - module_a_akshare:103 - [fund_flow] fetched successfully: 121 rows via stock_individual_fund_flow
+2026-02-12 21:16:28 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-12 21:16:31 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_industry] via stock_sector_fund_flow_rank...
+2026-02-12 21:16:31 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_industry: 连接异常（ConnectionError）(stock_sector_fund_flow_rank)，准备重试 1/3
+2026-02-12 21:16:31 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-12 21:16:34 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_industry] via stock_sector_fund_flow_rank (attempt 2/4)...
+2026-02-12 21:16:35 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_industry: 连接异常（ConnectionError）(stock_sector_fund_flow_rank)，准备重试 2/3
+2026-02-12 21:16:35 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.2s before next AKShare call
+2026-02-12 21:16:37 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_industry] via stock_sector_fund_flow_rank (attempt 3/4)...
+2026-02-12 21:16:37 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_industry: 连接异常（ConnectionError）(stock_sector_fund_flow_rank)，准备重试 3/3
+2026-02-12 21:16:37 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-12 21:16:40 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_industry] via stock_sector_fund_flow_rank (attempt 4/4)...
+2026-02-12 21:16:40 - ERROR - stock_analyzer - module_a_akshare:130 - sector_flow_industry: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_sector_fund_flow_rank)
+2026-02-12 21:16:40 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-12 21:16:43 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_concept] via stock_sector_fund_flow_rank...
+2026-02-12 21:16:43 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_concept: 连接异常（ConnectionError）(stock_sector_fund_flow_rank)，准备重试 1/3
+2026-02-12 21:16:43 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-12 21:16:46 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_concept] via stock_sector_fund_flow_rank (attempt 2/4)...
+2026-02-12 21:16:46 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_concept: 连接异常（ConnectionError）(stock_sector_fund_flow_rank)，准备重试 2/3
+2026-02-12 21:16:46 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.6s before next AKShare call
+2026-02-12 21:16:49 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_concept] via stock_sector_fund_flow_rank (attempt 3/4)...
+2026-02-12 21:16:49 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_concept: 连接异常（ConnectionError）(stock_sector_fund_flow_rank)，准备重试 3/3
+2026-02-12 21:16:49 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-12 21:16:52 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_concept] via stock_sector_fund_flow_rank (attempt 4/4)...
+2026-02-12 21:16:52 - ERROR - stock_analyzer - module_a_akshare:130 - sector_flow_concept: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_sector_fund_flow_rank)
+2026-02-12 21:16:52 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-12 21:16:55 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [northbound] via stock_hsgt_hold_stock_em...
+2026-02-12 21:16:56 - INFO - stock_analyzer - module_a_akshare:103 - [northbound] fetched successfully: 2767 rows via stock_hsgt_hold_stock_em
+2026-02-12 21:16:56 - INFO - stock_analyzer - module_a_akshare:224 - [northbound] cache set: stock_hsgt_hold_stock_em:北向:今日排行, rows=2767
+2026-02-12 21:16:56 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.8s before next AKShare call
+2026-02-12 21:16:58 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [shareholder_count] via stock_zh_a_gdhs_detail_em...
+2026-02-12 21:16:58 - INFO - stock_analyzer - module_a_akshare:103 - [shareholder_count] fetched successfully: 64 rows via stock_zh_a_gdhs_detail_em
+2026-02-12 21:16:58 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.7s before next AKShare call
+2026-02-12 21:17:01 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [dividend_history_detail] via stock_history_dividend_detail...
+2026-02-12 21:17:01 - INFO - stock_analyzer - module_a_akshare:103 - [dividend_history_detail] fetched successfully: 24 rows via stock_history_dividend_detail
+2026-02-12 21:17:01 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-12 21:17:04 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-12 21:17:08 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 7673 rows via stock_yjyg_em
+2026-02-12 21:17:08 - INFO - stock_analyzer - module_a_akshare:224 - [earnings_forecast] cache set: stock_yjyg_em:20251231, rows=7673
+2026-02-12 21:17:08 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-12 21:17:08 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 493 rows via stock_yjyg_em
+2026-02-12 21:17:08 - INFO - stock_analyzer - module_a_akshare:224 - [earnings_forecast] cache set: stock_yjyg_em:20250930, rows=493
+2026-02-12 21:17:08 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.5s before next AKShare call
+2026-02-12 21:17:11 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-12 21:17:15 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 4304 rows via stock_yjyg_em
+2026-02-12 21:17:15 - INFO - stock_analyzer - module_a_akshare:224 - [earnings_forecast] cache set: stock_yjyg_em:20250630, rows=4304
+2026-02-12 21:17:15 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-12 21:17:15 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 712 rows via stock_yjyg_em
+2026-02-12 21:17:16 - INFO - stock_analyzer - module_a_akshare:224 - [earnings_forecast] cache set: stock_yjyg_em:20250331, rows=712
+2026-02-12 21:17:16 - INFO - stock_analyzer - module_a_akshare:1276 - earnings_forecast: 最近 4 个季度均未找到 600583 的业绩预告（API 正常，该股票无预告）
+2026-02-12 21:17:16 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.1s before next AKShare call
+2026-02-12 21:17:18 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [pledge_ratio] via stock_gpzy_pledge_ratio_em...
+2026-02-12 21:17:19 - INFO - stock_analyzer - module_a_akshare:103 - [pledge_ratio] fetched successfully: 2322 rows via stock_gpzy_pledge_ratio_em
+2026-02-12 21:17:19 - INFO - stock_analyzer - module_a_akshare:224 - [pledge_ratio] cache set: stock_gpzy_pledge_ratio_em, rows=2322
+2026-02-12 21:17:19 - INFO - stock_analyzer - module_a_akshare:1424 - AKShare collection completed for 600583: 10/12 topics succeeded (2 failed, 4 errors)
+2026-02-12 21:17:19 - INFO - stock_analyzer - module_a_akshare:1454 - AKShare data collection finished for 600583: 10/12 topics, 4 errors

@@ -19,7 +19,7 @@ TAVILY_API_KEY: str = os.getenv("TAVILY_API_KEY", "")
 # Model selection
 MODEL_QUERY_AGENT: str = os.getenv("MODEL_QUERY_AGENT", "qwen-plus")
 MODEL_EXTRACT_AGENT: str = os.getenv("MODEL_EXTRACT_AGENT", "qwen-plus")
-MODEL_REPORT_AGENT: str = os.getenv("MODEL_REPORT_AGENT", "qwen-plus")
+MODEL_REPORT_AGENT: str = os.getenv("MODEL_REPORT_AGENT", "qwen3-max")
 
 # Deep research params
 DEFAULT_BREADTH: int = int(os.getenv("DEFAULT_BREADTH", "3"))
@@ -78,7 +78,7 @@ AKSHARE_MARKET_CACHE_TTL_SEC: int = int(
 # ============================================================
 
 # LLM model used by technical analysis agent
-MODEL_TECHNICAL_AGENT: str = os.getenv("MODEL_TECHNICAL_AGENT", "qwen-plus")
+MODEL_TECHNICAL_AGENT: str = os.getenv("MODEL_TECHNICAL_AGENT", "Kimi-K2.5")
 
 # AKShare monthly k-line fetch params
 TECH_START_DATE: str = os.getenv("TECH_START_DATE", "20000101")
@@ -107,3 +107,18 @@ TECH_BOLL_LENGTH: int = int(os.getenv("TECH_BOLL_LENGTH", "20"))
 TECH_KDJ_K: int = int(os.getenv("TECH_KDJ_K", "14"))
 TECH_KDJ_D: int = int(os.getenv("TECH_KDJ_D", "3"))
 TECH_KDJ_SMOOTH: int = int(os.getenv("TECH_KDJ_SMOOTH", "3"))
+
+# ============================================================
+# Module D: chief analyst config
+# ============================================================
+
+# LLM model used by chief analyst
+MODEL_CHIEF_AGENT: str = os.getenv("MODEL_CHIEF_AGENT", "deepseek-v3.2")
+
+# Total context soft guard (0 means disabled / no limit)
+CHIEF_INPUT_MAX_CHARS_TOTAL: int = int(
+    os.getenv("CHIEF_INPUT_MAX_CHARS_TOTAL", "0")
+)
+
+# Retry times when chief agent output fails validation
+CHIEF_OUTPUT_RETRIES: int = int(os.getenv("CHIEF_OUTPUT_RETRIES", "1"))
