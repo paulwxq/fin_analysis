@@ -447,79 +447,393 @@ class AKShareCollector:
 
 ---
 
-## 四、模块B：网络搜索与摘要
+## 四、模块B：网络搜索与摘要（Deep Research）
 
 ### 4.1 设计原则
 
-- 使用Agent + Web Search工具
-- 需要**多轮**搜索：先广度（了解全貌），再深度（挖掘细节）
-- 搜索完成后，由Agent撰写结构化的摘要
-- 输出为JSON文件
+- 采用 **Deep Research 递归搜索**模式：对每个搜索主题执行 `breadth=3, depth=3` 的深度研究
+- 搜索工具使用 **Tavily Search API**（已配置在项目依赖中）
+- 核心思路：**先广度发散，再深度聚焦，逐层累积知识**
+- 每层搜索自动提取 learnings（知识点）和 follow-up questions（追问方向）
+- 下一层搜索基于上一层的 learnings 生成更精准的查询
+- breadth 逐层自动减半（`max(1, breadth // 2)`），形成倒金字塔收拢结构
+- 所有主题的研究结果最终合并、去重，由 LLM 生成结构化的摘要报告
 
-### 4.2 搜索内容规划
+### 4.2 搜索主题规划
 
-需要通过网络搜索获取的信息（AKShare无法覆盖的）：
+需要通过网络深度搜索获取的信息（AKShare无法覆盖的），共 **5 个主题**，每个主题独立执行 Deep Research：
 
-| 搜索主题 | 搜索目的 | 示例搜索词 |
-|---------|---------|-----------|
-| 近期重大新闻 | 了解近期影响股价的事件 | `"{公司名} 最新消息 2025"` |
-| 公司竞争优势 | 了解护城河和核心竞争力 | `"{公司名} 核心竞争力 行业地位"` |
-| 行业前景 | 了解所在行业的发展趋势 | `"{行业名} 行业前景 2025"` |
-| 风险事件 | 了解潜在的负面信息 | `"{公司名} 风险 处罚 诉讼"` |
-| 机构观点 | 了解券商/基金的评级 | `"{公司名} 研报 评级 目标价"` |
+| 主题ID | 搜索主题 | 研究目标 | 初始搜索词示例 |
+|--------|---------|---------|---------------|
+| T1 | 近期重大新闻 | 了解近期影响股价的事件（正面+负面） | `"{公司名} 最新消息 2025"` |
+| T2 | 公司竞争优势 | 了解护城河、核心竞争力、市场地位 | `"{公司名} 核心竞争力 行业地位"` |
+| T3 | 行业前景 | 了解所在行业的发展趋势和政策环境 | `"{行业名} 行业前景 2025"` |
+| T4 | 风险事件 | 了解潜在的负面信息、监管和诉讼 | `"{公司名} 风险 处罚 诉讼"` |
+| T5 | 机构观点 | 了解券商/基金的评级和目标价 | `"{公司名} 研报 评级 目标价"` |
 
-### 4.3 多轮搜索策略
+### 4.3 Deep Research 递归搜索策略
 
-```
-第1轮（广度搜索）：
-  → 搜索 "{公司名} 最新消息"
-  → 搜索 "{公司名} {行业} 行业前景"
-  → 搜索 "{公司名} 研报 评级"
-  → 阅读搜索结果，提取关键信息
-  
-第2轮（深度搜索）：
-  → 根据第1轮发现的线索，进行针对性搜索
-  → 例如：第1轮发现公司有新产品发布，第2轮搜索该产品详情
-  → 例如：第1轮发现行业政策变化，第2轮搜索政策具体内容
-  
-第3轮（补充验证）：
-  → 针对第1-2轮中不确定的信息进行验证
-  → 搜索竞争对手信息进行对比
-  → 补充遗漏的重要维度
-```
+#### 4.3.1 核心递归机制
 
-### 4.4 Agent设计
+每个搜索主题独立执行以下递归流程（`breadth=3, depth=3`）：
 
 ```python
-web_research_agent = ChatAgent(
-    chat_client=client,
-    name="web_researcher",
-    description="股票相关信息的网络深度研究员",
-    instructions="""你是一位专业的金融研究员，负责通过网络搜索收集股票相关信息。
+async def deep_research(
+    query: str,
+    breadth: int,
+    depth: int,
+    learnings: list[str] = [],
+    visited_urls: list[str] = [],
+) -> ResearchResult:
+    """
+    递归深度搜索：
+    1. 根据当前 query + 已有 learnings，由 LLM 生成 breadth 个搜索查询
+    2. 并行调用 Tavily 执行搜索
+    3. 从搜索结果中提取 learnings 和 follow-up questions
+    4. 如果 depth > 1，则递归调用自身（breadth 减半，depth 减1）
+    5. 所有分支的 learnings 合并去重后返回
+    """
+    # Step 1: LLM 生成搜索查询（数量 = breadth）
+    serp_queries = await generate_serp_queries(
+        query=query,
+        num_queries=breadth,
+        learnings=learnings,
+    )
 
-    你需要进行3轮搜索：
+    all_learnings = list(learnings)
+    all_urls = list(visited_urls)
 
-    第1轮（广度）：搜索公司近期新闻、行业前景、机构评级
-    第2轮（深度）：根据第1轮发现，深入搜索重要话题
-    第3轮（补充）：验证信息，补充遗漏
+    # Step 2: 并行执行所有查询
+    for serp_query in serp_queries:
+        # 2a. 调用 Tavily Search
+        result = await tavily_search(serp_query.query)
 
-    每轮搜索后，总结发现的关键信息。
-    
-    最终输出必须是结构化的JSON格式，包含以下字段：
-    - news_summary: 近期重大新闻摘要（正面和负面分开）
-    - competitive_advantage: 公司竞争优势描述
-    - industry_outlook: 行业前景判断
-    - risk_events: 风险事件汇总
-    - analyst_opinions: 机构观点汇总
-    - search_confidence: 搜索信息的可信度（高/中/低）
-    """,
-    tools=[web_search_tool],  # MAF中配置的搜索工具
-    response_format=WebResearchResult,
-    temperature=0.3,
-)
+        # 2b. LLM 提取知识点和追问方向
+        processed = await process_serp_result(
+            query=serp_query.query,
+            search_results=result,
+        )
+        all_learnings.extend(processed.learnings)
+        all_urls.extend(processed.urls)
+
+        # Step 3: 判断是否继续深入
+        new_depth = depth - 1
+        new_breadth = max(1, breadth // 2)
+
+        if new_depth > 0:
+            # Step 4: 递归 — 基于 follow-up questions 继续深入
+            next_query = (
+                f"Previous research goal: {serp_query.research_goal}\n"
+                f"Follow-up directions:\n"
+                + "\n".join(f"- {q}" for q in processed.follow_up_questions)
+            )
+            deeper_result = await deep_research(
+                query=next_query,
+                breadth=new_breadth,
+                depth=new_depth,
+                learnings=all_learnings,
+                visited_urls=all_urls,
+            )
+            all_learnings = deeper_result.learnings
+            all_urls = deeper_result.visited_urls
+
+    # Step 5: 合并去重
+    return ResearchResult(
+        learnings=list(set(all_learnings)),
+        visited_urls=list(set(all_urls)),
+    )
 ```
 
-### 4.5 输出JSON Schema
+#### 4.3.2 Breadth 递减与搜索规模
+
+| 轮次 | depth | breadth | 每分支查询数 | 该轮总查询数 | 累积 learnings（估算）|
+|------|-------|---------|------------|------------|---------------------|
+| 第1轮 | 3 | 3 | 3 | 3 | ~9 |
+| 第2轮 | 2 | 1 | 1 | 3（3个分支各1个） | ~18 |
+| 第3轮 | 1 | 1 | 1 | 3（3个分支各1个） | ~27 |
+| **合计** | — | — | — | **~9次 Tavily 调用** | **去重后 ~20-25** |
+
+**单个主题**约 9 次 Tavily 搜索调用，**5 个主题总计约 45 次调用**。
+
+#### 4.3.3 每轮的提示词演进
+
+Deep Research 的核心优势在于**提示词的动态演进**，无需预设多个模板：
+
+**第1轮（无历史 learnings）— 广度发散：**
+
+```
+请为以下研究主题生成 3 个搜索查询。
+
+<topic>平安银行 近期重大新闻 正面和负面事件</topic>
+```
+
+**第2轮（带累积 learnings）— 深度聚焦：**
+
+```
+请为以下研究主题生成 1 个更精准的搜索查询。
+
+<topic>
+Previous research goal: 了解平安银行近期影响股价的重大事件
+Follow-up directions:
+- 平安银行2024年年报具体盈利数据？
+- 平安银行零售业务转型最新进展？
+- 平安银行不良贷款率变化趋势？
+</topic>
+
+以下是前几轮研究中已获得的知识点，请据此生成更有针对性的查询：
+<learnings>
+- 平安银行2024年净利润同比增长2.1%，营收1600亿元
+- 零售AUM突破4万亿，同比增长12%
+- 2024Q3不良贷款率1.06%，环比下降2BP
+</learnings>
+```
+
+**第3轮（带更多 learnings）— 精准验证：**
+
+```
+<topic>
+Previous research goal: 深入了解平安银行不良贷款率变化趋势
+Follow-up directions:
+- 平安银行房地产贷款敞口具体数据？
+- 与招商银行不良率对比？
+</topic>
+
+<learnings>
+... 共约18条累积知识点 ...
+</learnings>
+```
+
+### 4.4 Tavily Search 工具配置
+
+```python
+from tavily import AsyncTavilyClient
+
+tavily_client = AsyncTavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
+
+async def tavily_search(query: str, max_results: int = 5) -> list[dict]:
+    """
+    调用 Tavily Search API 执行搜索
+    
+    Args:
+        query: 搜索查询词
+        max_results: 每次搜索返回的最大结果数
+    
+    Returns:
+        搜索结果列表，每项包含 title, url, content
+    
+    Tavily 优势：
+    - 返回结构化的网页内容摘要，无需额外爬取
+    - 支持 search_depth="advanced" 获取更详细内容
+    - 原生支持异步调用，适合并发场景
+    """
+    response = await tavily_client.search(
+        query=query,
+        max_results=max_results,
+        search_depth="advanced",    # 获取更详细的内容
+        include_answer=False,       # 不需要 Tavily 生成答案
+        include_raw_content=False,  # 不需要原始 HTML
+    )
+    return response.get("results", [])
+```
+
+### 4.5 LLM 辅助函数设计
+
+#### 4.5.1 生成搜索查询
+
+```python
+async def generate_serp_queries(
+    query: str,
+    num_queries: int,
+    learnings: list[str] = [],
+) -> list[SerpQuery]:
+    """
+    由 LLM 根据研究主题和已有知识，生成搜索查询
+    
+    输入：研究主题 + 已有 learnings
+    输出：num_queries 个搜索查询（含 query 和 research_goal）
+    """
+    prompt = f"请为以下研究主题生成 {num_queries} 个搜索查询。\n\n"
+    prompt += f"<topic>{query}</topic>\n"
+    
+    if learnings:
+        prompt += "\n以下是前几轮研究中已获得的知识点，请据此生成更有针对性的查询：\n"
+        prompt += "<learnings>\n"
+        for l in learnings:
+            prompt += f"- {l}\n"
+        prompt += "</learnings>\n"
+    
+    prompt += (
+        "\n要求：\n"
+        "- 查询应具体且有针对性，适合搜索引擎\n"
+        "- 如果有已知知识点，应避免重复搜索已知信息\n"
+        "- 每个查询附带 research_goal 说明研究目的\n"
+    )
+    
+    # 使用结构化输出
+    result = await llm_call(prompt, response_format=SerpQueryList)
+    return result.queries
+
+
+class SerpQuery(BaseModel):
+    """单个搜索查询"""
+    query: str = Field(description="搜索引擎查询词")
+    research_goal: str = Field(description="该查询的研究目标和期望发现")
+
+
+class SerpQueryList(BaseModel):
+    """搜索查询列表"""
+    queries: list[SerpQuery]
+```
+
+#### 4.5.2 提取知识点
+
+```python
+async def process_serp_result(
+    query: str,
+    search_results: list[dict],
+) -> ProcessedResult:
+    """
+    由 LLM 从 Tavily 搜索结果中提取结构化知识点和追问方向
+    
+    输入：搜索查询 + Tavily 返回的搜索结果
+    输出：learnings（知识点列表）+ follow_up_questions（追问方向）
+    """
+    # 拼接搜索结果内容
+    contents = "\n\n".join(
+        f"<source url=\"{r['url']}\">\n{r['content']}\n</source>"
+        for r in search_results
+        if r.get("content")
+    )
+    
+    prompt = (
+        f"以下是针对查询 <query>{query}</query> 的搜索结果。\n"
+        f"请从中提取关键知识点（learnings）和值得追问的方向。\n\n"
+        f"<search_results>\n{contents}\n</search_results>\n\n"
+        f"要求：\n"
+        f"- learnings 应信息密集，包含具体的实体、数字、日期\n"
+        f"- learnings 之间不应重复\n"
+        f"- follow_up_questions 应指向当前结果未能充分覆盖的方向\n"
+        f"- 最多提取 5 个 learnings 和 3 个 follow_up_questions\n"
+    )
+    
+    result = await llm_call(prompt, response_format=ProcessedResult)
+    return result
+
+
+class ProcessedResult(BaseModel):
+    """搜索结果处理后的输出"""
+    learnings: list[str] = Field(description="从搜索结果中提取的知识点")
+    follow_up_questions: list[str] = Field(description="值得继续深入的追问方向")
+    urls: list[str] = Field(default_factory=list, description="来源URL列表")
+```
+
+### 4.6 整体执行流程
+
+```
+5个搜索主题（并行执行 Deep Research）
+┌──────────────────────────────────────────────────────────┐
+│                                                          │
+│  T1: 近期新闻 ──→ deep_research(breadth=3, depth=3)     │
+│  T2: 竞争优势 ──→ deep_research(breadth=3, depth=3)     │
+│  T3: 行业前景 ──→ deep_research(breadth=3, depth=3)     │
+│  T4: 风险事件 ──→ deep_research(breadth=3, depth=3)     │
+│  T5: 机构观点 ──→ deep_research(breadth=3, depth=3)     │
+│                                                          │
+│  每个主题约 9 次 Tavily 调用，产出 ~20-25 个 learnings    │
+│                                                          │
+└──────────────────────┬───────────────────────────────────┘
+                       │ 5个主题共计约 100-125 个 learnings
+                       ▼
+┌──────────────────────────────────────────────────────────┐
+│  合并去重所有 learnings                                   │
+│  → 去重后约 80-100 个独特知识点                           │
+│                                                          │
+│  LLM 综合生成结构化摘要报告                               │
+│  → web_research.json                                     │
+└──────────────────────────────────────────────────────────┘
+```
+
+**编排代码：**
+
+```python
+async def run_web_research(symbol: str, name: str, industry: str) -> dict:
+    """
+    对5个主题并行执行 Deep Research，然后合并生成报告
+    """
+    # 定义5个研究主题
+    topics = [
+        f"{name} 最新消息 近期重大新闻 影响股价事件",
+        f"{name} 核心竞争力 护城河 市场地位 竞争优势",
+        f"{industry}行业 发展前景 政策环境 市场趋势 2025",
+        f"{name} 风险事件 处罚 诉讼 监管 负面消息",
+        f"{name} 研报 券商评级 目标价 机构观点",
+    ]
+
+    # 并行执行5个主题的 Deep Research
+    research_tasks = [
+        deep_research(
+            query=topic,
+            breadth=3,
+            depth=3,
+            learnings=[],
+            visited_urls=[],
+        )
+        for topic in topics
+    ]
+    results = await asyncio.gather(*research_tasks, return_exceptions=True)
+
+    # 合并所有 learnings 并去重
+    all_learnings = set()
+    all_urls = set()
+    for r in results:
+        if isinstance(r, ResearchResult):
+            all_learnings.update(r.learnings)
+            all_urls.update(r.visited_urls)
+
+    # LLM 综合生成结构化报告
+    report = await generate_web_research_report(
+        symbol=symbol,
+        name=name,
+        industry=industry,
+        learnings=list(all_learnings),
+    )
+
+    return report
+```
+
+### 4.7 最终报告生成
+
+所有主题的 learnings 合并后，由 LLM 一次性生成结构化的摘要报告：
+
+```python
+async def generate_web_research_report(
+    symbol: str,
+    name: str,
+    industry: str,
+    learnings: list[str],
+) -> WebResearchResult:
+    """
+    将所有 Deep Research 的 learnings 汇总，生成结构化报告
+    """
+    prompt = (
+        f"你是一位专业的金融研究员。以下是对股票 {symbol} {name}（{industry}行业）"
+        f"进行多轮深度网络搜索后积累的全部知识点。\n\n"
+        f"请基于这些知识点，生成结构化的投资研究摘要。\n\n"
+        f"<learnings>\n"
+        + "\n".join(f"- {l}" for l in learnings)
+        + "\n</learnings>\n\n"
+        f"要求：\n"
+        f"- 按照输出 Schema 的字段分类整理信息\n"
+        f"- 正面和负面新闻分开归类\n"
+        f"- 包含具体数据、日期、来源\n"
+        f"- 对信息可信度给出客观评估\n"
+    )
+
+    result = await llm_call(prompt, response_format=WebResearchResult)
+    return result
+```
+
+### 4.8 输出JSON Schema
 
 ```json
 {
@@ -527,8 +841,15 @@ web_research_agent = ChatAgent(
     "symbol": "000001",
     "name": "平安银行",
     "search_time": "2025-02-06T10:35:00",
-    "search_rounds": 3,
-    "total_sources_consulted": 15
+    "search_config": {
+      "topics_count": 5,
+      "breadth": 3,
+      "depth": 3,
+      "queries_per_topic": 9,
+      "total_queries": 45
+    },
+    "total_learnings": 85,
+    "total_sources_consulted": 60
   },
   
   "news_summary": {
@@ -591,6 +912,26 @@ web_research_agent = ChatAgent(
   "search_confidence": "中"
 }
 ```
+
+### 4.9 搜索规模与成本估算
+
+| 指标 | 数值 |
+|------|------|
+| 搜索主题数 | 5 |
+| 每主题 Tavily 调用次数 | ~9（3+3+3） |
+| 总 Tavily 调用次数 | ~45 |
+| 每主题 LLM 调用次数 | ~18（9次生成查询 + 9次提取知识） + 1次生成报告 |
+| 总 LLM 调用次数 | ~96 |
+| 每主题 learnings | ~20-25（去重后） |
+| 总 learnings | ~80-100（去重后） |
+| 预计单次搜索耗时 | 2-5分钟（5个主题并行） |
+
+**成本控制策略：**
+- 5 个主题**并行**执行，大幅缩短总耗时
+- 同一主题内的同层查询也**并行**执行（`asyncio.gather`）
+- `generate_serp_queries` 和 `process_serp_result` 可使用较小的模型（如 DeepSeek）降低成本
+- 最终报告生成使用较强模型（如 GPT-4o）保证质量
+- Tavily 的 `search_depth="advanced"` 直接返回内容摘要，无需额外爬取网页
 
 ---
 
@@ -752,10 +1093,15 @@ technical_agent = ChatAgent(
     请给出0-10的技术面评分和分析摘要。
     注意：你收到的是数值数据，请基于数据客观分析，不要猜测。
     """,
-    response_format=TechnicalAnalysisResult,
-    temperature=0.2,
+    default_options={
+        "temperature": 0.2,
+        "response_format": {"type": "json_object"},
+    },
 )
 ```
+
+> 兼容性说明：当前项目使用 `agent-framework==1.0.0b260130`，技术分析Agent按模块B同款模式实现：
+> `response_format={"type":"json_object"}`，随后手动 `json.loads + TechnicalAnalysisResult.model_validate`。
 
 ### 5.6 输出JSON Schema
 
@@ -837,6 +1183,8 @@ chief_analyst = ChatAgent(
        
     3. **技术分析报告**（technical_analysis.json）：
        包含月K线技术分析评分、趋势判断、动量指标、量价关系。
+       注意：模块C现使用嵌套结构（`trend_analysis.*`, `momentum.*` 等），
+       模块D解析字段时需按新路径读取。
 
     你的任务：
     
@@ -953,12 +1301,13 @@ async def analyze_stock(symbol: str, name: str):
     # A和C的计算部分可以先同步执行（都是纯代码，很快）
     # 注意：AKShare调用之间建议间隔3-5秒，避免封IP
     akshare_data = collect_akshare_data(symbol, name)
+    lookback_months = TECH_AGENT_LOOKBACK_MONTHS  # from stock_analyzer.config
     
     kline_df = fetch_monthly_kline(symbol)          # 从AKShare获取月K线
     kline_with_indicators = compute_technical_indicators(kline_df)
-    kline_json = kline_with_indicators.tail(24).to_json(
+    kline_json = kline_with_indicators.tail(lookback_months).to_json(
         orient="records", date_format="iso", force_ascii=False
-    )  # 取最近24个月数据，供Agent分析
+    )  # 默认取最近36个月数据（由配置 TECH_AGENT_LOOKBACK_MONTHS 控制）
     
     # 然后B和C的推理部分并行执行（都需要调用LLM）
     industry = akshare_data.get("company_info", {}).get("industry", "")
@@ -971,7 +1320,7 @@ async def analyze_stock(symbol: str, name: str):
     
     tech_task = technical_agent.run(
         f"请分析股票 {symbol} {name} 的月K线技术面。\n\n"
-        f"以下是含技术指标的月K线数据（最近24个月，来自AKShare前复权数据）：\n"
+        f"以下是含技术指标的月K线数据（最近{lookback_months}个月，来自AKShare前复权数据）：\n"
         f"{kline_json}"
     )
     
@@ -1070,20 +1419,49 @@ class WebResearchResult(BaseModel):
     average_target_price: float | None = None
     search_confidence: Literal["高", "中", "低"]
 
-# ── 模块C输出 ──
+# ── 模块C输出（已升级为嵌套结构） ──
+# 说明：
+# 1) 旧版扁平字段（ma_alignment/macd_status/rsi_value 等）已弃用；
+# 2) 以 module_c_technical_analysis_detail_design.md 为准；
+# 3) 模块D读取路径需改为 trend_analysis.* / momentum.* / key_levels.*。
+
+class TrendAnalysis(BaseModel):
+    ma_alignment: str = Field(max_length=50)
+    price_vs_ma20: str = Field(max_length=80)
+    trend_6m: str = Field(max_length=80)
+    trend_12m: str = Field(max_length=80)
+    trend_judgment: str = Field(max_length=100)
+
+class MomentumAnalysis(BaseModel):
+    macd_status: str = Field(max_length=80)
+    rsi_value: float | None = None
+    rsi_status: str = Field(max_length=40)
+    kdj_status: str = Field(max_length=80)
+
+class VolatilityAnalysis(BaseModel):
+    boll_position: str = Field(max_length=80)
+    boll_width: str = Field(max_length=80)
+
+class VolumeAnalysis(BaseModel):
+    recent_vs_avg: str = Field(max_length=100)
+    volume_price_relation: str = Field(max_length=100)
+
+class KeyLevels(BaseModel):
+    support_1: float | None = None
+    support_2: float | None = None
+    resistance_1: float | None = None
+    resistance_2: float | None = None
 
 class TechnicalAnalysisResult(BaseModel):
     """技术分析模块的输出"""
     score: float = Field(ge=0, le=10)
     signal: Literal["强烈看多", "看多", "中性", "看空", "强烈看空"]
     confidence: float = Field(ge=0, le=1)
-    trend_judgment: str = Field(max_length=100)
-    ma_alignment: str = Field(max_length=50)
-    macd_status: str = Field(max_length=50)
-    rsi_value: float
-    volume_analysis: str = Field(max_length=100)
-    support_level: float
-    resistance_level: float
+    trend_analysis: TrendAnalysis
+    momentum: MomentumAnalysis
+    volatility: VolatilityAnalysis
+    volume_analysis: VolumeAnalysis
+    key_levels: KeyLevels
     summary: str = Field(max_length=300)
 
 # ── 模块D输出 ──
@@ -1162,7 +1540,7 @@ dependencies = [
 ```toml
 dependencies = [
     # ... 现有依赖 ...
-    "pandas-ta>=0.3.14",  # 技术指标计算库（如需使用，需手动添加）
+    "pandas-ta>=0.3.14b0",  # 技术指标计算库（模块C必需）
 ]
 ```
 

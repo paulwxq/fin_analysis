@@ -1,0 +1,1251 @@
+2026-02-10 19:13:45 - INFO - stock_analyzer - module_b_websearch:49 - Starting web research for 600519.SH 贵州茅台 (白酒)
+2026-02-10 19:13:46 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台（股票代码600519.SH）近期重大新闻，包括正面和负面影响股价的事件'
+2026-02-10 19:13:46 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台 核心竞争力分析，护城河类型，在白酒行业中的市场地位和竞争优势'
+2026-02-10 19:13:46 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='白酒行业发展前景，政策环境，市场趋势，行业增长驱动力和主要风险'
+2026-02-10 19:13:56 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年中报业绩预告 营收净利增速 机构持仓变化 北向资金减持' returned 5 results
+2026-02-10 19:13:56 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 600519.SH 2024年7月 重大事项公告 酒精度调整或价格政策变动' returned 5 results
+2026-02-10 19:13:57 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 股价异动 2024年6月-7月 监管问询函 或 税务稽查 新闻' returned 5 results
+2026-02-10 19:13:57 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 vs 五粮液 vs 洋河 白酒行业市场份额 销量 单瓶均价 毛利率 对比分析 2020-2...' returned 5 results
+2026-02-10 19:13:57 - INFO - stock_analyzer - tavily_client:81 - Tavily search '白酒行业主要风险分析 库存周期拐点判断 经销商资金链压力 上市公司应收账款周转天数对比（贵州茅台/五...' returned 5 results
+2026-02-10 19:13:58 - INFO - stock_analyzer - tavily_client:81 - Tavily search '白酒行业高端化与年轻化双趋势下Z世代消费行为调研报告 京东/天猫酒类销售数据 2023-2024' returned 5 results
+2026-02-10 19:13:58 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 酿造工艺 不可复制性 地理标志保护 赤水河流域 微生物菌群 独家性研究' returned 5 results
+2026-02-10 19:13:59 - INFO - stock_analyzer - tavily_client:81 - Tavily search '2024年白酒行业最新产业政策解读 工信部 商务部 酒类流通管理办法修订' returned 5 results
+2026-02-10 19:14:01 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 护城河类型 无形资产 品牌溢价 定价权 实证分析' returned 5 results
+2026-02-10 19:14:06 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 检索近期（近两个月）是否存在监管层对贵州茅台出具问询函、现场检查、税务核查等负面监管动作及其市场反应
+Follo...'
+2026-02-10 19:14:07 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 查找2024年7月以来贵州茅台官方发布的重大事项公告，重点关注可能影响市场预期的经营政策变化（如出厂价调整、系列...'
+2026-02-10 19:14:08 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 核实公司是否已发布2024年半年度业绩预告，并分析主流券商解读及北向资金、公募基金在Q2末的持仓变动情况，识别潜...'
+2026-02-10 19:14:08 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 量化评估行业核心经营风险，特别是渠道库存水位、终端动销疲软信号、区域酒企现金流承压情况，以及头部企业应对策略差异...'
+2026-02-10 19:14:10 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 量化贵州茅台在高端白酒市场的实际占有率、价格带统治力及盈利厚度，并与主要竞争对手横向对比，验证其市场地位是否具备...'
+2026-02-10 19:14:11 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取当前年度国家及部委层面针对白酒行业的具体监管政策、准入标准、税收或消费税改革动向，识别政策环境变化对行业合规...'
+2026-02-10 19:14:11 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 验证市场趋势中‘结构性增长’的具体表现，聚焦价格带迁移（如300–800元主流价位扩容）、新渠道渗透率（直播电商...'
+2026-02-10 19:14:12 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年6月7月 上交所问询函 编号 回复时间 关联交易定价 消费税计缴' returned 5 results
+2026-02-10 19:14:14 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 识别贵州茅台护城河的具体构成（如品牌、渠道、工艺、定价权等），并区分其属于成本优势型、网络效应型、转换成本型还是...'
+2026-02-10 19:14:14 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年7月 53度飞天茅台 批价变动 控货措施 i茅台配额调整 官方公告' returned 5 results
+2026-02-10 19:14:15 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 五粮液 洋河股份 山西汾酒 2024年年报 应收账款周转天数 应付账款周转天数 票据占比 ...' returned 5 results
+2026-02-10 19:14:15 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年Q4 营收501.23亿元 净利润25.40亿元 春节备货 提前确认收入 渠道压...' returned 5 results
+2026-02-10 19:14:15 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 探究茅台酒核心工艺中是否存在地理与生态层面的天然壁垒，评估其‘离开茅台镇酿不出茅台酒’这一说法的技术依据和科学共...'
+2026-02-10 19:14:17 - INFO - stock_analyzer - tavily_client:81 - Tavily search '劲酒 小红书 KOC占比 话题互动率 种草到下单链路时长 对比 泸州老窖 汾酒 2024年' returned 5 results
+2026-02-10 19:14:17 - INFO - stock_analyzer - tavily_client:81 - Tavily search '洋河股份2020-2022年白酒销量、吨价、单瓶均价（500ml折算）及分产品结构（海之蓝/天之蓝/...' returned 5 results
+2026-02-10 19:14:21 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 无形资产明细表 商标权 地理标志 非遗技艺 2019-2023 年报附注' returned 5 results
+2026-02-10 19:14:24 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:14:25 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:14:26 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-10 19:14:27 - INFO - stock_analyzer - tavily_client:81 - Tavily search '茅台镇赤水河谷宏基因组学研究 微生物地域特异性标记物 糖酵解通路关键菌株 Bacillus lich...' returned 5 results
+2026-02-10 19:14:27 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-10 19:14:27 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=28
+2026-02-10 19:14:27 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台 风险事件，包括监管处罚、诉讼纠纷、管理层变动、财务风险等负面信息'
+2026-02-10 19:14:27 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:14:28 - INFO - stock_analyzer - tavily_client:81 - Tavily search '云南省白酒产区建设政策文件 2024-2025 地方标准审定 监管强化措施 与工信部酒类流通管理办法...' returned 5 results
+2026-02-10 19:14:29 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:14:33 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:14:37 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 高管变动 2023-2024 董事会成员 离职原因 任职资格监管问询' returned 5 results
+2026-02-10 19:14:38 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 诉讼纠纷案由 中国裁判文书网 民事案件 2020-2024' returned 5 results
+2026-02-10 19:14:39 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 近三年监管处罚记录 证监会 银保监会 国家市场监督管理总局' returned 5 results
+2026-02-10 19:14:39 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:14:39 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=30
+2026-02-10 19:14:39 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台 券商研报、机构评级、目标价、分析师对该股的投资观点和评级变化'
+2026-02-10 19:14:40 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:14:40 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=30
+2026-02-10 19:14:49 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年 券商研报汇总 机构评级变化 中信证券 中金公司 华泰证券' returned 5 results
+2026-02-10 19:14:49 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 近6个月 分析师目标价平均值 中位数 标准差 数据来源 Wind/Choice/同花顺iF...' returned 5 results
+2026-02-10 19:14:51 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 核实2023–2024年贵州茅台董事会、监事会及高级管理人员（尤其财务总监、董秘、总经理）的变动情况，重点识别是...'
+2026-02-10 19:14:54 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 查找贵州茅台作为当事人（原告/被告）在2020–2024年间在中国裁判文书网公开的民事诉讼案件，重点关注合同纠纷...'
+2026-02-10 19:14:54 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 评级下调原因 2023Q4至2024Q2 食品饮料行业政策监管 白酒消费税传闻 估值泡沫争...' returned 5 results
+2026-02-10 19:15:01 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取2024年以来头部券商对贵州茅台的最新评级调整记录（如‘买入’→‘增持’）、目标价区间及核心逻辑摘要
+Fol...'
+2026-02-10 19:15:01 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年8月 涂华彬 王晓维 离职原因 官方说明 监管问询函 业绩压力 批价跌破1800...' returned 5 results
+2026-02-10 19:15:02 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 检索贵州茅台自2021年以来是否受到证监会、市场监管或金融监管机构的正式行政处罚，包括通报、警告、罚款等具体事由...'
+2026-02-10 19:15:02 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 商标侵权案 胜诉率 判赔金额 惩罚性赔偿 中国裁判文书网 2020-2024 site:w...' returned 5 results
+2026-02-10 19:15:03 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 验证主流金融数据库中贵州茅台近期目标价的统计分布特征，识别分歧度（标准差）及一致性（均值与中位数偏离程度）
+Fo...'
+2026-02-10 19:15:07 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中信证券 中金公司 华泰证券 2024年 贵州茅台 评级调整记录 时间 前后评级 核心逻辑' returned 5 results
+2026-02-10 19:15:07 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2021-2023 国家市场监督管理总局 立案调查 虚假宣传 价格垄断 整改通知书' returned 5 results
+2026-02-10 19:15:08 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=5, total_urls=10
+2026-02-10 19:15:10 - INFO - stock_analyzer - tavily_client:81 - Tavily search '华创证券 贵州茅台 2600元目标价 深度报告 PDF 2024年 关键假设 EPS预测 PE估值 ...' returned 5 results
+2026-02-10 19:15:12 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 挖掘近期出现评级下调的券商报告原文或媒体解读，重点分析驱动评级变化的非业绩因素（如政策、估值、渠道库存、高端消费...'
+2026-02-10 19:15:14 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:15:18 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:15:19 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:15:19 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=25, total_urls=30
+2026-02-10 19:15:21 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中信证券 中金公司 招商证券 贵州茅台 2024年4月 评级下调 报告原文 批价倒挂 直营占比增速放...' returned 5 results
+2026-02-10 19:15:23 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-10 19:15:32 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:15:32 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=28
+2026-02-10 19:15:32 - INFO - stock_analyzer - module_b_websearch:105 - Topic 1 completed: 30 learnings, 28 urls
+2026-02-10 19:15:32 - INFO - stock_analyzer - module_b_websearch:105 - Topic 2 completed: 30 learnings, 30 urls
+2026-02-10 19:15:32 - INFO - stock_analyzer - module_b_websearch:105 - Topic 3 completed: 30 learnings, 30 urls
+2026-02-10 19:15:32 - INFO - stock_analyzer - module_b_websearch:105 - Topic 4 completed: 25 learnings, 30 urls
+2026-02-10 19:15:32 - INFO - stock_analyzer - module_b_websearch:105 - Topic 5 completed: 30 learnings, 28 urls
+2026-02-10 19:15:32 - INFO - stock_analyzer - module_b_websearch:129 - All topics done: 145 unique learnings, 141 unique urls, 5/5 topics succeeded
+2026-02-10 19:16:25 - ERROR - stock_analyzer - module_b_websearch:177 - Final result validation failed: 4 validation errors for WebResearchResult
+analyst_opinions.recent_reports.0.broker
+  Field required [type=missing, input_value={'institution': '摩根...有+19.28%上行空间'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+analyst_opinions.recent_reports.1.broker
+  Field required [type=missing, input_value={'institution': '高盛',...': '买入', 'note': ''}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+analyst_opinions.recent_reports.2.broker
+  Field required [type=missing, input_value={'institution': '华创...oice主流平台均值'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+analyst_opinions.recent_reports.3.broker
+  Field required [type=missing, input_value={'institution': '国信...收入增长9%预测'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-10 19:18:51 - INFO - stock_analyzer - module_b_websearch:49 - Starting web research for 600519.SH 贵州茅台 (白酒)
+2026-02-10 19:18:51 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台（股票代码600519.SH）近期重大新闻，包括正面和负面影响股价的事件'
+2026-02-10 19:18:51 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台 核心竞争力分析，护城河类型，在白酒行业中的市场地位和竞争优势'
+2026-02-10 19:18:51 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='白酒行业发展前景，政策环境，市场趋势，行业增长驱动力和主要风险'
+2026-02-10 19:19:03 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国白酒行业2024年最新产业政策汇总及对高端酒企影响分析' returned 5 results
+2026-02-10 19:19:03 - INFO - stock_analyzer - tavily_client:81 - Tavily search '白酒行业Z世代消费行为变化与线上渠道增长数据 2023-2024年市场研究报告' returned 5 results
+2026-02-10 19:19:05 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 品牌溢价率 与 五粮液 洋河对比 白酒行业数据' returned 5 results
+2026-02-10 19:19:05 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 储酒能力 基酒储量 吨酒储酒周期 行业标准' returned 5 results
+2026-02-10 19:19:06 - INFO - stock_analyzer - tavily_client:81 - Tavily search '白酒行业库存周期拐点判断依据与2024年主要酒企批价倒挂风险预警分析' returned 5 results
+2026-02-10 19:19:06 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 渠道掌控力 经销商利润空间 飞天批价波动率 2020-2024' returned 5 results
+2026-02-10 19:19:15 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 探究茅台在“时间壁垒”维度的核心护城河——基酒储备规模、老酒占比及年份结构，验证其产能扩张受限性与品质稳定性之间...'
+2026-02-10 19:19:15 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 梳理当前有效期内的国家级及地方级白酒相关政策（如消费税改革、产能调控、绿色生产要求等），并评估其对头部企业盈利模...'
+2026-02-10 19:19:16 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 量化评估茅台品牌护城河强度，通过横向比较头部酒企的品牌溢价能力（如终端售价/出厂价比率、毛利率差异），识别其不可...'
+2026-02-10 19:19:18 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取近三年白酒在年轻客群中的渗透率、口味偏好迁移、社交平台种草转化率及直播电商销售占比等量化趋势，识别结构性增长...'
+2026-02-10 19:19:18 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 探究当前行业库存水位、经销商资金压力、终端动销速度等关键指标，识别系统性价格下行与信用风险传导路径
+Follow...'
+2026-02-10 19:19:19 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 分析茅台对终端价格和渠道利润的调控能力，评估其“强渠道管控”是否构成制度性护城河，并对比其他高端白酒厂商的渠道失...'
+2026-02-10 19:19:22 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年基酒产量下降 储酒周期满负荷 官方解释或管理层访谈原文' returned 5 results
+2026-02-10 19:19:24 - INFO - stock_analyzer - tavily_client:81 - Tavily search '2024年白酒消费税改革方案正式文件 财政部税务总局公告 2024年第X号 茅台五粮液净利润影响测算...' returned 5 results
+2026-02-10 19:19:24 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台2023-2024年直销渠道占比变化及经销商层级结构（一级/二级/终端数量） vs 五粮液洋...' returned 5 results
+2026-02-10 19:19:25 - INFO - stock_analyzer - tavily_client:81 - Tavily search '茅台 i茅台平台 2026年飞天茅台上线后 传统经销商销量占比变化 数据 2024年吨价与毛利率变动' returned 5 results
+2026-02-10 19:19:25 - INFO - stock_analyzer - tavily_client:81 - Tavily search '2025年第三季度茅台五粮液泸州老窖汾酒舍得渠道库存月数 同比变化 批价与出厂价倒挂单品清单 幅度' returned 5 results
+2026-02-10 19:19:28 - INFO - stock_analyzer - tavily_client:81 - Tavily search '劲酒125ml小瓶装 18-30岁女性 用户复购率 小红书抖音种草转化 临床或调研数据 养生功效（痛...' returned 5 results
+2026-02-10 19:19:32 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 600519.SH 近期股价异动原因分析 2024年5月-6月 社保基金减持 高端酒消费疲...' returned 5 results
+2026-02-10 19:19:32 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-10 19:19:33 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 600519.SH 2024年重大新闻事件汇总 官方公告 媒体报道' returned 5 results
+2026-02-10 19:19:33 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 股价影响因子实证研究 2023-2024年 业绩增速放缓 飞天批价下跌 电商渠道冲击' returned 5 results
+2026-02-10 19:19:36 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:19:38 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:19:40 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-10 19:19:40 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=28
+2026-02-10 19:19:40 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台 风险事件，包括监管处罚、诉讼纠纷、管理层变动、财务风险等负面信息'
+2026-02-10 19:19:43 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 全面梳理2024年以来贵州茅台发布的官方公告（如业绩预告、高管变动、投资事项）及主流财经媒体（如财新、第一财经、...'
+2026-02-10 19:19:44 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:19:45 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 聚焦近两个月（2024年5–6月）股价显著波动时段，挖掘具体驱动因素，特别是机构持仓变化（如社保/险资减持）、终...'
+2026-02-10 19:19:45 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-10 19:19:45 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=28
+2026-02-10 19:19:45 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台 券商研报、机构评级、目标价、分析师对该股的投资观点和评级变化'
+2026-02-10 19:19:49 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 查找学术论文、券商深度研报或第三方数据分析报告，验证近年影响其股价的核心变量（如营收/净利增速拐点、批价持续下行...'
+2026-02-10 19:19:49 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 近三年监管处罚记录 中国证监会 银保监会' returned 5 results
+2026-02-10 19:19:49 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 高管变动 2023年 董事会公告 异动原因 任职资格争议' returned 5 results
+2026-02-10 19:19:50 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年股份回购进展公告 截至2024年12月31日 回购数量 金额 成交均价' returned 5 results
+2026-02-10 19:19:51 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年5-6月 社保基金减持 公告编号 中国证监会指定信息披露网站' returned 5 results
+2026-02-10 19:19:51 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年 券商研报汇总 机构评级变化 中信证券 中金公司 华泰证券' returned 5 results
+2026-02-10 19:19:51 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 诉讼纠纷案由 中国裁判文书网 2022-2024' returned 5 results
+2026-02-10 19:19:53 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 分析师观点分歧点 高端白酒周期 茅台批价走势 估值锚定依据' returned 5 results
+2026-02-10 19:19:53 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 目标价预测 汇总 2023-2024年 各券商平均目标价与实际股价偏离度分析' returned 5 results
+2026-02-10 19:19:55 - INFO - stock_analyzer - tavily_client:81 - Tavily search '茅台社会库存1.2亿瓶结构分析 2023-2024年渠道层级分布 年份构成 周转天数变化 中金/中信...' returned 5 results
+2026-02-10 19:19:59 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 检索贵州茅台自2021年以来是否受到证监会、市场监管总局或金融监管部门的行政处罚，包括违规披露、税务稽查、广告违...'
+2026-02-10 19:20:00 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:20:02 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取2024年以来头部券商对贵州茅台的最新评级调整记录、评级变动时间点及核心逻辑
+Follow-up resea...'
+2026-02-10 19:20:04 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 核实2023年以来贵州茅台董事、监事及高级管理人员（尤其总经理、财务总监、董秘）的任免情况，识别是否存在突发性离...'
+2026-02-10 19:20:05 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2019年 上证公监函〔2019〕0583号 关联交易 具体交易对手方名称 交易金额 补充...' returned 5 results
+2026-02-10 19:20:05 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 查找贵州茅台作为当事人（原告/被告）在2022–2024年间涉及的已公开重大民商事或刑事案件，重点关注经销商合同...'
+2026-02-10 19:20:06 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:20:06 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 识别当前主流研报中对贵州茅台投资逻辑的核心分歧（如批价韧性、渠道改革成效、估值合理性），提取关键假设差异
+Fol...'
+2026-02-10 19:20:06 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:20:06 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=30
+2026-02-10 19:20:06 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 梳理近一年主要券商对贵州茅台的目标价预测区间、均值及后续股价实现情况，评估目标价有效性
+Follow-up re...'
+2026-02-10 19:20:09 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中信证券 中金公司 华泰证券 贵州茅台 2024年 评级调整记录 时间点 目标价变动 公告原文' returned 5 results
+2026-02-10 19:20:11 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州省国资委官网 茅台集团 陈华 任职评估意见 跨领域胜任力评估 国有企业领导人员管理规定' returned 5 results
+2026-02-10 19:20:12 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年各季度 飞天散瓶批价 整箱批价 均值 数据来源 中国白酒市场月报 中国酒业协会' returned 5 results
+2026-02-10 19:20:14 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 i茅台平台 2025年Q4 2026年1月 复购率 客单价 区域渗透率 运营数据 官方披露' returned 5 results
+2026-02-10 19:20:14 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 商标侵权诉讼 2022-2024年 胜诉率 判赔额 惩罚性赔偿 司法统计报告' returned 5 results
+2026-02-10 19:20:17 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:20:18 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-10 19:20:20 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:20:25 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:20:27 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:20:27 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=30
+2026-02-10 19:20:38 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:20:38 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=29
+2026-02-10 19:20:38 - INFO - stock_analyzer - module_b_websearch:105 - Topic 1 completed: 30 learnings, 30 urls
+2026-02-10 19:20:38 - INFO - stock_analyzer - module_b_websearch:105 - Topic 2 completed: 30 learnings, 28 urls
+2026-02-10 19:20:38 - INFO - stock_analyzer - module_b_websearch:105 - Topic 3 completed: 30 learnings, 28 urls
+2026-02-10 19:20:38 - INFO - stock_analyzer - module_b_websearch:105 - Topic 4 completed: 30 learnings, 29 urls
+2026-02-10 19:20:38 - INFO - stock_analyzer - module_b_websearch:105 - Topic 5 completed: 30 learnings, 30 urls
+2026-02-10 19:20:38 - INFO - stock_analyzer - module_b_websearch:129 - All topics done: 150 unique learnings, 142 unique urls, 5/5 topics succeeded
+2026-02-10 19:21:26 - ERROR - stock_analyzer - module_b_websearch:177 - Final result validation failed: 5 validation errors for WebResearchResult
+analyst_opinions.recent_reports.0
+  Input should be a valid dictionary or instance of AnalystReport [type=model_type, input_value='华创证券：目标价...反转乐观假设）', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+analyst_opinions.recent_reports.1
+  Input should be a valid dictionary or instance of AnalystReport [type=model_type, input_value='中金公司：目标价1860元（2025年2月）', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+analyst_opinions.recent_reports.2
+  Input should be a valid dictionary or instance of AnalystReport [type=model_type, input_value='东兴证券：目标价...后，对应26倍PE）', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+analyst_opinions.recent_reports.3
+  Input should be a valid dictionary or instance of AnalystReport [type=model_type, input_value="国信证券：维持'....02元（2025年4月）", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+analyst_opinions.recent_reports.4
+  Input should be a valid dictionary or instance of AnalystReport [type=model_type, input_value='英为财情汇总20位...1元有+20.94%空间）', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type
+2026-02-10 19:26:42 - INFO - stock_analyzer - module_b_websearch:129 - Starting web research for 600519.SH 贵州茅台 (白酒)
+2026-02-10 19:26:42 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台（股票代码600519.SH）近期重大新闻，包括正面和负面影响股价的事件'
+2026-02-10 19:26:42 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台 核心竞争力分析，护城河类型，在白酒行业中的市场地位和竞争优势'
+2026-02-10 19:26:42 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='白酒行业发展前景，政策环境，市场趋势，行业增长驱动力和主要风险'
+2026-02-10 19:26:52 - INFO - stock_analyzer - tavily_client:81 - Tavily search '2024年白酒行业最新产业政策解读 工信部 商务部 酒类流通管理办法修订' returned 5 results
+2026-02-10 19:26:53 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 品牌溢价率测算 白酒行业对比 近五年数据' returned 5 results
+2026-02-10 19:26:53 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 经销商体系 控货挺价机制 2020–2024年批价波动与渠道利润分析' returned 5 results
+2026-02-10 19:26:53 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 储酒能力 基酒储量 吨酒储酒成本 行业标准' returned 5 results
+2026-02-10 19:26:53 - INFO - stock_analyzer - tavily_client:81 - Tavily search '白酒行业产能过剩风险评估 2023年规模以上酒企亏损面 同业并购案例 贵州/四川产区环保限产影响' returned 5 results
+2026-02-10 19:26:54 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 600519.SH 2024年7月 重大事项公告 证监会处罚或监管关注' returned 5 results
+2026-02-10 19:26:55 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 600519.SH 2024年二季度业绩预告 营收净利增速放缓 市场解读' returned 5 results
+2026-02-10 19:26:55 - INFO - stock_analyzer - tavily_client:81 - Tavily search '白酒行业高端化与年轻化双轨趋势 2023-2024年Z世代消费数据 白酒即饮场景拓展案例' returned 5 results
+2026-02-10 19:26:56 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 飞天茅台批价 2024年8月 下跌 真实性 消费需求萎缩 或 渠道库存压力' returned 5 results
+2026-02-10 19:27:04 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 量化评估茅台的品牌护城河强度，通过品牌溢价率指标与五粮液、泸州老窖等头部酒企横向对比，验证其定价权和消费者支付意...'
+2026-02-10 19:27:04 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 分析茅台如何通过深度掌控经销商网络实现价格管控和渠道利润分配，评估其渠道护城河在行业周期波动中的抗压能力与不可复...'
+2026-02-10 19:27:05 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取当前最新出台的国家级及部委级白酒行业监管政策、准入标准、消费税改革动向及渠道管控措施，识别政策环境变化对行业...'
+2026-02-10 19:27:08 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 识别行业核心风险点：产能利用率下行趋势、中小酒企出清进度、区域集中度变化、环保与能耗双控对主产区产能的实际约束力...'
+2026-02-10 19:27:09 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 查找2024年7月起贵州茅台是否收到监管函、立案调查、行政处罚或被交易所问询等负面事件
+Follow-up re...'
+2026-02-10 19:27:09 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 验证近期飞天茅台批价是否持续走低，探究价格变动背后的真实动因（终端动销、经销商库存、非标产品投放节奏等）及其对市...'
+2026-02-10 19:27:10 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 探究市场结构性变化：高端产品占比提升、低度化/果味化新品渗透率、餐饮外渠道（电商、直播、社交平台）增长数据，以及...'
+2026-02-10 19:27:10 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2020-2024 飞天茅台 出厂价 一批价 终端零售价 渠道利润率 官方财报或经销商调研...' returned 5 results
+2026-02-10 19:27:11 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 探究茅台独有的“以酒养酒”模式背后的真实储酒规模、年份基酒结构及仓储成本效率，识别其产能壁垒与品质稳定性的物理护...'
+2026-02-10 19:27:11 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年经销商库存周转天数超12个月 样本数据 省级总代 地级市分销商 占比 亏损补贴 ...' returned 5 results
+2026-02-10 19:27:12 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 核实公司最新季度业绩是否低于预期，以及券商/媒体对增速放缓原因（如渠道改革、消费疲软、直销占比变化）的分析
+Fo...'
+2026-02-10 19:27:13 - INFO - stock_analyzer - tavily_client:81 - Tavily search '2025年新禁酒令 地方执行加码 江苏今世缘 宴请禁酒政策影响 经销商动销数据' returned 5 results
+2026-02-10 19:27:15 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2007年5月21日 证监函[2007]116号 关联交易 具体交易方 交易内容 整改报告' returned 5 results
+2026-02-10 19:27:16 - INFO - stock_analyzer - tavily_client:81 - Tavily search '2023年白酒行业规模以上企业亏损面数据 国家统计局或中国酒业协会年报' returned 5 results
+2026-02-10 19:27:17 - INFO - stock_analyzer - tavily_client:81 - Tavily search '上海贵酒 最®酒 终端补货率30% 开瓶率高 驱动因素 渠道模型 可复制性 2023年6-11月 省...' returned 5 results
+2026-02-10 19:27:18 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2025年中报 自制半成品 库龄结构 5年 10年 15年 分项披露' returned 5 results
+2026-02-10 19:27:18 - INFO - stock_analyzer - tavily_client:81 - Tavily search '2025年8月飞天茅台批价华东华南区域对比数据 1800元跌破节点 经销商调研报告' returned 5 results
+2026-02-10 19:27:20 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2025Q2 合同负债 55.1亿元 渠道库存 批价企稳 国泰君安 中金 申万宏源 点评' returned 5 results
+2026-02-10 19:27:24 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:27:25 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:27:26 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-10 19:27:26 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:27:26 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:27:29 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-10 19:27:29 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=28
+2026-02-10 19:27:29 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台 风险事件，包括监管处罚、诉讼纠纷、管理层变动、财务风险等负面信息'
+2026-02-10 19:27:30 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:27:30 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=28
+2026-02-10 19:27:30 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台 券商研报、机构评级、目标价、分析师对该股的投资观点和评级变化'
+2026-02-10 19:27:33 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:27:34 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:27:34 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=29
+2026-02-10 19:27:36 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 近三年监管处罚记录 证监会 银保监会 国家市场监督管理总局' returned 5 results
+2026-02-10 19:27:38 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 诉讼纠纷案由 中国裁判文书网 2020-2024 商业贿赂 虚假宣传 产品质量责任' returned 5 results
+2026-02-10 19:27:39 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 高管变动 2023-2024 董事会成员辞职 廉政调查 纪委通报' returned 5 results
+2026-02-10 19:27:40 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年 券商研报汇总 中信证券 中金公司 华泰证券 目标价评级变化' returned 5 results
+2026-02-10 19:27:40 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 分析师分歧度 估值分歧 目标价标准差 2023-2024年 研报统计' returned 5 results
+2026-02-10 19:27:40 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 机构评级变动历史 东方财富网 或 同花顺iFinD 近一年评级调升调降记录' returned 5 results
+2026-02-10 19:27:48 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 查找贵州茅台在2020–2024年间于中国裁判文书网公开的涉诉案件，重点关注商业贿赂、虚假宣传、产品质量或经销商...'
+2026-02-10 19:27:51 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 检索贵州茅台自2021年以来是否受到证监会、银保监会或市场监管总局等权威监管机构的行政处罚，包括事由、文号及整改...'
+2026-02-10 19:27:53 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 梳理近一年内主流金融机构对贵州茅台的评级变更轨迹（如从‘增持’上调至‘买入’），识别关键时间节点及对应基本面或政...'
+2026-02-10 19:27:54 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 核实2023至2024年贵州茅台是否存在董事、副总经理及以上级别高管突发辞职、被纪委调查或中纪委/贵州省纪委官网...'
+2026-02-10 19:27:56 - INFO - stock_analyzer - tavily_client:81 - Tavily search '天马传媒 贵州茅台冰淇淋 宣传总代理 广告合规处罚 市场监管总局 国家企业信用信息公示系统' returned 5 results
+2026-02-10 19:27:57 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 探究不同券商对贵州茅台目标价的离散程度（如最高与最低目标价差值、标准差），评估市场共识强度及潜在预期差来源
+Fo...'
+2026-02-10 19:27:57 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州省市场监管局 2021-2023年 贵州茅台 经销商 价格违法 行政处罚决定书' returned 5 results
+2026-02-10 19:27:58 - INFO - stock_analyzer - tavily_client:81 - Tavily search 'i茅台平台2023年散瓶与原箱飞天茅台批价收敛数据 对比2022年 同花顺iFinD或酒业家报告' returned 5 results
+2026-02-10 19:27:58 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取2024年以来头部券商对贵州茅台的最新研报核心结论，重点关注目标价区间、评级（如买入/增持/中性）及较前期的...'
+2026-02-10 19:28:00 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州省纪委监委官网 茅台集团 专项治理评估 2024-2025' returned 5 results
+2026-02-10 19:28:05 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中信证券 华泰证券 贵州茅台 2024年 研报 评级 目标价 发布日期' returned 5 results
+2026-02-10 19:28:09 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=8
+2026-02-10 19:28:10 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 600519.SH 2023Q4-2024Q2 卖方一致预期目标价标准差 Wind终端 C...' returned 5 results
+2026-02-10 19:28:10 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:28:11 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-10 19:28:15 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:28:15 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=28
+2026-02-10 19:28:19 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:28:21 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-10 19:28:21 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=28
+2026-02-10 19:28:21 - INFO - stock_analyzer - module_b_websearch:185 - Topic 1 completed: 30 learnings, 29 urls
+2026-02-10 19:28:21 - INFO - stock_analyzer - module_b_websearch:185 - Topic 2 completed: 30 learnings, 28 urls
+2026-02-10 19:28:21 - INFO - stock_analyzer - module_b_websearch:185 - Topic 3 completed: 30 learnings, 28 urls
+2026-02-10 19:28:21 - INFO - stock_analyzer - module_b_websearch:185 - Topic 4 completed: 30 learnings, 28 urls
+2026-02-10 19:28:21 - INFO - stock_analyzer - module_b_websearch:185 - Topic 5 completed: 30 learnings, 28 urls
+2026-02-10 19:28:21 - INFO - stock_analyzer - module_b_websearch:209 - All topics done: 150 unique learnings, 134 unique urls, 5/5 topics succeeded
+2026-02-10 19:29:18 - INFO - stock_analyzer - module_b_websearch:265 - Web research completed in 155.8s
+2026-02-11 13:37:15 - WARNING - stock_analyzer - module_a_akshare:661 - sector_flow_industry: 行业 '有色金属' 在板块数据中精确和模糊匹配均未命中
+2026-02-11 13:55:46 - WARNING - stock_analyzer - module_a_akshare:668 - sector_flow_industry: 行业 '有色金属' 在板块数据中精确和模糊匹配均未命中
+2026-02-11 13:58:08 - WARNING - stock_analyzer - module_a_akshare:686 - sector_flow_industry: 行业 '有色金属' 在板块数据中精确和模糊匹配均未命中
+2026-02-11 13:58:19 - WARNING - stock_analyzer - module_a_akshare:686 - sector_flow_industry: 行业 '有色金属' 在板块数据中精确和模糊匹配均未命中
+2026-02-11 14:03:48 - INFO - stock_analyzer - module_a_akshare:1066 - Starting AKShare data collection for 600519 (贵州茅台)
+2026-02-11 14:03:48 - INFO - stock_analyzer - module_a_akshare:86 - Fetching [company_info] via stock_individual_info_em...
+2026-02-11 14:03:51 - INFO - stock_analyzer - module_a_akshare:100 - [company_info] fetched successfully: 9 rows via stock_individual_info_em
+2026-02-11 14:03:51 - DEBUG - stock_analyzer - module_a_akshare:75 - Rate limit: waiting 0.5s before next AKShare call
+2026-02-11 14:03:51 - INFO - stock_analyzer - module_a_akshare:86 - Fetching [realtime_quote] via stock_zh_a_spot_em...
+2026-02-11 14:04:19 - ERROR - stock_analyzer - module_a_akshare:112 - realtime_quote: 调用超时（>30.0s）(stock_zh_a_spot_em) [连续超时 1/3]
+2026-02-11 14:04:19 - INFO - stock_analyzer - module_a_akshare:86 - Fetching [financial_indicators] via stock_financial_analysis_indicator...
+2026-02-11 14:04:19 - ERROR - stock_analyzer - module_a_akshare:127 - financial_indicators: TypeError - stock_financial_analysis_indicator() got an unexpected keyword argument 'stock' (stock_financial_analysis_indicator)
+2026-02-11 14:04:19 - ERROR - stock_analyzer - module_a_akshare:195 - valuation_history(解析阶段): AttributeError - module 'akshare' has no attribute 'stock_a_lg_indicator'
+2026-02-11 14:04:19 - DEBUG - stock_analyzer - module_a_akshare:75 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:04:22 - INFO - stock_analyzer - module_a_akshare:86 - Fetching [valuation_vs_industry] via stock_zh_valuation_comparison_em...
+2026-02-11 14:04:23 - INFO - stock_analyzer - module_a_akshare:100 - [valuation_vs_industry] fetched successfully: 8 rows via stock_zh_valuation_comparison_em
+2026-02-11 14:04:23 - DEBUG - stock_analyzer - module_a_akshare:75 - Rate limit: waiting 2.0s before next AKShare call
+2026-02-11 14:04:25 - INFO - stock_analyzer - module_a_akshare:86 - Fetching [fund_flow] via stock_individual_fund_flow...
+2026-02-11 14:04:27 - INFO - stock_analyzer - module_a_akshare:100 - [fund_flow] fetched successfully: 120 rows via stock_individual_fund_flow
+2026-02-11 14:04:27 - ERROR - stock_analyzer - module_a_akshare:195 - sector_flow(解析阶段): AttributeError - module 'akshare' has no attribute 'stock_board_industry_fund_flow_rank_em'
+2026-02-11 14:04:27 - DEBUG - stock_analyzer - module_a_akshare:75 - Rate limit: waiting 1.6s before next AKShare call
+2026-02-11 14:04:26 - INFO - stock_analyzer - module_a_akshare:86 - Fetching [northbound] via stock_hsgt_hold_stock_em...
+2026-02-11 14:04:36 - INFO - stock_analyzer - module_a_akshare:100 - [northbound] fetched successfully: 2767 rows via stock_hsgt_hold_stock_em
+2026-02-11 14:04:36 - INFO - stock_analyzer - module_a_akshare:149 - [northbound] cache set: stock_hsgt_hold_stock_em:北向:今日排行, rows=2767
+2026-02-11 14:04:36 - INFO - stock_analyzer - module_a_akshare:86 - Fetching [shareholder_count] via stock_zh_a_gdhs_detail_em...
+2026-02-11 14:04:39 - INFO - stock_analyzer - module_a_akshare:100 - [shareholder_count] fetched successfully: 60 rows via stock_zh_a_gdhs_detail_em
+2026-02-11 14:04:39 - DEBUG - stock_analyzer - module_a_akshare:75 - Rate limit: waiting 0.4s before next AKShare call
+2026-02-11 14:04:39 - INFO - stock_analyzer - module_a_akshare:86 - Fetching [dividend_history] via stock_history_dividend...
+2026-02-11 14:04:39 - ERROR - stock_analyzer - module_a_akshare:127 - dividend_history: TypeError - stock_history_dividend() got an unexpected keyword argument 'symbol' (stock_history_dividend)
+2026-02-11 14:04:39 - DEBUG - stock_analyzer - module_a_akshare:75 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:04:42 - INFO - stock_analyzer - module_a_akshare:86 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 14:05:12 - ERROR - stock_analyzer - module_a_akshare:112 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em) [连续超时 1/3]
+2026-02-11 14:05:12 - INFO - stock_analyzer - module_a_akshare:86 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 14:05:13 - INFO - stock_analyzer - module_a_akshare:100 - [earnings_forecast] fetched successfully: 493 rows via stock_yjyg_em
+2026-02-11 14:05:13 - INFO - stock_analyzer - module_a_akshare:149 - [earnings_forecast] cache set: stock_yjyg_em:20250930, rows=493
+2026-02-11 14:05:13 - DEBUG - stock_analyzer - module_a_akshare:75 - Rate limit: waiting 2.6s before next AKShare call
+2026-02-11 14:05:15 - INFO - stock_analyzer - module_a_akshare:86 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 14:05:35 - INFO - stock_analyzer - module_a_akshare:100 - [earnings_forecast] fetched successfully: 4304 rows via stock_yjyg_em
+2026-02-11 14:05:35 - INFO - stock_analyzer - module_a_akshare:149 - [earnings_forecast] cache set: stock_yjyg_em:20250630, rows=4304
+2026-02-11 14:05:35 - INFO - stock_analyzer - module_a_akshare:86 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 14:05:40 - INFO - stock_analyzer - module_a_akshare:100 - [earnings_forecast] fetched successfully: 712 rows via stock_yjyg_em
+2026-02-11 14:05:40 - INFO - stock_analyzer - module_a_akshare:149 - [earnings_forecast] cache set: stock_yjyg_em:20250331, rows=712
+2026-02-11 14:05:40 - INFO - stock_analyzer - module_a_akshare:891 - earnings_forecast: 最近 4 个季度均未找到 600519 的业绩预告（API 正常，该股票无预告）
+2026-02-11 14:05:40 - INFO - stock_analyzer - module_a_akshare:86 - Fetching [pledge_ratio] via stock_gpzy_pledge_ratio_em...
+2026-02-11 14:05:52 - INFO - stock_analyzer - module_a_akshare:100 - [pledge_ratio] fetched successfully: 2322 rows via stock_gpzy_pledge_ratio_em
+2026-02-11 14:05:52 - INFO - stock_analyzer - module_a_akshare:149 - [pledge_ratio] cache set: stock_gpzy_pledge_ratio_em, rows=2322
+2026-02-11 14:05:52 - INFO - stock_analyzer - module_a_akshare:1039 - AKShare collection completed for 600519: 7/12 topics succeeded (5 failed, 6 errors)
+2026-02-11 14:05:52 - INFO - stock_analyzer - module_a_akshare:1069 - AKShare data collection finished for 600519: 7/12 topics, 6 errors
+2026-02-11 14:25:34 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 14:25:34 - WARNING - stock_analyzer - module_a_akshare:110 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 14:25:34 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 14:25:34 - WARNING - stock_analyzer - module_a_akshare:110 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 14:25:34 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 14:25:34 - WARNING - stock_analyzer - module_a_akshare:110 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 14:25:34 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 14:25:34 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-11 14:25:34 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 14:25:34 - WARNING - stock_analyzer - module_a_akshare:110 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 14:25:34 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 14:25:34 - WARNING - stock_analyzer - module_a_akshare:110 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 14:25:34 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 14:25:34 - WARNING - stock_analyzer - module_a_akshare:110 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 14:25:34 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 14:25:34 - ERROR - stock_analyzer - module_a_akshare:122 - topic_x: 调用超时（>30.0s）(<lambda>) [连续超时 1/3]
+2026-02-11 14:25:34 - WARNING - stock_analyzer - module_a_akshare:834 - sector_flow_industry: 行业 '有色金属' 在板块数据中精确和模糊匹配均未命中
+2026-02-11 14:25:38 - INFO - stock_analyzer - module_a_akshare:1312 - Starting AKShare data collection for 600519 (贵州茅台)
+2026-02-11 14:25:38 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [company_info] via stock_individual_info_em...
+2026-02-11 14:25:38 - ERROR - stock_analyzer - module_a_akshare:137 - company_info: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/get?fltt=2&invt=2&fields=f120%2Cf121%2Cf122%2Cf174%2Cf175%2Cf59%2Cf163%2Cf43%2Cf57%2Cf58%2Cf169% (stock_individual_info_em)
+2026-02-11 14:25:38 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:25:41 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [realtime_quote] via stock_zh_a_spot_em...
+2026-02-11 14:25:47 - ERROR - stock_analyzer - module_a_akshare:137 - realtime_quote: ProxyError - HTTPSConnectionPool(host='82.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A0+ (stock_zh_a_spot_em)
+2026-02-11 14:25:47 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via stock_financial_analysis_indicator...
+2026-02-11 14:25:47 - ERROR - stock_analyzer - module_a_akshare:137 - financial_indicators: ProxyError - HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/600519/ctrl/2020/displaytype/4.phtml (Caused by ProxyError(' (stock_financial_analysis_indicator)
+2026-02-11 14:25:47 - WARNING - stock_analyzer - module_a_akshare:451 - valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu
+2026-02-11 14:25:47 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:25:50 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via stock_zh_valuation_baidu...
+2026-02-11 14:25:50 - ERROR - stock_analyzer - module_a_akshare:137 - valuation_history_baidu:pe_ttm: ProxyError - HTTPSConnectionPool(host='gushitong.baidu.com', port=443): Max retries exceeded with url: /opendata?openapi=1&dspName=iphone&tn=tangram&client=app&query=%E5%B8%82%E7%9B%88%E7%8E%87%28TTM%29&code=60051 (stock_zh_valuation_baidu)
+2026-02-11 14:25:50 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:25:53 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via stock_zh_valuation_baidu...
+2026-02-11 14:25:53 - ERROR - stock_analyzer - module_a_akshare:137 - valuation_history_baidu:pb: ProxyError - HTTPSConnectionPool(host='gushitong.baidu.com', port=443): Max retries exceeded with url: /opendata?openapi=1&dspName=iphone&tn=tangram&client=app&query=%E5%B8%82%E5%87%80%E7%8E%87&code=600519&word=&r (stock_zh_valuation_baidu)
+2026-02-11 14:25:53 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:25:56 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:ps_ttm] via stock_zh_valuation_baidu...
+2026-02-11 14:25:56 - ERROR - stock_analyzer - module_a_akshare:137 - valuation_history_baidu:ps_ttm: ProxyError - HTTPSConnectionPool(host='gushitong.baidu.com', port=443): Max retries exceeded with url: /opendata?openapi=1&dspName=iphone&tn=tangram&client=app&query=%E5%B8%82%E9%94%80%E7%8E%87%28TTM%29&code=60051 (stock_zh_valuation_baidu)
+2026-02-11 14:25:56 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:25:59 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:dv_ttm] via stock_zh_valuation_baidu...
+2026-02-11 14:25:59 - ERROR - stock_analyzer - module_a_akshare:137 - valuation_history_baidu:dv_ttm: ProxyError - HTTPSConnectionPool(host='gushitong.baidu.com', port=443): Max retries exceeded with url: /opendata?openapi=1&dspName=iphone&tn=tangram&client=app&query=%E8%82%A1%E6%81%AF%E7%8E%87%28TTM%29&code=60051 (stock_zh_valuation_baidu)
+2026-02-11 14:25:59 - WARNING - stock_analyzer - module_a_akshare:542 - valuation_history: 回退接口未能构建有效估值序列
+2026-02-11 14:25:59 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:26:02 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_vs_industry] via stock_zh_valuation_comparison_em...
+2026-02-11 14:26:02 - ERROR - stock_analyzer - module_a_akshare:137 - valuation_vs_industry: ProxyError - HTTPSConnectionPool(host='datacenter.eastmoney.com', port=443): Max retries exceeded with url: /securities/api/data/v1/get?reportName=RPT_PCF10_INDUSTRY_CVALUE&columns=ALL&quoteColumns=&filter=%28SECU (stock_zh_valuation_comparison_em)
+2026-02-11 14:26:02 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:26:05 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [fund_flow] via stock_individual_fund_flow...
+2026-02-11 14:26:05 - ERROR - stock_analyzer - module_a_akshare:137 - fund_flow: ProxyError - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/fflow/daykline/get?lmt=0&klt=101&secid=1.600519&fields1=f1%2Cf2%2Cf3%2Cf7&fields2=f51%2Cf52%2 (stock_individual_fund_flow)
+2026-02-11 14:26:05 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:26:08 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_industry] via stock_sector_fund_flow_rank...
+2026-02-11 14:26:08 - ERROR - stock_analyzer - module_a_akshare:137 - sector_flow_industry: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)
+2026-02-11 14:26:08 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:26:09 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_concept] via stock_sector_fund_flow_rank...
+2026-02-11 14:26:09 - ERROR - stock_analyzer - module_a_akshare:137 - sector_flow_concept: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)
+2026-02-11 14:26:09 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:26:12 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [northbound] via stock_hsgt_hold_stock_em...
+2026-02-11 14:26:12 - ERROR - stock_analyzer - module_a_akshare:137 - northbound: ProxyError - HTTPSConnectionPool(host='data.eastmoney.com', port=443): Max retries exceeded with url: /hsgtcg/list.html (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPSConnection(host= (stock_hsgt_hold_stock_em)
+2026-02-11 14:26:12 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:26:15 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [shareholder_count] via stock_zh_a_gdhs_detail_em...
+2026-02-11 14:26:15 - ERROR - stock_analyzer - module_a_akshare:137 - shareholder_count: ProxyError - HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=END_DATE&sortTypes=-1&pageSize=500&pageNumber=1&reportName=RPT_HOLDERNUM (stock_zh_a_gdhs_detail_em)
+2026-02-11 14:26:15 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:26:18 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [dividend_history_detail] via stock_history_dividend_detail...
+2026-02-11 14:26:18 - ERROR - stock_analyzer - module_a_akshare:137 - dividend_history_detail: ProxyError - HTTPSConnectionPool(host='vip.stock.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vISSUE_ShareBonus/stockid/600519.phtml (Caused by ProxyError('Unable to connect to prox (stock_history_dividend_detail)
+2026-02-11 14:26:18 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:26:21 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [dividend_history] via stock_history_dividend...
+2026-02-11 14:26:21 - ERROR - stock_analyzer - module_a_akshare:137 - dividend_history: ProxyError - HTTPSConnectionPool(host='vip.stock.finance.sina.com.cn', port=443): Max retries exceeded with url: /q/go.php/vInvestConsult/kind/lsfh/index.phtml?p=1&num=50000 (Caused by ProxyError('Unable to connec (stock_history_dividend)
+2026-02-11 14:26:21 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:26:24 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 14:26:24 - ERROR - stock_analyzer - module_a_akshare:137 - earnings_forecast: ProxyError - HTTPSConnectionPool(host='datacenter.eastmoney.com', port=443): Max retries exceeded with url: /securities/api/data/v1/get?sortColumns=NOTICE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNu (stock_yjyg_em)
+2026-02-11 14:26:24 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:26:27 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 14:26:27 - ERROR - stock_analyzer - module_a_akshare:137 - earnings_forecast: ProxyError - HTTPSConnectionPool(host='datacenter.eastmoney.com', port=443): Max retries exceeded with url: /securities/api/data/v1/get?sortColumns=NOTICE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNu (stock_yjyg_em)
+2026-02-11 14:26:27 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:26:30 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 14:26:30 - ERROR - stock_analyzer - module_a_akshare:137 - earnings_forecast: ProxyError - HTTPSConnectionPool(host='datacenter.eastmoney.com', port=443): Max retries exceeded with url: /securities/api/data/v1/get?sortColumns=NOTICE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNu (stock_yjyg_em)
+2026-02-11 14:26:30 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:26:33 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 14:26:33 - ERROR - stock_analyzer - module_a_akshare:137 - earnings_forecast: ProxyError - HTTPSConnectionPool(host='datacenter.eastmoney.com', port=443): Max retries exceeded with url: /securities/api/data/v1/get?sortColumns=NOTICE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNu (stock_yjyg_em)
+2026-02-11 14:26:33 - WARNING - stock_analyzer - module_a_akshare:1149 - earnings_forecast: 4 次 API 调用全部失败
+2026-02-11 14:26:33 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 14:26:36 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [pledge_ratio] via stock_gpzy_pledge_ratio_em...
+2026-02-11 14:26:36 - ERROR - stock_analyzer - module_a_akshare:137 - pledge_ratio: ProxyError - HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=PLEDGE_RATIO&sortTypes=-1&pageSize=500&pageNumber=1&reportName=RPT_CSDC_ (stock_gpzy_pledge_ratio_em)
+2026-02-11 14:27:17 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 14:27:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 14:27:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 14:27:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 14:27:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 14:27:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 14:27:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 14:27:17 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-11 14:27:17 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 14:27:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 14:27:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 14:27:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 14:27:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 14:27:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 14:27:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 14:27:17 - ERROR - stock_analyzer - module_a_akshare:149 - topic_x: 调用超时（>30.0s）(<lambda>) [连续超时 1/3]
+2026-02-11 14:27:17 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 14:27:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 14:27:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 14:27:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 14:27:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 14:27:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 14:27:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 14:27:17 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-11 14:27:17 - WARNING - stock_analyzer - module_a_akshare:858 - sector_flow_industry: 行业 '有色金属' 在板块数据中精确和模糊匹配均未命中
+2026-02-11 16:47:56 - INFO - stock_analyzer - module_a_akshare:1336 - Starting AKShare data collection for 600519 (贵州茅台)
+2026-02-11 16:47:56 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [company_info] via stock_individual_info_em...
+2026-02-11 16:47:56 - INFO - stock_analyzer - module_a_akshare:103 - [company_info] fetched successfully: 9 rows via stock_individual_info_em
+2026-02-11 16:47:56 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-11 16:47:59 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [realtime_quote] via stock_zh_a_spot_em...
+2026-02-11 16:48:10 - ERROR - stock_analyzer - module_a_akshare:123 - realtime_quote: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_zh_a_spot_em)
+2026-02-11 16:48:10 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via stock_financial_analysis_indicator...
+2026-02-11 16:48:10 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (stock_financial_analysis_indicator)
+2026-02-11 16:48:10 - WARNING - stock_analyzer - module_a_akshare:475 - valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu
+2026-02-11 16:48:10 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 16:48:13 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via stock_zh_valuation_baidu...
+2026-02-11 16:48:13 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-11 16:48:13 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 16:48:14 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via stock_zh_valuation_baidu...
+2026-02-11 16:48:14 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-11 16:48:14 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 16:48:17 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:ps_ttm] via stock_zh_valuation_baidu...
+2026-02-11 16:48:17 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:ps_ttm: TypeError - 'NoneType' object is not subscriptable (stock_zh_valuation_baidu)
+2026-02-11 16:48:17 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-11 16:48:20 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:dv_ttm] via stock_zh_valuation_baidu...
+2026-02-11 16:48:20 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:dv_ttm: TypeError - 'NoneType' object is not subscriptable (stock_zh_valuation_baidu)
+2026-02-11 16:48:20 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-11 16:48:23 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_vs_industry] via stock_zh_valuation_comparison_em...
+2026-02-11 16:48:23 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_vs_industry] fetched successfully: 8 rows via stock_zh_valuation_comparison_em
+2026-02-11 16:48:23 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-11 16:48:26 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [fund_flow] via stock_individual_fund_flow...
+2026-02-11 16:48:26 - INFO - stock_analyzer - module_a_akshare:103 - [fund_flow] fetched successfully: 121 rows via stock_individual_fund_flow
+2026-02-11 16:48:26 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 16:48:29 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_industry] via stock_sector_fund_flow_rank...
+2026-02-11 16:48:29 - ERROR - stock_analyzer - module_a_akshare:123 - sector_flow_industry: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_sector_fund_flow_rank)
+2026-02-11 16:48:29 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-11 16:48:32 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_concept] via stock_sector_fund_flow_rank...
+2026-02-11 16:48:32 - ERROR - stock_analyzer - module_a_akshare:123 - sector_flow_concept: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_sector_fund_flow_rank)
+2026-02-11 16:48:32 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-11 16:48:35 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [northbound] via stock_hsgt_hold_stock_em...
+2026-02-11 16:48:37 - INFO - stock_analyzer - module_a_akshare:103 - [northbound] fetched successfully: 2767 rows via stock_hsgt_hold_stock_em
+2026-02-11 16:48:37 - INFO - stock_analyzer - module_a_akshare:201 - [northbound] cache set: stock_hsgt_hold_stock_em:北向:今日排行, rows=2767
+2026-02-11 16:48:37 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.6s before next AKShare call
+2026-02-11 16:48:38 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [shareholder_count] via stock_zh_a_gdhs_detail_em...
+2026-02-11 16:48:39 - INFO - stock_analyzer - module_a_akshare:103 - [shareholder_count] fetched successfully: 60 rows via stock_zh_a_gdhs_detail_em
+2026-02-11 16:48:39 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.7s before next AKShare call
+2026-02-11 16:48:41 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [dividend_history_detail] via stock_history_dividend_detail...
+2026-02-11 16:48:41 - INFO - stock_analyzer - module_a_akshare:103 - [dividend_history_detail] fetched successfully: 30 rows via stock_history_dividend_detail
+2026-02-11 16:48:41 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 16:48:44 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 16:48:50 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 7667 rows via stock_yjyg_em
+2026-02-11 16:48:50 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20251231, rows=7667
+2026-02-11 16:48:50 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 16:48:51 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 493 rows via stock_yjyg_em
+2026-02-11 16:48:51 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250930, rows=493
+2026-02-11 16:48:51 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.6s before next AKShare call
+2026-02-11 16:48:53 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 16:48:57 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 4304 rows via stock_yjyg_em
+2026-02-11 16:48:57 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250630, rows=4304
+2026-02-11 16:48:57 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 16:48:58 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 712 rows via stock_yjyg_em
+2026-02-11 16:48:58 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250331, rows=712
+2026-02-11 16:48:58 - INFO - stock_analyzer - module_a_akshare:1161 - earnings_forecast: 最近 4 个季度均未找到 600519 的业绩预告（API 正常，该股票无预告）
+2026-02-11 16:48:58 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.0s before next AKShare call
+2026-02-11 16:49:00 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [pledge_ratio] via stock_gpzy_pledge_ratio_em...
+2026-02-11 16:49:01 - INFO - stock_analyzer - module_a_akshare:103 - [pledge_ratio] fetched successfully: 2322 rows via stock_gpzy_pledge_ratio_em
+2026-02-11 16:49:01 - INFO - stock_analyzer - module_a_akshare:201 - [pledge_ratio] cache set: stock_gpzy_pledge_ratio_em, rows=2322
+2026-02-11 16:49:01 - INFO - stock_analyzer - module_a_akshare:1309 - AKShare collection completed for 600519: 9/12 topics succeeded (3 failed, 7 errors)
+2026-02-11 16:49:01 - INFO - stock_analyzer - module_a_akshare:1339 - AKShare data collection finished for 600519: 9/12 topics, 7 errors
+2026-02-11 17:45:07 - ERROR - stock_analyzer - module_a_akshare:255 - financial_indicators(解析阶段): AttributeError - __name__
+2026-02-11 17:45:07 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:ps_ttm] via fake_baidu...
+2026-02-11 17:45:07 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:ps_ttm: TypeError - 'NoneType' object is not subscriptable (fake_baidu)
+2026-02-11 17:45:07 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:45:10 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:dv_ttm] via fake_baidu...
+2026-02-11 17:45:10 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:dv_ttm: TypeError - 'NoneType' object is not subscriptable (fake_baidu)
+2026-02-11 17:45:10 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 17:45:10 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 3 rows via fake_baidu
+2026-02-11 17:45:10 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:45:13 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 17:45:13 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 3 rows via fake_baidu
+2026-02-11 17:45:41 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 17:45:41 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (<lambda>)
+2026-02-11 17:45:41 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 17:45:41 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (<lambda>)
+2026-02-11 17:45:41 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 17:45:41 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 1 rows via <lambda>
+2026-02-11 17:45:41 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:ps_ttm] via fake_baidu...
+2026-02-11 17:45:41 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:ps_ttm: TypeError - 'NoneType' object is not subscriptable (fake_baidu)
+2026-02-11 17:45:41 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:45:44 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:dv_ttm] via fake_baidu...
+2026-02-11 17:45:44 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:dv_ttm: TypeError - 'NoneType' object is not subscriptable (fake_baidu)
+2026-02-11 17:45:44 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 17:45:44 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 3 rows via fake_baidu
+2026-02-11 17:45:44 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:45:47 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 17:45:47 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 3 rows via fake_baidu
+2026-02-11 17:47:18 - WARNING - stock_analyzer - module_a_akshare:668 - valuation_vs_industry: 代码 '688008' 在同行表中未找到
+2026-02-11 17:47:18 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 17:47:18 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 2 rows via fake_baidu
+2026-02-11 17:47:18 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:47:21 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 17:47:21 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 2 rows via fake_baidu
+2026-02-11 17:47:21 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 17:47:21 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 13 rows via fake_baidu
+2026-02-11 17:47:21 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:47:24 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 17:47:24 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 13 rows via fake_baidu
+2026-02-11 17:55:13 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 17:55:13 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 17:55:13 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 17:55:13 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 17:55:13 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 17:55:13 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 17:55:13 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 17:55:13 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-11 17:55:13 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 17:55:13 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 17:55:13 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 17:55:13 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 17:55:13 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 17:55:13 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 17:55:13 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 17:55:13 - ERROR - stock_analyzer - module_a_akshare:149 - topic_x: 调用超时（>30.0s）(<lambda>) [连续超时 1/3]
+2026-02-11 17:55:13 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 17:55:13 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 17:55:13 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 17:55:13 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 17:55:13 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 17:55:13 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 17:55:13 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 17:55:13 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-11 17:55:13 - WARNING - stock_analyzer - module_a_akshare:891 - sector_flow_industry: 行业 '有色金属' 在板块数据中精确和模糊匹配均未命中
+2026-02-11 17:55:42 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 17:55:42 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (<lambda>)
+2026-02-11 17:55:42 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 17:55:42 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (<lambda>)
+2026-02-11 17:55:42 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 17:55:42 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 1 rows via <lambda>
+2026-02-11 17:55:42 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:ps_ttm] via fake_baidu...
+2026-02-11 17:55:42 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:ps_ttm: TypeError - 'NoneType' object is not subscriptable (fake_baidu)
+2026-02-11 17:55:42 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:55:43 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:dv_ttm] via fake_baidu...
+2026-02-11 17:55:43 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:dv_ttm: TypeError - 'NoneType' object is not subscriptable (fake_baidu)
+2026-02-11 17:55:43 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 17:55:43 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 3 rows via fake_baidu
+2026-02-11 17:55:43 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:55:46 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 17:55:46 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 3 rows via fake_baidu
+2026-02-11 17:55:46 - WARNING - stock_analyzer - module_a_akshare:668 - valuation_vs_industry: 代码 '688008' 在同行表中未找到
+2026-02-11 17:55:46 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 17:55:46 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 2 rows via fake_baidu
+2026-02-11 17:55:46 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:55:49 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 17:55:49 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 2 rows via fake_baidu
+2026-02-11 17:55:49 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 17:55:49 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 13 rows via fake_baidu
+2026-02-11 17:55:49 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:55:52 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 17:55:52 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 13 rows via fake_baidu
+2026-02-11 17:56:17 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 17:56:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 17:56:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 17:56:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 17:56:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 17:56:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 17:56:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 17:56:17 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-11 17:56:17 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 17:56:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 17:56:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 17:56:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 17:56:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 17:56:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 17:56:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 17:56:17 - ERROR - stock_analyzer - module_a_akshare:149 - topic_x: 调用超时（>30.0s）(<lambda>) [连续超时 1/3]
+2026-02-11 17:56:17 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 17:56:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 17:56:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 17:56:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 17:56:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 17:56:17 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 17:56:17 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 17:56:17 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-11 17:56:17 - WARNING - stock_analyzer - module_a_akshare:891 - sector_flow_industry: 行业 '有色金属' 在板块数据中精确和模糊匹配均未命中
+2026-02-11 17:57:31 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 17:57:31 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (<lambda>)
+2026-02-11 17:57:31 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 17:57:31 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (<lambda>)
+2026-02-11 17:57:31 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 17:57:31 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 1 rows via <lambda>
+2026-02-11 17:57:31 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:ps_ttm] via fake_baidu...
+2026-02-11 17:57:31 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:ps_ttm: TypeError - 'NoneType' object is not subscriptable (fake_baidu)
+2026-02-11 17:57:31 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:57:34 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:dv_ttm] via fake_baidu...
+2026-02-11 17:57:34 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:dv_ttm: TypeError - 'NoneType' object is not subscriptable (fake_baidu)
+2026-02-11 17:57:34 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 17:57:34 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 3 rows via fake_baidu
+2026-02-11 17:57:34 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:57:37 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 17:57:37 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 3 rows via fake_baidu
+2026-02-11 17:57:37 - WARNING - stock_analyzer - module_a_akshare:668 - valuation_vs_industry: 代码 '688008' 在同行表中未找到
+2026-02-11 17:57:37 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 17:57:37 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 2 rows via fake_baidu
+2026-02-11 17:57:37 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:57:40 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 17:57:40 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 2 rows via fake_baidu
+2026-02-11 17:57:40 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 17:57:40 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 13 rows via fake_baidu
+2026-02-11 17:57:40 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:57:43 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 17:57:43 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 13 rows via fake_baidu
+2026-02-11 17:57:43 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 17:57:43 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 17:57:43 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 17:57:43 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 17:57:43 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 17:57:43 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 17:57:43 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 17:57:43 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-11 17:57:43 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 17:57:43 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 17:57:43 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 17:57:43 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 17:57:43 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 17:57:43 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 17:57:43 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 17:57:43 - ERROR - stock_analyzer - module_a_akshare:149 - topic_x: 调用超时（>30.0s）(<lambda>) [连续超时 1/3]
+2026-02-11 17:57:43 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 17:57:43 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 17:57:43 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 17:57:43 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 17:57:43 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 17:57:43 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 17:57:43 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 17:57:43 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-11 17:57:43 - WARNING - stock_analyzer - module_a_akshare:891 - sector_flow_industry: 行业 '有色金属' 在板块数据中精确和模糊匹配均未命中
+2026-02-11 17:57:45 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 17:57:45 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 17:57:45 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 17:57:45 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 17:57:45 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 17:57:45 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 17:57:45 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 17:57:45 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-11 17:57:45 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 17:57:45 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 17:57:45 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 17:57:45 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 17:57:45 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 17:57:45 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 17:57:45 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 17:57:45 - ERROR - stock_analyzer - module_a_akshare:149 - topic_x: 调用超时（>30.0s）(<lambda>) [连续超时 1/3]
+2026-02-11 17:57:45 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 17:57:45 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 17:57:45 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 17:57:45 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 17:57:45 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 17:57:45 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 17:57:45 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 17:57:45 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-11 17:57:45 - WARNING - stock_analyzer - module_a_akshare:891 - sector_flow_industry: 行业 '有色金属' 在板块数据中精确和模糊匹配均未命中
+2026-02-11 17:59:14 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 17:59:14 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (<lambda>)
+2026-02-11 17:59:14 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 17:59:14 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (<lambda>)
+2026-02-11 17:59:14 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 17:59:14 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 1 rows via <lambda>
+2026-02-11 17:59:14 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:ps_ttm] via fake_baidu...
+2026-02-11 17:59:14 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:ps_ttm: TypeError - 'NoneType' object is not subscriptable (fake_baidu)
+2026-02-11 17:59:14 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:59:17 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:dv_ttm] via fake_baidu...
+2026-02-11 17:59:17 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:dv_ttm: TypeError - 'NoneType' object is not subscriptable (fake_baidu)
+2026-02-11 17:59:17 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 17:59:17 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 3 rows via fake_baidu
+2026-02-11 17:59:17 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:59:19 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 17:59:19 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 3 rows via fake_baidu
+2026-02-11 17:59:19 - WARNING - stock_analyzer - module_a_akshare:668 - valuation_vs_industry: 代码 '688008' 在同行表中未找到
+2026-02-11 17:59:19 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 17:59:19 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 2 rows via fake_baidu
+2026-02-11 17:59:19 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:59:22 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 17:59:22 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 2 rows via fake_baidu
+2026-02-11 17:59:22 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 17:59:22 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 13 rows via fake_baidu
+2026-02-11 17:59:22 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 17:59:25 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 17:59:25 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 13 rows via fake_baidu
+2026-02-11 18:05:23 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 18:05:23 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 18:05:23 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 18:05:23 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 18:05:23 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 18:05:23 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 18:05:23 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 18:05:23 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-11 18:05:23 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 18:05:23 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 18:05:23 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 18:05:23 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 18:05:23 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 18:05:23 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 18:05:23 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 18:05:23 - ERROR - stock_analyzer - module_a_akshare:149 - topic_x: 调用超时（>30.0s）(<lambda>) [连续超时 1/3]
+2026-02-11 18:05:23 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-11 18:05:23 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-11 18:05:23 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-11 18:05:23 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-11 18:05:23 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-11 18:05:23 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-11 18:05:23 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-11 18:05:23 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-11 18:05:24 - WARNING - stock_analyzer - module_a_akshare:942 - sector_flow_industry: 行业 '有色金属' 在板块数据中精确和模糊匹配均未命中
+2026-02-11 18:10:00 - INFO - stock_analyzer - module_a_akshare:1420 - Starting AKShare data collection for 600519 (贵州茅台)
+2026-02-11 18:10:00 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [company_info] via stock_individual_info_em...
+2026-02-11 18:10:00 - INFO - stock_analyzer - module_a_akshare:103 - [company_info] fetched successfully: 9 rows via stock_individual_info_em
+2026-02-11 18:10:00 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:10:03 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [realtime_quote] via stock_zh_a_spot_em...
+2026-02-11 18:10:08 - ERROR - stock_analyzer - module_a_akshare:123 - realtime_quote: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_zh_a_spot_em)
+2026-02-11 18:10:08 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via stock_financial_analysis_indicator_em...
+2026-02-11 18:10:09 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 100 rows via stock_financial_analysis_indicator_em
+2026-02-11 18:10:09 - WARNING - stock_analyzer - module_a_akshare:526 - valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu
+2026-02-11 18:10:09 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:10:11 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via stock_zh_valuation_baidu...
+2026-02-11 18:10:12 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-11 18:10:12 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:10:15 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via stock_zh_valuation_baidu...
+2026-02-11 18:10:15 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-11 18:10:15 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:10:18 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_vs_industry] via stock_zh_valuation_comparison_em...
+2026-02-11 18:10:18 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_vs_industry] fetched successfully: 8 rows via stock_zh_valuation_comparison_em
+2026-02-11 18:10:18 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-11 18:10:19 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [fund_flow] via stock_individual_fund_flow...
+2026-02-11 18:10:19 - INFO - stock_analyzer - module_a_akshare:103 - [fund_flow] fetched successfully: 121 rows via stock_individual_fund_flow
+2026-02-11 18:10:19 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:10:22 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_industry] via stock_sector_fund_flow_rank...
+2026-02-11 18:10:22 - ERROR - stock_analyzer - module_a_akshare:123 - sector_flow_industry: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_sector_fund_flow_rank)
+2026-02-11 18:10:22 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-11 18:10:25 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_concept] via stock_sector_fund_flow_rank...
+2026-02-11 18:10:25 - ERROR - stock_analyzer - module_a_akshare:123 - sector_flow_concept: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_sector_fund_flow_rank)
+2026-02-11 18:10:25 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:10:28 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [northbound] via stock_hsgt_hold_stock_em...
+2026-02-11 18:10:29 - INFO - stock_analyzer - module_a_akshare:103 - [northbound] fetched successfully: 2767 rows via stock_hsgt_hold_stock_em
+2026-02-11 18:10:29 - INFO - stock_analyzer - module_a_akshare:201 - [northbound] cache set: stock_hsgt_hold_stock_em:北向:今日排行, rows=2767
+2026-02-11 18:10:29 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.4s before next AKShare call
+2026-02-11 18:10:31 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [shareholder_count] via stock_zh_a_gdhs_detail_em...
+2026-02-11 18:10:31 - INFO - stock_analyzer - module_a_akshare:103 - [shareholder_count] fetched successfully: 60 rows via stock_zh_a_gdhs_detail_em
+2026-02-11 18:10:31 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.5s before next AKShare call
+2026-02-11 18:10:34 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [dividend_history_detail] via stock_history_dividend_detail...
+2026-02-11 18:10:34 - INFO - stock_analyzer - module_a_akshare:103 - [dividend_history_detail] fetched successfully: 30 rows via stock_history_dividend_detail
+2026-02-11 18:10:34 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:10:37 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 18:10:43 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 7667 rows via stock_yjyg_em
+2026-02-11 18:10:43 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20251231, rows=7667
+2026-02-11 18:10:43 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 18:10:44 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 493 rows via stock_yjyg_em
+2026-02-11 18:10:44 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250930, rows=493
+2026-02-11 18:10:44 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.4s before next AKShare call
+2026-02-11 18:10:46 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 18:10:48 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 4304 rows via stock_yjyg_em
+2026-02-11 18:10:48 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250630, rows=4304
+2026-02-11 18:10:48 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.3s before next AKShare call
+2026-02-11 18:10:49 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 18:10:50 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 712 rows via stock_yjyg_em
+2026-02-11 18:10:50 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250331, rows=712
+2026-02-11 18:10:50 - INFO - stock_analyzer - module_a_akshare:1245 - earnings_forecast: 最近 4 个季度均未找到 600519 的业绩预告（API 正常，该股票无预告）
+2026-02-11 18:10:50 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.5s before next AKShare call
+2026-02-11 18:10:52 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [pledge_ratio] via stock_gpzy_pledge_ratio_em...
+2026-02-11 18:10:54 - INFO - stock_analyzer - module_a_akshare:103 - [pledge_ratio] fetched successfully: 2322 rows via stock_gpzy_pledge_ratio_em
+2026-02-11 18:10:54 - INFO - stock_analyzer - module_a_akshare:201 - [pledge_ratio] cache set: stock_gpzy_pledge_ratio_em, rows=2322
+2026-02-11 18:10:54 - INFO - stock_analyzer - module_a_akshare:1393 - AKShare collection completed for 600519: 10/12 topics succeeded (2 failed, 4 errors)
+2026-02-11 18:10:54 - INFO - stock_analyzer - module_a_akshare:1423 - AKShare data collection finished for 600519: 10/12 topics, 4 errors
+2026-02-11 18:41:33 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via stock_financial_analysis_indicator_em...
+2026-02-11 18:41:35 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 100 rows via stock_financial_analysis_indicator_em
+2026-02-11 18:41:35 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via stock_financial_analysis_indicator_em...
+2026-02-11 18:41:36 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 100 rows via stock_financial_analysis_indicator_em
+2026-02-11 18:41:36 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via stock_financial_analysis_indicator_em...
+2026-02-11 18:41:38 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 100 rows via stock_financial_analysis_indicator_em
+2026-02-11 18:41:38 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:ps_ttm] via fake_baidu...
+2026-02-11 18:41:38 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:ps_ttm: TypeError - 'NoneType' object is not subscriptable (fake_baidu)
+2026-02-11 18:41:38 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 18:41:41 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:dv_ttm] via fake_baidu...
+2026-02-11 18:41:41 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:dv_ttm: TypeError - 'NoneType' object is not subscriptable (fake_baidu)
+2026-02-11 18:41:41 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 18:41:41 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 3 rows via fake_baidu
+2026-02-11 18:41:41 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 18:41:44 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 18:41:44 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 3 rows via fake_baidu
+2026-02-11 18:41:44 - WARNING - stock_analyzer - module_a_akshare:719 - valuation_vs_industry: 代码 '688008' 在同行表中未找到
+2026-02-11 18:41:44 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 18:41:44 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 2 rows via fake_baidu
+2026-02-11 18:41:44 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 18:41:47 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 18:41:47 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 2 rows via fake_baidu
+2026-02-11 18:41:47 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 18:41:47 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 13 rows via fake_baidu
+2026-02-11 18:41:47 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 18:41:50 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 18:41:50 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 13 rows via fake_baidu
+2026-02-11 18:42:43 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 18:42:43 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (<lambda>)
+2026-02-11 18:42:43 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 18:42:46 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 18:42:46 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (<lambda>)
+2026-02-11 18:42:46 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 18:42:46 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (<lambda>)
+2026-02-11 18:42:46 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 18:42:49 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 18:42:49 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (<lambda>)
+2026-02-11 18:42:49 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:ps_ttm] via fake_baidu...
+2026-02-11 18:42:49 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:ps_ttm: TypeError - 'NoneType' object is not subscriptable (fake_baidu)
+2026-02-11 18:42:49 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 18:42:52 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:dv_ttm] via fake_baidu...
+2026-02-11 18:42:52 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:dv_ttm: TypeError - 'NoneType' object is not subscriptable (fake_baidu)
+2026-02-11 18:42:52 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 18:42:52 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 3 rows via fake_baidu
+2026-02-11 18:42:52 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 18:42:55 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 18:42:55 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 3 rows via fake_baidu
+2026-02-11 18:42:55 - WARNING - stock_analyzer - module_a_akshare:719 - valuation_vs_industry: 代码 '688008' 在同行表中未找到
+2026-02-11 18:42:55 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 18:42:55 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 2 rows via fake_baidu
+2026-02-11 18:42:55 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 18:42:58 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 18:42:58 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 2 rows via fake_baidu
+2026-02-11 18:42:58 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 18:42:58 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 13 rows via fake_baidu
+2026-02-11 18:42:58 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 18:43:01 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 18:43:01 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 13 rows via fake_baidu
+2026-02-11 18:45:29 - INFO - stock_analyzer - module_a_akshare:1420 - Starting AKShare data collection for 600519 (贵州茅台)
+2026-02-11 18:45:29 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [company_info] via stock_individual_info_em...
+2026-02-11 18:45:29 - INFO - stock_analyzer - module_a_akshare:103 - [company_info] fetched successfully: 9 rows via stock_individual_info_em
+2026-02-11 18:45:29 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:45:32 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [realtime_quote] via stock_zh_a_spot_em...
+2026-02-11 18:45:38 - ERROR - stock_analyzer - module_a_akshare:123 - realtime_quote: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_zh_a_spot_em)
+2026-02-11 18:45:38 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via stock_financial_analysis_indicator_em...
+2026-02-11 18:45:38 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 100 rows via stock_financial_analysis_indicator_em
+2026-02-11 18:45:38 - WARNING - stock_analyzer - module_a_akshare:526 - valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu
+2026-02-11 18:45:38 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:45:39 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via stock_zh_valuation_baidu...
+2026-02-11 18:45:39 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-11 18:45:39 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:45:42 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via stock_zh_valuation_baidu...
+2026-02-11 18:45:42 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-11 18:45:42 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-11 18:45:45 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_vs_industry] via stock_zh_valuation_comparison_em...
+2026-02-11 18:45:45 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_vs_industry] fetched successfully: 8 rows via stock_zh_valuation_comparison_em
+2026-02-11 18:45:45 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-11 18:45:48 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [fund_flow] via stock_individual_fund_flow...
+2026-02-11 18:45:48 - INFO - stock_analyzer - module_a_akshare:103 - [fund_flow] fetched successfully: 121 rows via stock_individual_fund_flow
+2026-02-11 18:45:48 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:45:51 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_industry] via stock_sector_fund_flow_rank...
+2026-02-11 18:45:51 - ERROR - stock_analyzer - module_a_akshare:123 - sector_flow_industry: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_sector_fund_flow_rank)
+2026-02-11 18:45:51 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-11 18:45:54 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_concept] via stock_sector_fund_flow_rank...
+2026-02-11 18:45:54 - ERROR - stock_analyzer - module_a_akshare:123 - sector_flow_concept: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_sector_fund_flow_rank)
+2026-02-11 18:45:54 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-11 18:45:57 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [northbound] via stock_hsgt_hold_stock_em...
+2026-02-11 18:46:00 - INFO - stock_analyzer - module_a_akshare:103 - [northbound] fetched successfully: 2767 rows via stock_hsgt_hold_stock_em
+2026-02-11 18:46:00 - INFO - stock_analyzer - module_a_akshare:201 - [northbound] cache set: stock_hsgt_hold_stock_em:北向:今日排行, rows=2767
+2026-02-11 18:46:00 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.7s before next AKShare call
+2026-02-11 18:46:00 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [shareholder_count] via stock_zh_a_gdhs_detail_em...
+2026-02-11 18:46:01 - INFO - stock_analyzer - module_a_akshare:103 - [shareholder_count] fetched successfully: 60 rows via stock_zh_a_gdhs_detail_em
+2026-02-11 18:46:01 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.4s before next AKShare call
+2026-02-11 18:46:03 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [dividend_history_detail] via stock_history_dividend_detail...
+2026-02-11 18:46:04 - INFO - stock_analyzer - module_a_akshare:103 - [dividend_history_detail] fetched successfully: 30 rows via stock_history_dividend_detail
+2026-02-11 18:46:04 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:46:06 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 18:46:09 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 7670 rows via stock_yjyg_em
+2026-02-11 18:46:09 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20251231, rows=7670
+2026-02-11 18:46:09 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.5s before next AKShare call
+2026-02-11 18:46:09 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 18:46:10 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 493 rows via stock_yjyg_em
+2026-02-11 18:46:10 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250930, rows=493
+2026-02-11 18:46:10 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.7s before next AKShare call
+2026-02-11 18:46:12 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 18:46:14 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 4304 rows via stock_yjyg_em
+2026-02-11 18:46:14 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250630, rows=4304
+2026-02-11 18:46:14 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.9s before next AKShare call
+2026-02-11 18:46:15 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 18:46:16 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 712 rows via stock_yjyg_em
+2026-02-11 18:46:16 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250331, rows=712
+2026-02-11 18:46:16 - INFO - stock_analyzer - module_a_akshare:1245 - earnings_forecast: 最近 4 个季度均未找到 600519 的业绩预告（API 正常，该股票无预告）
+2026-02-11 18:46:16 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.6s before next AKShare call
+2026-02-11 18:46:18 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [pledge_ratio] via stock_gpzy_pledge_ratio_em...
+2026-02-11 18:46:20 - INFO - stock_analyzer - module_a_akshare:103 - [pledge_ratio] fetched successfully: 2322 rows via stock_gpzy_pledge_ratio_em
+2026-02-11 18:46:20 - INFO - stock_analyzer - module_a_akshare:201 - [pledge_ratio] cache set: stock_gpzy_pledge_ratio_em, rows=2322
+2026-02-11 18:46:20 - INFO - stock_analyzer - module_a_akshare:1393 - AKShare collection completed for 600519: 10/12 topics succeeded (2 failed, 4 errors)
+2026-02-11 18:46:20 - INFO - stock_analyzer - module_a_akshare:1423 - AKShare data collection finished for 600519: 10/12 topics, 4 errors
+2026-02-11 18:51:37 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 18:51:37 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (<lambda>)
+2026-02-11 18:51:37 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 18:51:40 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 18:51:40 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (<lambda>)
+2026-02-11 18:51:40 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 18:51:40 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (<lambda>)
+2026-02-11 18:51:40 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 18:51:43 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via <lambda>...
+2026-02-11 18:51:43 - WARNING - stock_analyzer - module_a_akshare:100 - financial_indicators: 返回数据为空 (<lambda>)
+2026-02-11 18:51:43 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:ps_ttm] via fake_baidu...
+2026-02-11 18:51:43 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:ps_ttm: TypeError - 'NoneType' object is not subscriptable (fake_baidu)
+2026-02-11 18:51:43 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 18:51:46 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:dv_ttm] via fake_baidu...
+2026-02-11 18:51:46 - ERROR - stock_analyzer - module_a_akshare:123 - valuation_history_baidu:dv_ttm: TypeError - 'NoneType' object is not subscriptable (fake_baidu)
+2026-02-11 18:51:46 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 18:51:46 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 3 rows via fake_baidu
+2026-02-11 18:51:46 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 18:51:48 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 18:51:48 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 3 rows via fake_baidu
+2026-02-11 18:51:48 - WARNING - stock_analyzer - module_a_akshare:727 - valuation_vs_industry: 代码 '688008' 在同行表中未找到
+2026-02-11 18:51:48 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 18:51:48 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 2 rows via fake_baidu
+2026-02-11 18:51:48 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 18:51:51 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 18:51:51 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 2 rows via fake_baidu
+2026-02-11 18:51:51 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via fake_baidu...
+2026-02-11 18:51:51 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 13 rows via fake_baidu
+2026-02-11 18:51:51 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.0s before next AKShare call
+2026-02-11 18:51:54 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via fake_baidu...
+2026-02-11 18:51:54 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 13 rows via fake_baidu
+2026-02-11 18:53:48 - INFO - stock_analyzer - module_a_akshare:1428 - Starting AKShare data collection for 600519 (贵州茅台)
+2026-02-11 18:53:48 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [company_info] via stock_individual_info_em...
+2026-02-11 18:53:48 - INFO - stock_analyzer - module_a_akshare:103 - [company_info] fetched successfully: 9 rows via stock_individual_info_em
+2026-02-11 18:53:48 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:53:51 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [realtime_quote] via stock_zh_a_spot_em...
+2026-02-11 18:53:55 - ERROR - stock_analyzer - module_a_akshare:123 - realtime_quote: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_zh_a_spot_em)
+2026-02-11 18:53:55 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via stock_financial_analysis_indicator_em...
+2026-02-11 18:53:55 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 100 rows via stock_financial_analysis_indicator_em
+2026-02-11 18:53:55 - WARNING - stock_analyzer - module_a_akshare:534 - valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu
+2026-02-11 18:53:55 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:53:58 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via stock_zh_valuation_baidu...
+2026-02-11 18:53:58 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-11 18:53:58 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-11 18:54:01 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via stock_zh_valuation_baidu...
+2026-02-11 18:54:01 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-11 18:54:01 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:54:04 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_vs_industry] via stock_zh_valuation_comparison_em...
+2026-02-11 18:54:04 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_vs_industry] fetched successfully: 8 rows via stock_zh_valuation_comparison_em
+2026-02-11 18:54:04 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:54:07 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [fund_flow] via stock_individual_fund_flow...
+2026-02-11 18:54:07 - INFO - stock_analyzer - module_a_akshare:103 - [fund_flow] fetched successfully: 121 rows via stock_individual_fund_flow
+2026-02-11 18:54:07 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:54:10 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_industry] via stock_sector_fund_flow_rank...
+2026-02-11 18:54:10 - ERROR - stock_analyzer - module_a_akshare:123 - sector_flow_industry: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_sector_fund_flow_rank)
+2026-02-11 18:54:10 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-11 18:54:13 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_concept] via stock_sector_fund_flow_rank...
+2026-02-11 18:54:13 - ERROR - stock_analyzer - module_a_akshare:123 - sector_flow_concept: ConnectionError - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) (stock_sector_fund_flow_rank)
+2026-02-11 18:54:13 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.9s before next AKShare call
+2026-02-11 18:54:16 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [northbound] via stock_hsgt_hold_stock_em...
+2026-02-11 18:54:19 - INFO - stock_analyzer - module_a_akshare:103 - [northbound] fetched successfully: 2767 rows via stock_hsgt_hold_stock_em
+2026-02-11 18:54:19 - INFO - stock_analyzer - module_a_akshare:201 - [northbound] cache set: stock_hsgt_hold_stock_em:北向:今日排行, rows=2767
+2026-02-11 18:54:19 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.1s before next AKShare call
+2026-02-11 18:54:19 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [shareholder_count] via stock_zh_a_gdhs_detail_em...
+2026-02-11 18:54:19 - INFO - stock_analyzer - module_a_akshare:103 - [shareholder_count] fetched successfully: 60 rows via stock_zh_a_gdhs_detail_em
+2026-02-11 18:54:19 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.7s before next AKShare call
+2026-02-11 18:54:22 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [dividend_history_detail] via stock_history_dividend_detail...
+2026-02-11 18:54:22 - INFO - stock_analyzer - module_a_akshare:103 - [dividend_history_detail] fetched successfully: 30 rows via stock_history_dividend_detail
+2026-02-11 18:54:22 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.8s before next AKShare call
+2026-02-11 18:54:23 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 18:54:31 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 7670 rows via stock_yjyg_em
+2026-02-11 18:54:31 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20251231, rows=7670
+2026-02-11 18:54:31 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 18:54:31 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 493 rows via stock_yjyg_em
+2026-02-11 18:54:31 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250930, rows=493
+2026-02-11 18:54:31 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.6s before next AKShare call
+2026-02-11 18:54:34 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 18:54:37 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 4304 rows via stock_yjyg_em
+2026-02-11 18:54:37 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250630, rows=4304
+2026-02-11 18:54:37 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 18:54:37 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 712 rows via stock_yjyg_em
+2026-02-11 18:54:37 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250331, rows=712
+2026-02-11 18:54:37 - INFO - stock_analyzer - module_a_akshare:1253 - earnings_forecast: 最近 4 个季度均未找到 600519 的业绩预告（API 正常，该股票无预告）
+2026-02-11 18:54:37 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 2.4s before next AKShare call
+2026-02-11 18:54:40 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [pledge_ratio] via stock_gpzy_pledge_ratio_em...
+2026-02-11 18:54:42 - INFO - stock_analyzer - module_a_akshare:103 - [pledge_ratio] fetched successfully: 2322 rows via stock_gpzy_pledge_ratio_em
+2026-02-11 18:54:42 - INFO - stock_analyzer - module_a_akshare:201 - [pledge_ratio] cache set: stock_gpzy_pledge_ratio_em, rows=2322
+2026-02-11 18:54:42 - INFO - stock_analyzer - module_a_akshare:1401 - AKShare collection completed for 600519: 10/12 topics succeeded (2 failed, 4 errors)
+2026-02-11 18:54:42 - INFO - stock_analyzer - module_a_akshare:1431 - AKShare data collection finished for 600519: 10/12 topics, 4 errors
+2026-02-11 19:10:18 - INFO - stock_analyzer - module_a_akshare:1428 - Starting AKShare data collection for 600519 (贵州茅台)
+2026-02-11 19:10:18 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [company_info] via stock_individual_info_em...
+2026-02-11 19:10:22 - INFO - stock_analyzer - module_a_akshare:103 - [company_info] fetched successfully: 9 rows via stock_individual_info_em
+2026-02-11 19:10:22 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [realtime_quote] via stock_zh_a_spot_em...
+2026-02-11 19:10:43 - ERROR - stock_analyzer - module_a_akshare:123 - realtime_quote: ProxyError - HTTPSConnectionPool(host='82.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=3&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A0+ (stock_zh_a_spot_em)
+2026-02-11 19:10:43 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via stock_financial_analysis_indicator_em...
+2026-02-11 19:10:45 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 100 rows via stock_financial_analysis_indicator_em
+2026-02-11 19:10:45 - WARNING - stock_analyzer - module_a_akshare:534 - valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu
+2026-02-11 19:10:45 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.9s before next AKShare call
+2026-02-11 19:10:46 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via stock_zh_valuation_baidu...
+2026-02-11 19:10:48 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-11 19:10:48 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.5s before next AKShare call
+2026-02-11 19:10:49 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via stock_zh_valuation_baidu...
+2026-02-11 19:10:51 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-11 19:10:51 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.8s before next AKShare call
+2026-02-11 19:10:52 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_vs_industry] via stock_zh_valuation_comparison_em...
+2026-02-11 19:10:51 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_vs_industry] fetched successfully: 8 rows via stock_zh_valuation_comparison_em
+2026-02-11 19:10:51 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.4s before next AKShare call
+2026-02-11 19:10:55 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [fund_flow] via stock_individual_fund_flow...
+2026-02-11 19:10:57 - INFO - stock_analyzer - module_a_akshare:103 - [fund_flow] fetched successfully: 121 rows via stock_individual_fund_flow
+2026-02-11 19:10:57 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.1s before next AKShare call
+2026-02-11 19:10:58 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_industry] via stock_sector_fund_flow_rank...
+2026-02-11 19:11:00 - ERROR - stock_analyzer - module_a_akshare:123 - sector_flow_industry: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)
+2026-02-11 19:11:00 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.2s before next AKShare call
+2026-02-11 19:11:01 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_concept] via stock_sector_fund_flow_rank...
+2026-02-11 19:11:03 - ERROR - stock_analyzer - module_a_akshare:123 - sector_flow_concept: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)
+2026-02-11 19:11:03 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.5s before next AKShare call
+2026-02-11 19:11:04 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [northbound] via stock_hsgt_hold_stock_em...
+2026-02-11 19:11:17 - INFO - stock_analyzer - module_a_akshare:103 - [northbound] fetched successfully: 2767 rows via stock_hsgt_hold_stock_em
+2026-02-11 19:11:17 - INFO - stock_analyzer - module_a_akshare:201 - [northbound] cache set: stock_hsgt_hold_stock_em:北向:今日排行, rows=2767
+2026-02-11 19:11:17 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [shareholder_count] via stock_zh_a_gdhs_detail_em...
+2026-02-11 19:11:21 - INFO - stock_analyzer - module_a_akshare:103 - [shareholder_count] fetched successfully: 60 rows via stock_zh_a_gdhs_detail_em
+2026-02-11 19:11:21 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [dividend_history_detail] via stock_history_dividend_detail...
+2026-02-11 19:11:23 - INFO - stock_analyzer - module_a_akshare:103 - [dividend_history_detail] fetched successfully: 30 rows via stock_history_dividend_detail
+2026-02-11 19:11:23 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.0s before next AKShare call
+2026-02-11 19:11:22 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 19:11:52 - WARNING - stock_analyzer - module_a_akshare:137 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 1/3
+2026-02-11 19:11:52 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 2/4)...
+2026-02-11 19:12:21 - WARNING - stock_analyzer - module_a_akshare:137 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 2/3
+2026-02-11 19:12:21 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 3/4)...
+2026-02-11 19:12:49 - WARNING - stock_analyzer - module_a_akshare:137 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 3/3
+2026-02-11 19:12:49 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 4/4)...
+2026-02-11 19:13:17 - ERROR - stock_analyzer - module_a_akshare:149 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em) [连续超时 1/3]
+2026-02-11 19:13:17 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 19:13:21 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 493 rows via stock_yjyg_em
+2026-02-11 19:13:21 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250930, rows=493
+2026-02-11 19:13:21 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 19:13:40 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 4304 rows via stock_yjyg_em
+2026-02-11 19:13:40 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250630, rows=4304
+2026-02-11 19:13:40 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-11 19:13:46 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 712 rows via stock_yjyg_em
+2026-02-11 19:13:46 - INFO - stock_analyzer - module_a_akshare:201 - [earnings_forecast] cache set: stock_yjyg_em:20250331, rows=712
+2026-02-11 19:13:46 - INFO - stock_analyzer - module_a_akshare:1253 - earnings_forecast: 最近 4 个季度均未找到 600519 的业绩预告（API 正常，该股票无预告）
+2026-02-11 19:13:46 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [pledge_ratio] via stock_gpzy_pledge_ratio_em...
+2026-02-11 19:14:11 - INFO - stock_analyzer - module_a_akshare:103 - [pledge_ratio] fetched successfully: 2322 rows via stock_gpzy_pledge_ratio_em
+2026-02-11 19:14:11 - INFO - stock_analyzer - module_a_akshare:201 - [pledge_ratio] cache set: stock_gpzy_pledge_ratio_em, rows=2322
+2026-02-11 19:14:11 - INFO - stock_analyzer - module_a_akshare:1401 - AKShare collection completed for 600519: 10/12 topics succeeded (2 failed, 5 errors)
+2026-02-11 19:14:11 - INFO - stock_analyzer - module_a_akshare:1431 - AKShare data collection finished for 600519: 10/12 topics, 5 errors
+2026-02-12 00:17:14 - WARNING - stock_analyzer - module_c_technical:65 - fetch_monthly_kline failed for 600519 with adjust='qfq': RuntimeError: first call failed
+2026-02-12 00:17:14 - INFO - stock_analyzer - module_c_technical:548 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:17:14 - WARNING - stock_analyzer - module_c_technical:571 - 样本不足：仅 12 个月，小于 TECH_MIN_MONTHS=24
+2026-02-12 00:17:14 - INFO - stock_analyzer - module_c_technical:548 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:17:14 - INFO - stock_analyzer - module_c_technical:667 - Technical analysis completed for 600519: score=8.2, signal=看多, confidence=0.65
+2026-02-12 00:17:14 - INFO - stock_analyzer - module_c_technical:548 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:17:14 - ERROR - stock_analyzer - module_c_technical:633 - Technical agent call failed: Agent 'technical_analyst' call failed: bad llm output
+2026-02-12 00:17:28 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-12 00:17:28 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-12 00:17:28 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-12 00:17:28 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-12 00:17:28 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-12 00:17:28 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-12 00:17:28 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-12 00:17:28 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-12 00:17:28 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-12 00:17:28 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-12 00:17:28 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-12 00:17:28 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-12 00:17:28 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-12 00:17:28 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-12 00:17:28 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-12 00:17:28 - ERROR - stock_analyzer - module_a_akshare:149 - topic_x: 调用超时（>30.0s）(<lambda>) [连续超时 1/3]
+2026-02-12 00:17:28 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [topic_x] via <lambda>...
+2026-02-12 00:17:28 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 1/3
+2026-02-12 00:17:28 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 2/4)...
+2026-02-12 00:17:28 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 2/3
+2026-02-12 00:17:28 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 3/4)...
+2026-02-12 00:17:28 - WARNING - stock_analyzer - module_a_akshare:137 - topic_x: 调用超时（>30.0s）(<lambda>)，准备重试 3/3
+2026-02-12 00:17:28 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [topic_x] via <lambda> (attempt 4/4)...
+2026-02-12 00:17:28 - INFO - stock_analyzer - module_a_akshare:103 - [topic_x] fetched successfully: 1 rows via <lambda>
+2026-02-12 00:17:28 - WARNING - stock_analyzer - module_a_akshare:950 - sector_flow_industry: 行业 '有色金属' 在板块数据中精确和模糊匹配均未命中
+2026-02-12 00:26:43 - WARNING - stock_analyzer - module_c_technical:65 - fetch_monthly_kline failed for 600519 with adjust='qfq': RuntimeError: first call failed
+2026-02-12 00:26:43 - INFO - stock_analyzer - module_c_technical:557 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:26:43 - WARNING - stock_analyzer - module_c_technical:580 - 样本不足：仅 12 个月，小于 TECH_MIN_MONTHS=24
+2026-02-12 00:26:43 - INFO - stock_analyzer - module_c_technical:557 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:26:43 - INFO - stock_analyzer - module_c_technical:676 - Technical analysis completed for 600519: score=8.2, signal=看多, confidence=0.65
+2026-02-12 00:26:43 - INFO - stock_analyzer - module_c_technical:557 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:26:43 - ERROR - stock_analyzer - module_c_technical:642 - Technical agent call failed: Agent 'technical_analyst' call failed: bad llm output
+2026-02-12 00:29:27 - WARNING - stock_analyzer - module_c_technical:72 - fetch_monthly_kline failed for 600519 with adjust='qfq': RuntimeError: first call failed
+2026-02-12 00:29:27 - INFO - stock_analyzer - module_c_technical:579 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:29:27 - WARNING - stock_analyzer - module_c_technical:602 - 样本不足：仅 12 个月，小于 TECH_MIN_MONTHS=24
+2026-02-12 00:29:27 - INFO - stock_analyzer - module_c_technical:579 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:29:27 - INFO - stock_analyzer - module_c_technical:698 - Technical analysis completed for 600519: score=8.2, signal=看多, confidence=0.65
+2026-02-12 00:29:27 - INFO - stock_analyzer - module_c_technical:579 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:29:27 - ERROR - stock_analyzer - module_c_technical:664 - Technical agent call failed: Agent 'technical_analyst' call failed: bad llm output
+2026-02-12 00:35:17 - WARNING - stock_analyzer - module_c_technical:71 - fetch_monthly_kline failed for 600519 with adjust='qfq': RuntimeError: first call failed
+2026-02-12 00:35:17 - INFO - stock_analyzer - module_c_technical:578 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:35:17 - WARNING - stock_analyzer - module_c_technical:601 - 样本不足：仅 12 个月，小于 TECH_MIN_MONTHS=24
+2026-02-12 00:35:17 - INFO - stock_analyzer - module_c_technical:578 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:35:17 - INFO - stock_analyzer - module_c_technical:708 - Technical analysis completed for 600519: score=8.2, signal=看多, confidence=0.65
+2026-02-12 00:35:17 - INFO - stock_analyzer - module_c_technical:578 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:35:17 - ERROR - stock_analyzer - module_c_technical:663 - Technical agent call failed: Agent 'technical_analyst' call failed: bad llm output
+2026-02-12 00:35:17 - INFO - stock_analyzer - module_c_technical:578 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:35:17 - ERROR - stock_analyzer - module_c_technical:687 - Final technical result construction failed for 600519: ValidationError: 9 validation errors for TechnicalAnalysisResult
+score
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='bad', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/float_parsing
+signal
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+confidence
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+trend_analysis
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+momentum
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+volatility
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+volume_analysis
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+key_levels
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+summary
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-12 00:35:36 - WARNING - stock_analyzer - module_c_technical:71 - fetch_monthly_kline failed for 600519 with adjust='qfq': RuntimeError: first call failed
+2026-02-12 00:35:36 - INFO - stock_analyzer - module_c_technical:581 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:35:36 - WARNING - stock_analyzer - module_c_technical:604 - 样本不足：仅 12 个月，小于 TECH_MIN_MONTHS=24
+2026-02-12 00:35:36 - INFO - stock_analyzer - module_c_technical:581 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:35:36 - INFO - stock_analyzer - module_c_technical:711 - Technical analysis completed for 600519: score=8.2, signal=看多, confidence=0.65
+2026-02-12 00:35:36 - INFO - stock_analyzer - module_c_technical:581 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:35:36 - ERROR - stock_analyzer - module_c_technical:666 - Technical agent call failed: Agent 'technical_analyst' call failed: bad llm output
+2026-02-12 00:35:36 - INFO - stock_analyzer - module_c_technical:581 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:35:36 - ERROR - stock_analyzer - module_c_technical:690 - Final technical result construction failed for 600519: ValidationError: 9 validation errors for TechnicalAnalysisResult
+score
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='bad', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/float_parsing
+signal
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+confidence
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+trend_analysis
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+momentum
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+volatility
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+volume_analysis
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+key_levels
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+summary
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-12 00:42:07 - WARNING - stock_analyzer - module_c_technical:71 - fetch_monthly_kline failed for 600519 with adjust='qfq': RuntimeError: first call failed
+2026-02-12 00:42:07 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:42:07 - WARNING - stock_analyzer - module_c_technical:603 - 样本不足：仅 12 个月，小于 TECH_MIN_MONTHS=24
+2026-02-12 00:42:07 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:42:07 - INFO - stock_analyzer - module_c_technical:710 - Technical analysis completed for 600519: score=8.2, signal=看多, confidence=0.65
+2026-02-12 00:42:07 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:42:07 - ERROR - stock_analyzer - module_c_technical:665 - Technical agent call failed: Agent 'technical_analyst' call failed: bad llm output
+2026-02-12 00:42:07 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:42:07 - ERROR - stock_analyzer - module_c_technical:689 - Final technical result construction failed for 600519: ValidationError: 9 validation errors for TechnicalAnalysisResult
+score
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='bad', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/float_parsing
+signal
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+confidence
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+trend_analysis
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+momentum
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+volatility
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+volume_analysis
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+key_levels
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+summary
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-12 00:49:19 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 00:49:37 - INFO - stock_analyzer - module_c_technical:710 - Technical analysis completed for 600519: score=6.2, signal=看多, confidence=0.73
+2026-02-12 01:01:01 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 01:01:27 - INFO - stock_analyzer - module_c_technical:710 - Technical analysis completed for 600519: score=6.8, signal=看多, confidence=0.72
+2026-02-12 01:04:30 - WARNING - stock_analyzer - module_c_technical:71 - fetch_monthly_kline failed for 600519 with adjust='qfq': RuntimeError: first call failed
+2026-02-12 01:04:30 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 01:04:30 - WARNING - stock_analyzer - module_c_technical:603 - 样本不足：仅 12 个月，小于 TECH_MIN_MONTHS=24
+2026-02-12 01:04:30 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 01:04:30 - INFO - stock_analyzer - module_c_technical:710 - Technical analysis completed for 600519: score=8.2, signal=看多, confidence=0.65
+2026-02-12 01:04:30 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 01:04:30 - ERROR - stock_analyzer - module_c_technical:665 - Technical agent call failed: Agent 'technical_analyst' call failed: bad llm output
+2026-02-12 01:04:30 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 01:04:30 - ERROR - stock_analyzer - module_c_technical:689 - Final technical result construction failed for 600519: ValidationError: 9 validation errors for TechnicalAnalysisResult
+score
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='bad', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/float_parsing
+signal
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+confidence
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+trend_analysis
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+momentum
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+volatility
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+volume_analysis
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+key_levels
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+summary
+  Field required [type=missing, input_value={'meta': TechnicalMeta(sy...断']), 'score': 'bad'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-12 01:06:41 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-12 01:07:12 - INFO - stock_analyzer - module_c_technical:710 - Technical analysis completed for 600519: score=6.2, signal=中性, confidence=0.68

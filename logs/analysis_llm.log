@@ -6958,3 +6958,72 @@ RuntimeError: Step2 failed to produce valid output for 603080.SH. No valid Score
 2026-02-06 18:03:53,430 - INFO - analysis_llm - 评分生成完成 - 分数: 65.00
 2026-02-06 18:03:53,430 - DEBUG - analysis_llm - 评分理由摘要: 公司业绩稳健但治理承压，ESG评级为A级，若该优势未能转化为实质性治理改善，短期估值上行空间仍将受限。技术面显示买入信号，股价面临28.0元阻力位；板块热度指数达78.5，资金流入强劲。然而，SEC出...
 2026-02-06 18:03:53,430 - INFO - analysis_llm - Step2 完成 - 603080.SH: 65.00分
+2026-02-11 17:47:31,430 - DEBUG - agent_framework - The provider name 'openai' is not recognized. Consider using one of the following: OPENAI, ANTHROPIC, COHERE, MISTRALAI, OLLAMA, GROQ, ALEPH_ALPHA, REPLICATE, TOGETHER_AI, WATSONX, HUGGINGFACE, FIREWORKS, AZURE, AWS, GOOGLE, OPENROUTER, LANGCHAIN, CREWAI
+2026-02-11 17:47:31,431 - DEBUG - agent_framework - The provider name 'openai' is not recognized. Consider using one of the following: OPENAI, ANTHROPIC, COHERE, MISTRALAI, OLLAMA, GROQ, ALEPH_ALPHA, REPLICATE, TOGETHER_AI, WATSONX, HUGGINGFACE, FIREWORKS, AZURE, AWS, GOOGLE, OPENROUTER, LANGCHAIN, CREWAI
+2026-02-11 17:47:31,459 - DEBUG - agent_framework - The provider name 'openai' is not recognized. Consider using one of the following: OPENAI, ANTHROPIC, COHERE, MISTRALAI, OLLAMA, GROQ, ALEPH_ALPHA, REPLICATE, TOGETHER_AI, WATSONX, HUGGINGFACE, FIREWORKS, AZURE, AWS, GOOGLE, OPENROUTER, LANGCHAIN, CREWAI
+2026-02-11 17:48:27,270 - DEBUG - analysis_llm - 内容验证通过
+2026-02-11 17:48:27,271 - DEBUG - analysis_llm - 内容验证通过
+2026-02-11 17:50:40,375 - DEBUG - agent_framework - The provider name 'openai' is not recognized. Consider using one of the following: OPENAI, ANTHROPIC, COHERE, MISTRALAI, OLLAMA, GROQ, ALEPH_ALPHA, REPLICATE, TOGETHER_AI, WATSONX, HUGGINGFACE, FIREWORKS, AZURE, AWS, GOOGLE, OPENROUTER, LANGCHAIN, CREWAI
+2026-02-11 17:50:40,377 - DEBUG - agent_framework - The provider name 'openai' is not recognized. Consider using one of the following: OPENAI, ANTHROPIC, COHERE, MISTRALAI, OLLAMA, GROQ, ALEPH_ALPHA, REPLICATE, TOGETHER_AI, WATSONX, HUGGINGFACE, FIREWORKS, AZURE, AWS, GOOGLE, OPENROUTER, LANGCHAIN, CREWAI
+2026-02-11 17:50:40,405 - DEBUG - agent_framework - The provider name 'openai' is not recognized. Consider using one of the following: OPENAI, ANTHROPIC, COHERE, MISTRALAI, OLLAMA, GROQ, ALEPH_ALPHA, REPLICATE, TOGETHER_AI, WATSONX, HUGGINGFACE, FIREWORKS, AZURE, AWS, GOOGLE, OPENROUTER, LANGCHAIN, CREWAI
+2026-02-11 17:51:30,720 - DEBUG - analysis_llm - 内容验证通过
+2026-02-11 17:51:30,721 - DEBUG - analysis_llm - 内容验证通过
+2026-02-11 17:54:45,163 - DEBUG - agent_framework - The provider name 'openai' is not recognized. Consider using one of the following: OPENAI, ANTHROPIC, COHERE, MISTRALAI, OLLAMA, GROQ, ALEPH_ALPHA, REPLICATE, TOGETHER_AI, WATSONX, HUGGINGFACE, FIREWORKS, AZURE, AWS, GOOGLE, OPENROUTER, LANGCHAIN, CREWAI
+2026-02-11 17:54:45,164 - DEBUG - agent_framework - The provider name 'openai' is not recognized. Consider using one of the following: OPENAI, ANTHROPIC, COHERE, MISTRALAI, OLLAMA, GROQ, ALEPH_ALPHA, REPLICATE, TOGETHER_AI, WATSONX, HUGGINGFACE, FIREWORKS, AZURE, AWS, GOOGLE, OPENROUTER, LANGCHAIN, CREWAI
+2026-02-11 17:54:45,191 - DEBUG - agent_framework - The provider name 'openai' is not recognized. Consider using one of the following: OPENAI, ANTHROPIC, COHERE, MISTRALAI, OLLAMA, GROQ, ALEPH_ALPHA, REPLICATE, TOGETHER_AI, WATSONX, HUGGINGFACE, FIREWORKS, AZURE, AWS, GOOGLE, OPENROUTER, LANGCHAIN, CREWAI
+2026-02-11 17:55:36,713 - DEBUG - analysis_llm - 内容验证通过
+2026-02-11 17:55:36,713 - DEBUG - analysis_llm - 内容验证通过
+2026-02-11 17:55:41,609 - DEBUG - analysis_llm - 验证事件 [0] 的 ScoreAgent 输出是否经过审核
+2026-02-11 17:55:41,610 - DEBUG - analysis_llm - 找到 ReviewAgent 事件 [1]，检查审核结果
+2026-02-11 17:55:41,610 - DEBUG - analysis_llm - ReviewAgent 事件 [1] 审核结果: passed=True (原始值: True, 类型: bool)
+2026-02-11 17:55:41,610 - INFO - analysis_llm - ✓ ScoreAgent [0] 的输出已通过 ReviewAgent [1] 审核
+2026-02-11 17:55:41,610 - DEBUG - analysis_llm - 验证事件 [0] 的 ScoreAgent 输出是否经过审核
+2026-02-11 17:55:41,610 - DEBUG - analysis_llm - 找到 ReviewAgent 事件 [1]，检查审核结果
+2026-02-11 17:55:41,610 - DEBUG - analysis_llm - ReviewAgent 事件 [1] 审核结果: passed=False (原始值: False, 类型: bool)
+2026-02-11 17:55:41,610 - WARNING - analysis_llm - ✗ ScoreAgent [0] 的输出未通过 ReviewAgent [1] 审核，原因: 分数过高，理由不足
+2026-02-11 17:55:41,611 - DEBUG - analysis_llm - 验证事件 [0] 的 ScoreAgent 输出是否经过审核
+2026-02-11 17:55:41,611 - WARNING - analysis_llm - ⚠ ScoreAgent [0] 的输出未找到对应的 ReviewAgent 审核记录
+2026-02-11 17:55:41,611 - DEBUG - analysis_llm - 验证事件 [0] 的 ScoreAgent 输出是否经过审核
+2026-02-11 17:55:41,611 - DEBUG - analysis_llm - 找到 ReviewAgent 事件 [1]，检查审核结果
+2026-02-11 17:55:41,611 - DEBUG - analysis_llm - ReviewAgent 事件 [1] 审核结果: passed=False (原始值: False, 类型: bool)
+2026-02-11 17:55:41,611 - WARNING - analysis_llm - ✗ ScoreAgent [0] 的输出未通过 ReviewAgent [1] 审核，原因: 第一次审核未通过
+2026-02-11 17:55:41,611 - DEBUG - analysis_llm - 验证事件 [2] 的 ScoreAgent 输出是否经过审核
+2026-02-11 17:55:41,611 - DEBUG - analysis_llm - 找到 ReviewAgent 事件 [3]，检查审核结果
+2026-02-11 17:55:41,611 - DEBUG - analysis_llm - ReviewAgent 事件 [3] 审核结果: passed=True (原始值: True, 类型: bool)
+2026-02-11 17:55:41,611 - INFO - analysis_llm - ✓ ScoreAgent [2] 的输出已通过 ReviewAgent [3] 审核
+2026-02-11 17:55:41,631 - INFO - analysis_llm - 初始化 Step2 Workflow
+2026-02-11 17:55:41,637 - DEBUG - analysis_llm - ReviewAgent Client 初始化完成 - 模型: deepseek-chat
+2026-02-11 17:55:41,637 - INFO - analysis_llm - Step2 Workflow 初始化完成
+2026-02-11 17:55:41,637 - DEBUG - analysis_llm - 开始提取 Magentic 工作流结果
+2026-02-11 17:55:41,638 - DEBUG - analysis_llm - 从事件流中提取结果，共 0 个事件
+2026-02-11 17:55:41,638 - DEBUG - analysis_llm - 倒序遍历事件流，查找 ScoreAgent 的最终输出
+2026-02-11 17:55:41,638 - ERROR - analysis_llm - 未在事件流中找到有效的 ScoreAgent 输出
+2026-02-11 17:55:42,070 - DEBUG - analysis_llm - 初始化全局 HTTP 客户端（连接池：max_keepalive=10, max_connections=20）
+2026-02-11 17:55:52,942 - DEBUG - analysis_llm - 关闭 HTTP 客户端时出错（已忽略）: An asyncio.Future, a coroutine or an awaitable is required
+2026-02-11 17:59:14,350 - DEBUG - analysis_llm - 验证事件 [0] 的 ScoreAgent 输出是否经过审核
+2026-02-11 17:59:14,350 - DEBUG - analysis_llm - 找到 ReviewAgent 事件 [1]，检查审核结果
+2026-02-11 17:59:14,351 - DEBUG - analysis_llm - ReviewAgent 事件 [1] 审核结果: passed=True (原始值: True, 类型: bool)
+2026-02-11 17:59:14,351 - INFO - analysis_llm - ✓ ScoreAgent [0] 的输出已通过 ReviewAgent [1] 审核
+2026-02-11 17:59:14,351 - DEBUG - analysis_llm - 验证事件 [0] 的 ScoreAgent 输出是否经过审核
+2026-02-11 17:59:14,351 - DEBUG - analysis_llm - 找到 ReviewAgent 事件 [1]，检查审核结果
+2026-02-11 17:59:14,351 - DEBUG - analysis_llm - ReviewAgent 事件 [1] 审核结果: passed=False (原始值: False, 类型: bool)
+2026-02-11 17:59:14,351 - WARNING - analysis_llm - ✗ ScoreAgent [0] 的输出未通过 ReviewAgent [1] 审核，原因: 分数过高，理由不足
+2026-02-11 17:59:14,352 - DEBUG - analysis_llm - 验证事件 [0] 的 ScoreAgent 输出是否经过审核
+2026-02-11 17:59:14,352 - WARNING - analysis_llm - ⚠ ScoreAgent [0] 的输出未找到对应的 ReviewAgent 审核记录
+2026-02-11 17:59:14,352 - DEBUG - analysis_llm - 验证事件 [0] 的 ScoreAgent 输出是否经过审核
+2026-02-11 17:59:14,352 - DEBUG - analysis_llm - 找到 ReviewAgent 事件 [1]，检查审核结果
+2026-02-11 17:59:14,352 - DEBUG - analysis_llm - ReviewAgent 事件 [1] 审核结果: passed=False (原始值: False, 类型: bool)
+2026-02-11 17:59:14,352 - WARNING - analysis_llm - ✗ ScoreAgent [0] 的输出未通过 ReviewAgent [1] 审核，原因: 第一次审核未通过
+2026-02-11 17:59:14,352 - DEBUG - analysis_llm - 验证事件 [2] 的 ScoreAgent 输出是否经过审核
+2026-02-11 17:59:14,352 - DEBUG - analysis_llm - 找到 ReviewAgent 事件 [3]，检查审核结果
+2026-02-11 17:59:14,352 - DEBUG - analysis_llm - ReviewAgent 事件 [3] 审核结果: passed=True (原始值: True, 类型: bool)
+2026-02-11 17:59:14,352 - INFO - analysis_llm - ✓ ScoreAgent [2] 的输出已通过 ReviewAgent [3] 审核
+2026-02-11 17:59:14,360 - INFO - analysis_llm - 初始化 Step2 Workflow
+2026-02-11 17:59:14,365 - DEBUG - analysis_llm - ReviewAgent Client 初始化完成 - 模型: deepseek-chat
+2026-02-11 17:59:14,365 - INFO - analysis_llm - Step2 Workflow 初始化完成
+2026-02-11 17:59:14,365 - DEBUG - analysis_llm - 开始提取 Magentic 工作流结果
+2026-02-11 17:59:14,365 - DEBUG - analysis_llm - 从事件流中提取结果，共 0 个事件
+2026-02-11 17:59:14,365 - DEBUG - analysis_llm - 倒序遍历事件流，查找 ScoreAgent 的最终输出
+2026-02-11 17:59:14,365 - ERROR - analysis_llm - 未在事件流中找到有效的 ScoreAgent 输出
+2026-02-11 17:59:14,737 - DEBUG - analysis_llm - 初始化全局 HTTP 客户端（连接池：max_keepalive=10, max_connections=20）
+2026-02-11 17:59:25,618 - DEBUG - analysis_llm - 关闭 HTTP 客户端时出错（已忽略）: An asyncio.Future, a coroutine or an awaitable is required

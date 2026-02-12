@@ -3624,3 +3624,13 @@ LINE 251: LIMIT {sql_limit}
 2026-01-28 16:03:59 | INFO     | selection:101 | ============================================================
 2026-01-28 16:03:59 | INFO     | selection:645 | ✓ Successfully wrote 167 records to database
 2026-01-28 16:03:59 | INFO     | selection:692 | ✓ CSV file saved: output/stock_flatbottom_preselect_20260128_160359.csv
+2026-02-11 17:48:27 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-11 17:48:27 | ERROR    | selection:657 | Database write failed: Database connection failed: host not reachable
+2026-02-11 17:51:30 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-11 17:51:30 | ERROR    | selection:657 | Database write failed: Database connection failed: host not reachable
+2026-02-11 17:55:36 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-11 17:55:36 | ERROR    | selection:657 | Database write failed: Database connection failed: host not reachable
+2026-02-11 17:55:41 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-11 17:55:41 | INFO     | selection:473 | Filtering 4 ST stocks (markers: ST, *ST, S*ST, SST, 退市, PT, 终止上市)
+2026-02-11 17:59:14 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-11 17:59:14 | INFO     | selection:473 | Filtering 4 ST stocks (markers: ST, *ST, S*ST, SST, 退市, PT, 终止上市)

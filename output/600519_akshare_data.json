@@ -1,0 +1,255 @@
+{
+  "meta": {
+    "symbol": "600519",
+    "name": "贵州茅台",
+    "query_time": "2026-02-11T19:14:11.963664",
+    "data_errors": [
+      "realtime_quote: ProxyError - HTTPSConnectionPool(host='82.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=3&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A0+ (stock_zh_a_spot_em)",
+      "valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu",
+      "sector_flow_industry: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)",
+      "sector_flow_concept: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)",
+      "earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em) [连续超时 1/3]"
+    ],
+    "successful_topics": 10,
+    "topic_status": {
+      "company_info": "ok",
+      "realtime_quote": "failed",
+      "financial_indicators": "ok",
+      "valuation_history": "ok",
+      "valuation_vs_industry": "ok",
+      "fund_flow": "ok",
+      "sector_flow": "failed",
+      "northbound": "ok",
+      "shareholder_count": "ok",
+      "dividend_history": "ok",
+      "earnings_forecast": "no_data",
+      "pledge_ratio": "ok"
+    }
+  },
+  "company_info": {
+    "industry": "酿酒行业",
+    "listing_date": "20010827",
+    "total_market_cap": 18838.2765,
+    "circulating_market_cap": 18838.2765,
+    "total_shares": 12.5227,
+    "circulating_shares": 12.5227
+  },
+  "realtime_quote": null,
+  "financial_indicators": [
+    {
+      "report_date": "2025-09-30",
+      "eps": 51.53,
+      "net_asset_per_share": 205.283142014385,
+      "roe": 24.64,
+      "gross_margin": 91.293383213404,
+      "net_margin": 52.0800885914,
+      "revenue_growth": 6.3200018806,
+      "profit_growth": 6.2458449524,
+      "debt_ratio": 12.8087525579,
+      "current_ratio": 6.619318711183
+    },
+    {
+      "report_date": "2025-06-30",
+      "eps": 36.18,
+      "net_asset_per_share": 189.975286050079,
+      "roe": 17.89,
+      "gross_margin": 91.299309481908,
+      "net_margin": 52.5640684573,
+      "revenue_growth": 9.1581680613,
+      "profit_growth": 8.8914665772,
+      "debt_ratio": 14.7548515187,
+      "current_ratio": 5.729739663868
+    },
+    {
+      "report_date": "2025-03-31",
+      "eps": 21.38,
+      "net_asset_per_share": 205.666530124802,
+      "roe": 10.92,
+      "gross_margin": 91.973609354199,
+      "net_margin": 54.8895459139,
+      "revenue_growth": 10.6673989111,
+      "profit_growth": 11.5611117026,
+      "debt_ratio": 14.1430183604,
+      "current_ratio": 6.074894815957
+    },
+    {
+      "report_date": "2024-12-31",
+      "eps": 68.64,
+      "net_asset_per_share": 185.564713136315,
+      "roe": 36.02,
+      "gross_margin": 91.931216636065,
+      "net_margin": 52.2733593678,
+      "revenue_growth": 15.663979743,
+      "profit_growth": 15.3799661016,
+      "debt_ratio": 19.0447556579,
+      "current_ratio": 4.454078781594
+    },
+    {
+      "report_date": "2024-09-30",
+      "eps": 48.42,
+      "net_asset_per_share": 189.229319618519,
+      "roe": 26.09,
+      "gross_margin": 91.531375251402,
+      "net_margin": 52.1886744187,
+      "revenue_growth": 16.9078383241,
+      "profit_growth": 15.0376397857,
+      "debt_ratio": 13.6285037456,
+      "current_ratio": 6.156911766381
+    },
+    {
+      "report_date": "2024-06-30",
+      "eps": 33.19,
+      "net_asset_per_share": 173.997764205717,
+      "roe": 17.63,
+      "gross_margin": 91.760284762417,
+      "net_margin": 52.6991323358,
+      "revenue_growth": 17.5580350837,
+      "profit_growth": 15.8841855442,
+      "debt_ratio": 18.3241837277,
+      "current_ratio": 4.571369713876
+    },
+    {
+      "report_date": "2024-03-31",
+      "eps": 19.16,
+      "net_asset_per_share": 190.839202162709,
+      "roe": 10.57,
+      "gross_margin": 92.613316992526,
+      "net_margin": 54.3573266539,
+      "revenue_growth": 18.0435812731,
+      "profit_growth": 15.7268480818,
+      "debt_ratio": 12.9543240992,
+      "current_ratio": 6.480986951886
+    },
+    {
+      "report_date": "2023-12-31",
+      "eps": 59.49,
+      "net_asset_per_share": 171.683608749697,
+      "roe": 34.19,
+      "gross_margin": 91.964937241358,
+      "net_margin": 52.4880385179,
+      "revenue_growth": 18.0365792459,
+      "profit_growth": 19.1598992892,
+      "debt_ratio": 17.9843241392,
+      "current_ratio": 4.623892443179
+    }
+  ],
+  "valuation_history": {
+    "current_pe_ttm": 20.93,
+    "current_pb": 7.33,
+    "pe_percentile": 13.3,
+    "pb_percentile": 9.6,
+    "current_ps_ttm": null,
+    "current_dv_ttm": null,
+    "history_summary": "PE历史分位13.3%，处于极低位置（历史底部区域）；PB历史分位9.6%，处于极低位置（历史底部区域）"
+  },
+  "valuation_vs_industry": {
+    "stock_pe": 20.92506156,
+    "industry_avg_pe": 42.65,
+    "industry_median_pe": 22.9,
+    "stock_pb": 7.32807373,
+    "industry_avg_pb": 2.75,
+    "relative_valuation": "明显低于行业平均"
+  },
+  "fund_flow": {
+    "recent_days": [
+      {
+        "date": "2026-02-05",
+        "main_net_inflow": 421301104.0,
+        "main_net_inflow_pct": 2.97
+      },
+      {
+        "date": "2026-02-06",
+        "main_net_inflow": -544408832.0,
+        "main_net_inflow_pct": -4.53
+      },
+      {
+        "date": "2026-02-09",
+        "main_net_inflow": -642067680.0,
+        "main_net_inflow_pct": -8.22
+      },
+      {
+        "date": "2026-02-10",
+        "main_net_inflow": -637885632.0,
+        "main_net_inflow_pct": -10.71
+      },
+      {
+        "date": "2026-02-11",
+        "main_net_inflow": -170341984.0,
+        "main_net_inflow_pct": -3.66
+      }
+    ],
+    "summary": {
+      "main_net_inflow_5d_total": -1573403024.0,
+      "main_net_inflow_10d_total": 4563345904.0,
+      "trend": "近5日主力净流出，近10日整体净流入"
+    }
+  },
+  "sector_flow": null,
+  "northbound": {
+    "held": true,
+    "shares_held": 8235.44,
+    "market_value": 11786565.59,
+    "change_pct": 0.05,
+    "note": "北向资金披露规则2024年8月后有变化，数据仅供参考"
+  },
+  "shareholder_count": [
+    {
+      "date": "2025-09-30",
+      "count": 238512,
+      "change_pct": 8.091254339294
+    },
+    {
+      "date": "2025-06-30",
+      "count": 220658,
+      "change_pct": 14.669230369485
+    },
+    {
+      "date": "2025-03-31",
+      "count": 192430,
+      "change_pct": -7.438406110806
+    },
+    {
+      "date": "2024-12-31",
+      "count": 207894,
+      "change_pct": 3.131231955234
+    }
+  ],
+  "dividend_history": [
+    {
+      "year": "2025",
+      "dividend_per_share": 239.57,
+      "ex_date": "2025-12-19"
+    },
+    {
+      "year": "2025",
+      "dividend_per_share": 276.73,
+      "ex_date": "2025-06-26"
+    },
+    {
+      "year": "2024",
+      "dividend_per_share": 238.82,
+      "ex_date": "2024-12-20"
+    },
+    {
+      "year": "2024",
+      "dividend_per_share": 308.76,
+      "ex_date": "2024-06-19"
+    },
+    {
+      "year": "2023",
+      "dividend_per_share": 191.06,
+      "ex_date": "2023-12-20"
+    }
+  ],
+  "earnings_forecast": {
+    "latest_period": null,
+    "forecast_type": null,
+    "forecast_range": null,
+    "available": false
+  },
+  "pledge_ratio": {
+    "ratio_pct": 0.01,
+    "pledged_shares": 8.56,
+    "risk_level": "低"
+  }
+}
