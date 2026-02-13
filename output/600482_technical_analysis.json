@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "symbol": "600482",
+    "name": "中国动力",
+    "analysis_time": "2026-02-13T17:04:41.277929",
+    "data_start": null,
+    "data_end": null,
+    "total_months": 0,
+    "data_quality_warnings": [
+      "AKShare monthly kline failed for 600482: ProxyError: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=103&fqt=0&secid=1.600482&beg=20000101&end=20500101 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+    ]
+  },
+  "score": 5.0,
+  "signal": "中性",
+  "confidence": 0.2,
+  "trend_analysis": {
+    "ma_alignment": "数据不足",
+    "price_vs_ma20": "数据不足",
+    "trend_6m": "数据不足",
+    "trend_12m": "数据不足",
+    "trend_judgment": "数据不足，无法给出趋势判断"
+  },
+  "momentum": {
+    "macd_status": "数据不足",
+    "rsi_value": null,
+    "rsi_status": "数据不足",
+    "kdj_status": "数据不足"
+  },
+  "volatility": {
+    "boll_position": "数据不足",
+    "boll_width": "数据不足"
+  },
+  "volume_analysis": {
+    "recent_vs_avg": "数据不足",
+    "volume_price_relation": "数据不足"
+  },
+  "key_levels": {
+    "support_1": null,
+    "support_2": null,
+    "resistance_1": null,
+    "resistance_2": null
+  },
+  "summary": "技术分析降级结果：AKShare monthly kline failed for 600482: ProxyError: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=103&fqt=0&secid=1.600482&beg=20000101&end=20500101 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+}

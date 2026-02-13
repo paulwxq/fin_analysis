@@ -1,4 +1,4 @@
-"""Custom exceptions for module B deep research."""
+"""Custom exceptions for stock_analyzer modules."""
 
 
 class TavilySearchError(Exception):
@@ -107,3 +107,23 @@ class ChiefInputError(Exception):
 
 class ChiefAnalysisError(Exception):
     """Module D chief analysis failed after retries."""
+
+
+# ============================================================
+# Workflow: orchestration exceptions
+# ============================================================
+
+
+class WorkflowError(Exception):
+    """Base class for workflow orchestration failures."""
+
+
+class StockInfoLookupError(WorkflowError):
+    """Failed to look up stock name/industry from AKShare before parallel execution."""
+
+
+class WorkflowCircuitBreakerError(WorkflowError):
+    """
+    One or more of modules A/B/C produced an exception or returned None.
+    The workflow is aborted. All failure details are logged at ERROR level before raising.
+    """

@@ -1,4 +1,4 @@
-"""Configuration for stock analyzer module B."""
+"""Configuration for stock_analyzer modules."""
 
 import os
 
@@ -122,3 +122,24 @@ CHIEF_INPUT_MAX_CHARS_TOTAL: int = int(
 
 # Retry times when chief agent output fails validation
 CHIEF_OUTPUT_RETRIES: int = int(os.getenv("CHIEF_OUTPUT_RETRIES", "1"))
+
+# ============================================================
+# Workflow: orchestration config
+# ============================================================
+
+# Output directory for all module results and final report
+WORKFLOW_OUTPUT_DIR: str = os.getenv("WORKFLOW_OUTPUT_DIR", "output")
+
+# Whether to save intermediate A/B/C JSON outputs to disk during workflow run
+WORKFLOW_SAVE_INTERMEDIATE: bool = (
+    os.getenv("WORKFLOW_SAVE_INTERMEDIATE", "true").lower() == "true"
+)
+
+# Total timeout in seconds for the parallel A/B/C phase.
+# Accepts any integer: positive = timeout in seconds; 0 or negative = no limit.
+WORKFLOW_PARALLEL_TIMEOUT: int = int(os.getenv("WORKFLOW_PARALLEL_TIMEOUT", "1800"))
+
+# Warn when module A succeeds on fewer than this many topics (out of 12)
+WORKFLOW_AKSHARE_MIN_TOPICS_WARN: int = int(
+    os.getenv("WORKFLOW_AKSHARE_MIN_TOPICS_WARN", "6")
+)

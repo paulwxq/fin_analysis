@@ -1932,3 +1932,1180 @@ F...'
 2026-02-12 21:17:19 - INFO - stock_analyzer - module_a_akshare:224 - [pledge_ratio] cache set: stock_gpzy_pledge_ratio_em, rows=2322
 2026-02-12 21:17:19 - INFO - stock_analyzer - module_a_akshare:1424 - AKShare collection completed for 600583: 10/12 topics succeeded (2 failed, 4 errors)
 2026-02-12 21:17:19 - INFO - stock_analyzer - module_a_akshare:1454 - AKShare data collection finished for 600583: 10/12 topics, 4 errors
+2026-02-13 13:29:36 - DEBUG - stock_analyzer - workflow:90 - [Circuit breaker] module_a exception detail
+stock_analyzer.exceptions.AKShareCollectionError: AKShare collection aborted for 600519: 1 errors
+2026-02-13 13:29:36 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: AKShareCollectionError: AKShare collection aborted for 600519: 1 errors
+2026-02-13 13:29:36 - DEBUG - stock_analyzer - workflow:105 - [Circuit breaker] module_b exception detail
+RuntimeError: tavily down
+2026-02-13 13:29:36 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: RuntimeError: tavily down
+2026-02-13 13:29:36 - DEBUG - stock_analyzer - workflow:114 - [Circuit breaker] module_c exception detail
+ValueError: bad data
+2026-02-13 13:29:36 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_c: ValueError: bad data
+2026-02-13 13:29:36 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: returned None
+2026-02-13 13:29:36 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: returned None
+2026-02-13 13:29:36 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_c: returned None
+2026-02-13 13:29:36 - DEBUG - stock_analyzer - workflow:90 - [Circuit breaker] module_a exception detail
+RuntimeError: a failed
+2026-02-13 13:29:36 - DEBUG - stock_analyzer - workflow:105 - [Circuit breaker] module_b exception detail
+RuntimeError: b failed
+2026-02-13 13:29:36 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: RuntimeError: a failed
+2026-02-13 13:29:36 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: RuntimeError: b failed
+2026-02-13 13:29:36 - DEBUG - stock_analyzer - workflow:90 - [Circuit breaker] module_a exception detail
+RuntimeError: a
+2026-02-13 13:29:36 - DEBUG - stock_analyzer - workflow:105 - [Circuit breaker] module_b exception detail
+RuntimeError: b
+2026-02-13 13:29:36 - DEBUG - stock_analyzer - workflow:114 - [Circuit breaker] module_c exception detail
+RuntimeError: c
+2026-02-13 13:29:36 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: RuntimeError: a
+2026-02-13 13:29:36 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: RuntimeError: b
+2026-02-13 13:29:36 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_c: RuntimeError: c
+2026-02-13 13:29:36 - WARNING - stock_analyzer - workflow:98 - [Circuit breaker] module_a: only 3/12 topics succeeded, chief analysis context may be limited
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:153 - [Workflow] Intermediate results saved to /tmp/pytest-of-paul/pytest-0/test_creates_files0/out/
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:153 - [Workflow] Intermediate results saved to /tmp/pytest-of-paul/pytest-0/test_json_is_valid0/
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:153 - [Workflow] Intermediate results saved to /tmp/pytest-of-paul/pytest-0/test_nested_dirs_created0/a/b/c/
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=6.40, confidence=中
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 999999
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 999999
+2026-02-13 13:29:36 - ERROR - stock_analyzer - workflow:181 - [Workflow] Stock info lookup failed for 999999
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:29:36 - DEBUG - stock_analyzer - workflow:90 - [Circuit breaker] module_a exception detail
+Traceback (most recent call last):
+  File "/opt/fin_analysis/stock_analyzer/workflow.py", line 74, in _run_module_a
+    return await asyncio.to_thread(collect_akshare_data, symbol, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/unittest/mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/unittest/mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/unittest/mock.py", line 1193, in _execute_mock_call
+    raise effect
+stock_analyzer.exceptions.AKShareCollectionError: AKShare collection aborted for 600519: 1 errors
+2026-02-13 13:29:36 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: AKShareCollectionError: AKShare collection aborted for 600519: 1 errors
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:29:36 - DEBUG - stock_analyzer - workflow:105 - [Circuit breaker] module_b exception detail
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/mock.py", line 2262, in _execute_mock_call
+    raise effect
+RuntimeError: tavily
+2026-02-13 13:29:36 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: RuntimeError: tavily
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:153 - [Workflow] Intermediate results saved to output/
+2026-02-13 13:29:36 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 13:29:36 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-13 13:30:07 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 600519: overall_score=6.70, confidence=中
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=6.70, confidence=中
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:153 - [Workflow] Intermediate results saved to /tmp/pytest-of-paul/pytest-0/test_saves_intermediate_when_e0/
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=6.40, confidence=中
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=6.40, confidence=中
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=6.40, confidence=中
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 13:30:07 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=6.40, confidence=中
+2026-02-13 13:30:29 - DEBUG - stock_analyzer - workflow:90 - [Circuit breaker] module_a exception detail
+stock_analyzer.exceptions.AKShareCollectionError: AKShare collection aborted for 600519: 1 errors
+2026-02-13 13:30:29 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: AKShareCollectionError: AKShare collection aborted for 600519: 1 errors
+2026-02-13 13:30:29 - DEBUG - stock_analyzer - workflow:105 - [Circuit breaker] module_b exception detail
+RuntimeError: tavily down
+2026-02-13 13:30:29 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: RuntimeError: tavily down
+2026-02-13 13:30:29 - DEBUG - stock_analyzer - workflow:114 - [Circuit breaker] module_c exception detail
+ValueError: bad data
+2026-02-13 13:30:29 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_c: ValueError: bad data
+2026-02-13 13:30:29 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: returned None
+2026-02-13 13:30:29 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: returned None
+2026-02-13 13:30:29 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_c: returned None
+2026-02-13 13:30:29 - DEBUG - stock_analyzer - workflow:90 - [Circuit breaker] module_a exception detail
+RuntimeError: a failed
+2026-02-13 13:30:29 - DEBUG - stock_analyzer - workflow:105 - [Circuit breaker] module_b exception detail
+RuntimeError: b failed
+2026-02-13 13:30:29 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: RuntimeError: a failed
+2026-02-13 13:30:29 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: RuntimeError: b failed
+2026-02-13 13:30:29 - DEBUG - stock_analyzer - workflow:90 - [Circuit breaker] module_a exception detail
+RuntimeError: a
+2026-02-13 13:30:29 - DEBUG - stock_analyzer - workflow:105 - [Circuit breaker] module_b exception detail
+RuntimeError: b
+2026-02-13 13:30:29 - DEBUG - stock_analyzer - workflow:114 - [Circuit breaker] module_c exception detail
+RuntimeError: c
+2026-02-13 13:30:29 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: RuntimeError: a
+2026-02-13 13:30:29 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: RuntimeError: b
+2026-02-13 13:30:29 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_c: RuntimeError: c
+2026-02-13 13:30:29 - WARNING - stock_analyzer - workflow:98 - [Circuit breaker] module_a: only 3/12 topics succeeded, chief analysis context may be limited
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:153 - [Workflow] Intermediate results saved to /tmp/pytest-of-paul/pytest-1/test_creates_files0/out/
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:153 - [Workflow] Intermediate results saved to /tmp/pytest-of-paul/pytest-1/test_json_is_valid0/
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:153 - [Workflow] Intermediate results saved to /tmp/pytest-of-paul/pytest-1/test_nested_dirs_created0/a/b/c/
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=6.40, confidence=中
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 999999
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 999999
+2026-02-13 13:30:29 - ERROR - stock_analyzer - workflow:181 - [Workflow] Stock info lookup failed for 999999
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:30:29 - DEBUG - stock_analyzer - workflow:90 - [Circuit breaker] module_a exception detail
+Traceback (most recent call last):
+  File "/opt/fin_analysis/stock_analyzer/workflow.py", line 74, in _run_module_a
+    return await asyncio.to_thread(collect_akshare_data, symbol, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/unittest/mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/unittest/mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/unittest/mock.py", line 1193, in _execute_mock_call
+    raise effect
+stock_analyzer.exceptions.AKShareCollectionError: AKShare collection aborted for 600519: 1 errors
+2026-02-13 13:30:29 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: AKShareCollectionError: AKShare collection aborted for 600519: 1 errors
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:30:29 - DEBUG - stock_analyzer - workflow:105 - [Circuit breaker] module_b exception detail
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/mock.py", line 2262, in _execute_mock_call
+    raise effect
+RuntimeError: tavily
+2026-02-13 13:30:29 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: RuntimeError: tavily
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:30:29 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:30:30 - WARNING - stock_analyzer - workflow:202 - [Workflow] Parallel phase timed out after 1s. Async tasks (modules B/C) have been cancelled. The synchronous thread running module A cannot be forcibly stopped and may continue running in the background until its current AKShare call completes — residual module A log entries may appear after this error.
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:153 - [Workflow] Intermediate results saved to /tmp/pytest-of-paul/pytest-1/test_saves_intermediate_when_e0/
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=6.40, confidence=中
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=6.40, confidence=中
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=6.40, confidence=中
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 13:30:39 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=6.40, confidence=中
+2026-02-13 16:03:07 - DEBUG - stock_analyzer - workflow:90 - [Circuit breaker] module_a exception detail
+RuntimeError: A failed
+2026-02-13 16:03:07 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: RuntimeError: A failed
+2026-02-13 16:03:07 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: returned None
+2026-02-13 16:03:07 - WARNING - stock_analyzer - workflow:98 - [Circuit breaker] module_a: only 3/12 topics succeeded, chief analysis context may be limited
+2026-02-13 16:03:07 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:03:07 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:03:07 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:03:07 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:03:07 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 16:03:07 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=8.50, confidence=高
+2026-02-13 16:03:07 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:03:07 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:03:07 - ERROR - stock_analyzer - workflow:181 - [Workflow] Stock info lookup failed for 600519
+2026-02-13 16:03:07 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:03:07 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:03:07 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:03:07 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:03:07 - WARNING - stock_analyzer - workflow:202 - [Workflow] Parallel phase timed out after 0.1s. Async tasks (modules B/C) have been cancelled. The synchronous thread running module A cannot be forcibly stopped and may continue running in the background until its current AKShare call completes — residual module A log entries may appear after this error.
+2026-02-13 16:03:07 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:03:07 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:03:07 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:03:07 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:03:07 - DEBUG - stock_analyzer - workflow:105 - [Circuit breaker] module_b exception detail
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/mock.py", line 2262, in _execute_mock_call
+    raise effect
+RuntimeError: Web failed
+2026-02-13 16:03:07 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: RuntimeError: Web failed
+2026-02-13 16:03:48 - DEBUG - stock_analyzer - workflow:90 - [Circuit breaker] module_a exception detail
+RuntimeError: A failed
+2026-02-13 16:03:48 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: RuntimeError: A failed
+2026-02-13 16:03:48 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: returned None
+2026-02-13 16:03:48 - WARNING - stock_analyzer - workflow:98 - [Circuit breaker] module_a: only 3/12 topics succeeded, chief analysis context may be limited
+2026-02-13 16:03:48 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:03:48 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:03:48 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:03:48 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:03:48 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 16:03:48 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=8.50, confidence=高
+2026-02-13 16:03:48 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:03:48 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:03:48 - ERROR - stock_analyzer - workflow:181 - [Workflow] Stock info lookup failed for 600519
+2026-02-13 16:03:48 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:03:48 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:03:48 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:03:48 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:03:48 - WARNING - stock_analyzer - workflow:202 - [Workflow] Parallel phase timed out after 0.1s. Async tasks (modules B/C) have been cancelled. The synchronous thread running module A cannot be forcibly stopped and may continue running in the background until its current AKShare call completes — residual module A log entries may appear after this error.
+2026-02-13 16:03:48 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:03:48 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:03:48 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:03:48 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:03:48 - DEBUG - stock_analyzer - workflow:105 - [Circuit breaker] module_b exception detail
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/mock.py", line 2262, in _execute_mock_call
+    raise effect
+RuntimeError: Web failed
+2026-02-13 16:03:48 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: RuntimeError: Web failed
+2026-02-13 16:04:12 - DEBUG - stock_analyzer - workflow:90 - [Circuit breaker] module_a exception detail
+RuntimeError: A failed
+2026-02-13 16:04:12 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: RuntimeError: A failed
+2026-02-13 16:04:12 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: returned None
+2026-02-13 16:04:12 - WARNING - stock_analyzer - workflow:98 - [Circuit breaker] module_a: only 3/12 topics succeeded, chief analysis context may be limited
+2026-02-13 16:04:12 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:04:12 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:04:12 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:04:12 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:04:12 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 16:04:12 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=8.50, confidence=高
+2026-02-13 16:04:12 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:04:12 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:04:12 - ERROR - stock_analyzer - workflow:181 - [Workflow] Stock info lookup failed for 600519
+2026-02-13 16:04:12 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:04:12 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:04:12 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:04:12 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:04:12 - WARNING - stock_analyzer - workflow:202 - [Workflow] Parallel phase timed out after 0.1s. Async tasks (modules B/C) have been cancelled. The synchronous thread running module A cannot be forcibly stopped and may continue running in the background until its current AKShare call completes — residual module A log entries may appear after this error.
+2026-02-13 16:04:12 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:04:12 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:04:12 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:04:12 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:04:12 - DEBUG - stock_analyzer - workflow:105 - [Circuit breaker] module_b exception detail
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/mock.py", line 2262, in _execute_mock_call
+    raise effect
+RuntimeError: Web failed
+2026-02-13 16:04:12 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: RuntimeError: Web failed
+2026-02-13 16:04:12 - ERROR - stock_analyzer - run_module_a:53 - Module A input error: Cannot normalize symbol: 'bad_symbol'. Expected formats: 600519 / 600519.SH / SH600519
+2026-02-13 16:04:12 - ERROR - stock_analyzer - run_module_a:57 - Module A failed: AKShare collection aborted for 600519: 1 errors
+2026-02-13 16:04:12 - ERROR - stock_analyzer - run_module_b:56 - Module B input error: industry cannot be empty
+2026-02-13 16:04:12 - ERROR - stock_analyzer - run_module_b:60 - Module B failed: deep research failed
+2026-02-13 16:04:12 - ERROR - stock_analyzer - run_module_c:54 - Module C input error: Cannot normalize symbol: 'bad_symbol'. Expected formats: 600519 / 600519.SH / SH600519
+2026-02-13 16:04:12 - ERROR - stock_analyzer - run_module_c:58 - Module C failed: technical failed
+2026-02-13 16:05:04 - DEBUG - stock_analyzer - workflow:90 - [Circuit breaker] module_a exception detail
+RuntimeError: A failed
+2026-02-13 16:05:04 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: RuntimeError: A failed
+2026-02-13 16:05:04 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: returned None
+2026-02-13 16:05:04 - WARNING - stock_analyzer - workflow:98 - [Circuit breaker] module_a: only 3/12 topics succeeded, chief analysis context may be limited
+2026-02-13 16:05:04 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:05:04 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:05:04 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:05:04 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:05:04 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 16:05:04 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=8.50, confidence=高
+2026-02-13 16:05:04 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:05:04 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:05:04 - ERROR - stock_analyzer - workflow:181 - [Workflow] Stock info lookup failed for 600519
+2026-02-13 16:05:04 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:05:04 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:05:04 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:05:04 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:05:04 - WARNING - stock_analyzer - workflow:202 - [Workflow] Parallel phase timed out after 0.1s. Async tasks (modules B/C) have been cancelled. The synchronous thread running module A cannot be forcibly stopped and may continue running in the background until its current AKShare call completes — residual module A log entries may appear after this error.
+2026-02-13 16:05:04 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:05:04 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:05:04 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:05:04 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:05:04 - DEBUG - stock_analyzer - workflow:105 - [Circuit breaker] module_b exception detail
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/mock.py", line 2262, in _execute_mock_call
+    raise effect
+RuntimeError: Web failed
+2026-02-13 16:05:04 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: RuntimeError: Web failed
+2026-02-13 16:05:38 - DEBUG - stock_analyzer - workflow:90 - [Circuit breaker] module_a exception detail
+RuntimeError: A failed
+2026-02-13 16:05:38 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: RuntimeError: A failed
+2026-02-13 16:05:38 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: returned None
+2026-02-13 16:05:38 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:05:38 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:05:38 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:05:38 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:05:38 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 16:05:38 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=8.50, confidence=高
+2026-02-13 16:05:38 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:05:38 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:05:38 - ERROR - stock_analyzer - workflow:181 - [Workflow] Stock info lookup failed for 600519
+2026-02-13 16:05:38 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:05:38 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:05:38 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:05:38 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:05:38 - WARNING - stock_analyzer - workflow:202 - [Workflow] Parallel phase timed out after 0.1s. Async tasks (modules B/C) have been cancelled. The synchronous thread running module A cannot be forcibly stopped and may continue running in the background until its current AKShare call completes — residual module A log entries may appear after this error.
+2026-02-13 16:05:38 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:05:38 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:05:38 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:05:38 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:05:38 - DEBUG - stock_analyzer - workflow:105 - [Circuit breaker] module_b exception detail
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/mock.py", line 2262, in _execute_mock_call
+    raise effect
+RuntimeError: Web failed
+2026-02-13 16:05:38 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: RuntimeError: Web failed
+2026-02-13 16:06:12 - DEBUG - stock_analyzer - workflow:90 - [Circuit breaker] module_a exception detail
+RuntimeError: A failed
+2026-02-13 16:06:12 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: RuntimeError: A failed
+2026-02-13 16:06:12 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: returned None
+2026-02-13 16:06:12 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:06:12 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:06:12 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:06:12 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:06:12 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 16:06:12 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=8.50, confidence=高
+2026-02-13 16:06:12 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:06:12 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:06:12 - ERROR - stock_analyzer - workflow:181 - [Workflow] Stock info lookup failed for 600519
+2026-02-13 16:06:12 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:06:12 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:06:12 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:06:12 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:06:12 - WARNING - stock_analyzer - workflow:202 - [Workflow] Parallel phase timed out after 0.1s. Async tasks (modules B/C) have been cancelled. The synchronous thread running module A cannot be forcibly stopped and may continue running in the background until its current AKShare call completes — residual module A log entries may appear after this error.
+2026-02-13 16:06:12 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:06:12 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:06:12 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:06:12 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:06:12 - DEBUG - stock_analyzer - workflow:105 - [Circuit breaker] module_b exception detail
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/mock.py", line 2262, in _execute_mock_call
+    raise effect
+RuntimeError: Web failed
+2026-02-13 16:06:12 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: RuntimeError: Web failed
+2026-02-13 16:14:44 - DEBUG - stock_analyzer - workflow:90 - [Circuit breaker] module_a exception detail
+RuntimeError: A failed
+2026-02-13 16:14:44 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: RuntimeError: A failed
+2026-02-13 16:14:44 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: returned None
+2026-02-13 16:14:44 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:14:44 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:14:44 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:14:44 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:14:44 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 16:14:44 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=8.50, confidence=高
+2026-02-13 16:14:44 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:14:44 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:14:44 - ERROR - stock_analyzer - workflow:181 - [Workflow] Stock info lookup failed for 600519
+2026-02-13 16:14:44 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:14:44 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:14:44 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:14:44 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:14:44 - WARNING - stock_analyzer - workflow:202 - [Workflow] Parallel phase timed out after 0.1s. Async tasks (modules B/C) have been cancelled. The synchronous thread running module A cannot be forcibly stopped and may continue running in the background until its current AKShare call completes — residual module A log entries may appear after this error.
+2026-02-13 16:14:44 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:14:44 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:14:44 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:14:44 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:14:44 - DEBUG - stock_analyzer - workflow:105 - [Circuit breaker] module_b exception detail
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/mock.py", line 2262, in _execute_mock_call
+    raise effect
+RuntimeError: Web failed
+2026-02-13 16:14:44 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: RuntimeError: Web failed
+2026-02-13 16:14:44 - ERROR - stock_analyzer - run_workflow:53 - Workflow input error: bad symbol
+2026-02-13 16:14:44 - ERROR - stock_analyzer - run_workflow:57 - Workflow stock info lookup failed: lookup failed
+2026-02-13 16:14:44 - ERROR - stock_analyzer - run_workflow:61 - Workflow circuit breaker triggered: breaker
+2026-02-13 16:14:44 - ERROR - stock_analyzer - run_workflow:65 - Workflow chief analysis failed: chief failed
+2026-02-13 16:14:52 - ERROR - stock_analyzer - run_module_a:53 - Module A input error: Cannot normalize symbol: 'bad_symbol'. Expected formats: 600519 / 600519.SH / SH600519
+2026-02-13 16:14:52 - ERROR - stock_analyzer - run_module_a:57 - Module A failed: AKShare collection aborted for 600519: 1 errors
+2026-02-13 16:14:52 - ERROR - stock_analyzer - run_module_b:56 - Module B input error: industry cannot be empty
+2026-02-13 16:14:52 - ERROR - stock_analyzer - run_module_b:60 - Module B failed: deep research failed
+2026-02-13 16:14:52 - ERROR - stock_analyzer - run_module_c:54 - Module C input error: Cannot normalize symbol: 'bad_symbol'. Expected formats: 600519 / 600519.SH / SH600519
+2026-02-13 16:14:52 - ERROR - stock_analyzer - run_module_c:58 - Module C failed: technical failed
+2026-02-13 16:14:52 - DEBUG - stock_analyzer - workflow:90 - [Circuit breaker] module_a exception detail
+RuntimeError: A failed
+2026-02-13 16:14:52 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_a: RuntimeError: A failed
+2026-02-13 16:14:52 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: returned None
+2026-02-13 16:14:52 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:14:52 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:14:52 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:14:52 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:14:52 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 16:14:52 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=8.50, confidence=高
+2026-02-13 16:14:52 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:14:52 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:14:52 - ERROR - stock_analyzer - workflow:181 - [Workflow] Stock info lookup failed for 600519
+2026-02-13 16:14:52 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:14:52 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:14:52 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:14:52 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:14:52 - WARNING - stock_analyzer - workflow:202 - [Workflow] Parallel phase timed out after 0.1s. Async tasks (modules B/C) have been cancelled. The synchronous thread running module A cannot be forcibly stopped and may continue running in the background until its current AKShare call completes — residual module A log entries may appear after this error.
+2026-02-13 16:14:52 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:14:52 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:14:52 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='白酒'
+2026-02-13 16:14:52 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:14:52 - DEBUG - stock_analyzer - workflow:105 - [Circuit breaker] module_b exception detail
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/mock.py", line 2262, in _execute_mock_call
+    raise effect
+RuntimeError: Web failed
+2026-02-13 16:14:52 - ERROR - stock_analyzer - workflow:124 - [Circuit breaker] module_b: RuntimeError: Web failed
+2026-02-13 16:14:52 - ERROR - stock_analyzer - run_workflow:53 - Workflow input error: bad symbol
+2026-02-13 16:14:52 - ERROR - stock_analyzer - run_workflow:57 - Workflow stock info lookup failed: lookup failed
+2026-02-13 16:14:52 - ERROR - stock_analyzer - run_workflow:61 - Workflow circuit breaker triggered: breaker
+2026-02-13 16:14:52 - ERROR - stock_analyzer - run_workflow:65 - Workflow chief analysis failed: chief failed
+2026-02-13 16:21:28 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600519
+2026-02-13 16:21:28 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600519
+2026-02-13 16:21:39 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='贵州茅台', industry='酿酒行业'
+2026-02-13 16:21:39 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600519 贵州茅台（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:21:39 - INFO - stock_analyzer - module_b_websearch:130 - Starting web research for 600519 贵州茅台 (酿酒行业)
+2026-02-13 16:21:39 - INFO - stock_analyzer - module_a_akshare:1451 - Starting AKShare data collection for 600519 (贵州茅台)
+2026-02-13 16:21:39 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [company_info] via stock_individual_info_em...
+2026-02-13 16:21:39 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600519 贵州茅台
+2026-02-13 16:21:43 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台（股票代码600519）近期重大新闻，包括正面和负面影响股价的事件'
+2026-02-13 16:21:43 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台 核心竞争力分析，护城河类型，在酿酒行业行业中的市场地位和竞争优势'
+2026-02-13 16:21:43 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='酿酒行业行业发展前景，政策环境，市场趋势，行业增长驱动力和主要风险'
+2026-02-13 16:21:43 - INFO - stock_analyzer - module_a_akshare:103 - [company_info] fetched successfully: 9 rows via stock_individual_info_em
+2026-02-13 16:21:43 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [realtime_quote] via stock_zh_a_spot_em...
+2026-02-13 16:21:53 - WARNING - stock_analyzer - module_a_akshare:122 - realtime_quote: 连接异常（ProxyError）(stock_zh_a_spot_em)，准备重试 1/3
+2026-02-13 16:21:53 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [realtime_quote] via stock_zh_a_spot_em (attempt 2/4)...
+2026-02-13 16:21:53 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 护城河类型 波特五力分析 酿酒行业对比五粮液 洋河' returned 5 results
+2026-02-13 16:21:54 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2023年市场份额 酿酒行业集中度 CR3 CR5 数据 权威机构报告' returned 5 results
+2026-02-13 16:21:54 - INFO - stock_analyzer - tavily_client:81 - Tavily search '酿酒行业主要风险分析 原料成本波动 税收政策调整 酒精饮料健康争议 ESG合规压力' returned 5 results
+2026-02-13 16:21:55 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国酿酒行业十四五规划 政策支持文件 2023-2025年' returned 5 results
+2026-02-13 16:21:55 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 原料供应 酿造工艺 独特微生物群落 茅台镇地理标志保护范围 产能瓶颈分析' returned 5 results
+2026-02-13 16:21:55 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国酿酒行业2024年市场规模增速 白酒黄酒啤酒细分品类消费趋势 欧睿/凯度/尼尔森报告摘要' returned 5 results
+2026-02-13 16:21:55 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 600519 2024年二季度 业绩预告 营收利润增长放缓 市场解读' returned 5 results
+2026-02-13 16:21:55 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 600519 2024年 高管变动 董事长或总经理更换 人事新闻 影响分析' returned 5 results
+2026-02-13 16:21:56 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 600519 2024年7月 重大事项公告 监管处罚或经营异常' returned 5 results
+2026-02-13 16:22:05 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 识别当前制约行业发展的关键外部风险因素，包括高粱/大麦等主粮价格传导机制、消费税改革预期影响、公共卫生政策对酒精...'
+2026-02-13 16:22:07 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 查找权威第三方机构发布的近年酿酒行业分品类市场规模、零售额/量变化、价格带迁移、年轻消费者渗透率、即饮与非即饮渠...'
+2026-02-13 16:22:07 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取最新权威数据（如中国酒业协会、Euromonitor、国家统计局或券商研报）支撑贵州茅台在白酒行业中的实际市...'
+2026-02-13 16:22:08 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取国家及部委层面最新出台的针对酿酒（含白酒、黄酒、啤酒等）行业的产业政策、监管导向、绿色生产/数字化转型/兼并...'
+2026-02-13 16:22:09 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 识别贵州茅台在酿酒行业中护城河的具体构成（如品牌、渠道、成本、政策壁垒等），并基于波特五力模型与主要竞争对手进行...'
+2026-02-13 16:22:11 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 检索贵州茅台在最近一个月内是否发生被监管问询、立案调查、环保/税务/食品安全等负面事件，及其对股价的即时市场反应...'
+2026-02-13 16:22:11 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 探究其难以复制的底层生产要素壁垒，包括赤水河流域生态独特性、大曲坤沙工艺复杂性、微生物地域专属性及地理标志保护对...'
+2026-02-13 16:22:13 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 确认近期是否存在核心高管（尤其董事长、总经理、财务总监）变动，并评估该变动是否被市场视为治理稳定性风险或改革信号...'
+2026-02-13 16:22:13 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 查找其最新季度业绩预告中增速变化（如营收/净利同比增速是否低于预期）、券商点评及股价当日涨跌幅，识别潜在利空信号...'
+2026-02-13 16:22:15 - WARNING - stock_analyzer - module_a_akshare:122 - realtime_quote: 连接异常（ProxyError）(stock_zh_a_spot_em)，准备重试 2/3
+2026-02-13 16:22:15 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [realtime_quote] via stock_zh_a_spot_em (attempt 3/4)...
+2026-02-13 16:22:16 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年7月 子公司 经销商 专项监管检查 整改通知 中国证监会 贵州省市场监管局 税务...' returned 5 results
+2026-02-13 16:22:17 - INFO - stock_analyzer - tavily_client:81 - Tavily search '2024年白酒消费税征收后移试点城市名单及实施细则 官方文件 财政部税务总局公告' returned 5 results
+2026-02-13 16:22:18 - INFO - stock_analyzer - tavily_client:81 - Tavily search '五粮液古窖池微生物群落研究论文 科学验证 出酒率 风味稳定性 与茅台对比 数据' returned 5 results
+2026-02-13 16:22:19 - INFO - stock_analyzer - tavily_client:81 - Tavily search '2024年黄酒销量万千升数据 国家统计局 江浙沪分省销售量 同比变动' returned 5 results
+2026-02-13 16:22:20 - INFO - stock_analyzer - tavily_client:81 - Tavily search '茅台镇15.03平方公里核心产区 红缨子高粱自给率 2020-2024年 种植面积 亩产 收购价 基...' returned 5 results
+2026-02-13 16:22:20 - INFO - stock_analyzer - tavily_client:81 - Tavily search '茅台集团 陈华 上任后首次董事会决议公告 2025年10月25日后 战略调整 人事任命' returned 5 results
+2026-02-13 16:22:22 - INFO - stock_analyzer - tavily_client:81 - Tavily search '工信部 GB/T 27925 品牌培育管理体系 酿酒行业 认证企业名单 补贴政策 2023-2024' returned 5 results
+2026-02-13 16:22:23 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国酒业协会 白酒行业市场份额统计口径说明 2023年 营收 vs 产量 是否含系列酒 规模以上企业...' returned 5 results
+2026-02-13 16:22:24 - WARNING - stock_analyzer - module_a_akshare:122 - realtime_quote: 连接异常（ProxyError）(stock_zh_a_spot_em)，准备重试 3/3
+2026-02-13 16:22:24 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [realtime_quote] via stock_zh_a_spot_em (attempt 4/4)...
+2026-02-13 16:22:24 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=5, total_urls=10
+2026-02-13 16:22:26 - INFO - stock_analyzer - tavily_client:81 - Tavily search '茅台1935 2025年二季度控货挺价政策执行时间点 渠道库存去化进度 数据' returned 5 results
+2026-02-13 16:22:27 - INFO - stock_analyzer - module_c_technical:710 - Technical analysis completed for 600519: score=5.2, signal=中性, confidence=0.58
+2026-02-13 16:22:31 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=5, total_urls=10
+2026-02-13 16:22:31 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:22:32 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-13 16:22:34 - ERROR - stock_analyzer - module_a_akshare:130 - realtime_quote: ProxyError - HTTPSConnectionPool(host='82.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A0+ (stock_zh_a_spot_em)
+2026-02-13 16:22:34 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via stock_financial_analysis_indicator_em...
+2026-02-13 16:22:35 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-13 16:22:36 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:22:36 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=25, total_urls=29
+2026-02-13 16:22:36 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台 风险事件，包括监管处罚、诉讼纠纷、管理层变动、财务风险等负面信息'
+2026-02-13 16:22:37 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 100 rows via stock_financial_analysis_indicator_em
+2026-02-13 16:22:37 - WARNING - stock_analyzer - module_a_akshare:557 - valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu
+2026-02-13 16:22:37 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via stock_zh_valuation_baidu...
+2026-02-13 16:22:39 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:22:39 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=25, total_urls=29
+2026-02-13 16:22:39 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵州茅台 券商研报、机构评级、目标价、分析师对该股的投资观点和评级变化'
+2026-02-13 16:22:41 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:22:41 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 913 rows via stock_zh_valuation_baidu
+2026-02-13 16:22:41 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via stock_zh_valuation_baidu...
+2026-02-13 16:22:41 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:22:41 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=29
+2026-02-13 16:22:43 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 913 rows via stock_zh_valuation_baidu
+2026-02-13 16:22:43 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.7s before next AKShare call
+2026-02-13 16:22:44 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_vs_industry] via stock_zh_valuation_comparison_em...
+2026-02-13 16:22:46 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_vs_industry] fetched successfully: 8 rows via stock_zh_valuation_comparison_em
+2026-02-13 16:22:46 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.3s before next AKShare call
+2026-02-13 16:22:45 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [fund_flow] via stock_individual_fund_flow...
+2026-02-13 16:22:45 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 近三年监管处罚记录 证监会/国家市场监督管理总局' returned 5 results
+2026-02-13 16:22:45 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 高管变动 异常离职 董事会公告 2022-2024 年 财务总监 副总经理' returned 5 results
+2026-02-13 16:22:48 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年 券商研报汇总 机构评级变化 中信证券 中金公司 华泰证券' returned 5 results
+2026-02-13 16:22:48 - INFO - stock_analyzer - module_a_akshare:103 - [fund_flow] fetched successfully: 121 rows via stock_individual_fund_flow
+2026-02-13 16:22:48 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.0s before next AKShare call
+2026-02-13 16:22:48 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_industry] via stock_sector_fund_flow_rank...
+2026-02-13 16:22:49 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 分析师观点分歧 增长可持续性 飞天批价渠道库存 高端酒政策风险 2024年深度报告' returned 5 results
+2026-02-13 16:22:50 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_industry: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 1/3
+2026-02-13 16:22:50 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.8s before next AKShare call
+2026-02-13 16:22:50 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 目标价预测 2024Q2 平均值 中位数 最高最低目标价 国泰君安 海通证券 申万宏源' returned 5 results
+2026-02-13 16:22:51 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_industry] via stock_sector_fund_flow_rank (attempt 2/4)...
+2026-02-13 16:22:52 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 诉讼纠纷案由 民事/刑事 公开裁判文书网 2020-2024' returned 5 results
+2026-02-13 16:22:53 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_industry: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 2/3
+2026-02-13 16:22:53 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.9s before next AKShare call
+2026-02-13 16:22:54 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_industry] via stock_sector_fund_flow_rank (attempt 3/4)...
+2026-02-13 16:22:56 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_industry: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 3/3
+2026-02-13 16:22:56 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.9s before next AKShare call
+2026-02-13 16:22:57 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_industry] via stock_sector_fund_flow_rank (attempt 4/4)...
+2026-02-13 16:22:57 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 检索贵州茅台自2021年以来是否受到证监会、市场监管总局等权威监管部门的行政处罚，包括事由、文号、时间及整改情况...'
+2026-02-13 16:22:59 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 识别2022–2024年间贵州茅台核心高管（尤其是财务总监、副总经理及以上）是否存在未按常规程序披露的突发性离职...'
+2026-02-13 16:22:59 - ERROR - stock_analyzer - module_a_akshare:130 - sector_flow_industry: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)
+2026-02-13 16:22:59 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.9s before next AKShare call
+2026-02-13 16:23:00 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_concept] via stock_sector_fund_flow_rank...
+2026-02-13 16:23:02 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 挖掘近期深度研报中分析师对贵州茅台核心争议点的分析，特别是批价走势、库存去化进度与监管政策潜在影响的实证讨论
+F...'
+2026-02-13 16:23:04 - INFO - stock_analyzer - tavily_client:81 - Tavily search '国家市场监督管理总局官网 贵州茅台酒股份有限公司 2022年 2023年 2024年 行政处罚 公示' returned 5 results
+2026-02-13 16:23:07 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取2024年以来头部券商对贵州茅台的最新评级调整记录、评级变动时间点及核心上调/下调逻辑
+Follow-up ...'
+2026-02-13 16:23:07 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 查找中国裁判文书网等权威司法平台中贵州茅台作为当事人（原告/被告）的已公开重大诉讼案件，重点关注产品质量、经销商...'
+2026-02-13 16:23:07 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_concept: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 1/3
+2026-02-13 16:23:07 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_concept] via stock_sector_fund_flow_rank (attempt 2/4)...
+2026-02-13 16:23:09 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 i茅台平台 2024年Q4至2025年Q1 复购率 区域分布 客单价 经销商分流 数据报告' returned 5 results
+2026-02-13 16:23:10 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_concept: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 2/3
+2026-02-13 16:23:10 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.9s before next AKShare call
+2026-02-13 16:23:10 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵州茅台 2024年8月董事会会议 临2024-022号公告 原高管分管业务范围 向平 销售体系 张...' returned 5 results
+2026-02-13 16:23:10 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 梳理主流券商在2024年第二季度发布的贵州茅台目标价分布（含均值、区间及分歧原因），识别估值驱动因素差异
+Fol...'
+2026-02-13 16:23:10 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_concept] via stock_sector_fund_flow_rank (attempt 3/4)...
+2026-02-13 16:23:13 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_concept: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 3/3
+2026-02-13 16:23:13 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.9s before next AKShare call
+2026-02-13 16:23:13 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_concept] via stock_sector_fund_flow_rank (attempt 4/4)...
+2026-02-13 16:23:14 - INFO - stock_analyzer - tavily_client:81 - Tavily search '国信证券 贵州茅台 2026年营收预测下调4.0% 原因说明 研报原文 2025年4月' returned 5 results
+2026-02-13 16:23:15 - ERROR - stock_analyzer - module_a_akshare:130 - sector_flow_concept: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)
+2026-02-13 16:23:15 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.0s before next AKShare call
+2026-02-13 16:23:16 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国裁判文书网 贵州茅台 商标侵权 2020-2024年 统计数据 判赔金额 地域分布 site:c...' returned 5 results
+2026-02-13 16:23:16 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [northbound] via stock_hsgt_hold_stock_em...
+2026-02-13 16:23:17 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-13 16:23:16 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中邮证券 2024年7月2日 贵州茅台深度报告 非经常性损益调整 EPS预测值 2024年全年PE区...' returned 5 results
+2026-02-13 16:23:19 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:23:21 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-13 16:23:25 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:23:25 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=27
+2026-02-13 16:23:28 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-13 16:23:30 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:23:30 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=27
+2026-02-13 16:23:30 - INFO - stock_analyzer - module_b_websearch:186 - Topic 1 completed: 25 learnings, 29 urls
+2026-02-13 16:23:30 - INFO - stock_analyzer - module_b_websearch:186 - Topic 2 completed: 30 learnings, 29 urls
+2026-02-13 16:23:30 - INFO - stock_analyzer - module_b_websearch:186 - Topic 3 completed: 25 learnings, 29 urls
+2026-02-13 16:23:30 - INFO - stock_analyzer - module_b_websearch:186 - Topic 4 completed: 30 learnings, 27 urls
+2026-02-13 16:23:30 - INFO - stock_analyzer - module_b_websearch:186 - Topic 5 completed: 30 learnings, 27 urls
+2026-02-13 16:23:30 - INFO - stock_analyzer - module_b_websearch:210 - All topics done: 140 unique learnings, 135 unique urls, 5/5 topics succeeded
+2026-02-13 16:23:44 - WARNING - stock_analyzer - module_a_akshare:144 - northbound: 调用超时（>30.0s）(stock_hsgt_hold_stock_em)，准备重试 1/3
+2026-02-13 16:23:44 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [northbound] via stock_hsgt_hold_stock_em (attempt 2/4)...
+2026-02-13 16:23:49 - ERROR - stock_analyzer - module_a_akshare:130 - northbound: ChunkedEncodingError - Response ended prematurely (stock_hsgt_hold_stock_em)
+2026-02-13 16:23:49 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [shareholder_count] via stock_zh_a_gdhs_detail_em...
+2026-02-13 16:23:54 - INFO - stock_analyzer - module_a_akshare:103 - [shareholder_count] fetched successfully: 60 rows via stock_zh_a_gdhs_detail_em
+2026-02-13 16:23:54 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [dividend_history_detail] via stock_history_dividend_detail...
+2026-02-13 16:23:56 - INFO - stock_analyzer - module_a_akshare:103 - [dividend_history_detail] fetched successfully: 30 rows via stock_history_dividend_detail
+2026-02-13 16:23:56 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.5s before next AKShare call
+2026-02-13 16:23:57 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-13 16:24:25 - WARNING - stock_analyzer - module_a_akshare:144 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 1/3
+2026-02-13 16:24:25 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 2/4)...
+2026-02-13 16:24:30 - INFO - stock_analyzer - module_b_websearch:266 - Web research completed in 171.0s
+2026-02-13 16:24:53 - WARNING - stock_analyzer - module_a_akshare:144 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 2/3
+2026-02-13 16:24:53 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 3/4)...
+2026-02-13 16:25:21 - WARNING - stock_analyzer - module_a_akshare:144 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 3/3
+2026-02-13 16:25:21 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 4/4)...
+2026-02-13 16:25:49 - ERROR - stock_analyzer - module_a_akshare:156 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em) [连续超时 1/3]
+2026-02-13 16:25:49 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-13 16:25:59 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 493 rows via stock_yjyg_em
+2026-02-13 16:25:59 - INFO - stock_analyzer - module_a_akshare:224 - [earnings_forecast] cache set: stock_yjyg_em:20250930, rows=493
+2026-02-13 16:25:59 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-13 16:26:26 - WARNING - stock_analyzer - module_a_akshare:144 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 1/3
+2026-02-13 16:26:26 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 2/4)...
+2026-02-13 16:26:48 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 4304 rows via stock_yjyg_em
+2026-02-13 16:26:48 - INFO - stock_analyzer - module_a_akshare:224 - [earnings_forecast] cache set: stock_yjyg_em:20250630, rows=4304
+2026-02-13 16:26:48 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-13 16:26:52 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 712 rows via stock_yjyg_em
+2026-02-13 16:26:52 - INFO - stock_analyzer - module_a_akshare:224 - [earnings_forecast] cache set: stock_yjyg_em:20250331, rows=712
+2026-02-13 16:26:52 - INFO - stock_analyzer - module_a_akshare:1276 - earnings_forecast: 最近 4 个季度均未找到 600519 的业绩预告（API 正常，该股票无预告）
+2026-02-13 16:26:52 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [pledge_ratio] via stock_gpzy_pledge_ratio_em...
+2026-02-13 16:27:09 - INFO - stock_analyzer - module_a_akshare:103 - [pledge_ratio] fetched successfully: 2322 rows via stock_gpzy_pledge_ratio_em
+2026-02-13 16:27:09 - INFO - stock_analyzer - module_a_akshare:224 - [pledge_ratio] cache set: stock_gpzy_pledge_ratio_em, rows=2322
+2026-02-13 16:27:09 - INFO - stock_analyzer - module_a_akshare:1424 - AKShare collection completed for 600519: 9/12 topics succeeded (3 failed, 6 errors)
+2026-02-13 16:27:09 - INFO - stock_analyzer - module_a_akshare:1454 - AKShare data collection finished for 600519: 9/12 topics, 6 errors
+2026-02-13 16:27:09 - INFO - stock_analyzer - workflow:153 - [Workflow] Intermediate results saved to output/
+2026-02-13 16:27:09 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600519 贵州茅台
+2026-02-13 16:27:09 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600519 贵州茅台
+2026-02-13 16:27:43 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 600519: overall_score=6.50, confidence=中
+2026-02-13 16:27:43 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600519: score=6.50, confidence=中
+2026-02-13 16:37:25 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 601069
+2026-02-13 16:37:25 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 601069
+2026-02-13 16:37:28 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='西部黄金', industry='贵金属'
+2026-02-13 16:37:28 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 601069 西部黄金（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:37:28 - INFO - stock_analyzer - module_b_websearch:130 - Starting web research for 601069 西部黄金 (贵金属)
+2026-02-13 16:37:28 - INFO - stock_analyzer - module_a_akshare:1451 - Starting AKShare data collection for 601069 (西部黄金)
+2026-02-13 16:37:28 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [company_info] via stock_individual_info_em...
+2026-02-13 16:37:29 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 601069 西部黄金
+2026-02-13 16:37:31 - WARNING - stock_analyzer - module_c_technical:71 - fetch_monthly_kline failed for 601069 with adjust='qfq': ProxyError: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=103&fqt=1&secid=1.601069&beg=20000101&end=20500101 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2026-02-13 16:37:32 - INFO - stock_analyzer - module_a_akshare:103 - [company_info] fetched successfully: 9 rows via stock_individual_info_em
+2026-02-13 16:37:32 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [realtime_quote] via stock_zh_a_spot_em...
+2026-02-13 16:37:38 - ERROR - stock_analyzer - module_c_technical:586 - Technical data fetch/normalize failed: AKShare monthly kline failed for 601069: ProxyError: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=103&fqt=0&secid=1.601069&beg=20000101&end=20500101 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2026-02-13 16:37:38 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='西部黄金（股票代码601069）近期重大新闻，包括正面和负面影响股价的事件'
+2026-02-13 16:37:38 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='西部黄金 核心竞争力分析，护城河类型，在贵金属行业中的市场地位和竞争优势'
+2026-02-13 16:37:38 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='贵金属行业发展前景，政策环境，市场趋势，行业增长驱动力和主要风险'
+2026-02-13 16:37:50 - WARNING - stock_analyzer - module_a_akshare:122 - realtime_quote: 连接异常（ProxyError）(stock_zh_a_spot_em)，准备重试 1/3
+2026-02-13 16:37:50 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [realtime_quote] via stock_zh_a_spot_em (attempt 2/4)...
+2026-02-13 16:37:51 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 601069 近期被证监会/上交所出具监管函 或立案调查 新闻' returned 5 results
+2026-02-13 16:37:51 - INFO - stock_analyzer - tavily_client:81 - Tavily search '全球央行购金数据2024年季度更新 中国央行黄金储备增持节奏与地缘政治关联性分析' returned 5 results
+2026-02-13 16:37:51 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 601069 2024年一季度/半年度业绩预告修正 公告 原因' returned 5 results
+2026-02-13 16:37:51 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 新疆地区采矿权集中度 政策壁垒 矿业权延续情况 2024年最新公告' returned 5 results
+2026-02-13 16:37:51 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 喀拉通克铜镍矿伴生金回收技术 选冶工艺优势 专利或行业报告' returned 5 results
+2026-02-13 16:37:52 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国2023-2025年贵金属行业十四五规划及新出台环保/资源税/进口关税政策汇总' returned 5 results
+2026-02-13 16:37:52 - INFO - stock_analyzer - tavily_client:81 - Tavily search '光伏导电银浆、氢燃料电池铂催化剂国产替代进展 2024年头部企业技术突破与市占率变化' returned 5 results
+2026-02-13 16:37:53 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 2023年金矿储量与品位数据 对比紫金矿业 山东黄金 赤峰黄金' returned 5 results
+2026-02-13 16:37:54 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 601069 2024年重大资产重组或并购进展公告' returned 5 results
+2026-02-13 16:38:02 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 识别是否存在业绩大幅低于/高于预期、会计差错更正、监管问询等直接影响市场情绪与股价的负面或正面财务信号
+Foll...'
+2026-02-13 16:38:03 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 确认是否存在因信息披露违规、内幕交易、环保/安全生产问题等引发的监管处罚或调查，构成实质性利空
+Follow-u...'
+2026-02-13 16:38:03 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 系统梳理近三年国家及部委层面针对黄金、白银、铂族金属等贵金属开采、冶炼、回收、进出口等环节的实质性产业政策与监管...'
+2026-02-13 16:38:05 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 探究西部黄金是否具备独特的伴生金综合回收技术或低成本提金工艺，识别是否存在技术壁垒型护城河
+Follow-up ...'
+2026-02-13 16:38:06 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 聚焦高端制造业下游应用驱动的结构性增长，验证新能源领域对白银、铂族金属的真实需求增量、技术替代瓶颈及本土供应链成...'
+2026-02-13 16:38:07 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 查找公司近期是否启动或完成重大资产收购、剥离、合作等可能显著影响估值和经营预期的事件
+Follow-up res...'
+2026-02-13 16:38:07 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取最新权威渠道（如World Gold Council、IMF、中国人民银行）发布的央行购金动态，研判其对贵金...'
+2026-02-13 16:38:07 - WARNING - stock_analyzer - module_a_akshare:122 - realtime_quote: 连接异常（ProxyError）(stock_zh_a_spot_em)，准备重试 2/3
+2026-02-13 16:38:07 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [realtime_quote] via stock_zh_a_spot_em (attempt 3/4)...
+2026-02-13 16:38:08 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 分析其在新疆核心产区的区域垄断性、政策准入门槛及资源获取可持续性，判断是否存在地域与牌照型护城河
+Follow-...'
+2026-02-13 16:38:09 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 2024年半年报 资产减值损失明细 信用减值损失 所得税费用 非经常性损益 公告原文' returned 5 results
+2026-02-13 16:38:09 - INFO - stock_analyzer - tavily_client:81 - Tavily search '《有色金属行业碳达峰实施方案》 贵金属再生利用 量化指标 铂族金属 银 金 回收率 再生比例' returned 5 results
+2026-02-13 16:38:10 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 601069 上交所 2025年 监管工作函 问询函 纪律处分决定 公告原文' returned 5 results
+2026-02-13 16:38:10 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取西部黄金在资源禀赋（储量、品位、开采成本）维度的量化指标，并与国内主要黄金企业横向对比，评估其资源型护城河强...'
+2026-02-13 16:38:13 - INFO - stock_analyzer - tavily_client:81 - Tavily search '贵研铂业 中自科技 喜马拉雅 2024年氢燃料电池催化剂量产装车渗透率 铂载量 g/kW 耐久性小时...' returned 5 results
+2026-02-13 16:38:13 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 601069 2024年 重大资产重组预案 公告编号 证监会问询函 上交所反馈意见' returned 5 results
+2026-02-13 16:38:13 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 天山星贵金属 喀拉通克 铜镍矿伴生金 国家知识产权局 专利号 授权日期 工艺特征' returned 5 results
+2026-02-13 16:38:14 - INFO - stock_analyzer - tavily_client:81 - Tavily search '波兰央行2025年黄金增持节奏与成本均价测算 515吨储备目标达成时间点 实证研究' returned 5 results
+2026-02-13 16:38:16 - INFO - stock_analyzer - tavily_client:81 - Tavily search '新疆自然资源厅官网 阿希金矿 停产整改 处罚决定书 文号 2023年' returned 5 results
+2026-02-13 16:38:20 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:38:20 - WARNING - stock_analyzer - module_a_akshare:122 - realtime_quote: 连接异常（ProxyError）(stock_zh_a_spot_em)，准备重试 3/3
+2026-02-13 16:38:20 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [realtime_quote] via stock_zh_a_spot_em (attempt 4/4)...
+2026-02-13 16:38:21 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:38:22 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-13 16:38:23 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 2023年年报 矿产资源储量核实报告 自然资源部备案 哈密金矿 伊犁阿希金矿 储量分类 探...' returned 5 results
+2026-02-13 16:38:23 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-13 16:38:24 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:38:25 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:38:25 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=30
+2026-02-13 16:38:25 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='西部黄金 风险事件，包括监管处罚、诉讼纠纷、管理层变动、财务风险等负面信息'
+2026-02-13 16:38:26 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:38:27 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-13 16:38:27 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=21
+2026-02-13 16:38:27 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='西部黄金 券商研报、机构评级、目标价、分析师对该股的投资观点和评级变化'
+2026-02-13 16:38:32 - ERROR - stock_analyzer - module_a_akshare:130 - realtime_quote: ProxyError - HTTPSConnectionPool(host='82.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A0+ (stock_zh_a_spot_em)
+2026-02-13 16:38:32 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via stock_financial_analysis_indicator_em...
+2026-02-13 16:38:34 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 51 rows via stock_financial_analysis_indicator_em
+2026-02-13 16:38:34 - WARNING - stock_analyzer - module_a_akshare:557 - valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu
+2026-02-13 16:38:34 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.0s before next AKShare call
+2026-02-13 16:38:35 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via stock_zh_valuation_baidu...
+2026-02-13 16:38:36 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 近三年证监会或上交所行政处罚决定书 公告' returned 5 results
+2026-02-13 16:38:36 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 诉讼纠纷 案由 矿权争议 环保索赔 2021-2024 裁判文书网' returned 5 results
+2026-02-13 16:38:37 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 高管变动 2023-2024 董事会决议公告 副总经理/财务总监/董秘 离职 原因' returned 5 results
+2026-02-13 16:38:38 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 913 rows via stock_zh_valuation_baidu
+2026-02-13 16:38:38 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via stock_zh_valuation_baidu...
+2026-02-13 16:38:39 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 2024年 券商研报汇总 东方财富网 或 同花顺iFinD' returned 5 results
+2026-02-13 16:38:40 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:38:40 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=25
+2026-02-13 16:38:40 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-13 16:38:40 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.8s before next AKShare call
+2026-02-13 16:38:41 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_vs_industry] via stock_zh_valuation_comparison_em...
+2026-02-13 16:38:42 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=0, query='Previous research goal: 查找西部黄金作为被告或原告的已公开司法案件，重点关注矿权归属、生态环境损害赔偿、劳动纠纷等高风险诉讼类型及其最新...'
+2026-02-13 16:38:45 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 机构评级变化记录 近12个月 评级上调 下调 中性转买入 数据源：万得Wind或慧博投研' returned 5 results
+2026-02-13 16:38:46 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_vs_industry] fetched successfully: 8 rows via stock_zh_valuation_comparison_em
+2026-02-13 16:38:46 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [fund_flow] via stock_individual_fund_flow...
+2026-02-13 16:38:46 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 目标价统计 2024Q2 平均值 中位数 最高最低目标价 对应估值方法（PE/PCF/NA...' returned 5 results
+2026-02-13 16:38:47 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 2021-2024 矿权纠纷 案号 裁判文书网' returned 5 results
+2026-02-13 16:38:48 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 检索监管机构对西部黄金作出的正式处罚文件，确认是否存在因信息披露违规、环保问题、安全生产等导致的监管处罚
+Fol...'
+2026-02-13 16:38:48 - INFO - stock_analyzer - module_a_akshare:103 - [fund_flow] fetched successfully: 121 rows via stock_individual_fund_flow
+2026-02-13 16:38:48 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.9s before next AKShare call
+2026-02-13 16:38:49 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=0, query='Previous research goal: 梳理过去一年内各机构对西部黄金的评级变动时序（如由‘增持’上调至‘买入’），识别驱动评级变化的关键事件（如金价突...'
+2026-02-13 16:38:49 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_industry] via stock_sector_fund_flow_rank...
+2026-02-13 16:38:50 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 核实近一年内核心管理层（尤其是财务、合规、安全相关岗位）是否发生异常密集离职，判断是否存在治理稳定性风险或潜在内...'
+2026-02-13 16:38:51 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_industry: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 1/3
+2026-02-13 16:38:51 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.2s before next AKShare call
+2026-02-13 16:38:51 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取2024年以来主流券商（如中信证券、中金公司、国泰君安等）发布的最新研报原文，重点关注盈利预测、核心逻辑及首...'
+2026-02-13 16:38:52 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_industry] via stock_sector_fund_flow_rank (attempt 2/4)...
+2026-02-13 16:38:54 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_industry: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 2/3
+2026-02-13 16:38:54 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.3s before next AKShare call
+2026-02-13 16:38:54 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 601069 2025年 取消监事会 上交所 监管问询函 工作函' returned 5 results
+2026-02-13 16:38:55 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_industry] via stock_sector_fund_flow_rank (attempt 3/4)...
+2026-02-13 16:38:57 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_industry: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 3/3
+2026-02-13 16:38:57 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.9s before next AKShare call
+2026-02-13 16:38:58 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_industry] via stock_sector_fund_flow_rank (attempt 4/4)...
+2026-02-13 16:38:59 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 601069 2023年年报 2024年一季报 上交所公告 具体披露日期 营收 归母净利润...' returned 5 results
+2026-02-13 16:38:59 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部矿业 2024年11月29日后 财务总监 董秘 任命公告 上交所监管关注函 三合一岗位 内控合规' returned 5 results
+2026-02-13 16:39:00 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=5, total_urls=9
+2026-02-13 16:39:00 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 601069.SH 2023年 Wind 慧博投研 评级报告 券商名称 评级变动时间 前后...' returned 5 results
+2026-02-13 16:39:01 - ERROR - stock_analyzer - module_a_akshare:130 - sector_flow_industry: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)
+2026-02-13 16:39:01 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.4s before next AKShare call
+2026-02-13 16:39:01 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 汇总当前主流券商对西部黄金的目标价区间及对应估值模型，分析分歧来源（如金价假设、乌拉特前旗项目投产进度、吨矿成本...'
+2026-02-13 16:39:01 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_concept] via stock_sector_fund_flow_rank...
+2026-02-13 16:39:01 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=5, total_urls=10
+2026-02-13 16:39:03 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_concept: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 1/3
+2026-02-13 16:39:03 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.1s before next AKShare call
+2026-02-13 16:39:04 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_concept] via stock_sector_fund_flow_rank (attempt 2/4)...
+2026-02-13 16:39:06 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_concept: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 2/3
+2026-02-13 16:39:06 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.2s before next AKShare call
+2026-02-13 16:39:07 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_concept] via stock_sector_fund_flow_rank (attempt 3/4)...
+2026-02-13 16:39:08 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=5, total_urls=10
+2026-02-13 16:39:08 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=15, total_urls=29
+2026-02-13 16:39:09 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_concept: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 3/3
+2026-02-13 16:39:09 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.2s before next AKShare call
+2026-02-13 16:39:10 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=5, total_urls=10
+2026-02-13 16:39:10 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:39:10 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_concept] via stock_sector_fund_flow_rank (attempt 4/4)...
+2026-02-13 16:39:10 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西部黄金 2024年半年报 财务数据 吨矿成本 经营性现金流 归母净利润 扣非净利润 公告原文 si...' returned 5 results
+2026-02-13 16:39:12 - ERROR - stock_analyzer - module_a_akshare:130 - sector_flow_concept: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)
+2026-02-13 16:39:12 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.1s before next AKShare call
+2026-02-13 16:39:13 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [northbound] via stock_hsgt_hold_stock_em...
+2026-02-13 16:39:19 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:39:19 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=25, total_urls=29
+2026-02-13 16:39:19 - INFO - stock_analyzer - module_b_websearch:186 - Topic 1 completed: 30 learnings, 21 urls
+2026-02-13 16:39:19 - INFO - stock_analyzer - module_b_websearch:186 - Topic 2 completed: 30 learnings, 25 urls
+2026-02-13 16:39:19 - INFO - stock_analyzer - module_b_websearch:186 - Topic 3 completed: 30 learnings, 30 urls
+2026-02-13 16:39:19 - INFO - stock_analyzer - module_b_websearch:186 - Topic 4 completed: 15 learnings, 29 urls
+2026-02-13 16:39:19 - INFO - stock_analyzer - module_b_websearch:186 - Topic 5 completed: 25 learnings, 29 urls
+2026-02-13 16:39:19 - INFO - stock_analyzer - module_b_websearch:210 - All topics done: 130 unique learnings, 122 unique urls, 5/5 topics succeeded
+2026-02-13 16:39:31 - INFO - stock_analyzer - module_a_akshare:103 - [northbound] fetched successfully: 2767 rows via stock_hsgt_hold_stock_em
+2026-02-13 16:39:31 - INFO - stock_analyzer - module_a_akshare:224 - [northbound] cache set: stock_hsgt_hold_stock_em:北向:今日排行, rows=2767
+2026-02-13 16:39:31 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [shareholder_count] via stock_zh_a_gdhs_detail_em...
+2026-02-13 16:39:36 - INFO - stock_analyzer - module_a_akshare:103 - [shareholder_count] fetched successfully: 54 rows via stock_zh_a_gdhs_detail_em
+2026-02-13 16:39:36 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [dividend_history_detail] via stock_history_dividend_detail...
+2026-02-13 16:39:38 - INFO - stock_analyzer - module_a_akshare:103 - [dividend_history_detail] fetched successfully: 11 rows via stock_history_dividend_detail
+2026-02-13 16:39:38 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.4s before next AKShare call
+2026-02-13 16:39:39 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-13 16:40:07 - WARNING - stock_analyzer - module_a_akshare:144 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 1/3
+2026-02-13 16:40:07 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 2/4)...
+2026-02-13 16:40:15 - INFO - stock_analyzer - module_b_websearch:266 - Web research completed in 166.6s
+2026-02-13 16:40:35 - WARNING - stock_analyzer - module_a_akshare:144 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 2/3
+2026-02-13 16:40:35 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 3/4)...
+2026-02-13 16:41:03 - WARNING - stock_analyzer - module_a_akshare:144 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 3/3
+2026-02-13 16:41:03 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 4/4)...
+2026-02-13 16:41:31 - ERROR - stock_analyzer - module_a_akshare:156 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em) [连续超时 1/3]
+2026-02-13 16:41:31 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-13 16:41:35 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 493 rows via stock_yjyg_em
+2026-02-13 16:41:35 - INFO - stock_analyzer - module_a_akshare:224 - [earnings_forecast] cache set: stock_yjyg_em:20250930, rows=493
+2026-02-13 16:41:35 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-13 16:42:03 - WARNING - stock_analyzer - module_a_akshare:144 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 1/3
+2026-02-13 16:42:03 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 2/4)...
+2026-02-13 16:42:26 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 4304 rows via stock_yjyg_em
+2026-02-13 16:42:26 - INFO - stock_analyzer - module_a_akshare:224 - [earnings_forecast] cache set: stock_yjyg_em:20250630, rows=4304
+2026-02-13 16:42:26 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [pledge_ratio] via stock_gpzy_pledge_ratio_em...
+2026-02-13 16:42:47 - INFO - stock_analyzer - module_a_akshare:103 - [pledge_ratio] fetched successfully: 2322 rows via stock_gpzy_pledge_ratio_em
+2026-02-13 16:42:47 - INFO - stock_analyzer - module_a_akshare:224 - [pledge_ratio] cache set: stock_gpzy_pledge_ratio_em, rows=2322
+2026-02-13 16:42:47 - INFO - stock_analyzer - module_a_akshare:1424 - AKShare collection completed for 601069: 10/12 topics succeeded (2 failed, 5 errors)
+2026-02-13 16:42:47 - INFO - stock_analyzer - module_a_akshare:1454 - AKShare data collection finished for 601069: 10/12 topics, 5 errors
+2026-02-13 16:42:47 - INFO - stock_analyzer - workflow:153 - [Workflow] Intermediate results saved to output/
+2026-02-13 16:42:47 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 601069 西部黄金
+2026-02-13 16:42:47 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 601069 西部黄金
+2026-02-13 16:43:20 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 601069: overall_score=4.80, confidence=中
+2026-02-13 16:43:20 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 601069: score=4.80, confidence=中
+2026-02-13 16:46:49 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 601179
+2026-02-13 16:46:49 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 601179
+2026-02-13 16:46:54 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='中国西电', industry='电网设备'
+2026-02-13 16:46:54 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 601179 中国西电（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 16:46:54 - INFO - stock_analyzer - module_b_websearch:130 - Starting web research for 601179 中国西电 (电网设备)
+2026-02-13 16:46:54 - INFO - stock_analyzer - module_a_akshare:1451 - Starting AKShare data collection for 601179 (中国西电)
+2026-02-13 16:46:54 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [company_info] via stock_individual_info_em...
+2026-02-13 16:46:54 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 601179 中国西电
+2026-02-13 16:46:55 - WARNING - stock_analyzer - module_c_technical:71 - fetch_monthly_kline failed for 601179 with adjust='qfq': ProxyError: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=103&fqt=1&secid=1.601179&beg=20000101&end=20500101 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2026-02-13 16:46:56 - INFO - stock_analyzer - module_a_akshare:103 - [company_info] fetched successfully: 9 rows via stock_individual_info_em
+2026-02-13 16:46:56 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.3s before next AKShare call
+2026-02-13 16:46:56 - ERROR - stock_analyzer - module_c_technical:586 - Technical data fetch/normalize failed: AKShare monthly kline failed for 601179: ProxyError: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=103&fqt=0&secid=1.601179&beg=20000101&end=20500101 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2026-02-13 16:46:56 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='中国西电（股票代码601179）近期重大新闻，包括正面和负面影响股价的事件'
+2026-02-13 16:46:57 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='中国西电 核心竞争力分析，护城河类型，在电网设备行业中的市场地位和竞争优势'
+2026-02-13 16:46:57 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='电网设备行业发展前景，政策环境，市场趋势，行业增长驱动力和主要风险'
+2026-02-13 16:46:57 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [realtime_quote] via stock_zh_a_spot_em...
+2026-02-13 16:47:08 - WARNING - stock_analyzer - module_a_akshare:122 - realtime_quote: 连接异常（ProxyError）(stock_zh_a_spot_em)，准备重试 1/3
+2026-02-13 16:47:08 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [realtime_quote] via stock_zh_a_spot_em (attempt 2/4)...
+2026-02-13 16:47:09 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 601179 近期股东减持公告 高管变动 证监会或交易所监管问询函' returned 5 results
+2026-02-13 16:47:10 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 601179 2024年重大合同中标公告 超高压输变电设备' returned 5 results
+2026-02-13 16:47:10 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 央企背景 对招投标优势影响 电网设备行业客户集中度 前五大客户销售占比及合作年限' returned 5 results
+2026-02-13 16:47:11 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 601179 2024年一季度财报业绩下滑 原因分析 财务风险' returned 5 results
+2026-02-13 16:47:12 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 研发投入占比 同业对比 特高压技术专利数量 国家级实验室资质' returned 5 results
+2026-02-13 16:47:12 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 主营业务构成 2023年 电网设备细分领域市占率 国家电网南方电网中标数据' returned 5 results
+2026-02-13 16:47:12 - INFO - stock_analyzer - tavily_client:81 - Tavily search '2023-2024年国网南网年度设备招标规模变化、国产化率提升数据及新型电力系统相关设备（如柔性直流...' returned 5 results
+2026-02-13 16:47:14 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国电网设备行业十四五规划重点支持政策及2024年最新补贴/招标导向文件' returned 5 results
+2026-02-13 16:47:16 - INFO - stock_analyzer - tavily_client:81 - Tavily search '电网设备行业毛利率下行压力来源：原材料成本波动（取向硅钢、IGBT）、产能过剩预警、海外认证壁垒（I...' returned 5 results
+2026-02-13 16:47:19 - WARNING - stock_analyzer - module_a_akshare:122 - realtime_quote: 连接异常（ProxyError）(stock_zh_a_spot_em)，准备重试 2/3
+2026-02-13 16:47:19 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [realtime_quote] via stock_zh_a_spot_em (attempt 3/4)...
+2026-02-13 16:47:23 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 查找公司近期（2024年内）获得的重大订单或项目中标信息，评估其对营收和市场地位的潜在正面影响
+Follow-u...'
+2026-02-13 16:47:24 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 检索可能引发市场担忧的公司治理类负面事件，如重要股东减持、核心高管离职、监管问询或立案调查等非经营性风险信号
+F...'
+2026-02-13 16:47:25 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取中国西电在变压器、开关设备、GIS等核心电网设备细分市场的实际份额及近年在两大电网招标中的中标排名与金额，量...'
+2026-02-13 16:47:25 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 分析其作为国务院国资委控股央企在电网项目准入、回款周期、订单稳定性等方面的制度性优势，并通过客户集中度数据判断其...'
+2026-02-13 16:47:26 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 核实公司最新季度财报是否出现营收/净利润同比下滑，并挖掘管理层解释、行业共性因素或公司特有经营问题等负面驱动因素...'
+2026-02-13 16:47:25 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 识别其技术护城河的具体支撑——包括研发投入强度、与许继电气、平高电气、思源电气等头部企业的研发指标对比，以及特高...'
+2026-02-13 16:47:27 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 识别制约行业盈利可持续性的关键风险因子，特别是供应链脆弱性、技术标准准入门槛抬升、以及欧美‘去风险化’背景下头部...'
+2026-02-13 16:47:29 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 梳理当前国家级和能源局层面针对电网设备（如智能电表、GIS、变压器、储能变流器等）的实质性产业政策、招投标优先条...'
+2026-02-13 16:47:29 - WARNING - stock_analyzer - module_a_akshare:122 - realtime_quote: 连接异常（ProxyError）(stock_zh_a_spot_em)，准备重试 3/3
+2026-02-13 16:47:29 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [realtime_quote] via stock_zh_a_spot_em (attempt 4/4)...
+2026-02-13 16:47:31 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 2023年国家电网特高压招标 中标明细表 变压器 换流变 GIS 分批次 公告原文' returned 5 results
+2026-02-13 16:47:31 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 2025年8月-2026年1月 减持窗口期合规性分析 上交所上市公司股东减持实施细则 窗口...' returned 5 results
+2026-02-13 16:47:31 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取权威渠道（如EPTC、中电联、招标网公开数据）发布的近年电网主设备采购量、金额、技术门槛升级趋势及头部厂商（...'
+2026-02-13 16:47:31 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 2025年11月28日 国家电网第六十四批特高压中标明细 子公司分包金额 西电变压器 西电...' returned 5 results
+2026-02-13 16:47:32 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 2024年年报 客户集中度 专项说明 上海证券交易所股票上市规则 7.1.1条 重大依赖 ...' returned 5 results
+2026-02-13 16:47:34 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 2025年半年报附注 埃及项目 预计损失计提 未来冲回条件' returned 5 results
+2026-02-13 16:47:34 - INFO - stock_analyzer - tavily_client:81 - Tavily search '西高院 2025年中特高压相关发明专利数量 统计口径 国家知识产权局专利检索 '±800kV' OR...' returned 5 results
+2026-02-13 16:47:34 - INFO - stock_analyzer - tavily_client:81 - Tavily search '国家能源局《新型储能项目管理规范（暂行）》共享储能电站 一二次融合设备 准入条件 技术认证 收益分成...' returned 5 results
+2026-02-13 16:47:37 - INFO - stock_analyzer - tavily_client:81 - Tavily search '国电南瑞 许继电气 平高电气 2024年 IEC 61850-3 UL 1741 SB 认证通过率 ...' returned 5 results
+2026-02-13 16:47:40 - ERROR - stock_analyzer - module_a_akshare:130 - realtime_quote: ProxyError - HTTPSConnectionPool(host='82.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A0+ (stock_zh_a_spot_em)
+2026-02-13 16:47:40 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via stock_financial_analysis_indicator_em...
+2026-02-13 16:47:40 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=5, total_urls=9
+2026-02-13 16:47:41 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:47:41 - INFO - stock_analyzer - tavily_client:81 - Tavily search '2024年南方电网柔性直流换流阀、故障电流限制器FCL单独招标公告 中标结果 中国南方电网供应链统一...' returned 5 results
+2026-02-13 16:47:42 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-13 16:47:42 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 70 rows via stock_financial_analysis_indicator_em
+2026-02-13 16:47:42 - WARNING - stock_analyzer - module_a_akshare:557 - valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu
+2026-02-13 16:47:42 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.9s before next AKShare call
+2026-02-13 16:47:43 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via stock_zh_valuation_baidu...
+2026-02-13 16:47:43 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:47:43 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=25, total_urls=28
+2026-02-13 16:47:43 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='中国西电 风险事件，包括监管处罚、诉讼纠纷、管理层变动、财务风险等负面信息'
+2026-02-13 16:47:45 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=7
+2026-02-13 16:47:45 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-13 16:47:45 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.2s before next AKShare call
+2026-02-13 16:47:46 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via stock_zh_valuation_baidu...
+2026-02-13 16:47:46 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-13 16:47:46 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=23
+2026-02-13 16:47:46 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='中国西电 券商研报、机构评级、目标价、分析师对该股的投资观点和评级变化'
+2026-02-13 16:47:48 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-13 16:47:48 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.9s before next AKShare call
+2026-02-13 16:47:48 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:47:48 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=5, total_urls=10
+2026-02-13 16:47:49 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_vs_industry] via stock_zh_valuation_comparison_em...
+2026-02-13 16:47:50 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_vs_industry] fetched successfully: 8 rows via stock_zh_valuation_comparison_em
+2026-02-13 16:47:50 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.5s before next AKShare call
+2026-02-13 16:47:52 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [fund_flow] via stock_individual_fund_flow...
+2026-02-13 16:47:52 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:47:52 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=25, total_urls=29
+2026-02-13 16:47:54 - INFO - stock_analyzer - module_a_akshare:103 - [fund_flow] fetched successfully: 120 rows via stock_individual_fund_flow
+2026-02-13 16:47:54 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.4s before next AKShare call
+2026-02-13 16:47:54 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 诉讼纠纷 案号 高级人民法院 电力设备合同纠纷 质量索赔 2022-2024' returned 5 results
+2026-02-13 16:47:54 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 2021-2024年 证监会/交易所监管处罚决定书 公告原文' returned 5 results
+2026-02-13 16:47:55 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_industry] via stock_sector_fund_flow_rank...
+2026-02-13 16:47:55 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 董事会公告 管理层变动 副总经理/财务总监/董秘 离职原因 2023年至今 异常辞职 补充...' returned 5 results
+2026-02-13 16:47:57 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_industry: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 1/3
+2026-02-13 16:47:57 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.9s before next AKShare call
+2026-02-13 16:47:58 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 机构评级变动历史 同花顺iFinD 或 Wind 数据库 近三年评级调整记录' returned 5 results
+2026-02-13 16:47:58 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_industry] via stock_sector_fund_flow_rank (attempt 2/4)...
+2026-02-13 16:47:56 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 分析师观点对比 中信建投 vs 华泰证券 vs 东吴证券 研报核心分歧点 目标价差异原因' returned 5 results
+2026-02-13 16:47:56 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 2024年 券商研报汇总 东方财富网/同花顺/慧博投研' returned 5 results
+2026-02-13 16:47:57 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_industry: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 2/3
+2026-02-13 16:47:57 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 3.1s before next AKShare call
+2026-02-13 16:48:01 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_industry] via stock_sector_fund_flow_rank (attempt 3/4)...
+2026-02-13 16:48:03 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_industry: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 3/3
+2026-02-13 16:48:03 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.5s before next AKShare call
+2026-02-13 16:48:04 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_industry] via stock_sector_fund_flow_rank (attempt 4/4)...
+2026-02-13 16:48:05 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 识别2023年以来公司高管（特别是财务、合规、信息披露相关岗位）非正常离职情况，核查交易所问询函、公告补充说明中...'
+2026-02-13 16:48:05 - ERROR - stock_analyzer - module_a_akshare:130 - sector_flow_industry: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)
+2026-02-13 16:48:05 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.2s before next AKShare call
+2026-02-13 16:48:06 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取权威监管机构（证监会、上交所）对中国西电在近3年内出具的正式行政处罚、监管措施或纪律处分文件，确认是否存在重...'
+2026-02-13 16:48:07 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_concept] via stock_sector_fund_flow_rank...
+2026-02-13 16:48:09 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_concept: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 1/3
+2026-02-13 16:48:09 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.6s before next AKShare call
+2026-02-13 16:48:10 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_concept] via stock_sector_fund_flow_rank (attempt 2/4)...
+2026-02-13 16:48:10 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 检索中国裁判文书网及权威司法平台中中国西电作为被告/被上诉人的重大民商事诉讼（尤其涉高压设备交付、验收、质保争议...'
+2026-02-13 16:48:11 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 检索近三年（2021–2024）中国西电被各大机构调级的具体时间、前后期评级、调整原因（如订单落地、毛利率变化、...'
+2026-02-13 16:48:11 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_concept: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 2/3
+2026-02-13 16:48:11 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.2s before next AKShare call
+2026-02-13 16:48:12 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 定位至少三家头部券商对中国西电的深度研究报告，横向对比其盈利预测假设（如2024年特高压订单确认节奏、海外业务增...'
+2026-02-13 16:48:12 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 601179 2026年1月22日 股票异动 监管问询函 是否涉及高管离任及未披露重大事项' returned 5 results
+2026-02-13 16:48:13 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_concept] via stock_sector_fund_flow_rank (attempt 3/4)...
+2026-02-13 16:48:14 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_concept: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 3/3
+2026-02-13 16:48:14 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.1s before next AKShare call
+2026-02-13 16:48:15 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取2024年以来主流券商（如中信证券、中金公司、国泰君安等）发布的关于中国西电的最新研报原文或摘要，重点关注评...'
+2026-02-13 16:48:15 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 2023年 丧失西电财务公司控制权 会计处理 合并报表 影响 证监会问询函 或 上交所监管...' returned 5 results
+2026-02-13 16:48:16 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_concept] via stock_sector_fund_flow_rank (attempt 4/4)...
+2026-02-13 16:48:18 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国裁判文书网 中国西电电气股份有限公司 2024年 未决诉讼 案号 高压开关 变压器 质量索赔 合...' returned 5 results
+2026-02-13 16:48:18 - ERROR - stock_analyzer - module_a_akshare:130 - sector_flow_concept: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)
+2026-02-13 16:48:18 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.4s before next AKShare call
+2026-02-13 16:48:19 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [northbound] via stock_hsgt_hold_stock_em...
+2026-02-13 16:48:19 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 2022-2024 同花顺iFinD 分析师覆盖数量变化 评级分歧度 目标价标准差 平高电...' returned 5 results
+2026-02-13 16:48:20 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中信建投 中国西电 2024年三季报点评 毛利率提升6.51pct 产品结构 原材料 成本传导 量化...' returned 5 results
+2026-02-13 16:48:21 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国西电 2024年国外业务毛利率下降12.97个百分点 汇率影响 海外项目成本超支 地缘政治风险 ...' returned 5 results
+2026-02-13 16:48:24 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:48:28 - INFO - stock_analyzer - module_a_akshare:103 - [northbound] fetched successfully: 2767 rows via stock_hsgt_hold_stock_em
+2026-02-13 16:48:28 - INFO - stock_analyzer - module_a_akshare:224 - [northbound] cache set: stock_hsgt_hold_stock_em:北向:今日排行, rows=2767
+2026-02-13 16:48:28 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [shareholder_count] via stock_zh_a_gdhs_detail_em...
+2026-02-13 16:48:27 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=8
+2026-02-13 16:48:28 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-13 16:48:28 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=24
+2026-02-13 16:48:29 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=8
+2026-02-13 16:48:29 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:48:30 - INFO - stock_analyzer - module_a_akshare:103 - [shareholder_count] fetched successfully: 55 rows via stock_zh_a_gdhs_detail_em
+2026-02-13 16:48:30 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.7s before next AKShare call
+2026-02-13 16:48:31 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [dividend_history_detail] via stock_history_dividend_detail...
+2026-02-13 16:48:32 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 16:48:32 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=26
+2026-02-13 16:48:32 - INFO - stock_analyzer - module_b_websearch:186 - Topic 1 completed: 25 learnings, 28 urls
+2026-02-13 16:48:32 - INFO - stock_analyzer - module_b_websearch:186 - Topic 2 completed: 30 learnings, 23 urls
+2026-02-13 16:48:32 - INFO - stock_analyzer - module_b_websearch:186 - Topic 3 completed: 25 learnings, 29 urls
+2026-02-13 16:48:32 - INFO - stock_analyzer - module_b_websearch:186 - Topic 4 completed: 30 learnings, 24 urls
+2026-02-13 16:48:32 - INFO - stock_analyzer - module_b_websearch:186 - Topic 5 completed: 30 learnings, 26 urls
+2026-02-13 16:48:32 - INFO - stock_analyzer - module_b_websearch:210 - All topics done: 140 unique learnings, 116 unique urls, 5/5 topics succeeded
+2026-02-13 16:48:33 - INFO - stock_analyzer - module_a_akshare:103 - [dividend_history_detail] fetched successfully: 20 rows via stock_history_dividend_detail
+2026-02-13 16:48:33 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.9s before next AKShare call
+2026-02-13 16:48:34 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-13 16:49:02 - WARNING - stock_analyzer - module_a_akshare:144 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 1/3
+2026-02-13 16:49:02 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 2/4)...
+2026-02-13 16:49:21 - INFO - stock_analyzer - module_b_websearch:266 - Web research completed in 147.2s
+2026-02-13 16:49:30 - WARNING - stock_analyzer - module_a_akshare:144 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 2/3
+2026-02-13 16:49:30 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 3/4)...
+2026-02-13 16:49:58 - WARNING - stock_analyzer - module_a_akshare:144 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 3/3
+2026-02-13 16:49:58 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 4/4)...
+2026-02-13 16:50:28 - ERROR - stock_analyzer - module_a_akshare:156 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em) [连续超时 1/3]
+2026-02-13 16:50:28 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-13 16:50:30 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 493 rows via stock_yjyg_em
+2026-02-13 16:50:30 - INFO - stock_analyzer - module_a_akshare:224 - [earnings_forecast] cache set: stock_yjyg_em:20250930, rows=493
+2026-02-13 16:50:30 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.3s before next AKShare call
+2026-02-13 16:50:31 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-13 16:50:59 - WARNING - stock_analyzer - module_a_akshare:144 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 1/3
+2026-02-13 16:50:59 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 2/4)...
+2026-02-13 16:51:24 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 4304 rows via stock_yjyg_em
+2026-02-13 16:51:24 - INFO - stock_analyzer - module_a_akshare:224 - [earnings_forecast] cache set: stock_yjyg_em:20250630, rows=4304
+2026-02-13 16:51:24 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-13 16:51:34 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 712 rows via stock_yjyg_em
+2026-02-13 16:51:34 - INFO - stock_analyzer - module_a_akshare:224 - [earnings_forecast] cache set: stock_yjyg_em:20250331, rows=712
+2026-02-13 16:51:34 - INFO - stock_analyzer - module_a_akshare:1276 - earnings_forecast: 最近 4 个季度均未找到 601179 的业绩预告（API 正常，该股票无预告）
+2026-02-13 16:51:34 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [pledge_ratio] via stock_gpzy_pledge_ratio_em...
+2026-02-13 16:51:52 - INFO - stock_analyzer - module_a_akshare:103 - [pledge_ratio] fetched successfully: 2322 rows via stock_gpzy_pledge_ratio_em
+2026-02-13 16:51:52 - INFO - stock_analyzer - module_a_akshare:224 - [pledge_ratio] cache set: stock_gpzy_pledge_ratio_em, rows=2322
+2026-02-13 16:51:52 - INFO - stock_analyzer - module_a_akshare:1424 - AKShare collection completed for 601179: 10/12 topics succeeded (2 failed, 5 errors)
+2026-02-13 16:51:52 - INFO - stock_analyzer - module_a_akshare:1454 - AKShare data collection finished for 601179: 10/12 topics, 5 errors
+2026-02-13 16:51:52 - INFO - stock_analyzer - workflow:153 - [Workflow] Intermediate results saved to output/
+2026-02-13 16:51:52 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 601179 中国西电
+2026-02-13 16:51:52 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 601179 中国西电
+2026-02-13 16:52:26 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 601179: overall_score=5.00, confidence=中
+2026-02-13 16:52:26 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 601179: score=5.00, confidence=中
+2026-02-13 17:04:32 - INFO - stock_analyzer - workflow:174 - [Workflow] Starting analysis for 600482
+2026-02-13 17:04:32 - INFO - stock_analyzer - workflow:177 - [Workflow] Looking up stock info for 600482
+2026-02-13 17:04:36 - INFO - stock_analyzer - workflow:183 - [Workflow] Stock info resolved: name='中国动力', industry='船舶制造'
+2026-02-13 17:04:36 - INFO - stock_analyzer - workflow:186 - [Workflow] Starting parallel execution of modules A/B/C for 600482 中国动力（预计耗时 3–5 分钟，请耐心等待）
+2026-02-13 17:04:36 - INFO - stock_analyzer - module_b_websearch:130 - Starting web research for 600482 中国动力 (船舶制造)
+2026-02-13 17:04:36 - INFO - stock_analyzer - module_a_akshare:1451 - Starting AKShare data collection for 600482 (中国动力)
+2026-02-13 17:04:36 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [company_info] via stock_individual_info_em...
+2026-02-13 17:04:36 - INFO - stock_analyzer - module_c_technical:580 - Starting technical analysis for 600482 中国动力
+2026-02-13 17:04:39 - WARNING - stock_analyzer - module_c_technical:71 - fetch_monthly_kline failed for 600482 with adjust='qfq': ProxyError: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=103&fqt=1&secid=1.600482&beg=20000101&end=20500101 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2026-02-13 17:04:41 - ERROR - stock_analyzer - module_c_technical:586 - Technical data fetch/normalize failed: AKShare monthly kline failed for 600482: ProxyError: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=103&fqt=0&secid=1.600482&beg=20000101&end=20500101 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2026-02-13 17:04:41 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='中国动力（股票代码600482）近期重大新闻，包括正面和负面影响股价的事件'
+2026-02-13 17:04:41 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='中国动力 核心竞争力分析，护城河类型，在船舶制造行业中的市场地位和竞争优势'
+2026-02-13 17:04:41 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='船舶制造行业发展前景，政策环境，市场趋势，行业增长驱动力和主要风险'
+2026-02-13 17:04:41 - INFO - stock_analyzer - module_a_akshare:103 - [company_info] fetched successfully: 9 rows via stock_individual_info_em
+2026-02-13 17:04:41 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [realtime_quote] via stock_zh_a_spot_em...
+2026-02-13 17:04:50 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国船舶制造业供应链风险报告 船用发动机进口依赖度 高端钢材国产替代进展' returned 5 results
+2026-02-13 17:04:50 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 600482 近期军工订单中标公告 船舶动力系统 合同金额' returned 5 results
+2026-02-13 17:04:51 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 600482 2024年一季度财报异常波动 原因分析 机构调研纪要' returned 5 results
+2026-02-13 17:04:51 - INFO - stock_analyzer - tavily_client:81 - Tavily search '全球新造船订单结构分析 2023-2024 LNG船/集装箱船/散货船占比与手持订单周期变化' returned 5 results
+2026-02-13 17:04:51 - WARNING - stock_analyzer - module_a_akshare:122 - realtime_quote: 连接异常（ProxyError）(stock_zh_a_spot_em)，准备重试 1/3
+2026-02-13 17:04:51 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [realtime_quote] via stock_zh_a_spot_em (attempt 2/4)...
+2026-02-13 17:04:52 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 600482 2024年重大资产重组进展 公告' returned 5 results
+2026-02-13 17:04:55 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 2023年船舶动力市场份额 国内军用舰艇主动力供应商排名 市场集中度 CR3' returned 5 results
+2026-02-13 17:04:56 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 600482 核心技术壁垒 轴系系统/全电推进/燃气轮机国产化率' returned 5 results
+2026-02-13 17:04:56 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 与中国船舶集团内兄弟单位（如中国重工、中国海防）在舰船动力配套中的分工与协同机制' returned 5 results
+2026-02-13 17:04:57 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国船舶制造行业2024-2030年发展规划及十四五政策实施细则' returned 5 results
+2026-02-13 17:05:03 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 核实公司近期是否获得重要军品或民用船舶动力系统订单，评估其对营收预期和业绩弹性的实际影响
+Follow-up r...'
+2026-02-13 17:05:04 - WARNING - stock_analyzer - module_a_akshare:122 - realtime_quote: 连接异常（ProxyError）(stock_zh_a_spot_em)，准备重试 2/3
+2026-02-13 17:05:04 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [realtime_quote] via stock_zh_a_spot_em (attempt 3/4)...
+2026-02-13 17:05:05 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 评估关键零部件与原材料对外依存现状、国产化瓶颈环节及地缘政治扰动下的断供风险等级
+Follow-up resea...'
+2026-02-13 17:05:05 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 查找公司2024年以来是否披露重大资产重组、资产注入或剥离等影响控股权或主营业务的事件及其市场反应
+Follow...'
+2026-02-13 17:05:06 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 识别当前市场结构性需求热点、主流船型景气度分化趋势及船东下单周期延长或缩短的关键信号
+Follow-up res...'
+2026-02-13 17:05:06 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 量化中国动力在军用船舶动力细分市场的实际占有率及行业集中度，验证其市场地位是否具备显著领先优势，并对比中船动力、...'
+2026-02-13 17:05:06 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 定位股价近期显著异动（如单日涨跌幅超7%或连续三日偏离大盘）对应的直接诱因，包括业绩预告修正、股东减持、监管问询...'
+2026-02-13 17:05:09 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取国家层面最新产业政策文件原文及权威解读，明确补贴方向、绿色低碳转型要求、产能调控措施等具体监管框架
+Foll...'
+2026-02-13 17:05:11 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 厘清中国动力在中船集团内部的定位与不可替代性，分析其是否依托集团垄断性订单、军品定价机制或专用试验设施形成制度性...'
+2026-02-13 17:05:12 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 识别中国动力在船舶动力系统关键子领域的自主可控能力与技术护城河，特别是轴系、综合电力推进、燃气轮机等高壁垒环节的...'
+2026-02-13 17:05:12 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 高压共轨系统 国产化率 2023-2024 工信部船舶工业协会 数据' returned 5 results
+2026-02-13 17:05:13 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 600482 2024年 船舶动力系统 军工订单 金额 型号 交付节点 公告' returned 5 results
+2026-02-13 17:05:13 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 河柴重工 陕柴重工 2023年海军舰艇主动力装机数量 052D 055 075 公开招标合...' returned 5 results
+2026-02-13 17:05:14 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 600482 2024年三季报 武汉铁锚 焊接材料业务 收入分项披露 并表时点' returned 5 results
+2026-02-13 17:05:14 - INFO - stock_analyzer - tavily_client:81 - Tavily search '沪东中华LNG船薄膜型围护系统国产化进展 2024年GTT认证通过情况 与韩国现代重工/大宇造船技术...' returned 5 results
+2026-02-13 17:05:15 - ERROR - stock_analyzer - llm_helpers:75 - Agent 'knowledge_extractor' call failed: <class 'agent_framework.openai._chat_client.OpenAIChatClient'> service failed to complete the prompt: Error code: 400 - {'error': {'message': 'Input data may contain inappropriate content. For details, see: https://help.aliyun.com/zh/model-studio/error-code#inappropriate-content', 'type': 'data_inspection_failed', 'param': None, 'code': 'data_inspection_failed'}, 'id': 'chatcmpl-3fa00a9b-282b-9de8-9f85-01380675aa1a', 'request_id': '3fa00a9b-282b-9de8-9f85-01380675aa1a'}
+2026-02-13 17:05:15 - WARNING - stock_analyzer - deep_research:139 - Knowledge extraction failed for '中国动力 河柴重工 陕柴重工 2023年海军舰艇主动力装机数量 052D 055 075 公开招标合同'
+2026-02-13 17:05:15 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=5, total_urls=10
+2026-02-13 17:05:13 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 600482 2024年10月31日重大资产重组框架协议 公告全文 标的资产名称 是否包含...' returned 5 results
+2026-02-13 17:05:13 - WARNING - stock_analyzer - module_a_akshare:122 - realtime_quote: 连接异常（ProxyError）(stock_zh_a_spot_em)，准备重试 3/3
+2026-02-13 17:05:13 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [realtime_quote] via stock_zh_a_spot_em (attempt 4/4)...
+2026-02-13 17:05:18 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 广瀚动力 七〇三所 中压直流综合电力系统 总装集成 试验验证记录' returned 5 results
+2026-02-13 17:05:19 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国船舶 中国重工 绿色供应链管理 绿色供应商准入标准 碳足迹追溯系统 建设进展 2024年' returned 5 results
+2026-02-13 17:05:22 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 17:05:24 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 17:05:24 - INFO - stock_analyzer - tavily_client:81 - Tavily search 'CGT50燃气轮机 台架试验报告 舰载环境适应性验证 703所 广瀚动力 2024-2025' returned 5 results
+2026-02-13 17:05:25 - ERROR - stock_analyzer - module_a_akshare:130 - realtime_quote: ProxyError - HTTPSConnectionPool(host='82.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A0+ (stock_zh_a_spot_em)
+2026-02-13 17:05:25 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [financial_indicators] via stock_financial_analysis_indicator_em...
+2026-02-13 17:05:25 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-13 17:05:26 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=9
+2026-02-13 17:05:26 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=24
+2026-02-13 17:05:26 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='中国动力 风险事件，包括监管处罚、诉讼纠纷、管理层变动、财务风险等负面信息'
+2026-02-13 17:05:27 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 17:05:27 - INFO - stock_analyzer - module_a_akshare:103 - [financial_indicators] fetched successfully: 92 rows via stock_financial_analysis_indicator_em
+2026-02-13 17:05:27 - WARNING - stock_analyzer - module_a_akshare:557 - valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu
+2026-02-13 17:05:27 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.8s before next AKShare call
+2026-02-13 17:05:28 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pe_ttm] via stock_zh_valuation_baidu...
+2026-02-13 17:05:30 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=5, total_urls=10
+2026-02-13 17:05:31 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pe_ttm] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-13 17:05:31 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_history_baidu:pb] via stock_zh_valuation_baidu...
+2026-02-13 17:05:31 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 17:05:31 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=20, total_urls=28
+2026-02-13 17:05:31 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=2, breadth=3, existing_learnings=0, query='中国动力 券商研报、机构评级、目标价、分析师对该股的投资观点和评级变化'
+2026-02-13 17:05:32 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 17:05:32 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=30
+2026-02-13 17:05:33 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_history_baidu:pb] fetched successfully: 914 rows via stock_zh_valuation_baidu
+2026-02-13 17:05:33 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.6s before next AKShare call
+2026-02-13 17:05:34 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [valuation_vs_industry] via stock_zh_valuation_comparison_em...
+2026-02-13 17:05:36 - INFO - stock_analyzer - module_a_akshare:103 - [valuation_vs_industry] fetched successfully: 8 rows via stock_zh_valuation_comparison_em
+2026-02-13 17:05:36 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.3s before next AKShare call
+2026-02-13 17:05:36 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 重大诉讼纠纷 案由 原告被告 涉案金额 中国裁判文书网' returned 5 results
+2026-02-13 17:05:37 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 近三年高管变动名单 董事会决议公告 离职原因 任职资格异议' returned 5 results
+2026-02-13 17:05:37 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [fund_flow] via stock_individual_fund_flow...
+2026-02-13 17:05:37 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 2021-2024年证监会或交易所监管处罚记录 公告原文' returned 5 results
+2026-02-13 17:05:39 - INFO - stock_analyzer - module_a_akshare:103 - [fund_flow] fetched successfully: 120 rows via stock_individual_fund_flow
+2026-02-13 17:05:39 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.8s before next AKShare call
+2026-02-13 17:05:40 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_industry] via stock_sector_fund_flow_rank...
+2026-02-13 17:05:42 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 2024年券商研报汇总 东吴证券 中信证券 国泰君安' returned 5 results
+2026-02-13 17:05:42 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_industry: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 1/3
+2026-02-13 17:05:42 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.6s before next AKShare call
+2026-02-13 17:05:43 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_industry] via stock_sector_fund_flow_rank (attempt 2/4)...
+2026-02-13 17:05:43 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 机构评级变化记录 2023-2024年 调高 调低 评级调整公告' returned 5 results
+2026-02-13 17:05:44 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 目标价统计 2024年 各券商平均目标价 中位数 溢价空间' returned 5 results
+2026-02-13 17:05:45 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_industry: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 2/3
+2026-02-13 17:05:45 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.1s before next AKShare call
+2026-02-13 17:05:44 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_industry] via stock_sector_fund_flow_rank (attempt 3/4)...
+2026-02-13 17:05:46 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 梳理2021年以来董事长、总经理、财务总监、董秘等关键岗位人员变动情况，识别是否存在频繁更替、突发离职、监管问询...'
+2026-02-13 17:05:46 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_industry: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 3/3
+2026-02-13 17:05:46 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.6s before next AKShare call
+2026-02-13 17:05:47 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 检索公司作为当事人（原告或被告）涉及的已公开重大民商事/行政诉讼，重点关注合同纠纷、担保责任、资产权属争议等可能...'
+2026-02-13 17:05:47 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_industry] via stock_sector_fund_flow_rank (attempt 4/4)...
+2026-02-13 17:05:49 - ERROR - stock_analyzer - module_a_akshare:130 - sector_flow_industry: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)
+2026-02-13 17:05:49 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.2s before next AKShare call
+2026-02-13 17:05:50 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [sector_flow_concept] via stock_sector_fund_flow_rank...
+2026-02-13 17:05:52 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_concept: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 1/3
+2026-02-13 17:05:52 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.2s before next AKShare call
+2026-02-13 17:05:52 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 获取2024年以来主流券商对中国动力（600482.SH）发布的最新深度研报，重点关注盈利预测、核心逻辑与风险提...'
+2026-02-13 17:05:53 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=0, query='Previous research goal: 汇总2024年已披露的各券商对中国动力的目标价，计算均值/中位数，并对比当前股价测算潜在上涨空间及分歧度
+Fol...'
+2026-02-13 17:05:53 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_concept] via stock_sector_fund_flow_rank (attempt 2/4)...
+2026-02-13 17:05:53 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 核查公司近年是否因信息披露违规、财务造假、内幕交易等被证券监管机构正式处罚，并获取处罚决定书或监管函原文
+Fol...'
+2026-02-13 17:05:53 - INFO - stock_analyzer - tavily_client:81 - Tavily search '微宏动力系统（湖州）有限公司 与 中汽宏远新能源汽车有限公司 质量协议 锰酸锂电池 技术标准文件 仲...' returned 5 results
+2026-02-13 17:05:54 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 600482 2022-2024 董事会决议公告 高管离职原因 原文披露 site:www...' returned 5 results
+2026-02-13 17:05:55 - INFO - stock_analyzer - deep_research:98 - deep_research: depth=1, breadth=1, existing_learnings=5, query='Previous research goal: 梳理近一年内公募基金、保险资管等机构对中国动力的评级变动情况（如买入→增持→维持），识别评级转向的关键时点及驱动...'
+2026-02-13 17:05:56 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_concept: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 2/3
+2026-02-13 17:05:56 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.1s before next AKShare call
+2026-02-13 17:05:56 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_concept] via stock_sector_fund_flow_rank (attempt 3/4)...
+2026-02-13 17:05:58 - WARNING - stock_analyzer - module_a_akshare:122 - sector_flow_concept: 连接异常（ProxyError）(stock_sector_fund_flow_rank)，准备重试 3/3
+2026-02-13 17:05:58 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.2s before next AKShare call
+2026-02-13 17:05:59 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 600482.SH 2024年 券商目标价 研报标题 发布日期' returned 5 results
+2026-02-13 17:05:59 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [sector_flow_concept] via stock_sector_fund_flow_rank (attempt 4/4)...
+2026-02-13 17:05:59 - INFO - stock_analyzer - tavily_client:81 - Tavily search '国泰君安 中国动力 600482 2024 目标价 评级 氢能动力 军工业务升级' returned 5 results
+2026-02-13 17:06:01 - ERROR - stock_analyzer - module_a_akshare:130 - sector_flow_concept: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)
+2026-02-13 17:06:01 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 1.2s before next AKShare call
+2026-02-13 17:06:02 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 600482.SH 2021-2024 证监会行政处罚决定书 文号 site:www.cs...' returned 5 results
+2026-02-13 17:06:02 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [northbound] via stock_hsgt_hold_stock_em...
+2026-02-13 17:06:03 - INFO - stock_analyzer - tavily_client:81 - Tavily search '中国动力 600482 中信证券 中金公司 2023年 2024年 评级调整记录 买入 增持 维持 ...' returned 5 results
+2026-02-13 17:06:05 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 17:06:07 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 17:06:12 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 17:06:13 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=5, total_urls=10
+2026-02-13 17:06:15 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 17:06:15 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=30, total_urls=30
+2026-02-13 17:06:17 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=1, total_learnings=10, total_urls=10
+2026-02-13 17:06:17 - INFO - stock_analyzer - deep_research:179 - deep_research complete: depth=2, total_learnings=25, total_urls=30
+2026-02-13 17:06:17 - INFO - stock_analyzer - module_b_websearch:186 - Topic 1 completed: 30 learnings, 24 urls
+2026-02-13 17:06:17 - INFO - stock_analyzer - module_b_websearch:186 - Topic 2 completed: 20 learnings, 28 urls
+2026-02-13 17:06:17 - INFO - stock_analyzer - module_b_websearch:186 - Topic 3 completed: 30 learnings, 30 urls
+2026-02-13 17:06:17 - INFO - stock_analyzer - module_b_websearch:186 - Topic 4 completed: 30 learnings, 30 urls
+2026-02-13 17:06:17 - INFO - stock_analyzer - module_b_websearch:186 - Topic 5 completed: 25 learnings, 30 urls
+2026-02-13 17:06:17 - INFO - stock_analyzer - module_b_websearch:210 - All topics done: 135 unique learnings, 136 unique urls, 5/5 topics succeeded
+2026-02-13 17:06:30 - WARNING - stock_analyzer - module_a_akshare:144 - northbound: 调用超时（>30.0s）(stock_hsgt_hold_stock_em)，准备重试 1/3
+2026-02-13 17:06:30 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [northbound] via stock_hsgt_hold_stock_em (attempt 2/4)...
+2026-02-13 17:06:36 - INFO - stock_analyzer - module_a_akshare:103 - [northbound] fetched successfully: 2767 rows via stock_hsgt_hold_stock_em
+2026-02-13 17:06:36 - INFO - stock_analyzer - module_a_akshare:224 - [northbound] cache set: stock_hsgt_hold_stock_em:北向:今日排行, rows=2767
+2026-02-13 17:06:36 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [shareholder_count] via stock_zh_a_gdhs_detail_em...
+2026-02-13 17:06:40 - INFO - stock_analyzer - module_a_akshare:103 - [shareholder_count] fetched successfully: 63 rows via stock_zh_a_gdhs_detail_em
+2026-02-13 17:06:40 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [dividend_history_detail] via stock_history_dividend_detail...
+2026-02-13 17:06:43 - INFO - stock_analyzer - module_a_akshare:103 - [dividend_history_detail] fetched successfully: 23 rows via stock_history_dividend_detail
+2026-02-13 17:06:43 - DEBUG - stock_analyzer - module_a_akshare:77 - Rate limit: waiting 0.5s before next AKShare call
+2026-02-13 17:06:43 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-13 17:07:11 - WARNING - stock_analyzer - module_a_akshare:144 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 1/3
+2026-02-13 17:07:11 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 2/4)...
+2026-02-13 17:07:14 - INFO - stock_analyzer - module_b_websearch:266 - Web research completed in 157.3s
+2026-02-13 17:07:39 - WARNING - stock_analyzer - module_a_akshare:144 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 2/3
+2026-02-13 17:07:39 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 3/4)...
+2026-02-13 17:08:08 - WARNING - stock_analyzer - module_a_akshare:144 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em)，准备重试 3/3
+2026-02-13 17:08:08 - INFO - stock_analyzer - module_a_akshare:90 - Retrying [earnings_forecast] via stock_yjyg_em (attempt 4/4)...
+2026-02-13 17:08:35 - ERROR - stock_analyzer - module_a_akshare:156 - earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em) [连续超时 1/3]
+2026-02-13 17:08:35 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-13 17:08:39 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 493 rows via stock_yjyg_em
+2026-02-13 17:08:39 - INFO - stock_analyzer - module_a_akshare:224 - [earnings_forecast] cache set: stock_yjyg_em:20250930, rows=493
+2026-02-13 17:08:39 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [earnings_forecast] via stock_yjyg_em...
+2026-02-13 17:09:03 - INFO - stock_analyzer - module_a_akshare:103 - [earnings_forecast] fetched successfully: 4304 rows via stock_yjyg_em
+2026-02-13 17:09:03 - INFO - stock_analyzer - module_a_akshare:224 - [earnings_forecast] cache set: stock_yjyg_em:20250630, rows=4304
+2026-02-13 17:09:03 - INFO - stock_analyzer - module_a_akshare:88 - Fetching [pledge_ratio] via stock_gpzy_pledge_ratio_em...
+2026-02-13 17:09:21 - INFO - stock_analyzer - module_a_akshare:103 - [pledge_ratio] fetched successfully: 2322 rows via stock_gpzy_pledge_ratio_em
+2026-02-13 17:09:21 - INFO - stock_analyzer - module_a_akshare:224 - [pledge_ratio] cache set: stock_gpzy_pledge_ratio_em, rows=2322
+2026-02-13 17:09:21 - INFO - stock_analyzer - module_a_akshare:1424 - AKShare collection completed for 600482: 10/12 topics succeeded (2 failed, 5 errors)
+2026-02-13 17:09:21 - INFO - stock_analyzer - module_a_akshare:1454 - AKShare data collection finished for 600482: 10/12 topics, 5 errors
+2026-02-13 17:09:21 - INFO - stock_analyzer - workflow:153 - [Workflow] Intermediate results saved to output/
+2026-02-13 17:09:21 - INFO - stock_analyzer - workflow:221 - [Workflow] Starting chief analysis for 600482 中国动力
+2026-02-13 17:09:21 - INFO - stock_analyzer - module_d_chief:237 - Starting chief analysis for 600482 中国动力
+2026-02-13 17:10:05 - INFO - stock_analyzer - module_d_chief:279 - Chief analysis completed for 600482: overall_score=6.00, confidence=中
+2026-02-13 17:10:05 - INFO - stock_analyzer - workflow:229 - [Workflow] Analysis complete for 600482: score=6.00, confidence=中
