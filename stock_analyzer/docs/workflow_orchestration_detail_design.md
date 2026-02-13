@@ -606,6 +606,7 @@ def _save_intermediate_results(
     web_research: WebResearchResult,
     technical_analysis: TechnicalAnalysisResult,
 ) -> None:
+    """Save A/B/C intermediate results to output/ for debugging and replay."""
     output_dir = Path(WORKFLOW_OUTPUT_DIR)
     output_dir.mkdir(parents=True, exist_ok=True)
 

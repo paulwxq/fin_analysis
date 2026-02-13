@@ -2,15 +2,16 @@
   "meta": {
     "symbol": "600519",
     "name": "贵州茅台",
-    "query_time": "2026-02-11T19:14:11.963664",
+    "query_time": "2026-02-13T16:27:09.903467",
     "data_errors": [
-      "realtime_quote: ProxyError - HTTPSConnectionPool(host='82.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=3&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A0+ (stock_zh_a_spot_em)",
+      "realtime_quote: ProxyError - HTTPSConnectionPool(host='82.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A0+ (stock_zh_a_spot_em)",
       "valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu",
       "sector_flow_industry: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)",
       "sector_flow_concept: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)",
+      "northbound: ChunkedEncodingError - Response ended prematurely (stock_hsgt_hold_stock_em)",
       "earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em) [连续超时 1/3]"
     ],
-    "successful_topics": 10,
+    "successful_topics": 9,
     "topic_status": {
       "company_info": "ok",
       "realtime_quote": "failed",
@@ -19,7 +20,7 @@
       "valuation_vs_industry": "ok",
       "fund_flow": "ok",
       "sector_flow": "failed",
-      "northbound": "ok",
+      "northbound": "failed",
       "shareholder_count": "ok",
       "dividend_history": "ok",
       "earnings_forecast": "no_data",
@@ -29,8 +30,8 @@
   "company_info": {
     "industry": "酿酒行业",
     "listing_date": "20010827",
-    "total_market_cap": 18838.2765,
-    "circulating_market_cap": 18838.2765,
+    "total_market_cap": 18599.9695,
+    "circulating_market_cap": 18599.9695,
     "total_shares": 12.5227,
     "circulating_shares": 12.5227
   },
@@ -134,34 +135,24 @@
     }
   ],
   "valuation_history": {
-    "current_pe_ttm": 20.93,
-    "current_pb": 7.33,
-    "pe_percentile": 13.3,
-    "pb_percentile": 9.6,
+    "current_pe_ttm": 20.68,
+    "current_pb": 7.24,
+    "pe_percentile": 12.7,
+    "pb_percentile": 9.0,
     "current_ps_ttm": null,
     "current_dv_ttm": null,
-    "history_summary": "PE历史分位13.3%，处于极低位置（历史底部区域）；PB历史分位9.6%，处于极低位置（历史底部区域）"
+    "history_summary": "PE历史分位12.7%，处于极低位置（历史底部区域）；PB历史分位9.0%，处于极低位置（历史底部区域）"
   },
   "valuation_vs_industry": {
-    "stock_pe": 20.92506156,
-    "industry_avg_pe": 42.65,
-    "industry_median_pe": 22.9,
-    "stock_pb": 7.32807373,
-    "industry_avg_pb": 2.75,
+    "stock_pe": 20.66035639,
+    "industry_avg_pe": 41.31,
+    "industry_median_pe": 22.18,
+    "stock_pb": 7.2353725,
+    "industry_avg_pb": 2.67,
     "relative_valuation": "明显低于行业平均"
   },
   "fund_flow": {
     "recent_days": [
-      {
-        "date": "2026-02-05",
-        "main_net_inflow": 421301104.0,
-        "main_net_inflow_pct": 2.97
-      },
-      {
-        "date": "2026-02-06",
-        "main_net_inflow": -544408832.0,
-        "main_net_inflow_pct": -4.53
-      },
       {
         "date": "2026-02-09",
         "main_net_inflow": -642067680.0,
@@ -176,22 +167,26 @@
         "date": "2026-02-11",
         "main_net_inflow": -170341984.0,
         "main_net_inflow_pct": -3.66
+      },
+      {
+        "date": "2026-02-12",
+        "main_net_inflow": -597695472.0,
+        "main_net_inflow_pct": -8.69
+      },
+      {
+        "date": "2026-02-13",
+        "main_net_inflow": -281008672.0,
+        "main_net_inflow_pct": -4.52
       }
     ],
     "summary": {
-      "main_net_inflow_5d_total": -1573403024.0,
-      "main_net_inflow_10d_total": 4563345904.0,
+      "main_net_inflow_5d_total": -2328999440.0,
+      "main_net_inflow_10d_total": 794505968.0,
       "trend": "近5日主力净流出，近10日整体净流入"
     }
   },
   "sector_flow": null,
-  "northbound": {
-    "held": true,
-    "shares_held": 8235.44,
-    "market_value": 11786565.59,
-    "change_pct": 0.05,
-    "note": "北向资金披露规则2024年8月后有变化，数据仅供参考"
-  },
+  "northbound": null,
   "shareholder_count": [
     {
       "date": "2025-09-30",
