@@ -24,6 +24,7 @@ from stock_analyzer.config import (
     TECH_MA_SHORT,
     TECH_MA_TREND,
     TECH_MIN_MONTHS,
+    TECH_OUTPUT_RETRIES,
     TECH_RSI_LENGTH,
     TECH_START_DATE,
 )
@@ -652,66 +653,63 @@ async def run_technical_analysis(symbol: str, name: str) -> TechnicalAnalysisRes
         lookback_months=TECH_AGENT_LOOKBACK_MONTHS,
     )
 
-    try:
-        openai_client = create_openai_client()
-        technical_client = create_chat_client(openai_client, MODEL_TECHNICAL_AGENT)
-        technical_agent = create_technical_agent(technical_client)
-        llm_output = await call_agent_with_model(
-            agent=technical_agent,
-            message=message,
-            model_cls=LLMTechnicalOutput,
-        )
-    except AgentCallError as e:
-        logger.error(f"Technical agent call failed: {e}")
-        return _build_fallback_result(
-            symbol=symbol,
-            name=name,
-            warnings=warnings,
-            reason=f"LLM 推理失败: {e}",
-            data_start=data_start,
-            data_end=data_end,
-            total_months=total_months,
-            confidence=0.35,
-        )
+    openai_client = create_openai_client()
+    technical_client = create_chat_client(openai_client, MODEL_TECHNICAL_AGENT)
+    technical_agent = create_technical_agent(technical_client)
 
-    meta = _build_meta(
+    max_attempts = max(1, TECH_OUTPUT_RETRIES + 1)
+    last_error: Exception | None = None
+
+    for attempt in range(1, max_attempts + 1):
+        try:
+            llm_output = await call_agent_with_model(
+                agent=technical_agent,
+                message=message,
+                model_cls=LLMTechnicalOutput,
+            )
+            # If successful, we build the final result and return immediately
+            meta = _build_meta(
+                symbol=symbol,
+                name=name,
+                data_start=data_start,
+                data_end=data_end,
+                total_months=total_months,
+                warnings=warnings,
+            )
+            final_result = TechnicalAnalysisResult(meta=meta, **llm_output.model_dump())
+
+            # Soft-degrade confidence when MA60 long-trend context is unavailable.
+            if total_months < TECH_LONG_TREND_MIN_MONTHS:
+                final_result = final_result.model_copy(
+                    update={"confidence": min(final_result.confidence, 0.65)}
+                )
+
+            logger.info(
+                f"Technical analysis completed for {symbol}: score={final_result.score}, "
+                f"signal={final_result.signal}, confidence={final_result.confidence:.2f}"
+            )
+            return final_result
+
+        except (AgentCallError, Exception) as e:
+            last_error = e
+            if attempt < max_attempts:
+                logger.warning(
+                    f"Technical agent attempt {attempt}/{max_attempts} failed: {e}. Retrying..."
+                )
+                continue
+            logger.error(f"Technical agent failed after {max_attempts} attempts: {e}")
+
+    # If we reach here, all attempts failed
+    return _build_fallback_result(
         symbol=symbol,
         name=name,
+        warnings=warnings,
+        reason=f"LLM 推理失败 (已重试 {max_attempts} 次): {last_error}",
         data_start=data_start,
         data_end=data_end,
         total_months=total_months,
-        warnings=warnings,
+        confidence=0.35,
     )
-
-    try:
-        final_result = TechnicalAnalysisResult(meta=meta, **llm_output.model_dump())
-    except Exception as e:
-        logger.error(
-            f"Final technical result construction failed for {symbol}: "
-            f"{type(e).__name__}: {e}"
-        )
-        return _build_fallback_result(
-            symbol=symbol,
-            name=name,
-            warnings=warnings,
-            reason=f"最终结果构造失败: {type(e).__name__}: {e}",
-            data_start=data_start,
-            data_end=data_end,
-            total_months=total_months,
-            confidence=0.35,
-        )
-
-    # Soft-degrade confidence when MA60 long-trend context is unavailable.
-    if total_months < TECH_LONG_TREND_MIN_MONTHS:
-        final_result = final_result.model_copy(
-            update={"confidence": min(final_result.confidence, 0.65)}
-        )
-
-    logger.info(
-        f"Technical analysis completed for {symbol}: score={final_result.score}, "
-        f"signal={final_result.signal}, confidence={final_result.confidence:.2f}"
-    )
-    return final_result
 
 
 def dump_technical_result_json(result: TechnicalAnalysisResult) -> str:

@@ -15,7 +15,7 @@ class AKShareMeta(BaseModel):
     query_time: str = Field(description="采集时间 ISO 格式")
     data_errors: list[str] = Field(default_factory=list, description="采集过程中遇到的错误列表")
     successful_topics: int = Field(
-        default=0, description="成功采集的主题数（ok + no_data，总共12个）"
+        default=0, description="成功采集的主题数（ok + no_data，总共15个）"
     )
     topic_status: dict[str, str] = Field(
         default_factory=dict,
@@ -177,6 +177,32 @@ class PledgeRatio(BaseModel):
     )
 
 
+class ConsensusForecast(BaseModel):
+    """主题⑬：一致预期。"""
+
+    year: str = Field(description="预测年度")
+    inst_count: int | None = Field(default=None, description="预测机构数")
+    net_profit_avg: float | None = Field(default=None, description="归母净利润均值（亿元）")
+    industry_avg: float | None = Field(default=None, description="行业平均（亿元）")
+
+
+class InstitutionalHolding(BaseModel):
+    """主题⑭：机构持仓详情。"""
+
+    type: str = Field(description="持股机构类型")
+    name: str = Field(description="持股机构简称")
+    ratio: float | None = Field(default=None, description="持股比例(%)")
+
+
+class BusinessComposition(BaseModel):
+    """主题⑮：主营结构。"""
+
+    type: str = Field(description="分类类型（按产品/按地区/按行业）")
+    item: str = Field(description="主营构成项目")
+    revenue_ratio: float | None = Field(default=None, description="收入比例(%)")
+    gross_margin: float | None = Field(default=None, description="毛利率(%)")
+
+
 class AKShareData(BaseModel):
     """模块A 最终输出。"""
 
@@ -193,3 +219,6 @@ class AKShareData(BaseModel):
     dividend_history: list[DividendRecord] | None = None
     earnings_forecast: EarningsForecast | None = None
     pledge_ratio: PledgeRatio | None = None
+    consensus_forecast: list[ConsensusForecast] | None = None
+    institutional_holdings: list[InstitutionalHolding] | None = None
+    business_composition: list[BusinessComposition] | None = None

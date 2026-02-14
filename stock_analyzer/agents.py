@@ -47,6 +47,7 @@ def create_report_agent(chat_client: OpenAIChatClient) -> ChatAgent:
         default_options={
             "temperature": 0.3,
             "response_format": {"type": "json_object"},
+            "extra_body": {"enable_thinking": True},
         },
     )
 
@@ -60,6 +61,7 @@ def create_technical_agent(chat_client: OpenAIChatClient) -> ChatAgent:
         default_options={
             "temperature": 0.2,
             "response_format": {"type": "json_object"},
+            "extra_body": {"enable_thinking": True},
         },
     )
 
