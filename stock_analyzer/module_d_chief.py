@@ -9,12 +9,18 @@ from stock_analyzer.agents import create_chief_agent
 from stock_analyzer.config import (
     CHIEF_INPUT_MAX_CHARS_TOTAL,
     CHIEF_OUTPUT_RETRIES,
+    CHIEF_USE_STREAM,
     MODEL_CHIEF_AGENT,
 )
 from stock_analyzer.exceptions import AgentCallError, ChiefAnalysisError, ChiefInputError
 from stock_analyzer.llm_client import create_chat_client, create_openai_client
 from stock_analyzer.llm_helpers import call_agent_with_model
 from stock_analyzer.logger import logger
+from stock_analyzer.markdown_formatter import (
+    format_akshare_markdown,
+    format_technical_markdown,
+    format_web_research_markdown,
+)
 from stock_analyzer.models import WebResearchResult
 from stock_analyzer.module_a_models import AKShareData
 from stock_analyzer.module_c_models import TechnicalAnalysisResult
@@ -83,7 +89,7 @@ def build_chief_context(
     web_research_full = _strip_noise_fields(web_research.model_dump())
     technical_analysis_full = _strip_noise_fields(technical_analysis.model_dump())
 
-    module_a_total = len(akshare_data.meta.topic_status) if akshare_data.meta.topic_status else 12
+    module_a_total = len(akshare_data.meta.topic_status) if akshare_data.meta.topic_status else 15
     module_a_successful = akshare_data.meta.successful_topics
     module_b_is_fallback = web_research.meta.raw_learnings is not None
     module_c_warnings = technical_analysis.meta.data_quality_warnings[:3]
@@ -112,40 +118,46 @@ def build_chief_context(
     }
 
 
-def _build_chief_user_message(context: dict) -> str:
-    """Assemble final user message payload for chief agent."""
-    akshare_json = json.dumps(
-        context["akshare_data_full"],
-        ensure_ascii=False,
-        indent=2,
-    )
-    web_json = json.dumps(
-        context["web_research_full"],
-        ensure_ascii=False,
-        indent=2,
-    )
-    technical_json = json.dumps(
-        context["technical_analysis_full"],
-        ensure_ascii=False,
-        indent=2,
-    )
+def _build_chief_user_message(
+    akshare_data: AKShareData,
+    web_research: WebResearchResult,
+    technical_analysis: TechnicalAnalysisResult,
+    data_quality_report: dict,
+) -> str:
+    """Assemble final user message payload for chief agent.
+
+    Uses Markdown formatting for A/B/C data and JSON for the quality report.
+    """
+    akshare_md = format_akshare_markdown(akshare_data)
+    web_md = format_web_research_markdown(web_research)
+    tech_md = format_technical_markdown(technical_analysis)
     quality_json = json.dumps(
-        context["data_quality_report"],
+        data_quality_report,
         ensure_ascii=False,
         indent=2,
     )
 
     return (
-        "请作为首席分析师，基于以下三份报告与数据质量摘要做最终综合判定：\n\n"
-        "<akshare_data>\n"
-        f"{akshare_json}\n"
-        "</akshare_data>\n\n"
-        "<web_research>\n"
-        f"{web_json}\n"
-        "</web_research>\n\n"
-        "<technical_analysis>\n"
-        f"{technical_json}\n"
-        "</technical_analysis>\n\n"
+        "你现在担任首席分析师的角色。你的任务是整合并分析以下 Markdown 格式的多维数据，"
+        "输出一份专业的、具备深度洞察力的投资综合判定报告。\n\n"
+        "数据来源说明：\n"
+        "1. **结构化财务数据**（Module A）：包含公司基础信息及15个维度的财务与经营数据。"
+        "请重点关注财务指标趋势、盈利一致预期、主营构成、机构持仓、估值水平及资金流向。\n"
+        "2. **深度调研报告**（Module B）：基于全网搜索的舆情、竞争力、行业前景与风险分析。\n"
+        "3. **技术面分析**（Module C）：基于月线级别的趋势、动量、波动与量价分析。\n"
+        "4. **数据质量报告**：各模块执行质量摘要，请据此调整结论的审慎程度。\n\n"
+        "请基于以下数据做最终综合判定：\n\n"
+        "---\n\n"
+        "# 一、结构化财务数据（Module A）\n\n"
+        f"{akshare_md}\n"
+        "---\n\n"
+        "# 二、深度调研报告（Module B）\n\n"
+        f"{web_md}\n"
+        "---\n\n"
+        "# 三、技术面分析（Module C）\n\n"
+        f"{tech_md}\n"
+        "---\n\n"
+        "# 四、数据质量报告\n\n"
         "<data_quality_report>\n"
         f"{quality_json}\n"
         "</data_quality_report>\n"
@@ -234,19 +246,32 @@ async def run_chief_analysis(
         technical_analysis=technical_analysis,
     )
 
-    logger.info(f"Starting chief analysis for {symbol} {name}")
+    start_time = datetime.now()
+    logger.info(f"[Module D] Starting chief analysis for {symbol} {name}")
+
+    # --- Build context and prompt ---
+    logger.info(f"[Module D] Building chief analysis context for {symbol}...")
     try:
         context = build_chief_context(
             akshare_data=akshare_data,
             web_research=web_research,
             technical_analysis=technical_analysis,
         )
-        user_message = _build_chief_user_message(context)
+        user_message = _build_chief_user_message(
+            akshare_data=akshare_data,
+            web_research=web_research,
+            technical_analysis=technical_analysis,
+            data_quality_report=context["data_quality_report"],
+        )
     except Exception as e:
         logger.error(f"Failed to build chief prompt for {symbol}: {type(e).__name__}: {e}")
         raise ChiefAnalysisError(
             f"Failed to build chief prompt: {type(e).__name__}: {e}"
         ) from e
+    logger.info(
+        f"[Module D] Context built for {symbol}: "
+        f"prompt length={len(user_message)} chars"
+    )
 
     if CHIEF_INPUT_MAX_CHARS_TOTAL > 0 and len(user_message) > CHIEF_INPUT_MAX_CHARS_TOTAL:
         raise ChiefInputError(
@@ -254,19 +279,41 @@ async def run_chief_analysis(
             f"{len(user_message)} > {CHIEF_INPUT_MAX_CHARS_TOTAL}"
         )
 
+    logger.debug(f"[Module D] Chief prompt payload for {symbol}:\n{user_message}")
+
+    # --- Prepare LLM agent ---
     openai_client = create_openai_client()
     chief_client = create_chat_client(openai_client, MODEL_CHIEF_AGENT)
     chief_agent = create_chief_agent(chief_client)
+
+    extra_body = chief_agent.default_options.get("extra_body", {})
+    thinking_enabled = extra_body.get("enable_thinking", False) if isinstance(extra_body, dict) else False
+
+    logger.info(
+        f"[Module D] LLM config: model={MODEL_CHIEF_AGENT}, "
+        f"thinking={thinking_enabled}, stream={CHIEF_USE_STREAM}"
+    )
+    if thinking_enabled and not CHIEF_USE_STREAM:
+        logger.warning(
+            "[Module D] enable_thinking=True but stream=False: "
+            "DashScope may return server-side timeout for non-streaming thinking requests. "
+            "Consider setting CHIEF_USE_STREAM=true."
+        )
 
     max_attempts = max(1, CHIEF_OUTPUT_RETRIES + 1)
     last_error: Exception | None = None
 
     for attempt in range(1, max_attempts + 1):
+        logger.info(
+            f"[Module D] Submitting to LLM (attempt {attempt}/{max_attempts})... "
+            f"{'（thinking 模式，预计等待较久）' if thinking_enabled else ''}"
+        )
         try:
             llm_output = await call_agent_with_model(
                 agent=chief_agent,
                 message=user_message,
                 model_cls=LLMChiefOutput,
+                stream=CHIEF_USE_STREAM,
             )
             llm_output = _apply_confidence_guards(llm_output)
             validate_business_rules(llm_output)
@@ -276,10 +323,12 @@ async def run_chief_analysis(
                 analysis_time=datetime.now().isoformat(),
             )
             final_result = FinalReport(meta=meta, **llm_output.model_dump())
+            elapsed = (datetime.now() - start_time).total_seconds()
             logger.info(
-                f"Chief analysis completed for {symbol}: "
+                f"[Module D] completed for {symbol}: "
                 f"overall_score={final_result.overall_score:.2f}, "
-                f"confidence={final_result.overall_confidence}"
+                f"confidence={final_result.overall_confidence}, "
+                f"elapsed {elapsed:.1f}s"
             )
             return final_result
         except (AgentCallError, ChiefAnalysisError) as e:

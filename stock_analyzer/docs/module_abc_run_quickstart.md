@@ -14,17 +14,21 @@
 - `TAVILY_API_KEY`：模块 B 的联网搜索必需
 - `DASHSCOPE_BASE_URL`：默认已配置，可不改
 
-LLM 参数与模块对应关系（`stock_analyzer/config.py`）：
+LLM 参数一览（`stock_analyzer/config.py` + `stock_analyzer/agents.py`）：
 
 - Module A：无 LLM（纯 AKShare 数据采集）
-- Module B：
-  - `MODEL_QUERY_AGENT`
-  - `MODEL_EXTRACT_AGENT`
-  - `MODEL_REPORT_AGENT`
-- Module C：
-  - `MODEL_TECHNICAL_AGENT`
-- Module D：
-  - `MODEL_CHIEF_AGENT`
+- API 端点：DashScope 兼容模式（`DASHSCOPE_BASE_URL`），API 超时 120 秒（`API_TIMEOUT`）
+- 所有 Agent 统一使用 `response_format: json_object`
+
+| 模块 | Agent 名称 | 配置变量 | 默认模型 | temperature | 职责 |
+|------|-----------|---------|---------|-------------|------|
+| B | `query_generator` | `MODEL_QUERY_AGENT` | qwen-plus | 0.5 | 生成搜索关键词 |
+| B | `knowledge_extractor` | `MODEL_EXTRACT_AGENT` | qwen-plus | 0.2 | 从搜索结果提取信息 |
+| B | `report_generator` | `MODEL_REPORT_AGENT` | qwen3-max | 0.3 | 生成深度调研报告 |
+| C | `technical_analyst` | `MODEL_TECHNICAL_AGENT` | Kimi-K2.5 | 0.2 | 月线技术面分析 |
+| D | `chief_analyst` | `MODEL_CHIEF_AGENT` | deepseek-v3.2 | 0.2 | 首席分析师综合判定 |
+
+所有模型名称均可通过同名环境变量覆盖（如 `MODEL_CHIEF_AGENT=qwen-max`）。
 
 ## 2. 运行 Module A（AKShare 数据采集）
 

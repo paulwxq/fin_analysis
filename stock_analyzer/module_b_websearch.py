@@ -16,6 +16,8 @@ from stock_analyzer.config import (
     MODEL_EXTRACT_AGENT,
     MODEL_QUERY_AGENT,
     MODEL_REPORT_AGENT,
+    REPORT_OUTPUT_RETRIES,
+    REPORT_USE_STREAM,
     TOPIC_CONCURRENCY_LIMIT,
 )
 from stock_analyzer.deep_research import deep_research, generate_report
@@ -127,7 +129,7 @@ async def run_web_research(
 ) -> WebResearchResult:
     """Run module B workflow and return structured WebResearchResult."""
     start_time = datetime.now()
-    logger.info(f"Starting web research for {symbol} {name} ({industry})")
+    logger.info(f"[Module B] Starting web research for {symbol} {name} ({industry})")
 
     openai_client = create_openai_client()
     query_client = create_chat_client(openai_client, MODEL_QUERY_AGENT)
@@ -137,6 +139,11 @@ async def run_web_research(
     query_agent = create_query_agent(query_client)
     extract_agent = create_extract_agent(extract_client)
     report_agent = create_report_agent(report_client)
+
+    logger.info(
+        f"[Module B] LLM config: query_agent={MODEL_QUERY_AGENT}, "
+        f"extract_agent={MODEL_EXTRACT_AGENT}"
+    )
 
     topics = [
         (
@@ -212,21 +219,56 @@ async def run_web_research(
         f"{successful_topics}/{len(topics)} topics succeeded"
     )
 
-    is_fallback = False
-    try:
-        report_dict = await generate_report(
-            report_agent=report_agent,
-            symbol=symbol,
-            name=name,
-            industry=industry,
-            learnings=unique_learnings,
+    # --- Report generation via LLM ---
+    extra_body = report_agent.default_options.get("extra_body", {})
+    thinking_enabled = extra_body.get("enable_thinking", False) if isinstance(extra_body, dict) else False
+
+    logger.info(
+        f"[Module B] LLM config: model={MODEL_REPORT_AGENT}, "
+        f"thinking={thinking_enabled}, stream={REPORT_USE_STREAM}"
+    )
+    if thinking_enabled and not REPORT_USE_STREAM:
+        logger.warning(
+            "[Module B] enable_thinking=True but stream=False: "
+            "DashScope may return server-side timeout for non-streaming thinking requests. "
+            "Consider setting REPORT_USE_STREAM=true."
         )
-    except ReportGenerationError as e:
-        logger.error(f"Report generation failed, using fallback: {e}")
+
+    max_attempts = max(1, REPORT_OUTPUT_RETRIES + 1)
+    is_fallback = False
+    report_dict = None
+    last_error: Exception | None = None
+
+    for attempt in range(1, max_attempts + 1):
+        logger.info(
+            f"[Module B] Submitting {len(unique_learnings)} learnings to LLM "
+            f"(attempt {attempt}/{max_attempts})... "
+            f"{'（thinking 模式，预计等待较久）' if thinking_enabled else ''}"
+        )
+        try:
+            report_dict = await generate_report(
+                report_agent=report_agent,
+                symbol=symbol,
+                name=name,
+                industry=industry,
+                learnings=unique_learnings,
+                stream=REPORT_USE_STREAM,
+            )
+            break
+        except ReportGenerationError as e:
+            last_error = e
+            if attempt < max_attempts:
+                logger.warning(
+                    f"Report generation attempt {attempt}/{max_attempts} failed: {e}. Retrying..."
+                )
+                continue
+            logger.error(f"Report generation failed after {max_attempts} attempts: {e}")
+
+    if report_dict is None:
         is_fallback = True
         report_dict = _create_fallback_report(
             learnings=unique_learnings,
-            error_message=str(e.cause),
+            error_message=str(last_error.cause) if last_error else "unknown",
         )
 
     meta = SearchMeta(
@@ -263,7 +305,7 @@ async def run_web_research(
         ) from e
 
     elapsed = (datetime.now() - start_time).total_seconds()
-    logger.info(f"Web research completed in {elapsed:.1f}s")
+    logger.info(f"[Module B] completed for {symbol}, elapsed {elapsed:.1f}s")
     return final_result
 
 

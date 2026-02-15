@@ -57,12 +57,25 @@ async def call_agent_with_model(
     agent: ChatAgent,
     message: str,
     model_cls: type[T],
+    *,
+    stream: bool = False,
 ) -> T:
-    """Run an agent and parse result into a pydantic model."""
+    """Run an agent and parse result into a pydantic model.
+
+    Args:
+        agent: The ChatAgent to invoke.
+        message: User message to send.
+        model_cls: Pydantic model class for output validation.
+        stream: If True, use streaming mode (avoids server-side timeout for
+                long-running models like thinking-enabled qwen3-max).
+    """
     thread = agent.get_new_thread()
     try:
-        response = await agent.run(message, thread=thread)
-        raw_text = response.text
+        if stream:
+            raw_text = await _run_agent_stream(agent, message, thread)
+        else:
+            response = await agent.run(message, thread=thread)
+            raw_text = response.text
         json_str = extract_json_str(raw_text)
         return model_cls.model_validate_json(json_str)
     except ValidationError as e:
@@ -74,3 +87,20 @@ async def call_agent_with_model(
     except Exception as e:
         logger.error(f"Agent '{agent.name}' call failed: {e}")
         raise AgentCallError(agent_name=agent.name, cause=e) from e
+
+
+async def _run_agent_stream(agent: ChatAgent, message: str, thread) -> str:
+    """Run agent in streaming mode and collect full text response."""
+    chunks: list[str] = []
+    async for update in agent.run_stream(message, thread=thread):
+        for content in update.contents:
+            if content.type == "text" and content.text:
+                chunks.append(content.text)
+    full_text = "".join(chunks)
+    logger.debug(
+        f"Agent '{agent.name}' stream completed: "
+        f"{len(chunks)} chunks, {len(full_text)} chars"
+    )
+    if not full_text.strip():
+        logger.warning(f"Agent '{agent.name}' stream returned empty text")
+    return full_text

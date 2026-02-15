@@ -24,8 +24,10 @@ from stock_analyzer.config import (
     TECH_MA_SHORT,
     TECH_MA_TREND,
     TECH_MIN_MONTHS,
+    TECH_OUTPUT_RETRIES,
     TECH_RSI_LENGTH,
     TECH_START_DATE,
+    TECH_USE_STREAM,
 )
 from stock_analyzer.exceptions import (
     AgentCallError,
@@ -577,8 +579,11 @@ def _build_fallback_result(
 async def run_technical_analysis(symbol: str, name: str) -> TechnicalAnalysisResult:
     """Run module C workflow and return structured technical analysis result."""
     warnings: list[str] = []
-    logger.info(f"Starting technical analysis for {symbol} {name}")
+    start_time = datetime.now()
+    logger.info(f"[Module C] Starting technical analysis for {symbol} {name}")
 
+    # --- Step 1: fetch monthly kline data ---
+    logger.info(f"[Module C] Fetching monthly kline data for {symbol}...")
     try:
         raw_df = fetch_monthly_kline(symbol=symbol)
         kline_df = _normalize_kline_df(raw_df)
@@ -595,6 +600,10 @@ async def run_technical_analysis(symbol: str, name: str) -> TechnicalAnalysisRes
     total_months = len(kline_df)
     data_start = kline_df["date"].iloc[0].date().isoformat()
     data_end = kline_df["date"].iloc[-1].date().isoformat()
+    logger.info(
+        f"[Module C] Kline data fetched: {total_months} months "
+        f"({data_start} ~ {data_end})"
+    )
 
     if total_months < TECH_MIN_MONTHS:
         reason = (
@@ -612,6 +621,8 @@ async def run_technical_analysis(symbol: str, name: str) -> TechnicalAnalysisRes
             confidence=0.2,
         )
 
+    # --- Step 2: compute technical indicators ---
+    logger.info(f"[Module C] Computing technical indicators for {symbol}...")
     try:
         feature_df = _compute_technical_indicators(kline_df)
         features, warnings = _build_features(feature_df, warnings)
@@ -640,7 +651,9 @@ async def run_technical_analysis(symbol: str, name: str) -> TechnicalAnalysisRes
             total_months=total_months,
             confidence=0.2,
         )
+    logger.info(f"[Module C] Technical indicators computed for {symbol}")
 
+    # --- Step 3: build prompt ---
     message = _build_prompt_message(
         symbol=symbol,
         name=name,
@@ -652,66 +665,88 @@ async def run_technical_analysis(symbol: str, name: str) -> TechnicalAnalysisRes
         lookback_months=TECH_AGENT_LOOKBACK_MONTHS,
     )
 
-    try:
-        openai_client = create_openai_client()
-        technical_client = create_chat_client(openai_client, MODEL_TECHNICAL_AGENT)
-        technical_agent = create_technical_agent(technical_client)
-        llm_output = await call_agent_with_model(
-            agent=technical_agent,
-            message=message,
-            model_cls=LLMTechnicalOutput,
-        )
-    except AgentCallError as e:
-        logger.error(f"Technical agent call failed: {e}")
-        return _build_fallback_result(
-            symbol=symbol,
-            name=name,
-            warnings=warnings,
-            reason=f"LLM 推理失败: {e}",
-            data_start=data_start,
-            data_end=data_end,
-            total_months=total_months,
-            confidence=0.35,
+    # --- Step 4: call LLM ---
+    openai_client = create_openai_client()
+    technical_client = create_chat_client(openai_client, MODEL_TECHNICAL_AGENT)
+    technical_agent = create_technical_agent(technical_client)
+
+    # Detect thinking setting from agent options
+    extra_body = technical_agent.default_options.get("extra_body", {})
+    thinking_enabled = extra_body.get("enable_thinking", False) if isinstance(extra_body, dict) else False
+
+    logger.info(
+        f"[Module C] LLM config: model={MODEL_TECHNICAL_AGENT}, "
+        f"thinking={thinking_enabled}, stream={TECH_USE_STREAM}"
+    )
+    if thinking_enabled and not TECH_USE_STREAM:
+        logger.warning(
+            "[Module C] enable_thinking=True but stream=False: "
+            "DashScope may return server-side timeout for non-streaming thinking requests. "
+            "Consider setting TECH_USE_STREAM=true."
         )
 
-    meta = _build_meta(
+    logger.debug(f"[Module C] Technical prompt payload for {symbol}:\n{message}")
+
+    max_attempts = max(1, TECH_OUTPUT_RETRIES + 1)
+    last_error: Exception | None = None
+
+    for attempt in range(1, max_attempts + 1):
+        logger.info(
+            f"[Module C] Submitting to LLM (attempt {attempt}/{max_attempts})... "
+            f"{'（thinking 模式，预计等待较久）' if thinking_enabled else ''}"
+        )
+        try:
+            llm_output = await call_agent_with_model(
+                agent=technical_agent,
+                message=message,
+                model_cls=LLMTechnicalOutput,
+                stream=TECH_USE_STREAM,
+            )
+            # If successful, we build the final result and return immediately
+            meta = _build_meta(
+                symbol=symbol,
+                name=name,
+                data_start=data_start,
+                data_end=data_end,
+                total_months=total_months,
+                warnings=warnings,
+            )
+            final_result = TechnicalAnalysisResult(meta=meta, **llm_output.model_dump())
+
+            # Soft-degrade confidence when MA60 long-trend context is unavailable.
+            if total_months < TECH_LONG_TREND_MIN_MONTHS:
+                final_result = final_result.model_copy(
+                    update={"confidence": min(final_result.confidence, 0.65)}
+                )
+
+            elapsed = (datetime.now() - start_time).total_seconds()
+            logger.info(
+                f"[Module C] completed for {symbol}: score={final_result.score}, "
+                f"signal={final_result.signal}, confidence={final_result.confidence:.2f}, "
+                f"elapsed {elapsed:.1f}s"
+            )
+            return final_result
+
+        except (AgentCallError, Exception) as e:
+            last_error = e
+            if attempt < max_attempts:
+                logger.warning(
+                    f"Technical agent attempt {attempt}/{max_attempts} failed: {e}. Retrying..."
+                )
+                continue
+            logger.error(f"Technical agent failed after {max_attempts} attempts: {e}")
+
+    # If we reach here, all attempts failed
+    return _build_fallback_result(
         symbol=symbol,
         name=name,
+        warnings=warnings,
+        reason=f"LLM 推理失败 (已重试 {max_attempts} 次): {last_error}",
         data_start=data_start,
         data_end=data_end,
         total_months=total_months,
-        warnings=warnings,
+        confidence=0.35,
     )
-
-    try:
-        final_result = TechnicalAnalysisResult(meta=meta, **llm_output.model_dump())
-    except Exception as e:
-        logger.error(
-            f"Final technical result construction failed for {symbol}: "
-            f"{type(e).__name__}: {e}"
-        )
-        return _build_fallback_result(
-            symbol=symbol,
-            name=name,
-            warnings=warnings,
-            reason=f"最终结果构造失败: {type(e).__name__}: {e}",
-            data_start=data_start,
-            data_end=data_end,
-            total_months=total_months,
-            confidence=0.35,
-        )
-
-    # Soft-degrade confidence when MA60 long-trend context is unavailable.
-    if total_months < TECH_LONG_TREND_MIN_MONTHS:
-        final_result = final_result.model_copy(
-            update={"confidence": min(final_result.confidence, 0.65)}
-        )
-
-    logger.info(
-        f"Technical analysis completed for {symbol}: score={final_result.score}, "
-        f"signal={final_result.signal}, confidence={final_result.confidence:.2f}"
-    )
-    return final_result
 
 
 def dump_technical_result_json(result: TechnicalAnalysisResult) -> str:

@@ -17,9 +17,18 @@ DASHSCOPE_BASE_URL: str = os.getenv(
 TAVILY_API_KEY: str = os.getenv("TAVILY_API_KEY", "")
 
 # Model selection
+# qwen-plus
 MODEL_QUERY_AGENT: str = os.getenv("MODEL_QUERY_AGENT", "qwen-plus")
 MODEL_EXTRACT_AGENT: str = os.getenv("MODEL_EXTRACT_AGENT", "qwen-plus")
 MODEL_REPORT_AGENT: str = os.getenv("MODEL_REPORT_AGENT", "qwen3-max")
+
+# Report agent thinking/stream settings
+REPORT_USE_STREAM: bool = (
+    os.getenv("REPORT_USE_STREAM", "true").lower() == "true"
+)
+
+# Retry times when report agent output fails validation
+REPORT_OUTPUT_RETRIES: int = int(os.getenv("REPORT_OUTPUT_RETRIES", "3"))
 
 # Deep research params
 DEFAULT_BREADTH: int = int(os.getenv("DEFAULT_BREADTH", "3"))
@@ -27,7 +36,7 @@ DEFAULT_DEPTH: int = int(os.getenv("DEFAULT_DEPTH", "2"))
 TAVILY_MAX_RESULTS: int = int(os.getenv("TAVILY_MAX_RESULTS", "5"))
 
 # Timeout and concurrency
-API_TIMEOUT: float = float(os.getenv("API_TIMEOUT", "120.0"))
+API_TIMEOUT: float = float(os.getenv("API_TIMEOUT", "600.0"))
 TAVILY_TIMEOUT: float = float(os.getenv("TAVILY_TIMEOUT", "30.0"))
 TOPIC_CONCURRENCY_LIMIT: int = int(os.getenv("TOPIC_CONCURRENCY_LIMIT", "3"))
 
@@ -44,7 +53,7 @@ LOG_FILE_PATH: str = os.getenv("LOG_FILE_PATH", "logs/stock_analyzer.log")
 AKSHARE_CALL_INTERVAL: float = float(os.getenv("AKSHARE_CALL_INTERVAL", "3.0"))
 
 # AKShare per-call timeout seconds
-AKSHARE_CALL_TIMEOUT: float = float(os.getenv("AKSHARE_CALL_TIMEOUT", "30.0"))
+AKSHARE_CALL_TIMEOUT: float = float(os.getenv("AKSHARE_CALL_TIMEOUT", "60.0"))
 
 # Retry times when one AKShare call hits timeout (in addition to first attempt)
 AKSHARE_TIMEOUT_RETRIES: int = int(os.getenv("AKSHARE_TIMEOUT_RETRIES", "3"))
@@ -78,7 +87,7 @@ AKSHARE_MARKET_CACHE_TTL_SEC: int = int(
 # ============================================================
 
 # LLM model used by technical analysis agent
-MODEL_TECHNICAL_AGENT: str = os.getenv("MODEL_TECHNICAL_AGENT", "Kimi-K2.5")
+MODEL_TECHNICAL_AGENT: str = os.getenv("MODEL_TECHNICAL_AGENT", "qwen3-max")
 
 # AKShare monthly k-line fetch params
 TECH_START_DATE: str = os.getenv("TECH_START_DATE", "20000101")
@@ -87,6 +96,14 @@ TECH_ADJUST: str = os.getenv("TECH_ADJUST", "qfq")
 # How many recent months to send to LLM
 TECH_AGENT_LOOKBACK_MONTHS: int = int(
     os.getenv("TECH_AGENT_LOOKBACK_MONTHS", "36")
+)
+
+# Retry times when technical agent output fails validation
+TECH_OUTPUT_RETRIES: int = int(os.getenv("TECH_OUTPUT_RETRIES", "3"))
+
+# Use streaming mode for technical agent (avoids DashScope server-side timeout with thinking models)
+TECH_USE_STREAM: bool = (
+    os.getenv("TECH_USE_STREAM", "true").lower() == "true"
 )
 
 # Minimum monthly bars to enter full technical pipeline
@@ -113,7 +130,12 @@ TECH_KDJ_SMOOTH: int = int(os.getenv("TECH_KDJ_SMOOTH", "3"))
 # ============================================================
 
 # LLM model used by chief analyst
-MODEL_CHIEF_AGENT: str = os.getenv("MODEL_CHIEF_AGENT", "deepseek-v3.2")
+# deepseek-v3.2
+# MiniMax/MiniMax-M2.5
+# qwen3-max
+# qwen3-max
+# MiniMax-M2.1
+MODEL_CHIEF_AGENT: str = os.getenv("MODEL_CHIEF_AGENT", "qwen3-max")
 
 # Total context soft guard (0 means disabled / no limit)
 CHIEF_INPUT_MAX_CHARS_TOTAL: int = int(
@@ -123,12 +145,22 @@ CHIEF_INPUT_MAX_CHARS_TOTAL: int = int(
 # Retry times when chief agent output fails validation
 CHIEF_OUTPUT_RETRIES: int = int(os.getenv("CHIEF_OUTPUT_RETRIES", "1"))
 
+# Use streaming mode for chief agent (avoids DashScope server-side timeout with thinking models)
+CHIEF_USE_STREAM: bool = (
+    os.getenv("CHIEF_USE_STREAM", "true").lower() == "true"
+)
+
 # ============================================================
 # Workflow: orchestration config
 # ============================================================
 
 # Output directory for all module results and final report
 WORKFLOW_OUTPUT_DIR: str = os.getenv("WORKFLOW_OUTPUT_DIR", "output")
+
+# When True, reuse cached A/B/C JSON from output/ if available; otherwise run modules fresh.
+WORKFLOW_USE_CACHE: bool = (
+    os.getenv("WORKFLOW_USE_CACHE", "false").lower() == "true"
+)
 
 # Whether to save intermediate A/B/C JSON outputs to disk during workflow run
 WORKFLOW_SAVE_INTERMEDIATE: bool = (
@@ -139,7 +171,7 @@ WORKFLOW_SAVE_INTERMEDIATE: bool = (
 # Accepts any integer: positive = timeout in seconds; 0 or negative = no limit.
 WORKFLOW_PARALLEL_TIMEOUT: int = int(os.getenv("WORKFLOW_PARALLEL_TIMEOUT", "1800"))
 
-# Warn when module A succeeds on fewer than this many topics (out of 12)
+# Warn when module A succeeds on fewer than this many topics (out of 15)
 WORKFLOW_AKSHARE_MIN_TOPICS_WARN: int = int(
-    os.getenv("WORKFLOW_AKSHARE_MIN_TOPICS_WARN", "6")
+    os.getenv("WORKFLOW_AKSHARE_MIN_TOPICS_WARN", "12")
 )

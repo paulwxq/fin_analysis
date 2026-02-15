@@ -3,8 +3,11 @@
 from __future__ import annotations
 
 import asyncio
+from datetime import datetime
 import json
 from pathlib import Path
+from typing import TypedDict
+from zoneinfo import ZoneInfo
 
 import akshare as ak
 
@@ -13,6 +16,7 @@ from stock_analyzer.config import (
     WORKFLOW_OUTPUT_DIR,
     WORKFLOW_PARALLEL_TIMEOUT,
     WORKFLOW_SAVE_INTERMEDIATE,
+    WORKFLOW_USE_CACHE,
 )
 from stock_analyzer.exceptions import StockInfoLookupError, WorkflowCircuitBreakerError
 from stock_analyzer.logger import logger
@@ -24,13 +28,70 @@ from stock_analyzer.module_c_models import TechnicalAnalysisResult
 from stock_analyzer.module_c_technical import dump_technical_result_json, run_technical_analysis
 from stock_analyzer.module_d_chief import run_chief_analysis
 from stock_analyzer.module_d_models import FinalReport
-from stock_analyzer.utils import normalize_symbol
+from stock_analyzer.utils import get_market, normalize_symbol
 
 _EMPTY_PLACEHOLDERS: frozenset[str] = frozenset({"-", "None", "nan", "N/A", "--"})
 
+# File suffixes for cached A/B/C outputs (relative to WORKFLOW_OUTPUT_DIR)
+_CACHE_SUFFIXES = {
+    "akshare": "_akshare_data.json",
+    "web": "_web_research.json",
+    "tech": "_technical_analysis.json",
+}
 
-def lookup_stock_info(symbol: str) -> tuple[str, str]:
-    """Look up stock name and industry by 6-digit symbol via AKShare."""
+
+def _try_load_cache(
+    symbol: str,
+) -> tuple[AKShareData, WebResearchResult, TechnicalAnalysisResult] | None:
+    """Try loading cached A/B/C JSON files from output/.
+
+    Returns the three model instances if ALL three files exist and parse
+    successfully, otherwise returns None.
+    """
+    output_dir = Path(WORKFLOW_OUTPUT_DIR)
+    paths = {k: output_dir / f"{symbol}{v}" for k, v in _CACHE_SUFFIXES.items()}
+
+    missing = [str(p) for p in paths.values() if not p.exists()]
+    if missing:
+        logger.info(
+            f"[Cache] Cache miss for {symbol}: "
+            f"{len(missing)} file(s) not found: {', '.join(missing)}"
+        )
+        return None
+
+    try:
+        akshare_data = AKShareData.model_validate_json(
+            paths["akshare"].read_text(encoding="utf-8")
+        )
+        web_research = WebResearchResult.model_validate_json(
+            paths["web"].read_text(encoding="utf-8")
+        )
+        technical = TechnicalAnalysisResult.model_validate_json(
+            paths["tech"].read_text(encoding="utf-8")
+        )
+    except Exception as e:
+        logger.warning(
+            f"[Cache] Cache files found for {symbol} but failed to parse: "
+            f"{type(e).__name__}: {e}. Will run modules fresh."
+        )
+        return None
+
+    logger.info(
+        f"[Cache] Loaded cached A/B/C results for {symbol} from {output_dir}/"
+    )
+    return akshare_data, web_research, technical
+
+
+class StockLookupInfo(TypedDict):
+    symbol: str
+    symbol_with_market_upper: str
+    name: str
+    industry: str
+    date_beijing: str
+
+
+def lookup_stock_info(symbol: str) -> StockLookupInfo:
+    """Look up stock metadata by 6-digit symbol via AKShare."""
     try:
         df = ak.stock_individual_info_em(symbol=symbol)
     except Exception as e:
@@ -66,7 +127,15 @@ def lookup_stock_info(symbol: str) -> tuple[str, str]:
             f"Cannot resolve stock name for symbol {symbol} "
             "(stock may not exist or AKShare data incomplete)"
         )
-    return name, industry
+
+    beijing_date = datetime.now(ZoneInfo("Asia/Shanghai")).strftime("%Y-%m-%d")
+    return StockLookupInfo(
+        symbol=symbol,
+        symbol_with_market_upper=f"{symbol}.{get_market(symbol).upper()}",
+        name=name,
+        industry=industry,
+        date_beijing=beijing_date,
+    )
 
 
 async def _run_module_a(symbol: str, name: str) -> AKShareData:
@@ -97,7 +166,7 @@ def _check_circuit_breaker(
     elif akshare_result.meta.successful_topics < WORKFLOW_AKSHARE_MIN_TOPICS_WARN:
         logger.warning(
             f"[Circuit breaker] module_a: only "
-            f"{akshare_result.meta.successful_topics}/12 topics succeeded, "
+            f"{akshare_result.meta.successful_topics}/15 topics succeeded, "
             f"chief analysis context may be limited"
         )
 
@@ -176,46 +245,67 @@ async def run_workflow(raw_symbol: str) -> FinalReport:
     # Step 1: look up stock name and industry
     logger.info(f"[Workflow] Looking up stock info for {symbol}")
     try:
-        name, industry = await asyncio.to_thread(lookup_stock_info, symbol)
+        stock_info = await asyncio.to_thread(lookup_stock_info, symbol)
     except StockInfoLookupError:
         logger.error(f"[Workflow] Stock info lookup failed for {symbol}")
         raise
-    logger.info(f"[Workflow] Stock info resolved: name={name!r}, industry={industry!r}")
-
-    # Step 2: parallel execution of A/B/C
+    name = stock_info["name"]
+    industry = stock_info["industry"]
+    symbol_with_market_upper = stock_info["symbol_with_market_upper"]
+    date_beijing = stock_info["date_beijing"]
     logger.info(
-        f"[Workflow] Starting parallel execution of modules A/B/C for {symbol} {name}"
-        f"（预计耗时 3–5 分钟，请耐心等待）"
+        "[Workflow] Stock info resolved: "
+        f"name={name!r}, industry={industry!r}, "
+        f"symbol_with_market_upper={symbol_with_market_upper!r}, date_beijing={date_beijing}"
     )
-    timeout = WORKFLOW_PARALLEL_TIMEOUT if WORKFLOW_PARALLEL_TIMEOUT > 0 else None
-    try:
-        akshare_result, web_result, tech_result = await asyncio.wait_for(
-            asyncio.gather(
-                _run_module_a(symbol, name),
-                run_web_research(symbol=symbol, name=name, industry=industry),
-                run_technical_analysis(symbol=symbol, name=name),
-                return_exceptions=True,
-            ),
-            timeout=timeout,
-        )
-    except asyncio.TimeoutError as e:
-        logger.warning(
-            f"[Workflow] Parallel phase timed out after {WORKFLOW_PARALLEL_TIMEOUT}s. "
-            "Async tasks (modules B/C) have been cancelled. "
-            "The synchronous thread running module A cannot be forcibly stopped and "
-            "may continue running in the background until its current AKShare call "
-            "completes — residual module A log entries may appear after this error."
-        )
-        raise WorkflowCircuitBreakerError(
-            f"Parallel phase timed out after {WORKFLOW_PARALLEL_TIMEOUT}s"
-        ) from e
 
-    # Step 3: circuit breaker check
-    _check_circuit_breaker(akshare_result, web_result, tech_result)
+    # Step 2: load cached A/B/C results or run modules fresh
+    cached = _try_load_cache(symbol) if WORKFLOW_USE_CACHE else None
 
-    # Step 4: save intermediate results (optional)
-    if WORKFLOW_SAVE_INTERMEDIATE:
-        _save_intermediate_results(symbol, akshare_result, web_result, tech_result)
+    if cached is not None:
+        akshare_result, web_result, tech_result = cached
+        logger.info(
+            f"[Workflow] Using cached A/B/C results for {symbol}, "
+            "skipping module execution"
+        )
+    else:
+        logger.info(
+            f"[Workflow] Starting parallel execution of modules A/B/C for {symbol} {name}"
+            f"（预计耗时 3–5 分钟，请耐心等待）"
+        )
+        timeout = WORKFLOW_PARALLEL_TIMEOUT if WORKFLOW_PARALLEL_TIMEOUT > 0 else None
+        try:
+            akshare_result, web_result, tech_result = await asyncio.wait_for(
+                asyncio.gather(
+                    _run_module_a(symbol, name),
+                    run_web_research(
+                        symbol=symbol,
+                        name=name,
+                        industry=industry,
+                    ),
+                    run_technical_analysis(symbol=symbol, name=name),
+                    return_exceptions=True,
+                ),
+                timeout=timeout,
+            )
+        except asyncio.TimeoutError as e:
+            logger.warning(
+                f"[Workflow] Parallel phase timed out after {WORKFLOW_PARALLEL_TIMEOUT}s. "
+                "Async tasks (modules B/C) have been cancelled. "
+                "The synchronous thread running module A cannot be forcibly stopped and "
+                "may continue running in the background until its current AKShare call "
+                "completes — residual module A log entries may appear after this error."
+            )
+            raise WorkflowCircuitBreakerError(
+                f"Parallel phase timed out after {WORKFLOW_PARALLEL_TIMEOUT}s"
+            ) from e
+
+        # Circuit breaker check (only for fresh runs)
+        _check_circuit_breaker(akshare_result, web_result, tech_result)
+
+        # Save intermediate results (optional)
+        if WORKFLOW_SAVE_INTERMEDIATE:
+            _save_intermediate_results(symbol, akshare_result, web_result, tech_result)
 
     # Step 5: run module D
     logger.info(f"[Workflow] Starting chief analysis for {symbol} {name}")

@@ -1,0 +1,1516 @@
+{
+  "meta": {
+    "symbol": "603019",
+    "name": "中科曙光",
+    "query_time": "2026-02-15T21:03:19.175189",
+    "data_errors": [
+      "realtime_quote: 调用超时（>60.0s）(stock_zh_a_spot_em) [连续超时 1/3]",
+      "valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu",
+      "northbound: ChunkedEncodingError - Response ended prematurely (stock_hsgt_hold_stock_em)",
+      "institutional_holdings: 返回数据为空 (stock_institute_hold_detail)"
+    ],
+    "successful_topics": 13,
+    "topic_status": {
+      "company_info": "ok",
+      "realtime_quote": "failed",
+      "financial_indicators": "ok",
+      "valuation_history": "ok",
+      "valuation_vs_industry": "ok",
+      "fund_flow": "ok",
+      "sector_flow": "ok",
+      "northbound": "failed",
+      "shareholder_count": "ok",
+      "dividend_history": "ok",
+      "earnings_forecast": "no_data",
+      "pledge_ratio": "ok",
+      "consensus_forecast": "ok",
+      "institutional_holdings": "ok",
+      "business_composition": "ok"
+    }
+  },
+  "company_info": {
+    "industry": "计算机设备",
+    "listing_date": "20141106",
+    "total_market_cap": 1341.6772,
+    "circulating_market_cap": 1341.3022,
+    "total_shares": 14.6312,
+    "circulating_shares": 14.6271
+  },
+  "realtime_quote": null,
+  "financial_indicators": [
+    {
+      "report_date": "2025-09-30",
+      "eps": 0.662,
+      "net_asset_per_share": 14.396769938106,
+      "roe": 4.67,
+      "gross_margin": 24.453360977432,
+      "net_margin": 10.4557676672,
+      "revenue_growth": 9.684388771,
+      "profit_growth": 25.5472733836,
+      "debt_ratio": 40.6665089081,
+      "current_ratio": 2.388661197642
+    },
+    {
+      "report_date": "2025-06-30",
+      "eps": 0.5,
+      "net_asset_per_share": 14.225805638606,
+      "roe": 3.52,
+      "gross_margin": 26.649574158853,
+      "net_margin": 11.999574013,
+      "revenue_growth": 2.4142243493,
+      "profit_growth": 29.3881922223,
+      "debt_ratio": 40.7036390454,
+      "current_ratio": 2.460823303241
+    },
+    {
+      "report_date": "2025-03-31",
+      "eps": 0.128,
+      "net_asset_per_share": 13.808907342923,
+      "roe": 0.91,
+      "gross_margin": 26.068285846328,
+      "net_margin": 6.5482775551,
+      "revenue_growth": 4.3407555001,
+      "profit_growth": 30.7869055862,
+      "debt_ratio": 41.2406509525,
+      "current_ratio": 2.401054402467
+    },
+    {
+      "report_date": "2024-12-31",
+      "eps": 1.31,
+      "net_asset_per_share": 13.943440264066,
+      "roe": 9.81,
+      "gross_margin": 29.161187698002,
+      "net_margin": 15.1618242861,
+      "revenue_growth": -8.3954698369,
+      "profit_growth": 4.0988902605,
+      "debt_ratio": 41.7577566903,
+      "current_ratio": 2.503728698504
+    },
+    {
+      "report_date": "2024-09-30",
+      "eps": 0.528,
+      "net_asset_per_share": 13.109543522486,
+      "roe": 4.05,
+      "gross_margin": 26.811415765589,
+      "net_margin": 10.0102958791,
+      "revenue_growth": 3.6517826697,
+      "profit_growth": 2.5652435566,
+      "debt_ratio": 38.5883080027,
+      "current_ratio": 2.769273033545
+    },
+    {
+      "report_date": "2024-06-30",
+      "eps": 0.386,
+      "net_asset_per_share": 12.978525075149,
+      "roe": 2.97,
+      "gross_margin": 26.24552319482,
+      "net_margin": 9.9311251221,
+      "revenue_growth": 5.7652070278,
+      "profit_growth": 3.3798153983,
+      "debt_ratio": 38.2426192145,
+      "current_ratio": 2.951253689655
+    },
+    {
+      "report_date": "2024-03-31",
+      "eps": 0.098,
+      "net_asset_per_share": 12.842671853258,
+      "roe": 0.76,
+      "gross_margin": 26.851149401455,
+      "net_margin": 5.3011507129,
+      "revenue_growth": 7.8609165896,
+      "profit_growth": 8.8648407119,
+      "debt_ratio": 38.495592766,
+      "current_ratio": 2.599687651833
+    },
+    {
+      "report_date": "2023-12-31",
+      "eps": 1.26,
+      "net_asset_per_share": 12.742663385283,
+      "roe": 10.3,
+      "gross_margin": 26.260800782693,
+      "net_margin": 13.0840087582,
+      "revenue_growth": 10.3375434991,
+      "profit_growth": 18.8820083142,
+      "debt_ratio": 38.3820802066,
+      "current_ratio": 2.992227934059
+    }
+  ],
+  "valuation_history": {
+    "current_pe_ttm": 63.65,
+    "current_pb": 6.37,
+    "pe_percentile": 92.0,
+    "pb_percentile": 90.2,
+    "current_ps_ttm": null,
+    "current_dv_ttm": null,
+    "history_summary": "PE历史分位92.0%，处于极高位置（历史顶部区域）；PB历史分位90.2%，处于极高位置（历史顶部区域）"
+  },
+  "valuation_vs_industry": {
+    "stock_pe": 63.65465267,
+    "industry_avg_pe": 43.12,
+    "industry_median_pe": 41.78,
+    "stock_pb": 6.36948429,
+    "industry_avg_pb": 5.71,
+    "relative_valuation": "明显高于行业平均"
+  },
+  "fund_flow": {
+    "recent_days": [
+      {
+        "date": "2026-02-09",
+        "main_net_inflow": 662155296.0,
+        "main_net_inflow_pct": 14.7
+      },
+      {
+        "date": "2026-02-10",
+        "main_net_inflow": -160294720.0,
+        "main_net_inflow_pct": -4.14
+      },
+      {
+        "date": "2026-02-11",
+        "main_net_inflow": -428332832.0,
+        "main_net_inflow_pct": -16.53
+      },
+      {
+        "date": "2026-02-12",
+        "main_net_inflow": 429850896.0,
+        "main_net_inflow_pct": 11.52
+      },
+      {
+        "date": "2026-02-13",
+        "main_net_inflow": -90882640.0,
+        "main_net_inflow_pct": -2.95
+      }
+    ],
+    "summary": {
+      "main_net_inflow_5d_total": 412496000.0,
+      "main_net_inflow_10d_total": -316151010.0,
+      "trend": "近5日主力净流入，近10日整体净流出"
+    }
+  },
+  "sector_flow": {
+    "industry_name": "计算机设备",
+    "industry_rank": 330,
+    "industry_net_inflow_today": -192271136.0,
+    "hot_concepts_top5": [
+      {
+        "name": "存储芯片",
+        "net_inflow": 4215062784.0
+      },
+      {
+        "name": "冷链物流",
+        "net_inflow": 1896407808.0
+      },
+      {
+        "name": "智慧政务",
+        "net_inflow": 1831881216.0
+      },
+      {
+        "name": "时空大数据",
+        "net_inflow": 1771258608.0
+      },
+      {
+        "name": "光刻机(胶)",
+        "net_inflow": 1488280320.0
+      }
+    ]
+  },
+  "northbound": null,
+  "shareholder_count": [
+    {
+      "date": "2026-01-20",
+      "count": 398110,
+      "change_pct": 0.581595116824
+    },
+    {
+      "date": "2026-01-09",
+      "count": 395808,
+      "change_pct": 11.405145699111
+    },
+    {
+      "date": "2025-12-19",
+      "count": 355287,
+      "change_pct": -0.59260502791
+    },
+    {
+      "date": "2025-12-10",
+      "count": 357405,
+      "change_pct": 6.847853057857
+    }
+  ],
+  "dividend_history": [
+    {
+      "year": "2026",
+      "dividend_per_share": 0.7,
+      "ex_date": "2026-02-05"
+    },
+    {
+      "year": "2025",
+      "dividend_per_share": 2.7,
+      "ex_date": "2025-05-23"
+    },
+    {
+      "year": "2024",
+      "dividend_per_share": 1.7,
+      "ex_date": "2024-06-06"
+    },
+    {
+      "year": "2023",
+      "dividend_per_share": 0.8,
+      "ex_date": "2023-10-23"
+    },
+    {
+      "year": "2023",
+      "dividend_per_share": 2.2,
+      "ex_date": "2023-06-09"
+    }
+  ],
+  "earnings_forecast": {
+    "latest_period": null,
+    "forecast_type": null,
+    "forecast_range": null,
+    "available": false
+  },
+  "pledge_ratio": {
+    "ratio_pct": 0.19,
+    "pledged_shares": 283.0,
+    "risk_level": "低"
+  },
+  "consensus_forecast": [
+    {
+      "year": "2025",
+      "inst_count": 14,
+      "net_profit_avg": 1.67,
+      "industry_avg": 1.69
+    },
+    {
+      "year": "2026",
+      "inst_count": 14,
+      "net_profit_avg": 2.06,
+      "industry_avg": 2.53
+    },
+    {
+      "year": "2027",
+      "inst_count": 14,
+      "net_profit_avg": 2.51,
+      "industry_avg": 3.35
+    }
+  ],
+  "institutional_holdings": [
+    {
+      "type": "基金",
+      "name": "华泰柏瑞沪深300ETF",
+      "ratio": 1.78
+    },
+    {
+      "type": "基金",
+      "name": "易方达沪深300ETF",
+      "ratio": 1.28
+    },
+    {
+      "type": "基金",
+      "name": "华夏沪深300ETF",
+      "ratio": 0.93
+    }
+  ],
+  "business_composition": [
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.506012,
+      "gross_margin": 0.306225
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.493369,
+      "gross_margin": 0.225392
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000619,
+      "gross_margin": 0.550911
+    },
+    {
+      "type": "按产品分类",
+      "item": "IT设备",
+      "revenue_ratio": 0.887865,
+      "gross_margin": 0.250683
+    },
+    {
+      "type": "按产品分类",
+      "item": "软件开发、系统集成及技术服务",
+      "revenue_ratio": 0.111517,
+      "gross_margin": 0.390812
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000619,
+      "gross_margin": 0.550911
+    },
+    {
+      "type": "按地区分类",
+      "item": "北部大区",
+      "revenue_ratio": 0.486826,
+      "gross_margin": 0.250441
+    },
+    {
+      "type": "按地区分类",
+      "item": "东部大区",
+      "revenue_ratio": 0.348937,
+      "gross_margin": 0.319102
+    },
+    {
+      "type": "按地区分类",
+      "item": "西部大区",
+      "revenue_ratio": 0.085729,
+      "gross_margin": 0.203573
+    },
+    {
+      "type": "按地区分类",
+      "item": "南部大区",
+      "revenue_ratio": 0.077889,
+      "gross_margin": 0.198167
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000619,
+      "gross_margin": 0.550911
+    },
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.544286,
+      "gross_margin": 0.33857
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.452188,
+      "gross_margin": 0.233414
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.003525,
+      "gross_margin": 0.506566
+    },
+    {
+      "type": "按产品分类",
+      "item": "IT设备",
+      "revenue_ratio": 0.890355,
+      "gross_margin": 0.273415
+    },
+    {
+      "type": "按产品分类",
+      "item": "软件开发、系统集成及技术服务",
+      "revenue_ratio": 0.10612,
+      "gross_margin": 0.437142
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.003525,
+      "gross_margin": 0.506566
+    },
+    {
+      "type": "按地区分类",
+      "item": "北部大区",
+      "revenue_ratio": 0.473367,
+      "gross_margin": 0.250574
+    },
+    {
+      "type": "按地区分类",
+      "item": "东部大区",
+      "revenue_ratio": 0.333782,
+      "gross_margin": 0.29219
+    },
+    {
+      "type": "按地区分类",
+      "item": "南部大区",
+      "revenue_ratio": 0.113216,
+      "gross_margin": 0.378353
+    },
+    {
+      "type": "按地区分类",
+      "item": "西部大区",
+      "revenue_ratio": 0.076109,
+      "gross_margin": 0.405324
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.003525,
+      "gross_margin": 0.506566
+    },
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.625547,
+      "gross_margin": 0.308261
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.37415,
+      "gross_margin": 0.18552
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000303,
+      "gross_margin": 0.697629
+    },
+    {
+      "type": "按产品分类",
+      "item": "IT设备",
+      "revenue_ratio": 0.89744,
+      "gross_margin": 0.247235
+    },
+    {
+      "type": "按产品分类",
+      "item": "软件开发、系统集成及技术服务",
+      "revenue_ratio": 0.102257,
+      "gross_margin": 0.394742
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000303,
+      "gross_margin": 0.697629
+    },
+    {
+      "type": "按地区分类",
+      "item": "北部大区",
+      "revenue_ratio": 0.541765,
+      "gross_margin": 0.198554
+    },
+    {
+      "type": "按地区分类",
+      "item": "东部大区",
+      "revenue_ratio": 0.323048,
+      "gross_margin": 0.361383
+    },
+    {
+      "type": "按地区分类",
+      "item": "西部大区",
+      "revenue_ratio": 0.072722,
+      "gross_margin": 0.27494
+    },
+    {
+      "type": "按地区分类",
+      "item": "南部大区",
+      "revenue_ratio": 0.062162,
+      "gross_margin": 0.288537
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000303,
+      "gross_margin": 0.697629
+    },
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.582661,
+      "gross_margin": 0.286602
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.416927,
+      "gross_margin": 0.22857
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000412,
+      "gross_margin": 0.775316
+    },
+    {
+      "type": "按产品分类",
+      "item": "IT设备",
+      "revenue_ratio": 0.890439,
+      "gross_margin": 0.218824
+    },
+    {
+      "type": "按产品分类",
+      "item": "软件开发、系统集成及技术服务",
+      "revenue_ratio": 0.109149,
+      "gross_margin": 0.617861
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000412,
+      "gross_margin": 0.775316
+    },
+    {
+      "type": "按地区分类",
+      "item": "北部大区",
+      "revenue_ratio": 0.527378,
+      "gross_margin": 0.23072
+    },
+    {
+      "type": "按地区分类",
+      "item": "东部大区",
+      "revenue_ratio": 0.308578,
+      "gross_margin": 0.26079
+    },
+    {
+      "type": "按地区分类",
+      "item": "西部大区",
+      "revenue_ratio": 0.083246,
+      "gross_margin": 0.360784
+    },
+    {
+      "type": "按地区分类",
+      "item": "南部大区",
+      "revenue_ratio": 0.080387,
+      "gross_margin": 0.374494
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000412,
+      "gross_margin": 0.775316
+    },
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.677688,
+      "gross_margin": null
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.321846,
+      "gross_margin": null
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000466,
+      "gross_margin": 0.653423
+    },
+    {
+      "type": "按产品分类",
+      "item": "IT设备",
+      "revenue_ratio": 0.912856,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "软件开发、系统集成及技术服务",
+      "revenue_ratio": 0.086678,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000466,
+      "gross_margin": 0.653423
+    },
+    {
+      "type": "按地区分类",
+      "item": "北部大区",
+      "revenue_ratio": 0.695949,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "东部大区",
+      "revenue_ratio": 0.221442,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "南部大区",
+      "revenue_ratio": 0.047668,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "西部大区",
+      "revenue_ratio": 0.034475,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000466,
+      "gross_margin": 0.653423
+    },
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.546498,
+      "gross_margin": 0.285932
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.453136,
+      "gross_margin": 0.234173
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000366,
+      "gross_margin": 0.682611
+    },
+    {
+      "type": "按产品分类",
+      "item": "IT设备",
+      "revenue_ratio": 0.880101,
+      "gross_margin": 0.19663
+    },
+    {
+      "type": "按产品分类",
+      "item": "软件开发、系统集成及技术服务",
+      "revenue_ratio": 0.119533,
+      "gross_margin": 0.747233
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000366,
+      "gross_margin": 0.682611
+    },
+    {
+      "type": "按地区分类",
+      "item": "北部大区",
+      "revenue_ratio": 0.436865,
+      "gross_margin": 0.206379
+    },
+    {
+      "type": "按地区分类",
+      "item": "东部大区",
+      "revenue_ratio": 0.345148,
+      "gross_margin": 0.264309
+    },
+    {
+      "type": "按地区分类",
+      "item": "西部大区",
+      "revenue_ratio": 0.13066,
+      "gross_margin": 0.367398
+    },
+    {
+      "type": "按地区分类",
+      "item": "南部大区",
+      "revenue_ratio": 0.086961,
+      "gross_margin": 0.379291
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000366,
+      "gross_margin": 0.682611
+    },
+    {
+      "type": "",
+      "item": "政府",
+      "revenue_ratio": 0.447362,
+      "gross_margin": 0.278914
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.39376,
+      "gross_margin": 0.190528
+    },
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.158557,
+      "gross_margin": 0.251923
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000321,
+      "gross_margin": 0.642747
+    },
+    {
+      "type": "按产品分类",
+      "item": "高端计算机",
+      "revenue_ratio": 0.839389,
+      "gross_margin": 0.192348
+    },
+    {
+      "type": "按产品分类",
+      "item": "存储产品",
+      "revenue_ratio": 0.088053,
+      "gross_margin": 0.260911
+    },
+    {
+      "type": "按产品分类",
+      "item": "软件开发、系统集成及技术服务",
+      "revenue_ratio": 0.072237,
+      "gross_margin": 0.765715
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000321,
+      "gross_margin": 0.642747
+    },
+    {
+      "type": "按地区分类",
+      "item": "东部大区",
+      "revenue_ratio": 0.43047,
+      "gross_margin": 0.280684
+    },
+    {
+      "type": "按地区分类",
+      "item": "北部大区",
+      "revenue_ratio": 0.420875,
+      "gross_margin": 0.183816
+    },
+    {
+      "type": "按地区分类",
+      "item": "南部大区",
+      "revenue_ratio": 0.08165,
+      "gross_margin": 0.248641
+    },
+    {
+      "type": "按地区分类",
+      "item": "西部大区",
+      "revenue_ratio": 0.066683,
+      "gross_margin": 0.318677
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000321,
+      "gross_margin": 0.642747
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.525241,
+      "gross_margin": 0.210716
+    },
+    {
+      "type": "",
+      "item": "政府",
+      "revenue_ratio": 0.250269,
+      "gross_margin": 0.237674
+    },
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.224142,
+      "gross_margin": 0.298962
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000348,
+      "gross_margin": 0.766417
+    },
+    {
+      "type": "按产品分类",
+      "item": "高端计算机",
+      "revenue_ratio": 0.792815,
+      "gross_margin": 0.162026
+    },
+    {
+      "type": "按产品分类",
+      "item": "软件开发、系统集成及技术服务",
+      "revenue_ratio": 0.111851,
+      "gross_margin": 0.743027
+    },
+    {
+      "type": "按产品分类",
+      "item": "存储产品",
+      "revenue_ratio": 0.094986,
+      "gross_margin": 0.269556
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000348,
+      "gross_margin": 0.766417
+    },
+    {
+      "type": "按地区分类",
+      "item": "北部大区",
+      "revenue_ratio": 0.499604,
+      "gross_margin": 0.182245
+    },
+    {
+      "type": "按地区分类",
+      "item": "东部大区",
+      "revenue_ratio": 0.325184,
+      "gross_margin": 0.248191
+    },
+    {
+      "type": "按地区分类",
+      "item": "南部大区",
+      "revenue_ratio": 0.099631,
+      "gross_margin": 0.39142
+    },
+    {
+      "type": "按地区分类",
+      "item": "西部大区",
+      "revenue_ratio": 0.075233,
+      "gross_margin": 0.351086
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000348,
+      "gross_margin": 0.766417
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.510812,
+      "gross_margin": 0.176497
+    },
+    {
+      "type": "",
+      "item": "政府",
+      "revenue_ratio": 0.291459,
+      "gross_margin": 0.263765
+    },
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.197498,
+      "gross_margin": 0.253348
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.00023,
+      "gross_margin": 0.849778
+    },
+    {
+      "type": "按产品分类",
+      "item": "高端计算机",
+      "revenue_ratio": 0.803486,
+      "gross_margin": 0.15586
+    },
+    {
+      "type": "按产品分类",
+      "item": "存储产品",
+      "revenue_ratio": 0.106876,
+      "gross_margin": 0.227889
+    },
+    {
+      "type": "按产品分类",
+      "item": "软件开发、系统集成及技术服务",
+      "revenue_ratio": 0.089408,
+      "gross_margin": 0.754768
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.00023,
+      "gross_margin": 0.849778
+    },
+    {
+      "type": "按地区分类",
+      "item": "北部大区",
+      "revenue_ratio": 0.483711,
+      "gross_margin": 0.182378
+    },
+    {
+      "type": "按地区分类",
+      "item": "东部大区",
+      "revenue_ratio": 0.349718,
+      "gross_margin": 0.247885
+    },
+    {
+      "type": "按地区分类",
+      "item": "南部大区",
+      "revenue_ratio": 0.091198,
+      "gross_margin": 0.222036
+    },
+    {
+      "type": "按地区分类",
+      "item": "西部大区",
+      "revenue_ratio": 0.075142,
+      "gross_margin": 0.291606
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.00023,
+      "gross_margin": 0.849778
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.513708,
+      "gross_margin": 0.191121
+    },
+    {
+      "type": "",
+      "item": "政府",
+      "revenue_ratio": 0.253878,
+      "gross_margin": 0.2339
+    },
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.23214,
+      "gross_margin": 0.273747
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000274,
+      "gross_margin": 0.59344
+    },
+    {
+      "type": "按产品分类",
+      "item": "高端计算机",
+      "revenue_ratio": 0.792034,
+      "gross_margin": 0.148671
+    },
+    {
+      "type": "按产品分类",
+      "item": "软件开发、系统集成及技术服务",
+      "revenue_ratio": 0.109126,
+      "gross_margin": 0.741905
+    },
+    {
+      "type": "按产品分类",
+      "item": "存储产品",
+      "revenue_ratio": 0.098566,
+      "gross_margin": 0.227227
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000274,
+      "gross_margin": 0.59344
+    },
+    {
+      "type": "按地区分类",
+      "item": "北部大区",
+      "revenue_ratio": 0.49043,
+      "gross_margin": 0.172776
+    },
+    {
+      "type": "按地区分类",
+      "item": "东部大区",
+      "revenue_ratio": 0.318448,
+      "gross_margin": 0.217207
+    },
+    {
+      "type": "按地区分类",
+      "item": "南部大区",
+      "revenue_ratio": 0.109161,
+      "gross_margin": 0.365035
+    },
+    {
+      "type": "按地区分类",
+      "item": "西部大区",
+      "revenue_ratio": 0.081686,
+      "gross_margin": 0.334928
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000274,
+      "gross_margin": 0.59344
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.565955,
+      "gross_margin": 0.175942
+    },
+    {
+      "type": "",
+      "item": "政府",
+      "revenue_ratio": 0.273176,
+      "gross_margin": 0.261276
+    },
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.160758,
+      "gross_margin": 0.254119
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000111,
+      "gross_margin": 0.736891
+    },
+    {
+      "type": "按产品分类",
+      "item": "高端计算机",
+      "revenue_ratio": 0.798976,
+      "gross_margin": 0.143869
+    },
+    {
+      "type": "按产品分类",
+      "item": "存储产品",
+      "revenue_ratio": 0.105494,
+      "gross_margin": 0.223287
+    },
+    {
+      "type": "按产品分类",
+      "item": "软件开发、系统集成及技术服务",
+      "revenue_ratio": 0.095419,
+      "gross_margin": 0.768166
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000111,
+      "gross_margin": 0.736891
+    },
+    {
+      "type": "按地区分类",
+      "item": "北部大区",
+      "revenue_ratio": 0.488667,
+      "gross_margin": 0.168548
+    },
+    {
+      "type": "按地区分类",
+      "item": "东部大区",
+      "revenue_ratio": 0.334497,
+      "gross_margin": 0.247526
+    },
+    {
+      "type": "按地区分类",
+      "item": "南部大区",
+      "revenue_ratio": 0.101777,
+      "gross_margin": 0.259848
+    },
+    {
+      "type": "按地区分类",
+      "item": "西部大区",
+      "revenue_ratio": 0.074948,
+      "gross_margin": 0.269444
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000111,
+      "gross_margin": 0.736891
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.495649,
+      "gross_margin": 0.188328
+    },
+    {
+      "type": "",
+      "item": "政府",
+      "revenue_ratio": 0.276993,
+      "gross_margin": 0.268398
+    },
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.227229,
+      "gross_margin": 0.233263
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000129,
+      "gross_margin": 0.408558
+    },
+    {
+      "type": "按产品分类",
+      "item": "高端计算机",
+      "revenue_ratio": 0.787725,
+      "gross_margin": 0.144105
+    },
+    {
+      "type": "按产品分类",
+      "item": "软件开发、系统集成及技术服务",
+      "revenue_ratio": 0.11122,
+      "gross_margin": 0.759815
+    },
+    {
+      "type": "按产品分类",
+      "item": "存储产品",
+      "revenue_ratio": 0.100925,
+      "gross_margin": 0.224632
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000129,
+      "gross_margin": 0.408558
+    },
+    {
+      "type": "按地区分类",
+      "item": "北部大区",
+      "revenue_ratio": 0.4816,
+      "gross_margin": 0.188727
+    },
+    {
+      "type": "按地区分类",
+      "item": "东部大区",
+      "revenue_ratio": 0.287587,
+      "gross_margin": 0.205755
+    },
+    {
+      "type": "按地区分类",
+      "item": "南部大区",
+      "revenue_ratio": 0.150943,
+      "gross_margin": 0.243492
+    },
+    {
+      "type": "按地区分类",
+      "item": "西部大区",
+      "revenue_ratio": 0.07974,
+      "gross_margin": 0.424834
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000129,
+      "gross_margin": 0.408558
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.60751,
+      "gross_margin": 0.160256
+    },
+    {
+      "type": "",
+      "item": "政府",
+      "revenue_ratio": 0.257968,
+      "gross_margin": 0.231755
+    },
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.133864,
+      "gross_margin": 0.159759
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000658,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "高端计算机",
+      "revenue_ratio": 0.830284,
+      "gross_margin": 0.100379
+    },
+    {
+      "type": "按产品分类",
+      "item": "软件开发、系统集成、技术服务",
+      "revenue_ratio": 0.095826,
+      "gross_margin": 0.812389
+    },
+    {
+      "type": "按产品分类",
+      "item": "存储产品",
+      "revenue_ratio": 0.073232,
+      "gross_margin": 0.236751
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000658,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "北部大区",
+      "revenue_ratio": 0.507933,
+      "gross_margin": 0.13908
+    },
+    {
+      "type": "按地区分类",
+      "item": "东部大区",
+      "revenue_ratio": 0.270671,
+      "gross_margin": 0.215827
+    },
+    {
+      "type": "按地区分类",
+      "item": "南部大区",
+      "revenue_ratio": 0.156592,
+      "gross_margin": 0.201464
+    },
+    {
+      "type": "按地区分类",
+      "item": "西部大区",
+      "revenue_ratio": 0.064146,
+      "gross_margin": 0.279349
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000658,
+      "gross_margin": null
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.45232,
+      "gross_margin": 0.156354
+    },
+    {
+      "type": "",
+      "item": "政府",
+      "revenue_ratio": 0.298475,
+      "gross_margin": 0.238238
+    },
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.249085,
+      "gross_margin": 0.165314
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.00012,
+      "gross_margin": 0.345859
+    },
+    {
+      "type": "按产品分类",
+      "item": "高端计算机",
+      "revenue_ratio": 0.79504,
+      "gross_margin": 0.103785
+    },
+    {
+      "type": "按产品分类",
+      "item": "软件开发、系统集成、技术服务",
+      "revenue_ratio": 0.108924,
+      "gross_margin": 0.742867
+    },
+    {
+      "type": "按产品分类",
+      "item": "存储产品",
+      "revenue_ratio": 0.095916,
+      "gross_margin": 0.204117
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.00012,
+      "gross_margin": 0.345859
+    },
+    {
+      "type": "按地区分类",
+      "item": "北部大区",
+      "revenue_ratio": 0.492161,
+      "gross_margin": 0.15578
+    },
+    {
+      "type": "按地区分类",
+      "item": "东部大区",
+      "revenue_ratio": 0.271483,
+      "gross_margin": 0.202334
+    },
+    {
+      "type": "按地区分类",
+      "item": "南部大区",
+      "revenue_ratio": 0.161989,
+      "gross_margin": 0.1921
+    },
+    {
+      "type": "按地区分类",
+      "item": "西部大区",
+      "revenue_ratio": 0.074248,
+      "gross_margin": 0.273278
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.00012,
+      "gross_margin": 0.345859
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.555739,
+      "gross_margin": 0.177584
+    },
+    {
+      "type": "",
+      "item": "政府",
+      "revenue_ratio": 0.288036,
+      "gross_margin": 0.231123
+    },
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.14482,
+      "gross_margin": 0.16968
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.011406,
+      "gross_margin": 0.128231
+    },
+    {
+      "type": "按产品分类",
+      "item": "高端计算机",
+      "revenue_ratio": 0.809074,
+      "gross_margin": 0.127886
+    },
+    {
+      "type": "按产品分类",
+      "item": "软件、系统集成及技术服务",
+      "revenue_ratio": 0.105314,
+      "gross_margin": 0.656491
+    },
+    {
+      "type": "按产品分类",
+      "item": "存储",
+      "revenue_ratio": 0.074207,
+      "gross_margin": 0.232161
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.011406,
+      "gross_margin": 0.128231
+    },
+    {
+      "type": "按地区分类",
+      "item": "北部大区",
+      "revenue_ratio": 0.479093,
+      "gross_margin": 0.179086
+    },
+    {
+      "type": "按地区分类",
+      "item": "东部大区",
+      "revenue_ratio": 0.297785,
+      "gross_margin": 0.203378
+    },
+    {
+      "type": "按地区分类",
+      "item": "南部大区",
+      "revenue_ratio": 0.155128,
+      "gross_margin": 0.201174
+    },
+    {
+      "type": "按地区分类",
+      "item": "西部大区",
+      "revenue_ratio": 0.056589,
+      "gross_margin": 0.216755
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.011406,
+      "gross_margin": 0.128231
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.457141,
+      "gross_margin": 0.145967
+    },
+    {
+      "type": "",
+      "item": "政府",
+      "revenue_ratio": 0.327382,
+      "gross_margin": 0.228681
+    },
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.214836,
+      "gross_margin": 0.149972
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000641,
+      "gross_margin": 0.510368
+    },
+    {
+      "type": "按产品分类",
+      "item": "高端计算机",
+      "revenue_ratio": 0.804354,
+      "gross_margin": 0.100936
+    },
+    {
+      "type": "按产品分类",
+      "item": "软件开发、系统集成、技术服务",
+      "revenue_ratio": 0.102993,
+      "gross_margin": 0.742635
+    },
+    {
+      "type": "按产品分类",
+      "item": "存储产品",
+      "revenue_ratio": 0.092012,
+      "gross_margin": 0.175395
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000641,
+      "gross_margin": 0.510368
+    },
+    {
+      "type": "按地区分类",
+      "item": "北部大区",
+      "revenue_ratio": 0.455893,
+      "gross_margin": 0.16298
+    },
+    {
+      "type": "按地区分类",
+      "item": "东部大区",
+      "revenue_ratio": 0.30625,
+      "gross_margin": 0.175548
+    },
+    {
+      "type": "按地区分类",
+      "item": "南部大区",
+      "revenue_ratio": 0.180454,
+      "gross_margin": 0.164696
+    },
+    {
+      "type": "按地区分类",
+      "item": "西部大区",
+      "revenue_ratio": 0.056762,
+      "gross_margin": 0.282408
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000641,
+      "gross_margin": 0.510368
+    },
+    {
+      "type": "",
+      "item": "企业",
+      "revenue_ratio": 0.408087,
+      "gross_margin": 0.15977
+    },
+    {
+      "type": "",
+      "item": "政府",
+      "revenue_ratio": 0.339266,
+      "gross_margin": 0.248956
+    },
+    {
+      "type": "",
+      "item": "公共事业",
+      "revenue_ratio": 0.252624,
+      "gross_margin": 0.199929
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 2.2e-05,
+      "gross_margin": null
+    }
+  ]
+}

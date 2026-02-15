@@ -1292,20 +1292,31 @@ class AKShareCollector:
     def _get_recent_quarter_ends(
         lookback: int = 4,
         today: date | None = None,
+        style: Literal["standard", "short"] = "standard",
     ) -> list[str]:
-        """Return recent N passed quarter-end dates in reverse chronological order."""
+        """Return recent N passed quarter-end dates in reverse chronological order.
+
+        Styles:
+          - standard: "20240930"
+          - short: "20243" (for institutional holdings)
+        """
         if today is None:
             today = date.today()
 
-        quarter_ends = [(12, 31), (9, 30), (6, 30), (3, 31)]
+        # (month, day, short_suffix)
+        quarter_ends = [(12, 31, "4"), (9, 30, "3"), (6, 30, "2"), (3, 31, "1")]
         results: list[str] = []
         year = today.year
 
         while len(results) < lookback:
-            for q_month, q_day in quarter_ends:
+            for q_month, q_day, q_suffix in quarter_ends:
                 qe_date = date(year, q_month, q_day)
                 if qe_date <= today:
-                    results.append(f"{year}{q_month:02d}{q_day:02d}")
+                    if style == "standard":
+                        results.append(f"{year}{q_month:02d}{q_day:02d}")
+                    else:
+                        results.append(f"{year}{q_suffix}")
+
                     if len(results) >= lookback:
                         break
             year -= 1
@@ -1336,6 +1347,81 @@ class AKShareCollector:
             "risk_level": risk,
         }
 
+    def _collect_consensus_forecast(self) -> list[dict] | None:
+        """主题⑬：一致预期。"""
+        df = self.safe_call(
+            "consensus_forecast",
+            ak.stock_profit_forecast_ths,
+            symbol=self.symbol,
+        )
+        if df is None:
+            return None
+
+        # 核心返回字段: 年度, 预测机构数, 均值, 行业平均数
+        results: list[dict] = []
+        for _, row in df.iterrows():
+            results.append(
+                {
+                    "year": self._safe_str(row.get("年度")),
+                    "inst_count": self._safe_int(row.get("预测机构数")),
+                    "net_profit_avg": self._safe_float(row.get("均值")),
+                    "industry_avg": self._safe_float(row.get("行业平均数")),
+                }
+            )
+        return results
+
+    def _collect_institutional_holdings(self) -> list[dict] | None:
+        """主题⑭：机构持仓详情。"""
+        quarters = self._get_recent_quarter_ends(lookback=2, style="short")
+        for quarter in quarters:
+            df = self.safe_call(
+                "institutional_holdings",
+                ak.stock_institute_hold_detail,
+                stock=self.symbol,
+                quarter=quarter,
+            )
+            if df is not None and not df.empty:
+                # 核心返回字段: 持股机构类型, 持股机构简称, 持股比例 (或 最新持股比例)
+                ratio_col = self._pick_first_existing_column(
+                    df, ["最新持股比例", "持股比例"]
+                )
+                results: list[dict] = []
+                for _, row in df.iterrows():
+                    results.append(
+                        {
+                            "type": self._safe_str(row.get("持股机构类型")),
+                            "name": self._safe_str(row.get("持股机构简称")),
+                            "ratio": self._safe_float(row.get(ratio_col)) if ratio_col else None,
+                        }
+                    )
+                return results
+        return None
+
+    def _collect_business_composition(self) -> list[dict] | None:
+        """主题⑮：主营结构。"""
+        upper_symbol = format_symbol(self.symbol, "upper")
+        df = self.safe_call(
+            "business_composition",
+            ak.stock_zygc_em,
+            symbol=upper_symbol,
+        )
+        if df is None:
+            return None
+
+        # 核心返回字段: 分类类型, 主营构成, 收入比例, 毛利率
+        # 优先展示 '按产品分类'
+        results: list[dict] = []
+        for _, row in df.iterrows():
+            results.append(
+                {
+                    "type": self._safe_str(row.get("分类类型")),
+                    "item": self._safe_str(row.get("主营构成")),
+                    "revenue_ratio": self._safe_float(row.get("收入比例")),
+                    "gross_margin": self._safe_float(row.get("毛利率")),
+                }
+            )
+        return results
+
     @staticmethod
     def _judge_pledge_risk(ratio: float | None) -> str:
         """Risk level by pledge ratio."""
@@ -1348,7 +1434,7 @@ class AKShareCollector:
         return "极高"
 
     def collect(self) -> AKShareData:
-        """Collect all 12 topics serially and return validated AKShareData."""
+        """Collect all 15 topics serially and return validated AKShareData."""
         results: dict = {}
         industry = ""
 
@@ -1409,6 +1495,22 @@ class AKShareCollector:
         if pledge is not None:
             results["pledge_ratio"] = pledge
 
+        consensus = self._safe_collect("consensus_forecast", self._collect_consensus_forecast)
+        if consensus is not None:
+            results["consensus_forecast"] = consensus
+
+        institutional = self._safe_collect(
+            "institutional_holdings", self._collect_institutional_holdings
+        )
+        if institutional is not None:
+            results["institutional_holdings"] = institutional
+
+        business = self._safe_collect(
+            "business_composition", self._collect_business_composition
+        )
+        if business is not None:
+            results["business_composition"] = business
+
         successful = sum(
             1
             for status in self.topic_status.values()
@@ -1423,7 +1525,7 @@ class AKShareCollector:
 
         logger.info(
             f"AKShare collection completed for {self.symbol}: "
-            f"{successful}/12 topics succeeded ({failed} failed, {len(self.errors)} errors)"
+            f"{successful}/15 topics succeeded ({failed} failed, {len(self.errors)} errors)"
         )
 
         return AKShareData(
@@ -1448,11 +1550,14 @@ def collect_akshare_data(
     if not symbol.isdigit() or len(symbol) != 6:
         raise ValueError(f"Invalid symbol: '{symbol}', expected 6-digit string")
 
-    logger.info(f"Starting AKShare data collection for {symbol} ({name})")
+    logger.info(f"[Module A] Starting AKShare data collection for {symbol} ({name})")
+    start_time = time.time()
     collector = AKShareCollector(symbol, name, market_cache=market_cache)
     result = collector.collect()
+    elapsed = time.time() - start_time
     logger.info(
-        f"AKShare data collection finished for {symbol}: "
-        f"{result.meta.successful_topics}/12 topics, {len(result.meta.data_errors)} errors"
+        f"[Module A] completed for {symbol}: "
+        f"{result.meta.successful_topics}/15 topics, {len(result.meta.data_errors)} errors, "
+        f"elapsed {elapsed:.1f}s"
     )
     return result
