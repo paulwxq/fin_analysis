@@ -6,7 +6,7 @@ import json
 from agent_framework import ChatAgent
 
 from stock_analyzer.exceptions import AgentCallError, ReportGenerationError, TavilySearchError
-from stock_analyzer.llm_helpers import call_agent_with_model, extract_json_str
+from stock_analyzer.llm_helpers import _run_agent_stream, call_agent_with_model, extract_json_str
 from stock_analyzer.logger import logger
 from stock_analyzer.models import ProcessedResult, ResearchResult, SerpQuery, SerpQueryList
 from stock_analyzer.tavily_client import tavily_search
@@ -30,6 +30,8 @@ async def generate_serp_queries(
         for learning in learnings:
             user_message += f"- {learning}\n"
         user_message += "</learnings>\n"
+
+    logger.debug(f"[Module B] query_agent prompt ({len(user_message)} chars):\n{user_message}")
 
     result = await call_agent_with_model(
         agent=query_agent,
@@ -68,6 +70,8 @@ async def process_serp_result(
         "请从中提取关键知识点和值得追问的方向。\n\n"
         f"<search_results>\n{contents_text}\n</search_results>"
     )
+
+    logger.debug(f"[Module B] extract_agent prompt ({len(user_message)} chars):\n{user_message}")
 
     return await call_agent_with_model(
         agent=extract_agent,
@@ -192,6 +196,8 @@ async def generate_report(
     name: str,
     industry: str,
     learnings: list[str],
+    *,
+    stream: bool = False,
 ) -> dict:
     """Generate report dict (without meta) from all learnings."""
     user_message = (
@@ -203,10 +209,15 @@ async def generate_report(
         user_message += f"{index}. {learning}\n"
     user_message += "</learnings>\n"
 
+    logger.debug(f"[Module B] Report prompt payload for {symbol}:\n{user_message}")
+
     try:
         thread = report_agent.get_new_thread()
-        response = await report_agent.run(user_message, thread=thread)
-        raw_text = response.text
+        if stream:
+            raw_text = await _run_agent_stream(report_agent, user_message, thread)
+        else:
+            response = await report_agent.run(user_message, thread=thread)
+            raw_text = response.text
         json_str = extract_json_str(raw_text)
         return json.loads(json_str)
     except json.JSONDecodeError as e:

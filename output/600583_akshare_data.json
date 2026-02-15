@@ -2,7 +2,7 @@
   "meta": {
     "symbol": "600583",
     "name": "海油工程",
-    "query_time": "2026-02-15T00:01:07.206981",
+    "query_time": "2026-02-15T19:12:26.897177",
     "data_errors": [
       "realtime_quote: 调用超时（>60.0s）(stock_zh_a_spot_em) [连续超时 1/3]",
       "valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu",
@@ -137,11 +137,11 @@
   "valuation_history": {
     "current_pe_ttm": 15.0,
     "current_pb": 1.12,
-    "pe_percentile": 44.5,
-    "pb_percentile": 82.1,
+    "pe_percentile": 45.0,
+    "pb_percentile": 81.7,
     "current_ps_ttm": null,
     "current_dv_ttm": null,
-    "history_summary": "PE历史分位44.5%，处于中等位置；PB历史分位82.1%，处于极高位置（历史顶部区域）"
+    "history_summary": "PE历史分位45.0%，处于中等位置；PB历史分位81.7%，处于极高位置（历史顶部区域）"
   },
   "valuation_vs_industry": {
     "stock_pe": 15.00228168,

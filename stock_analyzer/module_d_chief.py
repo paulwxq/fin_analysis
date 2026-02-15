@@ -9,6 +9,7 @@ from stock_analyzer.agents import create_chief_agent
 from stock_analyzer.config import (
     CHIEF_INPUT_MAX_CHARS_TOTAL,
     CHIEF_OUTPUT_RETRIES,
+    CHIEF_USE_STREAM,
     MODEL_CHIEF_AGENT,
 )
 from stock_analyzer.exceptions import AgentCallError, ChiefAnalysisError, ChiefInputError
@@ -245,7 +246,11 @@ async def run_chief_analysis(
         technical_analysis=technical_analysis,
     )
 
-    logger.info(f"Starting chief analysis for {symbol} {name}")
+    start_time = datetime.now()
+    logger.info(f"[Module D] Starting chief analysis for {symbol} {name}")
+
+    # --- Build context and prompt ---
+    logger.info(f"[Module D] Building chief analysis context for {symbol}...")
     try:
         context = build_chief_context(
             akshare_data=akshare_data,
@@ -263,6 +268,10 @@ async def run_chief_analysis(
         raise ChiefAnalysisError(
             f"Failed to build chief prompt: {type(e).__name__}: {e}"
         ) from e
+    logger.info(
+        f"[Module D] Context built for {symbol}: "
+        f"prompt length={len(user_message)} chars"
+    )
 
     if CHIEF_INPUT_MAX_CHARS_TOTAL > 0 and len(user_message) > CHIEF_INPUT_MAX_CHARS_TOTAL:
         raise ChiefInputError(
@@ -270,21 +279,41 @@ async def run_chief_analysis(
             f"{len(user_message)} > {CHIEF_INPUT_MAX_CHARS_TOTAL}"
         )
 
-    logger.debug(f"Chief prompt payload for {symbol}:\n{user_message}")
+    logger.debug(f"[Module D] Chief prompt payload for {symbol}:\n{user_message}")
 
+    # --- Prepare LLM agent ---
     openai_client = create_openai_client()
     chief_client = create_chat_client(openai_client, MODEL_CHIEF_AGENT)
     chief_agent = create_chief_agent(chief_client)
+
+    extra_body = chief_agent.default_options.get("extra_body", {})
+    thinking_enabled = extra_body.get("enable_thinking", False) if isinstance(extra_body, dict) else False
+
+    logger.info(
+        f"[Module D] LLM config: model={MODEL_CHIEF_AGENT}, "
+        f"thinking={thinking_enabled}, stream={CHIEF_USE_STREAM}"
+    )
+    if thinking_enabled and not CHIEF_USE_STREAM:
+        logger.warning(
+            "[Module D] enable_thinking=True but stream=False: "
+            "DashScope may return server-side timeout for non-streaming thinking requests. "
+            "Consider setting CHIEF_USE_STREAM=true."
+        )
 
     max_attempts = max(1, CHIEF_OUTPUT_RETRIES + 1)
     last_error: Exception | None = None
 
     for attempt in range(1, max_attempts + 1):
+        logger.info(
+            f"[Module D] Submitting to LLM (attempt {attempt}/{max_attempts})... "
+            f"{'（thinking 模式，预计等待较久）' if thinking_enabled else ''}"
+        )
         try:
             llm_output = await call_agent_with_model(
                 agent=chief_agent,
                 message=user_message,
                 model_cls=LLMChiefOutput,
+                stream=CHIEF_USE_STREAM,
             )
             llm_output = _apply_confidence_guards(llm_output)
             validate_business_rules(llm_output)
@@ -294,10 +323,12 @@ async def run_chief_analysis(
                 analysis_time=datetime.now().isoformat(),
             )
             final_result = FinalReport(meta=meta, **llm_output.model_dump())
+            elapsed = (datetime.now() - start_time).total_seconds()
             logger.info(
-                f"Chief analysis completed for {symbol}: "
+                f"[Module D] completed for {symbol}: "
                 f"overall_score={final_result.overall_score:.2f}, "
-                f"confidence={final_result.overall_confidence}"
+                f"confidence={final_result.overall_confidence}, "
+                f"elapsed {elapsed:.1f}s"
             )
             return final_result
         except (AgentCallError, ChiefAnalysisError) as e:

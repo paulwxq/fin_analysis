@@ -106,6 +106,7 @@ class TestLookupStockInfo:
 
 
 @pytest.mark.asyncio
+@patch("stock_analyzer.workflow.WORKFLOW_USE_CACHE", False)
 class TestWorkflowRun:
     @patch("stock_analyzer.workflow.lookup_stock_info")
     @patch("stock_analyzer.workflow.collect_akshare_data")

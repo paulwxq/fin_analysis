@@ -1550,11 +1550,14 @@ def collect_akshare_data(
     if not symbol.isdigit() or len(symbol) != 6:
         raise ValueError(f"Invalid symbol: '{symbol}', expected 6-digit string")
 
-    logger.info(f"Starting AKShare data collection for {symbol} ({name})")
+    logger.info(f"[Module A] Starting AKShare data collection for {symbol} ({name})")
+    start_time = time.time()
     collector = AKShareCollector(symbol, name, market_cache=market_cache)
     result = collector.collect()
+    elapsed = time.time() - start_time
     logger.info(
-        f"AKShare data collection finished for {symbol}: "
-        f"{result.meta.successful_topics}/15 topics, {len(result.meta.data_errors)} errors"
+        f"[Module A] completed for {symbol}: "
+        f"{result.meta.successful_topics}/15 topics, {len(result.meta.data_errors)} errors, "
+        f"elapsed {elapsed:.1f}s"
     )
     return result

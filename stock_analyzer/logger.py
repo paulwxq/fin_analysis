@@ -2,9 +2,22 @@
 
 import logging
 import sys
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 from stock_analyzer.config import LOG_FILE_PATH, LOG_LEVEL_CONSOLE, LOG_LEVEL_FILE
+
+_BEIJING_TZ = timezone(timedelta(hours=8))
+
+
+class _BeijingFormatter(logging.Formatter):
+    """Formatter that always uses Beijing time (UTC+8)."""
+
+    def formatTime(self, record, datefmt=None):
+        dt = datetime.fromtimestamp(record.created, tz=_BEIJING_TZ)
+        if datefmt:
+            return dt.strftime(datefmt)
+        return dt.strftime("%Y-%m-%d %H:%M:%S")
 
 
 def setup_logger(name: str = "stock_analyzer") -> logging.Logger:
@@ -18,9 +31,9 @@ def setup_logger(name: str = "stock_analyzer") -> logging.Logger:
 
     console_handler = logging.StreamHandler(sys.stdout)
     console_handler.setLevel(getattr(logging, LOG_LEVEL_CONSOLE.upper(), logging.INFO))
-    console_formatter = logging.Formatter(
-        fmt="%(levelname)s - %(name)s - %(message)s",
-        datefmt="%H:%M:%S",
+    console_formatter = _BeijingFormatter(
+        fmt="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
     )
     console_handler.setFormatter(console_formatter)
     logger.addHandler(console_handler)
@@ -30,7 +43,7 @@ def setup_logger(name: str = "stock_analyzer") -> logging.Logger:
 
     file_handler = logging.FileHandler(log_file, encoding="utf-8")
     file_handler.setLevel(getattr(logging, LOG_LEVEL_FILE.upper(), logging.DEBUG))
-    file_formatter = logging.Formatter(
+    file_formatter = _BeijingFormatter(
         fmt="%(asctime)s - %(levelname)s - %(name)s - %(module)s:%(lineno)d - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
     )

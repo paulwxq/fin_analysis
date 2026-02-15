@@ -17,9 +17,18 @@ DASHSCOPE_BASE_URL: str = os.getenv(
 TAVILY_API_KEY: str = os.getenv("TAVILY_API_KEY", "")
 
 # Model selection
+# qwen-plus
 MODEL_QUERY_AGENT: str = os.getenv("MODEL_QUERY_AGENT", "qwen-plus")
 MODEL_EXTRACT_AGENT: str = os.getenv("MODEL_EXTRACT_AGENT", "qwen-plus")
-MODEL_REPORT_AGENT: str = os.getenv("MODEL_REPORT_AGENT", "MiniMax-M2.1")
+MODEL_REPORT_AGENT: str = os.getenv("MODEL_REPORT_AGENT", "qwen3-max")
+
+# Report agent thinking/stream settings
+REPORT_USE_STREAM: bool = (
+    os.getenv("REPORT_USE_STREAM", "true").lower() == "true"
+)
+
+# Retry times when report agent output fails validation
+REPORT_OUTPUT_RETRIES: int = int(os.getenv("REPORT_OUTPUT_RETRIES", "3"))
 
 # Deep research params
 DEFAULT_BREADTH: int = int(os.getenv("DEFAULT_BREADTH", "3"))
@@ -78,7 +87,7 @@ AKSHARE_MARKET_CACHE_TTL_SEC: int = int(
 # ============================================================
 
 # LLM model used by technical analysis agent
-MODEL_TECHNICAL_AGENT: str = os.getenv("MODEL_TECHNICAL_AGENT", "Kimi-K2.5")
+MODEL_TECHNICAL_AGENT: str = os.getenv("MODEL_TECHNICAL_AGENT", "qwen3-max")
 
 # AKShare monthly k-line fetch params
 TECH_START_DATE: str = os.getenv("TECH_START_DATE", "20000101")
@@ -91,6 +100,11 @@ TECH_AGENT_LOOKBACK_MONTHS: int = int(
 
 # Retry times when technical agent output fails validation
 TECH_OUTPUT_RETRIES: int = int(os.getenv("TECH_OUTPUT_RETRIES", "3"))
+
+# Use streaming mode for technical agent (avoids DashScope server-side timeout with thinking models)
+TECH_USE_STREAM: bool = (
+    os.getenv("TECH_USE_STREAM", "true").lower() == "true"
+)
 
 # Minimum monthly bars to enter full technical pipeline
 TECH_MIN_MONTHS: int = int(os.getenv("TECH_MIN_MONTHS", "24"))
@@ -131,6 +145,11 @@ CHIEF_INPUT_MAX_CHARS_TOTAL: int = int(
 # Retry times when chief agent output fails validation
 CHIEF_OUTPUT_RETRIES: int = int(os.getenv("CHIEF_OUTPUT_RETRIES", "1"))
 
+# Use streaming mode for chief agent (avoids DashScope server-side timeout with thinking models)
+CHIEF_USE_STREAM: bool = (
+    os.getenv("CHIEF_USE_STREAM", "true").lower() == "true"
+)
+
 # ============================================================
 # Workflow: orchestration config
 # ============================================================
@@ -140,7 +159,7 @@ WORKFLOW_OUTPUT_DIR: str = os.getenv("WORKFLOW_OUTPUT_DIR", "output")
 
 # When True, reuse cached A/B/C JSON from output/ if available; otherwise run modules fresh.
 WORKFLOW_USE_CACHE: bool = (
-    os.getenv("WORKFLOW_USE_CACHE", "true").lower() == "true"
+    os.getenv("WORKFLOW_USE_CACHE", "false").lower() == "true"
 )
 
 # Whether to save intermediate A/B/C JSON outputs to disk during workflow run
