@@ -1,5 +1,15 @@
-from load_data import db
 import logging
+import sys
+from pathlib import Path
+
+try:
+    from . import db
+except ImportError:
+    # Support direct execution: python load_data/reset_db.py
+    project_root = Path(__file__).resolve().parent.parent
+    if str(project_root) not in sys.path:
+        sys.path.insert(0, str(project_root))
+    from load_data import db
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -30,4 +40,3 @@ def reset_tables():
 
 if __name__ == "__main__":
     reset_tables()
-
