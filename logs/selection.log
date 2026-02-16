@@ -3634,3 +3634,59 @@ LINE 251: LIMIT {sql_limit}
 2026-02-11 17:55:41 | INFO     | selection:473 | Filtering 4 ST stocks (markers: ST, *ST, S*ST, SST, 退市, PT, 终止上市)
 2026-02-11 17:59:14 | INFO     | selection:42 | Screener initialized with preset: balanced
 2026-02-11 17:59:14 | INFO     | selection:473 | Filtering 4 ST stocks (markers: ST, *ST, S*ST, SST, 退市, PT, 终止上市)
+2026-02-16 22:27:47 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 22:27:47 | ERROR    | selection:657 | Database write failed: Database connection failed: host not reachable
+2026-02-16 22:27:47 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 22:27:47 | INFO     | selection:473 | Filtering 4 ST stocks (markers: ST, *ST, S*ST, SST, 退市, PT, 终止上市)
+2026-02-16 23:05:45 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:45 | ERROR    | selection:657 | Database write failed: Database connection failed: host not reachable
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | DEBUG    | selection:390 | Initial price is zero, skipping trend calculation
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | INFO     | selection:473 | Filtering 2 ST stocks (markers: ST, *ST, S*ST, SST, 退市, PT, 终止上市)
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | INFO     | selection:473 | Filtering 3 ST stocks (markers: ST, *ST, S*ST, SST, 退市, PT, 终止上市)
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | INFO     | selection:473 | Filtering 2 ST stocks (markers: ST, *ST, S*ST, SST, 退市, PT, 终止上市)
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | WARNING  | selection:443 | 'name' column not found, skipping ST filtering
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:46 | INFO     | selection:473 | Filtering 4 ST stocks (markers: ST, *ST, S*ST, SST, 退市, PT, 终止上市)
+2026-02-16 23:05:59 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:05:59 | ERROR    | selection:657 | Database write failed: Database connection failed: host not reachable
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | DEBUG    | selection:390 | Initial price is zero, skipping trend calculation
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | INFO     | selection:473 | Filtering 2 ST stocks (markers: ST, *ST, S*ST, SST, 退市, PT, 终止上市)
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | INFO     | selection:473 | Filtering 3 ST stocks (markers: ST, *ST, S*ST, SST, 退市, PT, 终止上市)
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | INFO     | selection:473 | Filtering 2 ST stocks (markers: ST, *ST, S*ST, SST, 退市, PT, 终止上市)
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | WARNING  | selection:443 | 'name' column not found, skipping ST filtering
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | INFO     | selection:42 | Screener initialized with preset: balanced
+2026-02-16 23:06:00 | INFO     | selection:473 | Filtering 4 ST stocks (markers: ST, *ST, S*ST, SST, 退市, PT, 终止上市)

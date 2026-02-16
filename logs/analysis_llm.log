@@ -7027,3 +7027,8 @@ RuntimeError: Step2 failed to produce valid output for 603080.SH. No valid Score
 2026-02-11 17:59:14,365 - ERROR - analysis_llm - 未在事件流中找到有效的 ScoreAgent 输出
 2026-02-11 17:59:14,737 - DEBUG - analysis_llm - 初始化全局 HTTP 客户端（连接池：max_keepalive=10, max_connections=20）
 2026-02-11 17:59:25,618 - DEBUG - analysis_llm - 关闭 HTTP 客户端时出错（已忽略）: An asyncio.Future, a coroutine or an awaitable is required
+2026-02-16 22:28:00,687 - DEBUG - agent_framework - The provider name 'openai' is not recognized. Consider using one of the following: OPENAI, ANTHROPIC, COHERE, MISTRALAI, OLLAMA, GROQ, ALEPH_ALPHA, REPLICATE, TOGETHER_AI, WATSONX, HUGGINGFACE, FIREWORKS, AZURE, AWS, GOOGLE, OPENROUTER, LANGCHAIN, CREWAI
+2026-02-16 22:28:00,699 - DEBUG - agent_framework - The provider name 'openai' is not recognized. Consider using one of the following: OPENAI, ANTHROPIC, COHERE, MISTRALAI, OLLAMA, GROQ, ALEPH_ALPHA, REPLICATE, TOGETHER_AI, WATSONX, HUGGINGFACE, FIREWORKS, AZURE, AWS, GOOGLE, OPENROUTER, LANGCHAIN, CREWAI
+2026-02-16 22:28:00,724 - DEBUG - agent_framework - The provider name 'openai' is not recognized. Consider using one of the following: OPENAI, ANTHROPIC, COHERE, MISTRALAI, OLLAMA, GROQ, ALEPH_ALPHA, REPLICATE, TOGETHER_AI, WATSONX, HUGGINGFACE, FIREWORKS, AZURE, AWS, GOOGLE, OPENROUTER, LANGCHAIN, CREWAI
+2026-02-16 22:30:18,527 - DEBUG - analysis_llm - 内容验证通过
+2026-02-16 22:30:18,528 - DEBUG - analysis_llm - 内容验证通过

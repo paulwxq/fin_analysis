@@ -222,14 +222,14 @@ if __name__ == "__main__":
 
 ```bash
 # 1. 单只股票 (兼容旧用法)
-python -m visualization.plot_kline 600000
+python -m flatbottom_pipeline.visualization.plot_kline 600000
 
 # 2. 批量处理 (文件在 visualization 目录下)
-python -m visualization.plot_kline -f visualization/my_stocks.txt
+python -m flatbottom_pipeline.visualization.plot_kline -f visualization/my_stocks.txt
 
 # 3. 混合使用 (文件 + 命令行追加)
-python -m visualization.plot_kline 000001 -f list.txt
+python -m flatbottom_pipeline.visualization.plot_kline 000001 -f list.txt
 
 # 4. 从预选表读取 (按 score DESC)
-python -m visualization.plot_kline --from-preselect-table
+python -m flatbottom_pipeline.visualization.plot_kline --from-preselect-table
 ```

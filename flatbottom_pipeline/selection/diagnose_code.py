@@ -2,7 +2,7 @@
 Diagnose why a single stock code is filtered out.
 
 Usage:
-  .venv/bin/python -m selection.diagnose_code --code 600583 --preset balanced
+  .venv/bin/python -m flatbottom_pipeline.selection.diagnose_code --code 600583 --preset balanced
 """
 import argparse
 from typing import Optional
@@ -12,7 +12,7 @@ from scipy import stats
 
 from load_data.db import get_db_connection
 from load_data.stock_code import classify_cn_stock
-from selection.config import get_config, validate_config
+from flatbottom_pipeline.selection.config import get_config, validate_config
 
 
 def _calculate_trend(prices: np.ndarray) -> tuple[float, float]:

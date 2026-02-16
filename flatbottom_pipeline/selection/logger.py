@@ -5,14 +5,14 @@ from logging.handlers import RotatingFileHandler
 from pathlib import Path
 
 # Import logging configuration from config module
-from selection import config
+from flatbottom_pipeline.selection import config
 
 
 def setup_logger(name: str = 'selection', log_level: str = 'INFO') -> logging.Logger:
     """
     Setup logger with console and file handlers.
 
-    Configuration is loaded from selection.config module:
+    Configuration is loaded from flatbottom_pipeline.selection.config module:
     - CONSOLE_LOG_LEVEL: Console handler level
     - FILE_LOG_LEVEL: File handler level
     - LOG_FORMAT_CONSOLE: Console message format
@@ -44,7 +44,7 @@ def setup_logger(name: str = 'selection', log_level: str = 'INFO') -> logging.Lo
         return logger
 
     # Create logs directory if not exists
-    log_dir = Path(__file__).parent.parent / config.LOG_DIR
+    log_dir = Path(__file__).resolve().parents[2] / config.LOG_DIR
     log_dir.mkdir(exist_ok=True)
 
     # Console handler (use config level)

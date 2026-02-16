@@ -1383,3 +1383,11 @@ tenacity.RetryError: RetryError[<Future at 0x78f5eb6a3c20 state=finished raised 
 2026-01-29 16:09:41 [INFO] [main] High Score (>= 6.0): 8
 2026-01-29 16:09:41 [INFO] [main] DB Inserted: 8
 2026-01-29 16:09:41 [INFO] [main] ========================================
+2026-02-16 23:05:45 [INFO] [image_loader] Found 2 valid images in /output
+2026-02-16 23:05:45 [INFO] [image_loader] Found 0 valid images in /empty
+2026-02-16 23:05:46 [ERROR] [llm_analyzer] JSON Parse Error for TEST: Expecting value: line 1 column 1 (char 0)
+2026-02-16 23:05:46 [DEBUG] [llm_analyzer] Raw Response: This is not JSON at all
+2026-02-16 23:05:59 [INFO] [image_loader] Found 2 valid images in /output
+2026-02-16 23:05:59 [INFO] [image_loader] Found 0 valid images in /empty
+2026-02-16 23:06:00 [ERROR] [llm_analyzer] JSON Parse Error for TEST: Expecting value: line 1 column 1 (char 0)
+2026-02-16 23:06:00 [DEBUG] [llm_analyzer] Raw Response: This is not JSON at all
