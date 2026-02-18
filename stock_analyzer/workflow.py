@@ -91,18 +91,47 @@ class StockLookupInfo(TypedDict):
 
 
 def lookup_stock_info(symbol: str) -> StockLookupInfo:
-    """Look up stock metadata by 6-digit symbol via AKShare."""
-    try:
-        df = ak.stock_individual_info_em(symbol=symbol)
-    except Exception as e:
-        raise StockInfoLookupError(
-            f"AKShare lookup failed for symbol {symbol}: {type(e).__name__}: {e}"
-        ) from e
+    """Look up stock metadata by 6-digit symbol via AKShare with retry."""
+    max_retries = 3
+    last_error: Exception | None = None
+    df = None
 
+    for attempt in range(max_retries + 1):
+        try:
+            df = ak.stock_individual_info_em(symbol=symbol)
+            if df is not None and not df.empty:
+                # 成功获取数据，跳出重试循环
+                break
+            # 如果 df 为空，视为失败，抛出 ValueError 触发重试逻辑
+            raise ValueError(f"AKShare returned empty data for symbol {symbol}")
+
+        except Exception as e:
+            last_error = e
+            if attempt < max_retries:
+                wait_time = 2**attempt  # 1s, 2s, 4s
+                logger.warning(
+                    f"[Workflow] Stock info lookup failed (attempt {attempt + 1}/{max_retries + 1}): "
+                    f"{type(e).__name__}: {e}. Retrying in {wait_time}s..."
+                )
+                import time
+
+                time.sleep(wait_time)
+            else:
+                logger.error(
+                    f"[Workflow] Stock info lookup failed after {max_retries + 1} attempts."
+                )
+
+    # 循环结束后，如果 df 仍无效，则抛出最终异常
     if df is None or df.empty:
-        raise StockInfoLookupError(
-            f"AKShare returned empty data for symbol {symbol}"
-        )
+        if last_error:
+            raise StockInfoLookupError(
+                f"AKShare lookup failed for symbol {symbol} after retries: "
+                f"{type(last_error).__name__}: {last_error}"
+            ) from last_error
+        else:
+             raise StockInfoLookupError(
+                f"AKShare returned empty data for symbol {symbol} (unexpected flow)"
+            )
 
     def _get(field: str) -> str:
         rows = df[df["item"] == field]["value"]

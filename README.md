@@ -64,8 +64,9 @@ fin_analysis/
 - 技术栈：`akshare`、`pandas`、`pandas-ta`、`agent-framework`、`openai`、`tavily`、`pydantic`。
 
 ### 5) `qwen3`
-- 作用：Qwen 客户端封装层（文本、视觉、deep-research）。
+- 作用：Qwen 客户端封装层（文本、视觉、deep-research），基于 DashScope 原生 SDK 实现。
 - 技术栈：`dashscope`、`agent-framework`。
+- **状态**：**未启用 (Idle)**。当前主业务逻辑 (`stock_analyzer`) 仍使用 OpenAI 兼容模式。本模块作为未来架构储备保留，用于在需要原生 SDK 高级特性时进行替换。
 
 ## 依赖关系（代码层）
 
