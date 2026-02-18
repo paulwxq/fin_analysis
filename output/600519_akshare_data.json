@@ -2,16 +2,15 @@
   "meta": {
     "symbol": "600519",
     "name": "贵州茅台",
-    "query_time": "2026-02-18T07:09:28.425109",
+    "query_time": "2026-02-18T10:31:03.386746",
     "data_errors": [
-      "realtime_quote: 调用超时（>120.0s）(stock_zh_a_spot_em) [连续超时 1/3]",
       "valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu",
       "institutional_holdings: 返回数据为空 (stock_institute_hold_detail)"
     ],
-    "successful_topics": 14,
+    "successful_topics": 15,
     "topic_status": {
       "company_info": "ok",
-      "realtime_quote": "failed",
+      "realtime_quote": "ok",
       "financial_indicators": "ok",
       "valuation_history": "ok",
       "valuation_vs_industry": "ok",
@@ -35,7 +34,18 @@
     "total_shares": 12.5227,
     "circulating_shares": 12.5227
   },
-  "realtime_quote": null,
+  "realtime_quote": {
+    "price": 1485.3,
+    "change_pct": -0.09,
+    "volume": 41679.0,
+    "turnover": 6216379203.0,
+    "pe_ttm": null,
+    "pb": null,
+    "turnover_rate": 0.33,
+    "volume_ratio": 0.84,
+    "change_60d_pct": 2.64,
+    "change_ytd_pct": 4.16
+  },
   "financial_indicators": [
     {
       "report_date": "2025-09-30",

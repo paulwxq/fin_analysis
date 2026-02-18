@@ -2,16 +2,16 @@
   "meta": {
     "symbol": "600583",
     "name": "海油工程",
-    "query_time": "2026-02-15T19:12:26.897177",
+    "query_time": "2026-02-18T14:18:51.286218",
     "data_errors": [
-      "realtime_quote: 调用超时（>60.0s）(stock_zh_a_spot_em) [连续超时 1/3]",
       "valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu",
+      "pledge_ratio: ChunkedEncodingError - Response ended prematurely (stock_gpzy_pledge_ratio_em)",
       "institutional_holdings: 返回数据为空 (stock_institute_hold_detail)"
     ],
     "successful_topics": 14,
     "topic_status": {
       "company_info": "ok",
-      "realtime_quote": "failed",
+      "realtime_quote": "ok",
       "financial_indicators": "ok",
       "valuation_history": "ok",
       "valuation_vs_industry": "ok",
@@ -21,7 +21,7 @@
       "shareholder_count": "ok",
       "dividend_history": "ok",
       "earnings_forecast": "no_data",
-      "pledge_ratio": "ok",
+      "pledge_ratio": "failed",
       "consensus_forecast": "ok",
       "institutional_holdings": "ok",
       "business_composition": "ok"
@@ -35,7 +35,18 @@
     "total_shares": 44.2135,
     "circulating_shares": 44.2135
   },
-  "realtime_quote": null,
+  "realtime_quote": {
+    "price": 6.86,
+    "change_pct": -5.25,
+    "volume": 1092629.0,
+    "turnover": 757932144.0,
+    "pe_ttm": null,
+    "pb": null,
+    "turnover_rate": 2.47,
+    "volume_ratio": 1.04,
+    "change_60d_pct": 20.35,
+    "change_ytd_pct": 23.38
+  },
   "financial_indicators": [
     {
       "report_date": "2025-09-30",
@@ -138,10 +149,10 @@
     "current_pe_ttm": 15.0,
     "current_pb": 1.12,
     "pe_percentile": 45.0,
-    "pb_percentile": 81.7,
+    "pb_percentile": 81.6,
     "current_ps_ttm": null,
     "current_dv_ttm": null,
-    "history_summary": "PE历史分位45.0%，处于中等位置；PB历史分位81.7%，处于极高位置（历史顶部区域）"
+    "history_summary": "PE历史分位45.0%，处于中等位置；PB历史分位81.6%，处于极高位置（历史顶部区域）"
   },
   "valuation_vs_industry": {
     "stock_pe": 15.00228168,
@@ -274,11 +285,7 @@
     "forecast_range": null,
     "available": false
   },
-  "pledge_ratio": {
-    "ratio_pct": 0.0,
-    "pledged_shares": null,
-    "risk_level": "低"
-  },
+  "pledge_ratio": null,
   "consensus_forecast": [
     {
       "year": "2025",
