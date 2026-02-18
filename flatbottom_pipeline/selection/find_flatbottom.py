@@ -18,10 +18,10 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 
-from load_data.db import get_db_connection
-from load_data.stock_code import classify_cn_stock
-from selection.config import get_config, validate_config, print_config, DEFAULT_PRESET
-from selection.logger import logger
+from data_infra.db import get_db_connection
+from data_infra.stock_code import classify_cn_stock
+from flatbottom_pipeline.selection.config import get_config, validate_config, print_config, DEFAULT_PRESET
+from flatbottom_pipeline.selection.logger import logger
 
 
 class FlatbottomScreener:
@@ -706,13 +706,13 @@ def main():
         epilog='''
 Examples:
   # Use balanced preset
-  python -m selection.find_flatbottom --preset balanced
+  python -m flatbottom_pipeline.selection.find_flatbottom --preset balanced
 
   # Override specific parameters
-  python -m selection.find_flatbottom --preset balanced --min-drawdown -0.50 --exclude-st
+  python -m flatbottom_pipeline.selection.find_flatbottom --preset balanced --min-drawdown -0.50 --exclude-st
 
   # Show current configuration
-  python -m selection.find_flatbottom --show-config
+  python -m flatbottom_pipeline.selection.find_flatbottom --show-config
         '''
     )
     parser.add_argument(
@@ -853,7 +853,7 @@ Examples:
     preset = args.preset or DEFAULT_PRESET
 
     # Get configuration with overrides (auto-validates)
-    from selection.config import get_config
+    from flatbottom_pipeline.selection.config import get_config
     try:
         config = get_config(preset, **overrides)
         validate_config(config)

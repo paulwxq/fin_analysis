@@ -152,7 +152,7 @@ WHERE drawdown >= 0.5
 
 ### 6.2 Python 模块结构建议
 ```
-load_data/
+data_infra/
   aggregate.py
   screen_flat_pan.py        # 新增：筛选入口
   features.py               # 特征提取

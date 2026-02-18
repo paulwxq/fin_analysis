@@ -1,5 +1,5 @@
 import zipfile, csv, io, os
-from load_data import db, loader, config, utils
+from data_infra import db, loader, config, utils
 from datetime import datetime
 
 def test_tiny_load():

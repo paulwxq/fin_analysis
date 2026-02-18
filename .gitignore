@@ -4,3 +4,5 @@ __pycache__/
 .venv/
 tmp/
 load_errors.log
+logs/
+output/

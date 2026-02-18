@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 import math
-from load_data import loader, config
+from data_infra import loader, config
 
 class TestLoaderCleaning(unittest.TestCase):
     

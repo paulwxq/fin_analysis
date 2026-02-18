@@ -3,14 +3,10 @@
 
 import sys
 import pandas as pd
-from pathlib import Path
 from unittest.mock import patch, MagicMock
 
-# Add parent directory to path
-sys.path.insert(0, str(Path(__file__).parent))
-
-from selection.find_flatbottom import FlatbottomScreener
-from selection.config import get_config
+from flatbottom_pipeline.selection.find_flatbottom import FlatbottomScreener
+from flatbottom_pipeline.selection.config import get_config
 
 
 def test_bug8_connection_failure_preserves_original_error():
@@ -44,7 +40,7 @@ def test_bug8_connection_failure_preserves_original_error():
     # Mock get_db_connection to raise exception
     original_error_msg = "Database connection failed: host not reachable"
 
-    with patch('selection.find_flatbottom.get_db_connection') as mock_conn:
+    with patch('flatbottom_pipeline.selection.find_flatbottom.get_db_connection') as mock_conn:
         mock_conn.side_effect = Exception(original_error_msg)
 
         try:

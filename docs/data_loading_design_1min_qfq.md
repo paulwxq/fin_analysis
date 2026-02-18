@@ -100,13 +100,13 @@ ALTER TABLE stock_1min_qfq SET (
 ## 5. 模块设计
 
 ### 5.1 目录结构
-在项目根目录下创建 `load_data` 模块：
+在项目根目录下创建 `data_infra` 模块：
 
 ```
 /opt/fin_analysis/
 ├── .env                  # 数据库连接信息
 ├── pyproject.toml        # 依赖管理
-├── load_data/
+├── data_infra/
 │   ├── __init__.py
 │   ├── config.py         # 配置加载 (读取 .env)
 │   ├── db.py             # 数据库连接与初始化
@@ -301,7 +301,7 @@ ALTER TABLE stock_1min_qfq SET (
    按照上述模块结构编写代码。
 
 4. **执行加载**:
-   运行 `python -m load_data.main`。
+   运行 `python -m data_infra.main`。
 
 5. **验证**:
    查询数据库确认数据完整性。

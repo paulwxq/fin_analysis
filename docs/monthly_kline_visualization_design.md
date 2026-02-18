@@ -19,9 +19,9 @@ uv add pandas "mplfinance>=0.12.7"
 
 ### 2.2 模块复用
 
-*   `load_data.config`: 数据库配置。
-*   `load_data.db`: 数据库连接。
-*   `load_data.stock_code`: A 股标准化规则库。
+*   `data_infra.config`: 数据库配置。
+*   `data_infra.db`: 数据库连接。
+*   `data_infra.stock_code`: A 股标准化规则库。
 
 ## 3. 模块设计
 
@@ -74,8 +74,8 @@ import pandas as pd
 import mplfinance as mpf
 import psycopg
 from datetime import datetime
-from load_data.db import get_db_connection
-from load_data.stock_code import classify_cn_stock
+from data_infra.db import get_db_connection
+from data_infra.stock_code import classify_cn_stock
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -222,14 +222,14 @@ if __name__ == "__main__":
 
 ```bash
 # 1. 单只股票 (兼容旧用法)
-python -m visualization.plot_kline 600000
+python -m flatbottom_pipeline.visualization.plot_kline 600000
 
 # 2. 批量处理 (文件在 visualization 目录下)
-python -m visualization.plot_kline -f visualization/my_stocks.txt
+python -m flatbottom_pipeline.visualization.plot_kline -f visualization/my_stocks.txt
 
 # 3. 混合使用 (文件 + 命令行追加)
-python -m visualization.plot_kline 000001 -f list.txt
+python -m flatbottom_pipeline.visualization.plot_kline 000001 -f list.txt
 
 # 4. 从预选表读取 (按 score DESC)
-python -m visualization.plot_kline --from-preselect-table
+python -m flatbottom_pipeline.visualization.plot_kline --from-preselect-table
 ```

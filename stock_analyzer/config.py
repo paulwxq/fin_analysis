@@ -17,10 +17,11 @@ DASHSCOPE_BASE_URL: str = os.getenv(
 TAVILY_API_KEY: str = os.getenv("TAVILY_API_KEY", "")
 
 # Model selection
-# qwen-plus
-MODEL_QUERY_AGENT: str = os.getenv("MODEL_QUERY_AGENT", "qwen-plus")
-MODEL_EXTRACT_AGENT: str = os.getenv("MODEL_EXTRACT_AGENT", "qwen-plus")
-MODEL_REPORT_AGENT: str = os.getenv("MODEL_REPORT_AGENT", "qwen3-max")
+# qwen-plus / qwen3.5-plus
+MODEL_QUERY_AGENT: str = os.getenv("MODEL_QUERY_AGENT", "qwen3.5-plus")
+MODEL_EXTRACT_AGENT: str = os.getenv("MODEL_EXTRACT_AGENT", "qwen3.5-plus")
+# qwen3-max / qwen3.5-plus
+MODEL_REPORT_AGENT: str = os.getenv("MODEL_REPORT_AGENT", "qwen3.5-plus")
 
 # Report agent thinking/stream settings
 REPORT_USE_STREAM: bool = (
@@ -31,7 +32,7 @@ REPORT_USE_STREAM: bool = (
 REPORT_OUTPUT_RETRIES: int = int(os.getenv("REPORT_OUTPUT_RETRIES", "3"))
 
 # Deep research params
-DEFAULT_BREADTH: int = int(os.getenv("DEFAULT_BREADTH", "3"))
+DEFAULT_BREADTH: int = int(os.getenv("DEFAULT_BREADTH", "2"))
 DEFAULT_DEPTH: int = int(os.getenv("DEFAULT_DEPTH", "2"))
 TAVILY_MAX_RESULTS: int = int(os.getenv("TAVILY_MAX_RESULTS", "5"))
 
@@ -53,7 +54,7 @@ LOG_FILE_PATH: str = os.getenv("LOG_FILE_PATH", "logs/stock_analyzer.log")
 AKSHARE_CALL_INTERVAL: float = float(os.getenv("AKSHARE_CALL_INTERVAL", "3.0"))
 
 # AKShare per-call timeout seconds
-AKSHARE_CALL_TIMEOUT: float = float(os.getenv("AKSHARE_CALL_TIMEOUT", "60.0"))
+AKSHARE_CALL_TIMEOUT: float = float(os.getenv("AKSHARE_CALL_TIMEOUT", "120.0"))
 
 # Retry times when one AKShare call hits timeout (in addition to first attempt)
 AKSHARE_TIMEOUT_RETRIES: int = int(os.getenv("AKSHARE_TIMEOUT_RETRIES", "3"))
@@ -87,7 +88,9 @@ AKSHARE_MARKET_CACHE_TTL_SEC: int = int(
 # ============================================================
 
 # LLM model used by technical analysis agent
-MODEL_TECHNICAL_AGENT: str = os.getenv("MODEL_TECHNICAL_AGENT", "qwen3-max")
+# qwen3-max
+# qwen3.5-plus
+MODEL_TECHNICAL_AGENT: str = os.getenv("MODEL_TECHNICAL_AGENT", "qwen3.5-plus")
 
 # AKShare monthly k-line fetch params
 TECH_START_DATE: str = os.getenv("TECH_START_DATE", "20000101")
@@ -133,9 +136,9 @@ TECH_KDJ_SMOOTH: int = int(os.getenv("TECH_KDJ_SMOOTH", "3"))
 # deepseek-v3.2
 # MiniMax/MiniMax-M2.5
 # qwen3-max
-# qwen3-max
+# qwen3.5-plus
 # MiniMax-M2.1
-MODEL_CHIEF_AGENT: str = os.getenv("MODEL_CHIEF_AGENT", "qwen3-max")
+MODEL_CHIEF_AGENT: str = os.getenv("MODEL_CHIEF_AGENT", "qwen3.5-plus")
 
 # Total context soft guard (0 means disabled / no limit)
 CHIEF_INPUT_MAX_CHARS_TOTAL: int = int(
@@ -169,7 +172,7 @@ WORKFLOW_SAVE_INTERMEDIATE: bool = (
 
 # Total timeout in seconds for the parallel A/B/C phase.
 # Accepts any integer: positive = timeout in seconds; 0 or negative = no limit.
-WORKFLOW_PARALLEL_TIMEOUT: int = int(os.getenv("WORKFLOW_PARALLEL_TIMEOUT", "1800"))
+WORKFLOW_PARALLEL_TIMEOUT: int = int(os.getenv("WORKFLOW_PARALLEL_TIMEOUT", "3600"))
 
 # Warn when module A succeeds on fewer than this many topics (out of 15)
 WORKFLOW_AKSHARE_MIN_TOPICS_WARN: int = int(

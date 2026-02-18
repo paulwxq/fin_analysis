@@ -353,35 +353,101 @@ class AKShareCollector:
             return None
 
     def _collect_realtime_quote(self) -> dict | None:
-        """主题②：实时行情快照。"""
-        df = self.safe_call_market_cached(
-            "stock_zh_a_spot_em",
+        """主题②：实时行情快照。
+
+        使用 stock_bid_ask_em 单股查询获取基础行情（<1s），
+        再用 stock_zh_a_hist 日线数据精确计算 60日/YTD 涨跌幅（QFQ）。
+        PE/PB 已由 valuation_history (Topic 4) 覆盖，此处不再重复获取。
+        """
+        # --- 1) 盘口快照 ---
+        df_bid = self.safe_call(
             "realtime_quote",
-            ak.stock_zh_a_spot_em,
+            ak.stock_bid_ask_em,
+            symbol=self.symbol,
         )
-        if df is None:
+        if df_bid is None or df_bid.empty:
             return None
 
-        row = self._safe_filter(df, "代码", self.symbol, "realtime_quote")
-        if row.empty:
-            msg = f"realtime_quote: 全市场数据中未找到 {self.symbol}"
+        bid_map = dict(zip(df_bid["item"], df_bid["value"]))
+        result = {
+            "price": self._safe_float(bid_map.get("最新")),
+            "change_pct": self._safe_float(bid_map.get("涨幅")),
+            "volume": self._safe_float(bid_map.get("总手")),
+            "turnover": self._safe_float(bid_map.get("金额")),
+            "pe_ttm": None,
+            "pb": None,
+            "turnover_rate": self._safe_float(bid_map.get("换手")),
+            "volume_ratio": self._safe_float(bid_map.get("量比")),
+            "change_60d_pct": None,
+            "change_ytd_pct": None,
+        }
+
+        # --- 2) 精确涨跌幅（QFQ 日线） ---
+        pct = self._fetch_precise_price_changes()
+        if pct is not None:
+            result["change_60d_pct"] = pct.get("change_60d_pct")
+            result["change_ytd_pct"] = pct.get("change_ytd_pct")
+
+        return result
+
+    def _fetch_precise_price_changes(self) -> dict | None:
+        """基于前复权日线计算 60日涨跌幅 和 年初至今涨跌幅。"""
+        today = date.today()
+        # 拉取当年初前 90 天（覆盖 60 个交易日 + 节假日余量）
+        year_start = date(today.year, 1, 1)
+        fetch_start = date(today.year - 1, 10, 1)  # 保守起点
+
+        df = self.safe_call(
+            "realtime_quote_hist",
+            ak.stock_zh_a_hist,
+            symbol=self.symbol,
+            period="daily",
+            start_date=fetch_start.strftime("%Y%m%d"),
+            end_date=today.strftime("%Y%m%d"),
+            adjust="qfq",
+        )
+        if df is None or df.empty:
+            return None
+
+        if "日期" not in df.columns or "收盘" not in df.columns:
+            msg = (
+                f"realtime_quote_hist: 缺少必要列，"
+                f"实际列名: {list(df.columns)[:10]}"
+            )
             self.errors.append(msg)
             logger.warning(msg)
             return None
 
-        r = row.iloc[0]
-        return {
-            "price": self._safe_float(r.get("最新价")),
-            "change_pct": self._safe_float(r.get("涨跌幅")),
-            "volume": self._safe_float(r.get("成交量")),
-            "turnover": self._safe_float(r.get("成交额")),
-            "pe_ttm": self._safe_float(r.get("市盈率-动态")),
-            "pb": self._safe_float(r.get("市净率")),
-            "turnover_rate": self._safe_float(r.get("换手率")),
-            "volume_ratio": self._safe_float(r.get("量比")),
-            "change_60d_pct": self._safe_float(r.get("60日涨跌幅")),
-            "change_ytd_pct": self._safe_float(r.get("年初至今涨跌幅")),
+        df = df.assign(
+            _date=pd.to_datetime(df["日期"], errors="coerce"),
+            _close=pd.to_numeric(df["收盘"], errors="coerce"),
+        ).dropna(subset=["_date", "_close"]).sort_values("_date")
+
+        if len(df) < 2:
+            return None
+
+        latest_close = df["_close"].iloc[-1]
+        result: dict[str, float | None] = {
+            "change_60d_pct": None,
+            "change_ytd_pct": None,
         }
+
+        # 60日涨跌幅
+        if len(df) > 60:
+            close_60d = df["_close"].iloc[-61]
+            result["change_60d_pct"] = round(
+                (latest_close / close_60d - 1) * 100, 2
+            )
+
+        # 年初至今涨跌幅
+        ytd_df = df[df["_date"] >= pd.Timestamp(year_start)]
+        if len(ytd_df) >= 2:
+            first_close = ytd_df["_close"].iloc[0]
+            result["change_ytd_pct"] = round(
+                (latest_close / first_close - 1) * 100, 2
+            )
+
+        return result
 
     @staticmethod
     def _safe_float(value) -> float | None:

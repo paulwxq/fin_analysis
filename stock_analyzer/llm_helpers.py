@@ -70,6 +70,7 @@ async def call_agent_with_model(
                 long-running models like thinking-enabled qwen3-max).
     """
     thread = agent.get_new_thread()
+    raw_text = None
     try:
         if stream:
             raw_text = await _run_agent_stream(agent, message, thread)
@@ -83,9 +84,13 @@ async def call_agent_with_model(
             f"Agent '{agent.name}' validation failed: {e.error_count()} errors; "
             f"first={e.errors()[0] if e.errors() else 'unknown'}"
         )
+        if raw_text is not None:
+            logger.debug(f"Agent '{agent.name}' raw output: {raw_text}")
         raise AgentCallError(agent_name=agent.name, cause=e) from e
     except Exception as e:
         logger.error(f"Agent '{agent.name}' call failed: {e}")
+        if raw_text is not None:
+            logger.debug(f"Agent '{agent.name}' raw output: {raw_text}")
         raise AgentCallError(agent_name=agent.name, cause=e) from e
 
 

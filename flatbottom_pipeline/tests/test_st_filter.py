@@ -3,12 +3,8 @@
 
 import pandas as pd
 import sys
-from pathlib import Path
 
-# Add parent directory to path
-sys.path.insert(0, str(Path(__file__).parent))
-
-from selection.find_flatbottom import FlatbottomScreener
+from flatbottom_pipeline.selection.find_flatbottom import FlatbottomScreener
 
 def test_st_filtering():
     """Test ST filtering with various stock names."""

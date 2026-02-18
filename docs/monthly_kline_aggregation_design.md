@@ -1,6 +1,6 @@
 # 月K线生成自动化设计文档 (基于 TimescaleDB 持续聚合)
 
-本文档设计了一个 Python 自动化模块 (`load_data/aggregate.py`)，用于在 1 分钟分时数据加载完成后，自动创建并维护月度 K 线数据 (`stock_monthly_kline`)。
+本文档设计了一个 Python 自动化模块 (`data_infra/aggregate.py`)，用于在 1 分钟分时数据加载完成后，自动创建并维护月度 K 线数据 (`stock_monthly_kline`)。
 
 ## 1. 设计目标
 
@@ -11,7 +11,7 @@
 ## 2. 模块设计
 
 ### 2.1 文件位置
-`load_data/aggregate.py`
+`data_infra/aggregate.py`
 
 ### 2.2 核心逻辑 (`run_aggregation`)
 
@@ -90,7 +90,7 @@ CALL refresh_continuous_aggregate(
 
 ## 3. 实施代码框架
 
-### `load_data/aggregate.py`
+### `data_infra/aggregate.py`
 
 ```python
 import logging
@@ -205,7 +205,7 @@ if __name__ == "__main__":
 
 ## 5. 集成计划
 
-在全量数据加载脚本 `load_data/main.py` 中，应增加以下参数解析和调用逻辑，实现“加载+聚合”的自动化流程。
+在全量数据加载脚本 `data_infra/main.py` 中，应增加以下参数解析和调用逻辑，实现“加载+聚合”的自动化流程。
 
 ### 5.1 参数定义建议
 
@@ -245,13 +245,13 @@ def main():
 
 ```bash
 # 仅加载数据
-python -m load_data.main
+python -m data_infra.main
 
 # 加载数据并在结束后自动创建/检查视图（推荐）
-python -m load_data.main --aggregate
+python -m data_infra.main --aggregate
 
 # 强制重跑历史数据回填（慎用，仅在逻辑变更或修复数据时使用）
-python -m load_data.main --aggregate --force-backfill
+python -m data_infra.main --aggregate --force-backfill
 ```
 
 ## 6. 验证与排查
