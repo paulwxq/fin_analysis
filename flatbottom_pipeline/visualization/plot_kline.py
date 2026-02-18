@@ -6,8 +6,8 @@ import pandas as pd
 import mplfinance as mpf
 import psycopg
 from datetime import datetime
-from load_data.db import get_db_connection
-from load_data.stock_code import classify_cn_stock
+from data_infra.db import get_db_connection
+from data_infra.stock_code import classify_cn_stock
 
 # 配置日志
 logging.basicConfig(

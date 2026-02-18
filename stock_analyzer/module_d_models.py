@@ -1,8 +1,9 @@
 """Pydantic models for module D chief analyst output."""
 
+import re
 from typing import Literal
 
-from pydantic import BaseModel, Field, model_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 
 class FinalMeta(BaseModel):
@@ -30,6 +31,14 @@ class TimeframeAdvice(BaseModel):
     timeframe: Literal["1个月", "6个月", "1年"]
     recommendation: Literal["强烈买入", "买入", "持有", "卖出", "强烈卖出"]
     reasoning: str = Field(max_length=180)
+
+    @field_validator("timeframe", mode="before")
+    @classmethod
+    def normalize_timeframe(cls, v: str) -> str:
+        """Strip spaces so '1 个月' → '1个月' (some models insert spaces)."""
+        if isinstance(v, str):
+            return re.sub(r"\s+", "", v)
+        return v
 
 
 class LLMChiefOutput(BaseModel):

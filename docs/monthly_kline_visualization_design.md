@@ -19,9 +19,9 @@ uv add pandas "mplfinance>=0.12.7"
 
 ### 2.2 模块复用
 
-*   `load_data.config`: 数据库配置。
-*   `load_data.db`: 数据库连接。
-*   `load_data.stock_code`: A 股标准化规则库。
+*   `data_infra.config`: 数据库配置。
+*   `data_infra.db`: 数据库连接。
+*   `data_infra.stock_code`: A 股标准化规则库。
 
 ## 3. 模块设计
 
@@ -74,8 +74,8 @@ import pandas as pd
 import mplfinance as mpf
 import psycopg
 from datetime import datetime
-from load_data.db import get_db_connection
-from load_data.stock_code import classify_cn_stock
+from data_infra.db import get_db_connection
+from data_infra.stock_code import classify_cn_stock
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')

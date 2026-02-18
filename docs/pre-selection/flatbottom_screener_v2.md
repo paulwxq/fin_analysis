@@ -795,7 +795,7 @@ REFRESH MATERIALIZED VIEW stock_metrics_mv;
 #### 4.0.1 导入数据库连接
 
 ```python
-from load_data.db import get_db_connection
+from data_infra.db import get_db_connection
 ```
 
 **函数签名**:
@@ -841,7 +841,7 @@ DB_NAME=fin_db
 
 **基本用法**:
 ```python
-from load_data.db import get_db_connection
+from data_infra.db import get_db_connection
 import pandas as pd
 
 # 方式1: 手动管理连接
@@ -865,7 +865,7 @@ with get_db_connection() as conn:
 
 **错误处理**:
 ```python
-from load_data.db import get_db_connection
+from data_infra.db import get_db_connection
 import psycopg
 from selection.logger import logger
 
@@ -908,7 +908,7 @@ pip install psycopg pandas python-dotenv
 如果需要高并发场景，可以考虑使用连接池：
 
 ```python
-# load_data/db.py 中可选增强
+# data_infra/db.py 中可选增强
 from psycopg_pool import ConnectionPool
 
 # 创建连接池（示例）
@@ -929,7 +929,7 @@ def get_db_connection():
 
 ### 4.1 批量数据获取 (关键优化)
 
-**前置说明**: 本节及后续代码示例中的 `get_db_connection()` 函数需从 `load_data.db` 导入（参见 4.0 节）。
+**前置说明**: 本节及后续代码示例中的 `get_db_connection()` 函数需从 `data_infra.db` 导入（参见 4.0 节）。
 
 **v1 的 N+1 问题**:
 ```python

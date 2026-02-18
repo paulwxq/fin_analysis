@@ -226,7 +226,7 @@ ORDER BY drawdown_pct DESC;
 
 ```python
 import pandas as pd
-from load_data.db import get_db_connection
+from data_infra.db import get_db_connection
 import logging
 
 def sql_screen_candidates(

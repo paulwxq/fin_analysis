@@ -33,8 +33,8 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 # ---------------------------------------------------------------------------
 
 def _get_db_connection():
-    """获取数据库连接（复用 load_data 公共模块）"""
-    from load_data.db import get_db_connection
+    """获取数据库连接（复用 data_infra 公共模块）"""
+    from data_infra.db import get_db_connection
     return get_db_connection()
 
 
@@ -62,13 +62,13 @@ def check_monthly_kline() -> bool:
                 result = cur.fetchone()
                 if result is None or result[0] is None:
                     logger.error("[preflight] stock_monthly_kline 视图不存在")
-                    logger.error("  → 请先运行: python -m load_data.aggregate")
+                    logger.error("  → 请先运行: python -m data_infra.aggregate")
                     return False
                 # 非空性检查
                 cur.execute("SELECT 1 FROM stock_monthly_kline LIMIT 1")
                 if cur.fetchone() is None:
                     logger.error("[preflight] stock_monthly_kline 视图为空（无数据）")
-                    logger.error("  → 请先运行: python -m load_data.aggregate --force-backfill")
+                    logger.error("  → 请先运行: python -m data_infra.aggregate --force-backfill")
                     return False
         logger.info("[preflight] stock_monthly_kline 视图就绪")
         return True

@@ -308,7 +308,7 @@ uv run python -m flatbottom_pipeline.selection.find_flatbottom --preset balanced
 创建诊断脚本 `selection/diagnose.py`：
 
 ```python
-from load_data.db import get_db_connection
+from data_infra.db import get_db_connection
 import pandas as pd
 
 def diagnose_parameters():

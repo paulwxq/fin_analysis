@@ -266,7 +266,7 @@ SQL queries: 0  # 无需查询
 
 ### Q1: ST状态变化怎么办？
 
-**A**: 交易所改名 → `load_data` 模块同步 → `stock_info.name` 自动更新 → ST过滤自动生效
+**A**: 交易所改名 → `data_infra` 模块同步 → `stock_info.name` 自动更新 → ST过滤自动生效
 
 ### Q2: 如果有新的ST标记怎么办？
 

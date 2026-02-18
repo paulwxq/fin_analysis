@@ -10,7 +10,7 @@
 
 ```
 fin_analysis/
-├── load_data/                      # 数据基础设施（入库、聚合、压缩）
+├── data_infra/                      # 数据基础设施（入库、聚合、压缩）
 ├── flatbottom_pipeline/            # 平底锅筛选流水线
 │   ├── run_pipeline.py             #   统一编排入口
 │   ├── selection/                  #   规则筛选
@@ -20,14 +20,18 @@ fin_analysis/
 ├── analysis_llm/                   # 多 Agent 综合评分（独立链路）
 ├── stock_analyzer/                 # 全流程投研（独立链路）
 ├── qwen3/                          # Qwen 客户端封装层
-├── tests/                          # load_data 及其他模块测试
+├── tests/                          # data_infra 及其他模块测试
 └── output/                         # 共享输出目录
 ```
 
 ## 模块说明
 
-### 1) `load_data`
-- 作用：导入 1 分钟前复权数据、初始化表结构、维护加载日志、聚合月线。
+### 1) `data_infra`（数据基础设施）
+- 作用：项目公共数据基础设施层，涵盖数据入库、聚合加工、存储压缩及公共工具。
+  - **入库**：导入 1 分钟前复权数据，初始化表结构，维护加载日志（`main.py`、`loader.py`）。
+  - **聚合**：基于 TimescaleDB 持续聚合生成月线视图（`aggregate.py`）。
+  - **压缩**：TimescaleDB chunk 手动压缩（`compress_manual.py`）。
+  - **公共工具**：数据库连接池（`db.py`）、A 股代码标准化（`stock_code.py`）。
 - 主要数据表：`stock_1min_qfq`、`load_log`、`stock_monthly_kline`。
 - 技术栈：`psycopg`、PostgreSQL、TimescaleDB（hypertable、continuous aggregate）。
 
@@ -39,7 +43,7 @@ fin_analysis/
 - **`refinement_llm`**：批量读取 K 线图片做视觉打分，写入 `stock_flatbottom_refinement`。
 - **`run_pipeline.py`**：统一编排入口，支持按阶段执行和前置条件检查。
 
-`selection` 和 `visualization` 依赖 `load_data.db` 和 `load_data.stock_code`（公共数据基础设施）。
+`selection` 和 `visualization` 依赖 `data_infra.db` 和 `data_infra.stock_code`（公共数据基础设施）。
 `refinement_llm` 完全自包含，无外部模块依赖。
 
 ### 3) `analysis_llm`
@@ -66,8 +70,8 @@ fin_analysis/
 ## 依赖关系（代码层）
 
 ```
-flatbottom_pipeline.selection ──→ load_data.db, load_data.stock_code
-flatbottom_pipeline.visualization ──→ load_data.db, load_data.stock_code
+flatbottom_pipeline.selection ──→ data_infra.db, data_infra.stock_code
+flatbottom_pipeline.visualization ──→ data_infra.db, data_infra.stock_code
 flatbottom_pipeline.refinement_llm ──→ （无外部模块依赖）
 analysis_llm / stock_analyzer / qwen3 ──→ （各自独立）
 ```
@@ -78,8 +82,8 @@ analysis_llm / stock_analyzer / qwen3 ──→ （各自独立）
 
 ```bash
 # 前置：数据入库并聚合月线
-python -m load_data.main
-python -m load_data.aggregate
+python -m data_infra.main
+python -m data_infra.aggregate
 
 # 一键运行完整流水线
 python -m flatbottom_pipeline.run_pipeline --step all

@@ -5,11 +5,11 @@ from pathlib import Path
 try:
     from . import db
 except ImportError:
-    # Support direct execution: python load_data/check_load_progress.py
+    # Support direct execution: python data_infra/check_load_progress.py
     project_root = Path(__file__).resolve().parent.parent
     if str(project_root) not in sys.path:
         sys.path.insert(0, str(project_root))
-    from load_data import db
+    from data_infra import db
 
 
 def main() -> None:

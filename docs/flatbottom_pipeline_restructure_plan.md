@@ -20,9 +20,9 @@ selection → visualization → refinement_llm
 
 ## 2. 关键设计决策
 
-### 2.1 `load_data` 不迁入
+### 2.1 `data_infra` 不迁入
 
-`load_data` 模块的职责是**数据基础设施**，而非平底锅业务逻辑：
+`data_infra` 模块的职责是**数据基础设施**，而非平底锅业务逻辑：
 
 | 文件 | 功能 | 性质 |
 |------|------|------|
@@ -32,9 +32,9 @@ selection → visualization → refinement_llm
 | `db.py` | `get_db_connection()` 公共数据库连接 | 公共工具 |
 | `stock_code.py` | `classify_cn_stock()` 股票代码分类 | 公共工具 |
 
-`selection` 和 `visualization` 依赖 `load_data.db` 和 `load_data.stock_code`。将 `load_data` 保留在根目录，可以：
+`selection` 和 `visualization` 依赖 `data_infra.db` 和 `data_infra.stock_code`。将 `data_infra` 保留在根目录，可以：
 - 保持语义清晰（基础设施 vs 业务流水线）
-- 避免未来其他链路引用时出现 `from flatbottom_pipeline.load_data.db import ...` 的别扭路径
+- 避免未来其他链路引用时出现 `from flatbottom_pipeline.data_infra.db import ...` 的别扭路径
 - 减小迁移范围和风险
 
 ### 2.2 不设代码兼容层
@@ -67,7 +67,7 @@ selection → visualization → refinement_llm
 
 - 不改业务算法逻辑（筛选规则、评分规则、指标计算）
 - 不改数据库 schema
-- 不动 `load_data/`、`analysis_llm/`、`stock_analyzer/` 的代码和位置
+- 不动 `data_infra/`、`analysis_llm/`、`stock_analyzer/` 的代码和位置
 - 不动 `.env` 文件位置
 
 ## 4. 目标目录结构
@@ -78,7 +78,7 @@ fin_analysis/
 ├── main.py                         # 项目入口占位（不动）
 ├── pyproject.toml
 │
-├── load_data/                      # 数据基础设施（不动）
+├── data_infra/                      # 数据基础设施（不动）
 │   ├── db.py
 │   ├── stock_code.py
 │   ├── loader.py
@@ -120,10 +120,10 @@ fin_analysis/
 ├── analysis_llm/                   # 不动
 ├── stock_analyzer/                 # 不动
 │
-├── tests/                          # 保留：load_data 和其他模块的测试
-│   ├── test_tiny.py                # load_data 测试（不动）
-│   ├── test_loader.py              # load_data 测试（不动）
-│   ├── test_load_single.py         # load_data 测试（不动）
+├── tests/                          # 保留：data_infra 和其他模块的测试
+│   ├── test_tiny.py                # data_infra 测试（不动）
+│   ├── test_loader.py              # data_infra 测试（不动）
+│   ├── test_load_single.py         # data_infra 测试（不动）
 │   ├── test_analysis_llm_*.py      # analysis_llm 测试（不动）
 │   ├── test_stock_analyzer_*.py    # stock_analyzer 测试（不动）
 │   └── ...
@@ -136,20 +136,20 @@ fin_analysis/
 ### 5.1 当前代码层依赖（迁移前）
 
 ```
-selection ──→ load_data.db, load_data.stock_code
-visualization ──→ load_data.db, load_data.stock_code
+selection ──→ data_infra.db, data_infra.stock_code
+visualization ──→ data_infra.db, data_infra.stock_code
 refinement_llm ──→ （无外部模块依赖，完全自包含）
 ```
 
 ### 5.2 迁移后依赖
 
 ```
-flatbottom_pipeline.selection ──→ load_data.db, load_data.stock_code  （路径不变）
-flatbottom_pipeline.visualization ──→ load_data.db, load_data.stock_code  （路径不变）
+flatbottom_pipeline.selection ──→ data_infra.db, data_infra.stock_code  （路径不变）
+flatbottom_pipeline.visualization ──→ data_infra.db, data_infra.stock_code  （路径不变）
 flatbottom_pipeline.refinement_llm ──→ （无变化）
 ```
 
-**关键点**：因为 `load_data` 不动，`selection` 和 `visualization` 对 `load_data` 的导入路径**无需修改**。
+**关键点**：因为 `data_infra` 不动，`selection` 和 `visualization` 对 `data_infra` 的导入路径**无需修改**。
 
 ### 5.3 完整修改清单
 
@@ -168,7 +168,7 @@ flatbottom_pipeline.refinement_llm ──→ （无变化）
 | `tests/test_bug_fixes_part3.py` | `from selection.config import ...` | `from flatbottom_pipeline.selection.config import ...` |
 
 > 注意：
-> - `from load_data.db import get_db_connection` 等导入**不需要改**。
+> - `from data_infra.db import get_db_connection` 等导入**不需要改**。
 > - 注意同时覆盖 `from X.Y import Z` 和 `from X import Y` 两种形式（如 `selection/logger.py` 使用后者）。
 
 #### B. mock patch 字符串
@@ -259,7 +259,7 @@ touch flatbottom_pipeline/tests/__init__.py
 按 §5.3 的完整清单（A/B/C 三类）逐文件修改。修改后执行全量检查：
 
 ```bash
-# A. 检查 import 语句残留（排除 load_data，那些不需要改）
+# A. 检查 import 语句残留（排除 data_infra，那些不需要改）
 #    覆盖 "from X.Y import Z" 和 "from X import Y" 两种形式
 grep -rn "from selection[\. ]" --include="*.py" .
 grep -rn "from visualization[\. ]" --include="*.py" .
@@ -331,12 +331,12 @@ flatbottom_pipeline/run_pipeline.py
 流水线的完整链路实际上是：
 
 ```
-[load_data 数据入库] → [load_data 月线聚合] → selection → visualization → refinement_llm
+[data_infra 数据入库] → [data_infra 月线聚合] → selection → visualization → refinement_llm
                         ↑ 不在本流水线内，        ↑ flatbottom_pipeline 负责的范围 ↑
                           但是硬前置条件
 ```
 
-`selection` 模块依赖 `stock_monthly_kline` 月线聚合视图（由 `load_data/aggregate.py` 创建），
+`selection` 模块依赖 `stock_monthly_kline` 月线聚合视图（由 `data_infra/aggregate.py` 创建），
 `refinement_llm` 模块依赖 `output/` 目录下的 K 线图文件（由 `visualization` 生成）。
 
 `run_pipeline.py` 应在**每个阶段执行前**检查该阶段的前置条件（而非一次性检查所有阶段）。
@@ -345,7 +345,7 @@ flatbottom_pipeline/run_pipeline.py
 | 检查项 | 执行时机 | 检查方式 | 失败时提示 |
 |--------|---------|---------|-----------|
 | 数据库可连接 | 任何阶段前（仅一次） | `SELECT 1` 测试连接 | 请检查 .env 中数据库配置 |
-| `stock_monthly_kline` 视图存在且非空 | `select` 阶段前 | 存在性：`SELECT to_regclass('public.stock_monthly_kline')`；非空性：`SELECT 1 FROM stock_monthly_kline LIMIT 1` | 请先运行 `python -m load_data.aggregate` |
+| `stock_monthly_kline` 视图存在且非空 | `select` 阶段前 | 存在性：`SELECT to_regclass('public.stock_monthly_kline')`；非空性：`SELECT 1 FROM stock_monthly_kline LIMIT 1` | 请先运行 `python -m data_infra.aggregate` |
 | `stock_flatbottom_preselect` 表有数据 | `plot` 阶段前 | `SELECT 1 FROM stock_flatbottom_preselect LIMIT 1` | 请先运行 `--step select` |
 | `output/` 目录下存在 `*_kline.png` 文件 | `refine` 阶段前 | glob 扫描 `output/*_kline.png` | 请先运行 `--step plot` |
 
@@ -514,7 +514,7 @@ git revert <migration-commit-hash>
 
 本方案采用"**业务归业务、基础设施归基础设施**"的分离策略：
 - 仅迁移 `selection`、`visualization`、`refinement_llm` 三个业务模块
-- `load_data` 保留在根目录作为公共数据基础设施
+- `data_infra` 保留在根目录作为公共数据基础设施
 - 不设兼容层，一步到位
 - 共享项目根目录 `.env`，不引入新的配置管理机制
 
