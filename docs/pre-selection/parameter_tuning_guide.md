@@ -223,7 +223,7 @@ ORDER BY MIN(r_squared);
 ### Step 1: 基线测试
 ```bash
 # 运行默认配置
-uv run python -m selection.find_flatbottom --preset balanced
+uv run python -m flatbottom_pipeline.selection.find_flatbottom --preset balanced
 ```
 
 ### Step 2: 分析结果分布
@@ -256,7 +256,7 @@ PRESETS = {
 ### Step 4: 回测验证
 ```bash
 # 重新运行筛选
-uv run python -m selection.find_flatbottom --preset balanced
+uv run python -m flatbottom_pipeline.selection.find_flatbottom --preset balanced
 
 # 对比前后结果数量变化
 ```
@@ -308,7 +308,7 @@ uv run python -m selection.find_flatbottom --preset balanced
 创建诊断脚本 `selection/diagnose.py`：
 
 ```python
-from load_data.db import get_db_connection
+from data_infra.db import get_db_connection
 import pandas as pd
 
 def diagnose_parameters():

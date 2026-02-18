@@ -30,7 +30,43 @@ LLM 参数一览（`stock_analyzer/config.py` + `stock_analyzer/agents.py`）：
 
 所有模型名称均可通过同名环境变量覆盖（如 `MODEL_CHIEF_AGENT=qwen-max`）。
 
-## 2. 运行 Module A（AKShare 数据采集）
+## 2. 全流程自动化运行（推荐）
+
+这是最简单的执行方式，会自动处理股票信息查询、并行数据采集和首席分析师汇总。
+
+**命令：**
+
+```bash
+.venv/bin/python stock_analyzer/run_workflow.py <symbol>
+```
+
+**示例：**
+
+```bash
+.venv/bin/python stock_analyzer/run_workflow.py 600519.SH
+```
+
+**参数：**
+
+- `symbol`：股票代码，支持 `600519` / `600519.SH` / `SH600519`。程序会自动通过 AKShare 补全名称和行业信息。
+
+**输出文件：**
+
+工作流会一次性产出所有中间结果和最终报告：
+- `output/{normalized_symbol}_akshare_data.json`
+- `output/{normalized_symbol}_web_research.json`
+- `output/{normalized_symbol}_technical_analysis.json`
+- `output/{normalized_symbol}_final_report.json`（**核心结论**）
+
+**全流程逻辑：**
+1.  **查询**：自动查找股票名称、行业及日期。
+2.  **并行**：同时启动 Module A (财务)、B (搜网)、C (技术面)。
+3.  **熔断**：任一基础模块硬失败则停止，防止产生误导性研报。
+4.  **汇总**：由首席分析师 (Module D) 生成综合评分和投资建议。
+
+---
+
+## 3. 运行 Module A（AKShare 数据采集）
 
 命令：
 
@@ -62,7 +98,7 @@ Module A 重点配置（`stock_analyzer/config.py`）：
 - `AKSHARE_FINANCIAL_PERIODS`
 - `AKSHARE_FUND_FLOW_DAYS`
 
-## 3. 运行 Module B（Web Deep Research）
+## 4. 运行 Module B（Web Deep Research）
 
 命令：
 
@@ -98,7 +134,7 @@ Module B 重点配置（`stock_analyzer/config.py`）：
 - `TAVILY_MAX_RESULTS`
 - `TAVILY_TIMEOUT`
 
-## 4. 运行 Module C（月线技术分析）
+## 5. 运行 Module C（月线技术分析）
 
 命令：
 
@@ -133,7 +169,7 @@ Module C 重点配置（`stock_analyzer/config.py`）：
 - `TECH_MA_SHORT` / `TECH_MA_MID` / `TECH_MA_LONG` / `TECH_MA_TREND`
 - `TECH_RSI_LENGTH` / `TECH_BOLL_LENGTH` / `TECH_KDJ_K` / `TECH_KDJ_D` / `TECH_KDJ_SMOOTH`
 
-## 5. 运行 Module D（最终综合分析）
+## 6. 运行 Module D（最终综合分析）
 
 命令：
 
@@ -171,7 +207,7 @@ Module D 重点配置（`stock_analyzer/config.py`）：
 - `CHIEF_INPUT_MAX_CHARS_TOTAL`
 - `CHIEF_OUTPUT_RETRIES`
 
-## 6. 推荐执行顺序
+## 7. 推荐分步执行顺序（调试用）
 
 ```bash
 .venv/bin/python stock_analyzer/run_module_a.py 600519.SH 贵州茅台

@@ -315,7 +315,7 @@ SQL层完成初步筛选后（100-200只候选股），Python层负责：
 import pandas as pd
 import numpy as np
 from scipy.stats import linregress
-from load_data.db import get_db_connection
+from data_infra.db import get_db_connection
 import logging
 
 logger = logging.getLogger(__name__)

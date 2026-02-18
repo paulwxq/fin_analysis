@@ -1,6 +1,6 @@
 import os
 import logging
-from load_data import db, loader, config
+from data_infra import db, loader, config
 
 # Configure logging to see output clearly
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')

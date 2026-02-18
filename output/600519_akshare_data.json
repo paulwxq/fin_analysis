@@ -2,16 +2,13 @@
   "meta": {
     "symbol": "600519",
     "name": "贵州茅台",
-    "query_time": "2026-02-13T16:27:09.903467",
+    "query_time": "2026-02-18T07:09:28.425109",
     "data_errors": [
-      "realtime_quote: ProxyError - HTTPSConnectionPool(host='82.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A0+ (stock_zh_a_spot_em)",
+      "realtime_quote: 调用超时（>120.0s）(stock_zh_a_spot_em) [连续超时 1/3]",
       "valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu",
-      "sector_flow_industry: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)",
-      "sector_flow_concept: ProxyError - HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t (stock_sector_fund_flow_rank)",
-      "northbound: ChunkedEncodingError - Response ended prematurely (stock_hsgt_hold_stock_em)",
-      "earnings_forecast: 调用超时（>30.0s）(stock_yjyg_em) [连续超时 1/3]"
+      "institutional_holdings: 返回数据为空 (stock_institute_hold_detail)"
     ],
-    "successful_topics": 9,
+    "successful_topics": 14,
     "topic_status": {
       "company_info": "ok",
       "realtime_quote": "failed",
@@ -19,16 +16,19 @@
       "valuation_history": "ok",
       "valuation_vs_industry": "ok",
       "fund_flow": "ok",
-      "sector_flow": "failed",
-      "northbound": "failed",
+      "sector_flow": "ok",
+      "northbound": "ok",
       "shareholder_count": "ok",
       "dividend_history": "ok",
       "earnings_forecast": "no_data",
-      "pledge_ratio": "ok"
+      "pledge_ratio": "ok",
+      "consensus_forecast": "ok",
+      "institutional_holdings": "ok",
+      "business_composition": "ok"
     }
   },
   "company_info": {
-    "industry": "酿酒行业",
+    "industry": "白酒Ⅱ",
     "listing_date": "20010827",
     "total_market_cap": 18599.9695,
     "circulating_market_cap": 18599.9695,
@@ -135,20 +135,20 @@
     }
   ],
   "valuation_history": {
-    "current_pe_ttm": 20.68,
+    "current_pe_ttm": 20.66,
     "current_pb": 7.24,
-    "pe_percentile": 12.7,
-    "pb_percentile": 9.0,
+    "pe_percentile": 12.4,
+    "pb_percentile": 8.8,
     "current_ps_ttm": null,
     "current_dv_ttm": null,
-    "history_summary": "PE历史分位12.7%，处于极低位置（历史底部区域）；PB历史分位9.0%，处于极低位置（历史底部区域）"
+    "history_summary": "PE历史分位12.4%，处于极低位置（历史底部区域）；PB历史分位8.8%，处于极低位置（历史底部区域）"
   },
   "valuation_vs_industry": {
     "stock_pe": 20.66035639,
-    "industry_avg_pe": 41.31,
-    "industry_median_pe": 22.18,
+    "industry_avg_pe": 38.78,
+    "industry_median_pe": 16.45,
     "stock_pb": 7.2353725,
-    "industry_avg_pb": 2.67,
+    "industry_avg_pb": 3.07,
     "relative_valuation": "明显低于行业平均"
   },
   "fund_flow": {
@@ -185,8 +185,40 @@
       "trend": "近5日主力净流出，近10日整体净流入"
     }
   },
-  "sector_flow": null,
-  "northbound": null,
+  "sector_flow": {
+    "industry_name": "白酒Ⅱ",
+    "industry_rank": 322,
+    "industry_net_inflow_today": -178885472.0,
+    "hot_concepts_top5": [
+      {
+        "name": "存储芯片",
+        "net_inflow": 4215062784.0
+      },
+      {
+        "name": "冷链物流",
+        "net_inflow": 1896407808.0
+      },
+      {
+        "name": "智慧政务",
+        "net_inflow": 1831881216.0
+      },
+      {
+        "name": "时空大数据",
+        "net_inflow": 1771258608.0
+      },
+      {
+        "name": "光刻机(胶)",
+        "net_inflow": 1488280320.0
+      }
+    ]
+  },
+  "northbound": {
+    "held": true,
+    "shares_held": 8235.44,
+    "market_value": 11786565.59,
+    "change_pct": 0.05,
+    "note": "北向资金披露规则2024年8月后有变化，数据仅供参考"
+  },
   "shareholder_count": [
     {
       "date": "2025-09-30",
@@ -246,5 +278,1254 @@
     "ratio_pct": 0.01,
     "pledged_shares": 8.56,
     "risk_level": "低"
-  }
+  },
+  "consensus_forecast": [
+    {
+      "year": "2025",
+      "inst_count": 45,
+      "net_profit_avg": 72.64,
+      "industry_avg": 8.21
+    },
+    {
+      "year": "2026",
+      "inst_count": 45,
+      "net_profit_avg": 76.31,
+      "industry_avg": 8.78
+    },
+    {
+      "year": "2027",
+      "inst_count": 44,
+      "net_profit_avg": 80.8,
+      "industry_avg": 9.53
+    }
+  ],
+  "institutional_holdings": [
+    {
+      "type": "stock",
+      "name": "中国证券金融股份有限公司",
+      "ratio": 0.0
+    },
+    {
+      "type": "基金",
+      "name": "华夏上证50ETF",
+      "ratio": 0.98
+    },
+    {
+      "type": "基金",
+      "name": "华泰柏瑞沪深300ETF",
+      "ratio": 0.89
+    },
+    {
+      "type": "基金",
+      "name": "易方达沪深300ETF",
+      "ratio": 0.64
+    },
+    {
+      "type": "基金",
+      "name": "华夏沪深300ETF",
+      "ratio": 0.47
+    }
+  ],
+  "business_composition": [
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.860337,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.139228,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.969258,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.030307,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.845626,
+      "gross_margin": 0.938493
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.153962,
+      "gross_margin": 0.775914
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000413,
+      "gross_margin": -0.198493
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.967566,
+      "gross_margin": 0.912772
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.032434,
+      "gross_margin": 0.919591
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.860803,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.138782,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.97748,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.022105,
+      "gross_margin": null
+    },
+    {
+      "type": "",
+      "item": "酒类",
+      "revenue_ratio": 0.998319,
+      "gross_margin": 0.920111
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.001681,
+      "gross_margin": 0.444905
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.853884,
+      "gross_margin": 0.940641
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他系列酒",
+      "revenue_ratio": 0.144435,
+      "gross_margin": 0.798737
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.001681,
+      "gross_margin": 0.444905
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.967959,
+      "gross_margin": 0.920042
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.03036,
+      "gross_margin": 0.922305
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.001681,
+      "gross_margin": 0.444905
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.837301,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.160567,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.969034,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.028835,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.836886,
+      "gross_margin": 0.941293
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他系列酒",
+      "revenue_ratio": 0.160465,
+      "gross_margin": 0.80098
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.002649,
+      "gross_margin": 0.497724
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.972985,
+      "gross_margin": 0.91737
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.027015,
+      "gross_margin": 0.925987
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.867425,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.12968,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.979337,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.017767,
+      "gross_margin": null
+    },
+    {
+      "type": "",
+      "item": "酒类",
+      "revenue_ratio": 0.996787,
+      "gross_margin": 0.921069
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.003213,
+      "gross_margin": 0.479423
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.857106,
+      "gross_margin": 0.941184
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他系列酒",
+      "revenue_ratio": 0.139681,
+      "gross_margin": 0.797637
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.003213,
+      "gross_margin": 0.479423
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.967333,
+      "gross_margin": 0.921045
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.029454,
+      "gross_margin": 0.921843
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.003213,
+      "gross_margin": 0.479423
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.845076,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.151005,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.967184,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.028896,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.851998,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.144789,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.003213,
+      "gross_margin": 0.454461
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.967441,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.029346,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.003213,
+      "gross_margin": 0.454461
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.870105,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.129378,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.982499,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.016984,
+      "gross_margin": null
+    },
+    {
+      "type": "",
+      "item": "酒类",
+      "revenue_ratio": 0.997361,
+      "gross_margin": 0.920046
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.002639,
+      "gross_margin": 0.397409
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.868927,
+      "gross_margin": 0.941894
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他系列酒",
+      "revenue_ratio": 0.128434,
+      "gross_margin": 0.772233
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.002639,
+      "gross_margin": 0.397409
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.963198,
+      "gross_margin": 0.920033
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.034163,
+      "gross_margin": 0.920409
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.002639,
+      "gross_margin": 0.397409
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.853599,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.143877,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.965664,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.031813,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.867194,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.131875,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000931,
+      "gross_margin": 0.121672
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.96321,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.035859,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000931,
+      "gross_margin": 0.121672
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.893603,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.106137,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.662645,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.337095,
+      "gross_margin": null
+    },
+    {
+      "type": "",
+      "item": "酒类",
+      "revenue_ratio": 0.998768,
+      "gross_margin": 0.91617
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.001232,
+      "gross_margin": 0.294023
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.880162,
+      "gross_margin": 0.940321
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他系列酒",
+      "revenue_ratio": 0.118606,
+      "gross_margin": 0.736948
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.001232,
+      "gross_margin": 0.294023
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.974109,
+      "gross_margin": 0.916384
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.024658,
+      "gross_margin": 0.907691
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.001232,
+      "gross_margin": 0.294023
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.870713,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.127807,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.969781,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.02874,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.87496,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.123463,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.001577,
+      "gross_margin": 0.338215
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.973974,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.024449,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.001577,
+      "gross_margin": 0.338215
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.901781,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.096901,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.974596,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.024085,
+      "gross_margin": null
+    },
+    {
+      "type": "",
+      "item": "酒类",
+      "revenue_ratio": 0.999016,
+      "gross_margin": 0.914752
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000984,
+      "gross_margin": 0.243642
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.893753,
+      "gross_margin": 0.939876
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他系列酒",
+      "revenue_ratio": 0.105263,
+      "gross_margin": 0.70143
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000984,
+      "gross_margin": 0.243642
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.973391,
+      "gross_margin": 0.914764
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.025626,
+      "gross_margin": 0.9143
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000984,
+      "gross_margin": 0.243642
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.89482,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.104147,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.968878,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.030089,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.893258,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.105805,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000936,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.974005,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.025059,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000936,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.910556,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.088854,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.983386,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.016024,
+      "gross_margin": null
+    },
+    {
+      "type": "",
+      "item": "酒类",
+      "revenue_ratio": 0.999005,
+      "gross_margin": 0.913705
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000995,
+      "gross_margin": 0.233031
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.887308,
+      "gross_margin": 0.937838
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他系列酒",
+      "revenue_ratio": 0.111697,
+      "gross_margin": 0.721992
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000995,
+      "gross_margin": 0.233031
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.96482,
+      "gross_margin": 0.913543
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.034185,
+      "gross_margin": 0.918274
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000995,
+      "gross_margin": 0.233031
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.883443,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.115495,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.967525,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.031413,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.881153,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.117885,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000962,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.971655,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.027383,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000962,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.900836,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.098497,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.988575,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.010758,
+      "gross_margin": null
+    },
+    {
+      "type": "",
+      "item": "酒类",
+      "revenue_ratio": 0.998992,
+      "gross_margin": 0.912501
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.001008,
+      "gross_margin": -0.159907
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.889304,
+      "gross_margin": 0.937415
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他系列酒",
+      "revenue_ratio": 0.109688,
+      "gross_margin": 0.710504
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.001008,
+      "gross_margin": -0.159907
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.959706,
+      "gross_margin": 0.912722
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.039287,
+      "gross_margin": 0.907101
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.001008,
+      "gross_margin": -0.159907
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.885603,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.11358,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.965801,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.033382,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.879827,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.119574,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000599,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.968516,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.030885,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000599,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.902626,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.096645,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.98987,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.009402,
+      "gross_margin": null
+    },
+    {
+      "type": "",
+      "item": "酒类",
+      "revenue_ratio": 0.999154,
+      "gross_margin": 0.898319
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000846,
+      "gross_margin": 0.476901
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.899969,
+      "gross_margin": 0.928169
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他系列酒",
+      "revenue_ratio": 0.099184,
+      "gross_margin": 0.627467
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000846,
+      "gross_margin": 0.476901
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.960161,
+      "gross_margin": 0.899016
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.038993,
+      "gross_margin": 0.88114
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000846,
+      "gross_margin": 0.476901
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.904686,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.094668,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.965711,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.033642,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.89404,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.105372,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000588,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.964596,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.034816,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000588,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.929168,
+      "gross_margin": null
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.070267,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.997184,
+      "gross_margin": null
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.002251,
+      "gross_margin": null
+    },
+    {
+      "type": "",
+      "item": "酒类",
+      "revenue_ratio": 0.999454,
+      "gross_margin": 0.913148
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000546,
+      "gross_margin": -0.729229
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.944734,
+      "gross_margin": 0.935022
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他系列酒",
+      "revenue_ratio": 0.054721,
+      "gross_margin": 0.535495
+    },
+    {
+      "type": "按产品分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000546,
+      "gross_margin": -0.729229
+    },
+    {
+      "type": "按地区分类",
+      "item": "国内",
+      "revenue_ratio": 0.94648,
+      "gross_margin": 0.913547
+    },
+    {
+      "type": "按地区分类",
+      "item": "国外",
+      "revenue_ratio": 0.052974,
+      "gross_margin": 0.906012
+    },
+    {
+      "type": "按地区分类",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000546,
+      "gross_margin": -0.729229
+    },
+    {
+      "type": "",
+      "item": "酒类",
+      "revenue_ratio": 0.999536,
+      "gross_margin": 0.919147
+    },
+    {
+      "type": "",
+      "item": "其他(补充)",
+      "revenue_ratio": 0.000464,
+      "gross_margin": 0.201019
+    },
+    {
+      "type": "按产品分类",
+      "item": "茅台酒",
+      "revenue_ratio": 0.961497,
+      "gross_margin": 0.937761
+    },
+    {
+      "type": "按产品分类",
+      "item": "系列酒",
+      "revenue_ratio": 0.038039,
+      "gross_margin": 0.448648
+    }
+  ]
 }
