@@ -50,6 +50,7 @@ def extract_json_str(text: str) -> str:
         except Exception:
             continue
 
+    logger.error(f"Failed to extract JSON from model output. Raw text preview (500 chars):\n{text[:500]}")
     raise ValueError("No valid JSON found in model output")
 
 
