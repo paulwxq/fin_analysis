@@ -5,6 +5,7 @@ import json
 
 from agent_framework import ChatAgent
 
+from stock_analyzer.config import SERP_QUERY_RETRIES
 from stock_analyzer.exceptions import AgentCallError, ReportGenerationError, TavilySearchError
 from stock_analyzer.llm_helpers import _run_agent_stream, call_agent_with_model, extract_json_str
 from stock_analyzer.logger import logger
@@ -103,16 +104,27 @@ async def deep_research(
         f"deep_research: depth={depth}, breadth={breadth}, existing_learnings={len(learnings)}, query='{query_preview}'"
     )
 
-    try:
-        serp_queries = await generate_serp_queries(
-            query_agent=query_agent,
-            query=query,
-            num_queries=breadth,
-            learnings=learnings,
-        )
-    except AgentCallError:
-        logger.warning("Failed to generate SERP queries, returning current learnings")
-        return ResearchResult(learnings=learnings, visited_urls=visited_urls)
+    serp_queries = None
+    for attempt in range(1 + SERP_QUERY_RETRIES):
+        try:
+            serp_queries = await generate_serp_queries(
+                query_agent=query_agent,
+                query=query,
+                num_queries=breadth,
+                learnings=learnings,
+            )
+            break
+        except AgentCallError:
+            if attempt < SERP_QUERY_RETRIES:
+                delay = attempt + 1
+                logger.warning(
+                    f"query_generator failed (attempt {attempt + 1}/{1 + SERP_QUERY_RETRIES}), "
+                    f"retrying in {delay}s..."
+                )
+                await asyncio.sleep(delay)
+            else:
+                logger.warning("Failed to generate SERP queries after retries, returning current learnings")
+                return ResearchResult(learnings=learnings, visited_urls=visited_urls)
 
     all_learnings = list(learnings)
     all_urls = list(visited_urls)
@@ -132,16 +144,30 @@ async def deep_research(
             if url:
                 branch_urls.append(url)
 
-        try:
-            processed = await process_serp_result(
-                extract_agent=extract_agent,
-                query=serp_query.query,
-                search_results=search_results,
-            )
-            branch_learnings.extend(processed.learnings)
-        except AgentCallError:
-            logger.warning(f"Knowledge extraction failed for '{serp_query.query}'")
-            processed = ProcessedResult(learnings=[], follow_up_questions=[])
+        processed = None
+        for attempt in range(1 + SERP_QUERY_RETRIES):
+            try:
+                processed = await process_serp_result(
+                    extract_agent=extract_agent,
+                    query=serp_query.query,
+                    search_results=search_results,
+                )
+                branch_learnings.extend(processed.learnings)
+                break
+            except AgentCallError:
+                if attempt < SERP_QUERY_RETRIES:
+                    delay = attempt + 1
+                    logger.warning(
+                        f"knowledge_extractor failed for '{serp_query.query}' "
+                        f"(attempt {attempt + 1}/{1 + SERP_QUERY_RETRIES}), "
+                        f"retrying in {delay}s..."
+                    )
+                    await asyncio.sleep(delay)
+                else:
+                    logger.warning(
+                        f"Knowledge extraction failed for '{serp_query.query}' after retries"
+                    )
+                    processed = ProcessedResult(learnings=[], follow_up_questions=[])
 
         new_depth = depth - 1
         new_breadth = max(1, breadth // 2)
@@ -218,6 +244,9 @@ async def generate_report(
         else:
             response = await report_agent.run(user_message, thread=thread)
             raw_text = response.text
+        
+        logger.debug(f"[Module B] Report raw response ({len(raw_text)} chars):\n{raw_text}")
+        
         json_str = extract_json_str(raw_text)
         return json.loads(json_str)
     except json.JSONDecodeError as e:

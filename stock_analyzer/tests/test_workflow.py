@@ -11,7 +11,7 @@ from stock_analyzer.workflow import (
     run_workflow,
     lookup_stock_info,
     _check_circuit_breaker,
-    _try_load_cache,
+    _try_load_module_cache,
 )
 from stock_analyzer.exceptions import (
     StockInfoLookupError,
@@ -50,6 +50,16 @@ def mock_final_report():
     report.meta.symbol = "600519"
     return report
 
+
+_STOCK_LOOKUP = {
+    "symbol": "600519",
+    "symbol_with_market_upper": "600519.SH",
+    "name": "贵州茅台",
+    "industry": "白酒",
+    "date_beijing": "2026-02-13",
+}
+
+
 class TestCircuitBreaker:
     def test_all_success_no_raise(self, mock_akshare_data, mock_web_result, mock_tech_result):
         # Should not raise
@@ -68,7 +78,7 @@ class TestCircuitBreaker:
     def test_module_a_low_topics_warns_only(self, mock_logger, mock_akshare_data, mock_web_result, mock_tech_result):
         mock_akshare_data.meta.successful_topics = 3  # Lower than default 6
         _check_circuit_breaker(mock_akshare_data, mock_web_result, mock_tech_result)
-        
+
         # Verify warning was called
         args, kwargs = mock_logger.warning.call_args
         assert "chief analysis context may be limited" in args[0]
@@ -105,8 +115,14 @@ class TestLookupStockInfo:
             lookup_stock_info("600519")
 
 
+_NO_CACHE = {
+    "WORKFLOW_MODULE_A_USE_CACHE": False,
+    "WORKFLOW_MODULE_B_USE_CACHE": False,
+    "WORKFLOW_MODULE_C_USE_CACHE": False,
+}
+
+
 @pytest.mark.asyncio
-@patch("stock_analyzer.workflow.WORKFLOW_USE_CACHE", False)
 class TestWorkflowRun:
     @patch("stock_analyzer.workflow.lookup_stock_info")
     @patch("stock_analyzer.workflow.collect_akshare_data")
@@ -115,12 +131,12 @@ class TestWorkflowRun:
     @patch("stock_analyzer.workflow.run_chief_analysis")
     @patch("stock_analyzer.workflow._save_intermediate_results")
     async def test_full_success_flow(
-        self, 
-        mock_save, 
-        mock_chief, 
-        mock_tech, 
-        mock_web, 
-        mock_a, 
+        self,
+        mock_save,
+        mock_chief,
+        mock_tech,
+        mock_web,
+        mock_a,
         mock_lookup,
         mock_akshare_data,
         mock_web_result,
@@ -128,20 +144,15 @@ class TestWorkflowRun:
         mock_final_report
     ):
         # Setup mocks
-        mock_lookup.return_value = {
-            "symbol": "600519",
-            "symbol_with_market_upper": "600519.SH",
-            "name": "贵州茅台",
-            "industry": "白酒",
-            "date_beijing": "2026-02-13",
-        }
+        mock_lookup.return_value = _STOCK_LOOKUP
         mock_a.return_value = mock_akshare_data
         mock_web.return_value = mock_web_result
         mock_tech.return_value = mock_tech_result
         mock_chief.return_value = mock_final_report
 
         # Run
-        result = await run_workflow("600519")
+        with patch.multiple("stock_analyzer.workflow", **_NO_CACHE):
+            result = await run_workflow("600519")
 
         # Verify
         assert result == mock_final_report
@@ -159,7 +170,7 @@ class TestWorkflowRun:
     @patch("stock_analyzer.workflow.lookup_stock_info")
     async def test_lookup_failure_aborts_early(self, mock_lookup):
         mock_lookup.side_effect = StockInfoLookupError("Lookup failed")
-        
+
         with pytest.raises(StockInfoLookupError):
             await run_workflow("600519")
 
@@ -168,22 +179,17 @@ class TestWorkflowRun:
     @patch("stock_analyzer.workflow.run_web_research")
     @patch("stock_analyzer.workflow.run_technical_analysis")
     async def test_parallel_timeout_raises(self, mock_tech, mock_web, mock_a, mock_lookup):
-        mock_lookup.return_value = {
-            "symbol": "600519",
-            "symbol_with_market_upper": "600519.SH",
-            "name": "贵州茅台",
-            "industry": "白酒",
-            "date_beijing": "2026-02-13",
-        }
-        
+        mock_lookup.return_value = _STOCK_LOOKUP
+
         # Make one task slow
         async def slow_task(*args, **kwargs):
             await asyncio.sleep(2)
             return MagicMock()
-        
+
         mock_web.side_effect = slow_task
-        
-        with patch("stock_analyzer.workflow.WORKFLOW_PARALLEL_TIMEOUT", 0.1):
+
+        with patch("stock_analyzer.workflow.WORKFLOW_PARALLEL_TIMEOUT", 0.1), \
+             patch.multiple("stock_analyzer.workflow", **_NO_CACHE):
             with pytest.raises(WorkflowCircuitBreakerError, match="Parallel phase timed out"):
                 await run_workflow("600519")
 
@@ -192,19 +198,14 @@ class TestWorkflowRun:
     @patch("stock_analyzer.workflow.run_web_research")
     @patch("stock_analyzer.workflow.run_technical_analysis")
     async def test_partial_failure_triggers_breaker(self, mock_tech, mock_web, mock_a, mock_lookup, mock_akshare_data):
-        mock_lookup.return_value = {
-            "symbol": "600519",
-            "symbol_with_market_upper": "600519.SH",
-            "name": "贵州茅台",
-            "industry": "白酒",
-            "date_beijing": "2026-02-13",
-        }
+        mock_lookup.return_value = _STOCK_LOOKUP
         mock_a.return_value = mock_akshare_data
         mock_web.side_effect = RuntimeError("Web failed")
         mock_tech.return_value = MagicMock()
 
-        with pytest.raises(WorkflowCircuitBreakerError, match="module_b: RuntimeError: Web failed"):
-            await run_workflow("600519")
+        with patch.multiple("stock_analyzer.workflow", **_NO_CACHE):
+            with pytest.raises(WorkflowCircuitBreakerError, match="module_b: RuntimeError: Web failed"):
+                await run_workflow("600519")
 
 
 # ---- Minimal JSON fixtures for cache tests ----
@@ -268,81 +269,74 @@ _MINIMAL_TECH_JSON = json.dumps({
 })
 
 
-class TestTryLoadCache:
-    """Tests for _try_load_cache."""
+class TestTryLoadModuleCache:
+    """Tests for _try_load_module_cache."""
 
-    def test_cache_hit_all_files_present(self, tmp_path):
-        """When all 3 JSON files exist and are valid, returns parsed models."""
+    def test_cache_hit_akshare(self, tmp_path):
+        """Load a valid akshare cache file."""
         (tmp_path / "600519_akshare_data.json").write_text(_MINIMAL_AKSHARE_JSON, encoding="utf-8")
+
+        with patch("stock_analyzer.workflow.WORKFLOW_OUTPUT_DIR", str(tmp_path)):
+            result = _try_load_module_cache("600519", "akshare")
+
+        assert isinstance(result, AKShareData)
+        assert result.meta.symbol == "600519"
+
+    def test_cache_hit_web(self, tmp_path):
+        """Load a valid web research cache file."""
         (tmp_path / "600519_web_research.json").write_text(_MINIMAL_WEB_JSON, encoding="utf-8")
+
+        with patch("stock_analyzer.workflow.WORKFLOW_OUTPUT_DIR", str(tmp_path)):
+            result = _try_load_module_cache("600519", "web")
+
+        assert isinstance(result, WebResearchResult)
+
+    def test_cache_hit_tech(self, tmp_path):
+        """Load a valid technical analysis cache file."""
         (tmp_path / "600519_technical_analysis.json").write_text(_MINIMAL_TECH_JSON, encoding="utf-8")
 
         with patch("stock_analyzer.workflow.WORKFLOW_OUTPUT_DIR", str(tmp_path)):
-            result = _try_load_cache("600519")
+            result = _try_load_module_cache("600519", "tech")
 
-        assert result is not None
-        akshare, web, tech = result
-        assert isinstance(akshare, AKShareData)
-        assert isinstance(web, WebResearchResult)
-        assert isinstance(tech, TechnicalAnalysisResult)
-        assert akshare.meta.symbol == "600519"
+        assert isinstance(result, TechnicalAnalysisResult)
 
-    def test_cache_miss_no_files(self, tmp_path):
-        """When no cached files exist, returns None."""
+    def test_cache_miss_no_file(self, tmp_path):
+        """When cache file does not exist, returns None."""
         with patch("stock_analyzer.workflow.WORKFLOW_OUTPUT_DIR", str(tmp_path)):
-            result = _try_load_cache("600519")
-        assert result is None
-
-    def test_cache_miss_partial_files(self, tmp_path):
-        """When only some files exist, returns None."""
-        (tmp_path / "600519_akshare_data.json").write_text(_MINIMAL_AKSHARE_JSON, encoding="utf-8")
-        # web and tech missing
-
-        with patch("stock_analyzer.workflow.WORKFLOW_OUTPUT_DIR", str(tmp_path)):
-            result = _try_load_cache("600519")
+            result = _try_load_module_cache("600519", "akshare")
         assert result is None
 
     def test_cache_corrupt_json_returns_none(self, tmp_path):
         """When a file has invalid JSON, returns None gracefully."""
         (tmp_path / "600519_akshare_data.json").write_text("{bad json", encoding="utf-8")
-        (tmp_path / "600519_web_research.json").write_text(_MINIMAL_WEB_JSON, encoding="utf-8")
-        (tmp_path / "600519_technical_analysis.json").write_text(_MINIMAL_TECH_JSON, encoding="utf-8")
 
         with patch("stock_analyzer.workflow.WORKFLOW_OUTPUT_DIR", str(tmp_path)):
-            result = _try_load_cache("600519")
+            result = _try_load_module_cache("600519", "akshare")
         assert result is None
 
     def test_cache_validation_error_returns_none(self, tmp_path):
         """When a file has valid JSON but fails model validation, returns None."""
         (tmp_path / "600519_akshare_data.json").write_text('{"meta": {}}', encoding="utf-8")
-        (tmp_path / "600519_web_research.json").write_text(_MINIMAL_WEB_JSON, encoding="utf-8")
-        (tmp_path / "600519_technical_analysis.json").write_text(_MINIMAL_TECH_JSON, encoding="utf-8")
 
         with patch("stock_analyzer.workflow.WORKFLOW_OUTPUT_DIR", str(tmp_path)):
-            result = _try_load_cache("600519")
+            result = _try_load_module_cache("600519", "akshare")
         assert result is None
 
 
 @pytest.mark.asyncio
 class TestWorkflowCache:
-    """Tests for WORKFLOW_USE_CACHE integration in run_workflow."""
+    """Tests for per-module WORKFLOW_MODULE_*_USE_CACHE in run_workflow."""
 
     @patch("stock_analyzer.workflow.lookup_stock_info")
     @patch("stock_analyzer.workflow.run_chief_analysis")
     @patch("stock_analyzer.workflow.collect_akshare_data")
     @patch("stock_analyzer.workflow.run_web_research")
     @patch("stock_analyzer.workflow.run_technical_analysis")
-    async def test_use_cache_true_skips_modules(
+    async def test_all_cache_true_skips_all_modules(
         self, mock_tech, mock_web, mock_a, mock_chief, mock_lookup, tmp_path
     ):
-        """When USE_CACHE=True and cache exists, A/B/C modules are NOT called."""
-        mock_lookup.return_value = {
-            "symbol": "600519",
-            "symbol_with_market_upper": "600519.SH",
-            "name": "贵州茅台",
-            "industry": "白酒",
-            "date_beijing": "2026-02-13",
-        }
+        """When all USE_CACHE=True and cache exists, A/B/C modules are NOT called."""
+        mock_lookup.return_value = _STOCK_LOOKUP
         mock_chief.return_value = MagicMock(
             spec=FinalReport, overall_score=8.0, overall_confidence="高"
         )
@@ -352,7 +346,9 @@ class TestWorkflowCache:
         (tmp_path / "600519_web_research.json").write_text(_MINIMAL_WEB_JSON, encoding="utf-8")
         (tmp_path / "600519_technical_analysis.json").write_text(_MINIMAL_TECH_JSON, encoding="utf-8")
 
-        with patch("stock_analyzer.workflow.WORKFLOW_USE_CACHE", True), \
+        with patch("stock_analyzer.workflow.WORKFLOW_MODULE_A_USE_CACHE", True), \
+             patch("stock_analyzer.workflow.WORKFLOW_MODULE_B_USE_CACHE", True), \
+             patch("stock_analyzer.workflow.WORKFLOW_MODULE_C_USE_CACHE", True), \
              patch("stock_analyzer.workflow.WORKFLOW_OUTPUT_DIR", str(tmp_path)):
             result = await run_workflow("600519")
 
@@ -369,18 +365,12 @@ class TestWorkflowCache:
     @patch("stock_analyzer.workflow.run_web_research")
     @patch("stock_analyzer.workflow.run_technical_analysis")
     @patch("stock_analyzer.workflow._save_intermediate_results")
-    async def test_use_cache_true_no_cache_runs_modules(
+    async def test_all_cache_true_no_files_runs_all_modules(
         self, mock_save, mock_tech, mock_web, mock_a, mock_chief, mock_lookup, tmp_path,
         mock_akshare_data, mock_web_result, mock_tech_result,
     ):
-        """When USE_CACHE=True but no cache files, falls back to running modules."""
-        mock_lookup.return_value = {
-            "symbol": "600519",
-            "symbol_with_market_upper": "600519.SH",
-            "name": "贵州茅台",
-            "industry": "白酒",
-            "date_beijing": "2026-02-13",
-        }
+        """When all USE_CACHE=True but no cache files, falls back to running all modules."""
+        mock_lookup.return_value = _STOCK_LOOKUP
         mock_a.return_value = mock_akshare_data
         mock_web.return_value = mock_web_result
         mock_tech.return_value = mock_tech_result
@@ -388,7 +378,9 @@ class TestWorkflowCache:
             spec=FinalReport, overall_score=8.0, overall_confidence="高"
         )
 
-        with patch("stock_analyzer.workflow.WORKFLOW_USE_CACHE", True), \
+        with patch("stock_analyzer.workflow.WORKFLOW_MODULE_A_USE_CACHE", True), \
+             patch("stock_analyzer.workflow.WORKFLOW_MODULE_B_USE_CACHE", True), \
+             patch("stock_analyzer.workflow.WORKFLOW_MODULE_C_USE_CACHE", True), \
              patch("stock_analyzer.workflow.WORKFLOW_OUTPUT_DIR", str(tmp_path)):
             await run_workflow("600519")
 
@@ -403,18 +395,12 @@ class TestWorkflowCache:
     @patch("stock_analyzer.workflow.run_web_research")
     @patch("stock_analyzer.workflow.run_technical_analysis")
     @patch("stock_analyzer.workflow._save_intermediate_results")
-    async def test_use_cache_false_always_runs_modules(
+    async def test_all_cache_false_always_runs_modules(
         self, mock_save, mock_tech, mock_web, mock_a, mock_chief, mock_lookup, tmp_path,
         mock_akshare_data, mock_web_result, mock_tech_result,
     ):
-        """When USE_CACHE=False, modules always run even if cache files exist."""
-        mock_lookup.return_value = {
-            "symbol": "600519",
-            "symbol_with_market_upper": "600519.SH",
-            "name": "贵州茅台",
-            "industry": "白酒",
-            "date_beijing": "2026-02-13",
-        }
+        """When all USE_CACHE=False, modules always run even if cache files exist."""
+        mock_lookup.return_value = _STOCK_LOOKUP
         mock_a.return_value = mock_akshare_data
         mock_web.return_value = mock_web_result
         mock_tech.return_value = mock_tech_result
@@ -427,7 +413,7 @@ class TestWorkflowCache:
         (tmp_path / "600519_web_research.json").write_text(_MINIMAL_WEB_JSON, encoding="utf-8")
         (tmp_path / "600519_technical_analysis.json").write_text(_MINIMAL_TECH_JSON, encoding="utf-8")
 
-        with patch("stock_analyzer.workflow.WORKFLOW_USE_CACHE", False), \
+        with patch.multiple("stock_analyzer.workflow", **_NO_CACHE), \
              patch("stock_analyzer.workflow.WORKFLOW_OUTPUT_DIR", str(tmp_path)):
             await run_workflow("600519")
 
@@ -435,3 +421,71 @@ class TestWorkflowCache:
         mock_a.assert_called_once()
         mock_web.assert_called_once()
         mock_tech.assert_called_once()
+
+    @patch("stock_analyzer.workflow.lookup_stock_info")
+    @patch("stock_analyzer.workflow.run_chief_analysis")
+    @patch("stock_analyzer.workflow.collect_akshare_data")
+    @patch("stock_analyzer.workflow.run_web_research")
+    @patch("stock_analyzer.workflow.run_technical_analysis")
+    @patch("stock_analyzer.workflow._save_intermediate_results")
+    async def test_partial_cache_a_cached_bc_fresh(
+        self, mock_save, mock_tech, mock_web, mock_a, mock_chief, mock_lookup, tmp_path,
+        mock_web_result, mock_tech_result,
+    ):
+        """When only module A uses cache, B and C still run fresh."""
+        mock_lookup.return_value = _STOCK_LOOKUP
+        mock_web.return_value = mock_web_result
+        mock_tech.return_value = mock_tech_result
+        mock_chief.return_value = MagicMock(
+            spec=FinalReport, overall_score=8.0, overall_confidence="高"
+        )
+
+        # Only write A cache
+        (tmp_path / "600519_akshare_data.json").write_text(_MINIMAL_AKSHARE_JSON, encoding="utf-8")
+
+        with patch("stock_analyzer.workflow.WORKFLOW_MODULE_A_USE_CACHE", True), \
+             patch("stock_analyzer.workflow.WORKFLOW_MODULE_B_USE_CACHE", False), \
+             patch("stock_analyzer.workflow.WORKFLOW_MODULE_C_USE_CACHE", False), \
+             patch("stock_analyzer.workflow.WORKFLOW_OUTPUT_DIR", str(tmp_path)):
+            result = await run_workflow("600519")
+
+        # A should NOT be called (cached), B/C should run
+        mock_a.assert_not_called()
+        mock_web.assert_called_once()
+        mock_tech.assert_called_once()
+        mock_chief.assert_called_once()
+
+    @patch("stock_analyzer.workflow.lookup_stock_info")
+    @patch("stock_analyzer.workflow.run_chief_analysis")
+    @patch("stock_analyzer.workflow.collect_akshare_data")
+    @patch("stock_analyzer.workflow.run_web_research")
+    @patch("stock_analyzer.workflow.run_technical_analysis")
+    @patch("stock_analyzer.workflow._save_intermediate_results")
+    async def test_cache_true_but_file_missing_falls_back(
+        self, mock_save, mock_tech, mock_web, mock_a, mock_chief, mock_lookup, tmp_path,
+        mock_akshare_data, mock_web_result, mock_tech_result,
+    ):
+        """When USE_CACHE=True for a module but its cache file is missing, that module runs fresh."""
+        mock_lookup.return_value = _STOCK_LOOKUP
+        mock_a.return_value = mock_akshare_data
+        mock_web.return_value = mock_web_result
+        mock_tech.return_value = mock_tech_result
+        mock_chief.return_value = MagicMock(
+            spec=FinalReport, overall_score=8.0, overall_confidence="高"
+        )
+
+        # Write B and C cache but NOT A
+        (tmp_path / "600519_web_research.json").write_text(_MINIMAL_WEB_JSON, encoding="utf-8")
+        (tmp_path / "600519_technical_analysis.json").write_text(_MINIMAL_TECH_JSON, encoding="utf-8")
+
+        with patch("stock_analyzer.workflow.WORKFLOW_MODULE_A_USE_CACHE", True), \
+             patch("stock_analyzer.workflow.WORKFLOW_MODULE_B_USE_CACHE", True), \
+             patch("stock_analyzer.workflow.WORKFLOW_MODULE_C_USE_CACHE", True), \
+             patch("stock_analyzer.workflow.WORKFLOW_OUTPUT_DIR", str(tmp_path)):
+            result = await run_workflow("600519")
+
+        # A should run (cache miss), B/C should be cached
+        mock_a.assert_called_once()
+        mock_web.assert_not_called()
+        mock_tech.assert_not_called()
+        mock_chief.assert_called_once()

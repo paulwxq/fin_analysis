@@ -109,6 +109,26 @@ result = await agent.run(
 - ✅ Token使用统计
 - ✅ 与其他MAF Agent无缝集成
 
+## 集成状态与分析 (Status Note)
+
+**⚠️ 当前状态：未启用 (Idle)**
+
+经过详细的代码依赖分析与技术评估，本模块 (`@qwen3`) 目前并未被主业务逻辑（`stock_analyzer`）引用。系统目前继续沿用 OpenAI 兼容模式（通过 `stock_analyzer/llm_client.py` 调用 DashScope 的 `/compatible-mode/v1` 端点）。
+
+**未启用原因分析：**
+
+1.  **MAF 框架的耦合性**：
+    Microsoft Agent Framework (`agent-framework`) 核心高度依赖 OpenAI 的接口规范。虽然 `qwen3` 试图通过继承 `BaseChatClient` 来适配 MAF，但在实际集成中，涉及流式响应块结构、Tool Call 格式转换等深层行为差异，导致维护自定义 Client 的成本目前高于直接使用 OpenAI 兼容层。
+
+2.  **问题的自动消解**：
+    最初开发本模块的动力之一是解决旧版 `qwen-plus` 在 OpenAI 兼容层下无法同时开启 Thinking 和 JSON Mode 的问题。然而，随着 `qwen3.5-plus` 的发布以及阿里云网关的升级，这一兼容性问题已在服务端得到修复（详见 `stock_analyzer/docs/tech_note_qwen3.5_plus_compatibility.md`）。因此，迁移到原生 SDK 的紧迫性大幅降低。
+
+3.  **异步桥接的复杂性**：
+    DashScope SDK 是同步设计，本模块通过线程池和队列实现了异步桥接。相比之下，`openai` 库提供原生异步支持，在高并发场景（如 Deep Research）下表现更为成熟稳定。
+
+**结论**：
+本模块作为一个功能完备的 DashScope 原生 SDK 封装层被保留在代码库中，作为“未来架构”或“备用方案”。如果未来遇到 DashScope 原生 SDK 独有的功能需求（如特殊的视觉参数微调），可随时启用。
+
 ## 文件结构
 
 ```

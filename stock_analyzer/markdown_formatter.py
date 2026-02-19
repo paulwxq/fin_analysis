@@ -9,6 +9,7 @@ from __future__ import annotations
 from stock_analyzer.models import WebResearchResult
 from stock_analyzer.module_a_models import AKShareData
 from stock_analyzer.module_c_models import TechnicalAnalysisResult
+from stock_analyzer.module_d_models import FinalReport
 
 _NULL = "—"
 
@@ -533,6 +534,82 @@ def format_technical_markdown(data: TechnicalAnalysisResult) -> str:
     # Summary
     parts.append("### 技术总结")
     parts.append(data.summary)
+    parts.append("")
+
+    return "\n".join(parts)
+
+
+# ---------------------------------------------------------------------------
+# Final Report (Module D) → Markdown
+# ---------------------------------------------------------------------------
+
+_DIMENSION_LABELS = {
+    "technical": "技术面",
+    "fundamental": "基本面",
+    "valuation": "估值",
+    "capital_flow": "资金流向",
+    "sentiment": "市场情绪",
+}
+
+
+def render_final_report_markdown(report: FinalReport) -> str:
+    """Render a FinalReport to a human-readable Markdown string."""
+    m = report.meta
+    parts: list[str] = []
+
+    # Title
+    parts.append(f"# {m.name}（{m.symbol}）投资分析报告\n")
+    parts.append(f"> 分析时间：{m.analysis_time}\n")
+
+    # Overall score (first section)
+    parts.append("## 综合评估\n")
+    parts.append(
+        f"- 综合评分：**{report.overall_score}**/10\n"
+        f"- 置信度：**{report.overall_confidence}**"
+    )
+    if report.veto_triggered:
+        cap = f"（评分上限：{report.score_cap}）" if report.score_cap is not None else ""
+        parts.append(f"- 一票否决触发：{report.veto_reason}{cap}")
+    parts.append("")
+
+    # Dimension scores
+    parts.append("## 维度评分\n")
+    dim_headers = ["维度", "评分", "简评"]
+    dim_rows: list[list[str]] = []
+    ds = report.dimension_scores
+    for field, label in _DIMENSION_LABELS.items():
+        dim = getattr(ds, field)
+        dim_rows.append([label, str(dim.score), dim.brief])
+    parts.append(_to_table(dim_headers, dim_rows))
+    parts.append("")
+
+    # Advice
+    parts.append("## 投资建议\n")
+    adv_headers = ["时间框架", "建议", "理由"]
+    adv_rows = [[a.timeframe, a.recommendation, a.reasoning] for a in report.advice]
+    parts.append(_to_table(adv_headers, adv_rows))
+    parts.append("")
+
+    # Report body
+    parts.append("## 分析报告\n")
+    parts.append(report.report)
+    parts.append("")
+
+    # Catalysts
+    parts.append("## 关键催化剂\n")
+    for c in report.key_catalysts:
+        parts.append(f"- {c}")
+    parts.append("")
+
+    # Risks
+    parts.append("## 主要风险\n")
+    for r in report.primary_risks:
+        parts.append(f"- {r}")
+    parts.append("")
+
+    # Disclaimer
+    parts.append("---")
+    parts.append("*免责声明：本报告由 AI 自动生成，仅供参考，不构成投资建议。*")
     parts.append("")
 
     return "\n".join(parts)

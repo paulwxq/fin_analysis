@@ -16,7 +16,7 @@ class FinalMeta(BaseModel):
 
 class DimensionBrief(BaseModel):
     score: float = Field(ge=0, le=10)
-    brief: str = Field(max_length=200)
+    brief: str = Field(max_length=800)
 
 
 class DimensionScores(BaseModel):
@@ -30,7 +30,7 @@ class DimensionScores(BaseModel):
 class TimeframeAdvice(BaseModel):
     timeframe: Literal["1个月", "6个月", "1年"]
     recommendation: Literal["强烈买入", "买入", "持有", "卖出", "强烈卖出"]
-    reasoning: str = Field(max_length=180)
+    reasoning: str = Field(max_length=500)
 
     @field_validator("timeframe", mode="before")
     @classmethod

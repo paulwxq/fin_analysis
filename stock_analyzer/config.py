@@ -18,8 +18,8 @@ TAVILY_API_KEY: str = os.getenv("TAVILY_API_KEY", "")
 
 # Model selection
 # qwen-plus / qwen3.5-plus
-MODEL_QUERY_AGENT: str = os.getenv("MODEL_QUERY_AGENT", "qwen3.5-plus")
-MODEL_EXTRACT_AGENT: str = os.getenv("MODEL_EXTRACT_AGENT", "qwen3.5-plus")
+MODEL_QUERY_AGENT: str = os.getenv("MODEL_QUERY_AGENT", "qwen-plus")
+MODEL_EXTRACT_AGENT: str = os.getenv("MODEL_EXTRACT_AGENT", "qwen-plus")
 # qwen3-max / qwen3.5-plus
 MODEL_REPORT_AGENT: str = os.getenv("MODEL_REPORT_AGENT", "qwen3.5-plus")
 
@@ -34,6 +34,7 @@ REPORT_OUTPUT_RETRIES: int = int(os.getenv("REPORT_OUTPUT_RETRIES", "3"))
 # Deep research params
 DEFAULT_BREADTH: int = int(os.getenv("DEFAULT_BREADTH", "2"))
 DEFAULT_DEPTH: int = int(os.getenv("DEFAULT_DEPTH", "2"))
+SERP_QUERY_RETRIES: int = int(os.getenv("SERP_QUERY_RETRIES", "2"))
 TAVILY_MAX_RESULTS: int = int(os.getenv("TAVILY_MAX_RESULTS", "5"))
 
 # Timeout and concurrency
@@ -160,9 +161,16 @@ CHIEF_USE_STREAM: bool = (
 # Output directory for all module results and final report
 WORKFLOW_OUTPUT_DIR: str = os.getenv("WORKFLOW_OUTPUT_DIR", "output")
 
-# When True, reuse cached A/B/C JSON from output/ if available; otherwise run modules fresh.
-WORKFLOW_USE_CACHE: bool = (
-    os.getenv("WORKFLOW_USE_CACHE", "false").lower() == "true"
+# Per-module cache control (workflow only, default: all False = always run fresh).
+# Set to "true" to reuse cached JSON from output/ for that module.
+WORKFLOW_MODULE_A_USE_CACHE: bool = (
+    os.getenv("WORKFLOW_MODULE_A_USE_CACHE", "false").lower() == "true"
+)
+WORKFLOW_MODULE_B_USE_CACHE: bool = (
+    os.getenv("WORKFLOW_MODULE_B_USE_CACHE", "false").lower() == "true"
+)
+WORKFLOW_MODULE_C_USE_CACHE: bool = (
+    os.getenv("WORKFLOW_MODULE_C_USE_CACHE", "false").lower() == "true"
 )
 
 # Whether to save intermediate A/B/C JSON outputs to disk during workflow run

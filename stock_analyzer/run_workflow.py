@@ -2,12 +2,14 @@
 
 Usage (from project root):
     .venv/bin/python3 stock_analyzer/run_workflow.py <symbol>
+    .venv/bin/python3 stock_analyzer/run_workflow.py <symbol> --markdown
 
     <symbol> supports: 600519 / 600519.SH / SH600519
 """
 
 from __future__ import annotations
 
+import argparse
 import asyncio
 import sys
 from pathlib import Path
@@ -21,19 +23,30 @@ from stock_analyzer.exceptions import (                            # noqa: E402
     WorkflowCircuitBreakerError,
 )
 from stock_analyzer.logger import logger                           # noqa: E402
+from stock_analyzer.markdown_formatter import render_final_report_markdown  # noqa: E402
 from stock_analyzer.module_d_chief import dump_final_report_json  # noqa: E402
 from stock_analyzer.workflow import run_workflow                   # noqa: E402
 
 
-async def main() -> None:
-    if len(sys.argv) != 2:
-        print(
-            "Usage: .venv/bin/python3 stock_analyzer/run_workflow.py <symbol>",
-            file=sys.stderr,
-        )
-        raise SystemExit(2)
+def _parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="A/B/C/D 全流程投研分析",
+    )
+    parser.add_argument(
+        "symbol",
+        help="股票代码，支持 600519 / 600519.SH / SH600519",
+    )
+    parser.add_argument(
+        "--markdown", "-md",
+        action="store_true",
+        help="同时生成 Markdown 格式的报告",
+    )
+    return parser.parse_args()
 
-    raw_symbol = sys.argv[1].strip()
+
+async def main() -> None:
+    args = _parse_args()
+    raw_symbol = args.symbol.strip()
 
     try:
         print(f"[workflow] 开始全流程分析: {raw_symbol}\n", file=sys.stderr)
@@ -48,6 +61,12 @@ async def main() -> None:
         output_path = output_dir / f"{symbol}_final_report.json"
         output_path.write_text(json_str, encoding="utf-8")
         print(f"\n[workflow] 最终报告已保存到 {output_path}", file=sys.stderr)
+
+        if args.markdown:
+            md_str = render_final_report_markdown(final_report)
+            md_path = output_dir / f"{symbol}_final_report.md"
+            md_path.write_text(md_str, encoding="utf-8")
+            print(f"[workflow] Markdown 报告已保存到 {md_path}", file=sys.stderr)
 
     except ValueError as e:
         logger.error(f"Workflow input error: {e}")

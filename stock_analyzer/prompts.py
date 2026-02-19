@@ -213,12 +213,12 @@ CHIEF_ANALYST_SYSTEM_PROMPT = """\
 3. `overall_score` 范围 0-10，且不是五个分项评分的简单平均
 4. `advice` 必须正好 3 条，timeframe 分别是 "1个月"、"6个月"、"1年"
 5. `report` 目标 800-1200 字，最大 2000 字符（字符数，不是 token）
-6. 每条 `advice.reasoning` 必须是 1-2 句话，且 <=180 字符
+6. 每条 `advice.reasoning` 必须 <=500 字符（建议 2-4 句话，涵盖判断依据和操作建议）
 7. 必须输出 `overall_confidence`，可选值仅 "高"、"中"、"低"
 8. 报告末尾必须包含“数据可信度声明”小节，且至少引用 `data_quality_report` 的 3 个具体指标
 9. 输出 JSON 字段名必须与下方示例完全一致，不得使用中文键名、同义键名或额外键
 10. 如果某字段信息不足，也必须填入最保守合法值，不得省略字段
-11. `dimension_scores` 中每个 `brief` 必须 <=200 字符（建议 60-140 字符）
+11. `dimension_scores` 中每个 `brief` 必须 <=800 字符（建议 200-600 字符）
 
 ## 输出 JSON 结构（字段名固定）
 

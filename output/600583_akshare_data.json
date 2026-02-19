@@ -2,13 +2,12 @@
   "meta": {
     "symbol": "600583",
     "name": "海油工程",
-    "query_time": "2026-02-18T14:18:51.286218",
+    "query_time": "2026-02-19T22:56:24.005187",
     "data_errors": [
       "valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu",
-      "pledge_ratio: ChunkedEncodingError - Response ended prematurely (stock_gpzy_pledge_ratio_em)",
       "institutional_holdings: 返回数据为空 (stock_institute_hold_detail)"
     ],
-    "successful_topics": 14,
+    "successful_topics": 15,
     "topic_status": {
       "company_info": "ok",
       "realtime_quote": "ok",
@@ -21,7 +20,7 @@
       "shareholder_count": "ok",
       "dividend_history": "ok",
       "earnings_forecast": "no_data",
-      "pledge_ratio": "failed",
+      "pledge_ratio": "ok",
       "consensus_forecast": "ok",
       "institutional_holdings": "ok",
       "business_composition": "ok"
@@ -149,10 +148,10 @@
     "current_pe_ttm": 15.0,
     "current_pb": 1.12,
     "pe_percentile": 45.0,
-    "pb_percentile": 81.6,
+    "pb_percentile": 81.5,
     "current_ps_ttm": null,
     "current_dv_ttm": null,
-    "history_summary": "PE历史分位45.0%，处于中等位置；PB历史分位81.6%，处于极高位置（历史顶部区域）"
+    "history_summary": "PE历史分位45.0%，处于中等位置；PB历史分位81.5%，处于极高位置（历史顶部区域）"
   },
   "valuation_vs_industry": {
     "stock_pe": 15.00228168,
@@ -285,7 +284,11 @@
     "forecast_range": null,
     "available": false
   },
-  "pledge_ratio": null,
+  "pledge_ratio": {
+    "ratio_pct": 0.0,
+    "pledged_shares": null,
+    "risk_level": "低"
+  },
   "consensus_forecast": [
     {
       "year": "2025",
