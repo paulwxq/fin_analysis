@@ -61,38 +61,42 @@ def fetch_monthly_kline(
     start_date: str = TECH_START_DATE,
     adjust: str = TECH_ADJUST,
 ) -> pd.DataFrame:
-    """Fetch monthly k-line from AKShare with one fallback adjust mode."""
-    try:
-        df = ak.stock_zh_a_hist(
-            symbol=symbol,
-            period="monthly",
-            start_date=start_date,
-            adjust=adjust,
-        )
-    except Exception as e:
-        logger.warning(
-            f"fetch_monthly_kline failed for {symbol} with adjust='{adjust}': {type(e).__name__}: {e}"
-        )
-        if adjust:
-            try:
-                df = ak.stock_zh_a_hist(
-                    symbol=symbol,
-                    period="monthly",
-                    start_date=start_date,
-                    adjust="",
-                )
-            except Exception as e2:
-                raise TechnicalDataError(
-                    f"AKShare monthly kline failed for {symbol}: {type(e2).__name__}: {e2}"
-                ) from e2
-        else:
-            raise TechnicalDataError(
-                f"AKShare monthly kline failed for {symbol}: {type(e).__name__}: {e}"
-            ) from e
+    """Fetch monthly k-line from AKShare with retry (no adjust fallback)."""
+    max_retries = 3
+    last_error: Exception | None = None
 
-    if df is None or df.empty:
-        raise TechnicalDataError(f"Empty monthly kline data for {symbol}")
-    return df
+    for attempt in range(1, max_retries + 1):
+        try:
+            df = ak.stock_zh_a_hist(
+                symbol=symbol,
+                period="monthly",
+                start_date=start_date,
+                adjust=adjust,
+            )
+            if df is not None and not df.empty:
+                return df
+            
+            # Empty dataframe is also a failure case warranting retry
+            raise TechnicalDataError(f"AKShare returned empty kline for {symbol}")
+
+        except Exception as e:
+            last_error = e
+            if attempt < max_retries:
+                wait_time = attempt * 5  # 5s, 10s
+                logger.warning(
+                    f"[Module C] fetch_monthly_kline failed ({attempt}/{max_retries}): "
+                    f"{type(e).__name__}: {e}. Retrying in {wait_time}s..."
+                )
+                import time
+                time.sleep(wait_time)
+            else:
+                logger.error(
+                    f"[Module C] fetch_monthly_kline failed after {max_retries} attempts."
+                )
+
+    raise TechnicalDataError(
+        f"Failed to fetch monthly kline for {symbol} after {max_retries} attempts: {last_error}"
+    ) from last_error
 
 
 def _normalize_kline_df(raw_df: pd.DataFrame) -> pd.DataFrame:
@@ -589,13 +593,8 @@ async def run_technical_analysis(symbol: str, name: str) -> TechnicalAnalysisRes
         kline_df = _normalize_kline_df(raw_df)
     except TechnicalDataError as e:
         logger.error(f"Technical data fetch/normalize failed: {e}")
-        return _build_fallback_result(
-            symbol=symbol,
-            name=name,
-            warnings=warnings,
-            reason=str(e),
-            confidence=0.2,
-        )
+        # Fail fast: data is critical, do not fallback to low-confidence report
+        raise
 
     total_months = len(kline_df)
     data_start = kline_df["date"].iloc[0].date().isoformat()

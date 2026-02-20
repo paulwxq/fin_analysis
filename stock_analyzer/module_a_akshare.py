@@ -175,7 +175,7 @@ class AKShareCollector:
         """Detect transient connection errors worth retrying."""
         name = type(exc).__name__.lower()
         message = str(exc).lower()
-        if "connectionerror" in name:
+        if "connectionerror" in name or "chunkedencodingerror" in name:
             return True
         transient_markers = (
             "connection aborted",
@@ -183,6 +183,7 @@ class AKShareCollector:
             "connection reset by peer",
             "temporarily unavailable",
             "max retries exceeded with url",
+            "response ended prematurely",
         )
         return any(marker in message for marker in transient_markers)
 
@@ -1474,12 +1475,34 @@ class AKShareCollector:
         if df is None:
             return None
 
-        # 核心返回字段: 分类类型, 主营构成, 收入比例, 毛利率
-        # 优先展示 '按产品分类'
+        # 核心返回字段: 报告日期, 分类类型, 主营构成, 收入比例, 毛利率
+        if "报告日期" not in df.columns:
+            msg = "business_composition: 缺少 '报告日期' 列"
+            self.errors.append(msg)
+            logger.warning(msg)
+            return None
+
+        # 1. 提取最近 3 个报告期
+        # 确保日期列是 datetime 类型以便排序，虽然接口通常返回倒序，但显式处理更安全
+        df = df.copy()
+        df["_dt"] = pd.to_datetime(df["报告日期"], errors="coerce")
+        unique_dates = df["_dt"].dropna().unique()
+        # 降序排列（最新在前），取前 3 个
+        top3_dates = sorted(unique_dates, reverse=True)[:3]
+        
+        # 转换回字符串以便筛选
+        top3_dates_str = [d.strftime("%Y-%m-%d") for d in top3_dates]
+        
+        # 2. 筛选数据
+        # 注意：原 df['报告日期'] 可能是字符串也可能是 datetime，统一标准化比较
+        df["_date_str"] = df["_dt"].dt.strftime("%Y-%m-%d")
+        filtered_df = df[df["_date_str"].isin(top3_dates_str)]
+
         results: list[dict] = []
-        for _, row in df.iterrows():
+        for _, row in filtered_df.iterrows():
             results.append(
                 {
+                    "report_date": self._safe_str(row.get("_date_str")),
                     "type": self._safe_str(row.get("分类类型")),
                     "item": self._safe_str(row.get("主营构成")),
                     "revenue_ratio": self._safe_float(row.get("收入比例")),

@@ -137,7 +137,10 @@ def _build_chief_user_message(
         indent=2,
     )
 
+    today = datetime.now().strftime("%Y-%m-%d")
+
     return (
+        f"当前日期：{today}\n\n"
         "你现在担任首席分析师的角色。你的任务是整合并分析以下 Markdown 格式的多维数据，"
         "输出一份专业的、具备深度洞察力的投资综合判定报告。\n\n"
         "数据来源说明：\n"

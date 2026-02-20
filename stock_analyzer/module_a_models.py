@@ -197,6 +197,7 @@ class InstitutionalHolding(BaseModel):
 class BusinessComposition(BaseModel):
     """主题⑮：主营结构。"""
 
+    report_date: str = Field(description="报告期")
     type: str = Field(description="分类类型（按产品/按地区/按行业）")
     item: str = Field(description="主营构成项目")
     revenue_ratio: float | None = Field(default=None, description="收入比例(%)")

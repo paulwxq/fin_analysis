@@ -305,44 +305,50 @@ def _format_business_composition(data: AKShareData) -> str:
     if not bc:
         return "### 主营结构\n（数据缺失）\n"
 
-    # Split by type into separate tables
-    by_product = [r for r in bc if r.type == "按产品分类"]
-    by_region = [r for r in bc if r.type == "按地区分类"]
-    by_summary = [r for r in bc if r.type == ""]
+    # Group by report_date
+    grouped: dict[str, list] = {}
+    for item in bc:
+        grouped.setdefault(item.report_date, []).append(item)
+
+    # Sort dates descending
+    sorted_dates = sorted(grouped.keys(), reverse=True)
 
     parts = ["### 主营结构\n"]
 
-    if by_product:
-        headers = ["项目", "收入占比", "毛利率"]
-        rows = [
-            [item.item, _fmt_ratio(item.revenue_ratio),
-             _fmt_ratio(item.gross_margin)]
-            for item in by_product
-        ]
-        parts.append(f"**按产品分类（{len(by_product)}条）：**\n")
-        parts.append(_to_table(headers, rows))
-        parts.append("")
+    for date in sorted_dates:
+        items = grouped[date]
+        parts.append(f"**报告期：{date}**\n")
 
-    if by_region:
-        headers = ["地区", "收入占比", "毛利率"]
-        rows = [
-            [item.item, _fmt_ratio(item.revenue_ratio),
-             _fmt_ratio(item.gross_margin)]
-            for item in by_region
-        ]
-        parts.append(f"**按地区分类（{len(by_region)}条）：**\n")
-        parts.append(_to_table(headers, rows))
-        parts.append("")
+        # Split by type
+        by_product = [r for r in items if r.type == "按产品分类"]
+        by_region = [r for r in items if r.type == "按地区分类"]
+        by_summary = [r for r in items if r.type == ""]
 
-    if by_summary:
-        headers = ["分类", "收入占比", "毛利率"]
-        rows = [
-            [item.item, _fmt_ratio(item.revenue_ratio),
-             _fmt_ratio(item.gross_margin)]
-            for item in by_summary
-        ]
-        parts.append(f"**行业汇总（{len(by_summary)}条）：**\n")
-        parts.append(_to_table(headers, rows))
+        if by_product:
+            headers = ["项目", "收入占比", "毛利率"]
+            rows = [
+                [item.item, _fmt_ratio(item.revenue_ratio),
+                 _fmt_ratio(item.gross_margin)]
+                for item in by_product
+            ]
+            parts.append(f"按产品分类：")
+            parts.append(_to_table(headers, rows))
+            parts.append("")
+
+        if by_region:
+            headers = ["地区", "收入占比", "毛利率"]
+            rows = [
+                [item.item, _fmt_ratio(item.revenue_ratio),
+                 _fmt_ratio(item.gross_margin)]
+                for item in by_region
+            ]
+            parts.append(f"按地区分类：")
+            parts.append(_to_table(headers, rows))
+            parts.append("")
+        
+        # Add a separator between periods if it's not the last one
+        if date != sorted_dates[-1]:
+            parts.append("---\n")
 
     return "\n".join(parts) + "\n"
 
