@@ -20,8 +20,17 @@ async def generate_serp_queries(
     learnings: list[str],
 ) -> list[SerpQuery]:
     """Generate search queries for a topic."""
-    user_message = f"请为以下研究主题生成 {num_queries} 个搜索查询。\n\n"
-    user_message += f"<topic>\n{query}\n</topic>\n"
+    from datetime import datetime
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    user_message = (
+        f"Today is {today}.\n"
+        f"请为以下研究主题生成 {num_queries} 个搜索查询。\n\n"
+        f"<topic>\n{query}\n</topic>\n\n"
+        "搜索策略提示：\n"
+        "- 优先搜索最新的数据（例如当前年份或最近季度）。\n"
+        "- 如果最新数据（如年报/季报）可能尚未披露，请务必同时搜索最近一期已披露的数据（例如上一年度），确保信息不遗漏。\n"
+    )
 
     if learnings:
         user_message += (
@@ -226,7 +235,11 @@ async def generate_report(
     stream: bool = False,
 ) -> dict:
     """Generate report dict (without meta) from all learnings."""
+    from datetime import datetime
+    today = datetime.now().strftime("%Y-%m-%d")
+
     user_message = (
+        f"Today is {today}.\n"
         f"请为股票 {symbol} {name}（{industry}行业）生成结构化的网络深度搜索研究报告。\n\n"
         f"以下是通过多轮深度搜索积累的全部 {len(learnings)} 个知识点：\n\n"
         "<learnings>\n"
