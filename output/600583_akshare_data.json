@@ -2,7 +2,7 @@
   "meta": {
     "symbol": "600583",
     "name": "海油工程",
-    "query_time": "2026-02-19T22:56:24.005187",
+    "query_time": "2026-02-20T23:03:44.971466",
     "data_errors": [
       "valuation_history: stock_a_lg_indicator 不可用，回退到 stock_zh_valuation_baidu",
       "institutional_holdings: 返回数据为空 (stock_institute_hold_detail)"
@@ -147,11 +147,11 @@
   "valuation_history": {
     "current_pe_ttm": 15.0,
     "current_pb": 1.12,
-    "pe_percentile": 45.0,
-    "pb_percentile": 81.5,
+    "pe_percentile": 44.5,
+    "pb_percentile": 81.7,
     "current_ps_ttm": null,
     "current_dv_ttm": null,
-    "history_summary": "PE历史分位45.0%，处于中等位置；PB历史分位81.5%，处于极高位置（历史顶部区域）"
+    "history_summary": "PE历史分位44.5%，处于中等位置；PB历史分位81.7%，处于极高位置（历史顶部区域）"
   },
   "valuation_vs_industry": {
     "stock_pe": 15.00228168,
@@ -323,1204 +323,193 @@
   ],
   "business_composition": [
     {
+      "report_date": "2025-06-30",
       "type": "按产品分类",
       "item": "海洋工程总承包项目收入",
       "revenue_ratio": 0.75388,
       "gross_margin": null
     },
     {
+      "report_date": "2025-06-30",
       "type": "按产品分类",
       "item": "海洋工程非总承包项目收入",
       "revenue_ratio": 0.162419,
       "gross_margin": null
     },
     {
+      "report_date": "2025-06-30",
       "type": "按产品分类",
       "item": "非海洋工程项目收入",
       "revenue_ratio": 0.079899,
       "gross_margin": null
     },
     {
+      "report_date": "2025-06-30",
       "type": "按产品分类",
       "item": "其他(补充)",
       "revenue_ratio": 0.003801,
       "gross_margin": 0.412206
     },
     {
+      "report_date": "2025-06-30",
       "type": "按产品分类",
       "item": "其中:海洋工程非总承包项目收入-陆地建造收入",
       "revenue_ratio": 0.073383,
       "gross_margin": null
     },
     {
+      "report_date": "2025-06-30",
       "type": "按产品分类",
       "item": "其中:海洋工程非总承包项目收入-海上安装及海管铺设收入",
       "revenue_ratio": 0.053487,
       "gross_margin": null
     },
     {
+      "report_date": "2025-06-30",
       "type": "按产品分类",
       "item": "其中:海洋工程非总承包项目收入-维修收入",
       "revenue_ratio": 0.024525,
       "gross_margin": null
     },
     {
+      "report_date": "2025-06-30",
       "type": "按产品分类",
       "item": "其中:海洋工程非总承包项目收入-设计收入",
       "revenue_ratio": 0.011024,
       "gross_margin": null
     },
     {
+      "report_date": "2024-12-31",
       "type": "",
       "item": "海洋工程",
       "revenue_ratio": 0.907045,
       "gross_margin": 0.119433
     },
     {
+      "report_date": "2024-12-31",
       "type": "",
       "item": "非海洋工程",
       "revenue_ratio": 0.092941,
       "gross_margin": 0.155891
     },
     {
+      "report_date": "2024-12-31",
       "type": "按产品分类",
       "item": "海洋工程总承包项目收入",
       "revenue_ratio": 0.723342,
       "gross_margin": null
     },
     {
+      "report_date": "2024-12-31",
       "type": "按产品分类",
       "item": "海洋工程非总承包项目收入",
       "revenue_ratio": 0.180022,
       "gross_margin": null
     },
     {
+      "report_date": "2024-12-31",
       "type": "按产品分类",
       "item": "非海洋工程项目收入",
       "revenue_ratio": 0.092958,
       "gross_margin": null
     },
     {
+      "report_date": "2024-12-31",
       "type": "按产品分类",
       "item": "其他(补充)",
       "revenue_ratio": 0.003679,
       "gross_margin": 0.219146
     },
     {
+      "report_date": "2024-12-31",
       "type": "按产品分类",
       "item": "其中:海洋工程非总承包项目收入-陆地建造收入",
       "revenue_ratio": 0.109332,
       "gross_margin": null
     },
     {
+      "report_date": "2024-12-31",
       "type": "按产品分类",
       "item": "其中:海洋工程非总承包项目收入-海上安装及海管铺设收入",
       "revenue_ratio": 0.050982,
       "gross_margin": null
     },
     {
+      "report_date": "2024-12-31",
       "type": "按产品分类",
       "item": "其中:海洋工程非总承包项目收入-维修收入",
       "revenue_ratio": 0.011639,
       "gross_margin": null
     },
     {
+      "report_date": "2024-12-31",
       "type": "按产品分类",
       "item": "其中:海洋工程非总承包项目收入-设计收入",
       "revenue_ratio": 0.008068,
       "gross_margin": null
     },
     {
+      "report_date": "2024-12-31",
       "type": "按地区分类",
       "item": "境内",
       "revenue_ratio": 0.806959,
       "gross_margin": 0.13044
     },
     {
+      "report_date": "2024-12-31",
       "type": "按地区分类",
       "item": "境外",
       "revenue_ratio": 0.193027,
       "gross_margin": 0.090972
     },
     {
+      "report_date": "2024-06-30",
       "type": "按产品分类",
       "item": "海洋工程总承包项目收入",
       "revenue_ratio": 0.733972,
       "gross_margin": null
     },
     {
+      "report_date": "2024-06-30",
       "type": "按产品分类",
       "item": "非海洋工程项目收入",
       "revenue_ratio": 0.15465,
       "gross_margin": null
     },
     {
+      "report_date": "2024-06-30",
       "type": "按产品分类",
       "item": "海洋工程非总承包项目收入",
       "revenue_ratio": 0.107445,
       "gross_margin": null
     },
     {
+      "report_date": "2024-06-30",
       "type": "按产品分类",
       "item": "其他(补充)",
       "revenue_ratio": 0.003932,
       "gross_margin": 0.603644
     },
     {
+      "report_date": "2024-06-30",
       "type": "按产品分类",
       "item": "其中:海洋工程非总承包项目收入-海上安装及海管铺设收入",
       "revenue_ratio": 0.067313,
       "gross_margin": null
     },
     {
+      "report_date": "2024-06-30",
       "type": "按产品分类",
       "item": "其中:海洋工程非总承包项目收入-维修收入",
       "revenue_ratio": 0.030359,
       "gross_margin": null
     },
     {
+      "report_date": "2024-06-30",
       "type": "按产品分类",
       "item": "其中:海洋工程非总承包项目收入-设计收入",
       "revenue_ratio": 0.009773,
       "gross_margin": null
-    },
-    {
-      "type": "",
-      "item": "海洋工程",
-      "revenue_ratio": 0.735626,
-      "gross_margin": 0.088984
-    },
-    {
-      "type": "",
-      "item": "非海洋工程",
-      "revenue_ratio": 0.264373,
-      "gross_margin": 0.159041
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程总承包项目收入",
-      "revenue_ratio": 0.626267,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "非海洋工程项目收入",
-      "revenue_ratio": 0.264365,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程非总承包项目收入",
-      "revenue_ratio": 0.105482,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.003886,
-      "gross_margin": 0.554688
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:海洋工程非总承包项目收入-海上安装及海管铺设收入",
-      "revenue_ratio": 0.079017,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:海洋工程非总承包项目收入-维修收入",
-      "revenue_ratio": 0.017961,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:海洋工程非总承包项目收入-设计收入",
-      "revenue_ratio": 0.008494,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:海洋工程非总承包项目收入-陆地建造收入",
-      "revenue_ratio": 1e-05,
-      "gross_margin": null
-    },
-    {
-      "type": "按地区分类",
-      "item": "境内",
-      "revenue_ratio": 0.805117,
-      "gross_margin": 0.09443
-    },
-    {
-      "type": "按地区分类",
-      "item": "境外",
-      "revenue_ratio": 0.194881,
-      "gross_margin": 0.161522
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程总承包项目收入",
-      "revenue_ratio": 0.592793,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "非海洋工程项目收入",
-      "revenue_ratio": 0.334087,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程非总承包项目收入",
-      "revenue_ratio": 0.069858,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.003262,
-      "gross_margin": 0.245665
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:海上安装及海管铺设收入",
-      "revenue_ratio": 0.054606,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:维修收入",
-      "revenue_ratio": 0.008877,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:设计收入",
-      "revenue_ratio": 0.006182,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:陆地建造收入",
-      "revenue_ratio": 0.000193,
-      "gross_margin": null
-    },
-    {
-      "type": "",
-      "item": "海洋工程",
-      "revenue_ratio": 0.695475,
-      "gross_margin": 0.114066
-    },
-    {
-      "type": "",
-      "item": "非海洋工程",
-      "revenue_ratio": 0.304513,
-      "gross_margin": 0.034676
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程总承包项目收入",
-      "revenue_ratio": 0.597445,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "非海洋工程项目收入",
-      "revenue_ratio": 0.3038,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程非总承包项目收入",
-      "revenue_ratio": 0.095755,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.003,
-      "gross_margin": 0.508647
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:海上安装及海管铺设收入",
-      "revenue_ratio": 0.047553,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:陆地建造收入",
-      "revenue_ratio": 0.026714,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:维修收入",
-      "revenue_ratio": 0.01245,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:设计收入",
-      "revenue_ratio": 0.009038,
-      "gross_margin": null
-    },
-    {
-      "type": "按地区分类",
-      "item": "国内",
-      "revenue_ratio": 0.755968,
-      "gross_margin": 0.100883
-    },
-    {
-      "type": "按地区分类",
-      "item": "境外",
-      "revenue_ratio": 0.244019,
-      "gross_margin": 0.055835
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程总承包项目收入",
-      "revenue_ratio": 0.612982,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "非海洋工程项目收入",
-      "revenue_ratio": 0.318623,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程非总承包项目收入",
-      "revenue_ratio": 0.065642,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.002752,
-      "gross_margin": 0.137089
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:海上安装及海管铺设收入",
-      "revenue_ratio": 0.024253,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:陆地建造收入",
-      "revenue_ratio": 0.019096,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:维修收入",
-      "revenue_ratio": 0.017783,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:设计收入",
-      "revenue_ratio": 0.004511,
-      "gross_margin": null
-    },
-    {
-      "type": "",
-      "item": "海洋工程",
-      "revenue_ratio": 0.594681,
-      "gross_margin": 0.124278
-    },
-    {
-      "type": "",
-      "item": "非海洋工程",
-      "revenue_ratio": 0.405295,
-      "gross_margin": 0.077901
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程总承包项目收入",
-      "revenue_ratio": 0.492631,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "非海洋工程项目收入",
-      "revenue_ratio": 0.414564,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程非总承包项目收入",
-      "revenue_ratio": 0.085785,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.00702,
-      "gross_margin": 0.795871
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:海上安装及海管铺设收入",
-      "revenue_ratio": 0.055724,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:维修收入",
-      "revenue_ratio": 0.013319,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:陆地建造收入",
-      "revenue_ratio": 0.009394,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:设计收入",
-      "revenue_ratio": 0.007347,
-      "gross_margin": null
-    },
-    {
-      "type": "按地区分类",
-      "item": "国内",
-      "revenue_ratio": 0.73249,
-      "gross_margin": 0.155517
-    },
-    {
-      "type": "按地区分类",
-      "item": "境外",
-      "revenue_ratio": 0.267485,
-      "gross_margin": -0.031539
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:南海",
-      "revenue_ratio": 0.318659,
-      "gross_margin": 0.198478
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:渤海",
-      "revenue_ratio": 0.212271,
-      "gross_margin": 0.181342
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:LNG陆上建造",
-      "revenue_ratio": 0.172817,
-      "gross_margin": 0.063432
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:东海",
-      "revenue_ratio": 0.028693,
-      "gross_margin": 0.040493
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程总承包项目收入",
-      "revenue_ratio": 0.584757,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "非海洋工程项目收入",
-      "revenue_ratio": 0.325741,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程非总承包项目收入",
-      "revenue_ratio": 0.085107,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.004394,
-      "gross_margin": 0.73222
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:陆地建造收入",
-      "revenue_ratio": 0.043704,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:海上安装及海管铺设收入",
-      "revenue_ratio": 0.028511,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:维修收入",
-      "revenue_ratio": 0.006464,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:设计收入",
-      "revenue_ratio": 0.006429,
-      "gross_margin": null
-    },
-    {
-      "type": "",
-      "item": "海洋工程",
-      "revenue_ratio": 0.803896,
-      "gross_margin": 0.095056
-    },
-    {
-      "type": "",
-      "item": "非海洋工程",
-      "revenue_ratio": 0.196104,
-      "gross_margin": 0.135598
-    },
-    {
-      "type": "按地区分类",
-      "item": "国内",
-      "revenue_ratio": 0.836925,
-      "gross_margin": 0.161739
-    },
-    {
-      "type": "按地区分类",
-      "item": "境外",
-      "revenue_ratio": 0.163075,
-      "gross_margin": -0.198078
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:南海",
-      "revenue_ratio": 0.473717,
-      "gross_margin": 0.142283
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:渤海",
-      "revenue_ratio": 0.26916,
-      "gross_margin": 0.21589
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:LNG陆上建造",
-      "revenue_ratio": 0.088843,
-      "gross_margin": 0.114052
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:东海",
-      "revenue_ratio": 0.005206,
-      "gross_margin": -0.043011
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程总承包项目收入",
-      "revenue_ratio": 0.756455,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程非总承包项目收入",
-      "revenue_ratio": 0.131224,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "非海洋工程项目收入",
-      "revenue_ratio": 0.111651,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.000671,
-      "gross_margin": 0.691781
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:陆地建造收入",
-      "revenue_ratio": 0.071149,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:海上安装及海管铺设收入",
-      "revenue_ratio": 0.03475,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:维修收入",
-      "revenue_ratio": 0.020332,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:设计收入",
-      "revenue_ratio": 0.004992,
-      "gross_margin": null
-    },
-    {
-      "type": "",
-      "item": "海洋工程行业",
-      "revenue_ratio": 0.918324,
-      "gross_margin": 0.122733
-    },
-    {
-      "type": "",
-      "item": "非海洋工程行业",
-      "revenue_ratio": 0.078515,
-      "gross_margin": 0.083117
-    },
-    {
-      "type": "",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.00316,
-      "gross_margin": 0.740988
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程总承包项目收入",
-      "revenue_ratio": 0.791328,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程非总承包项目收入",
-      "revenue_ratio": 0.126993,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "非海洋工程项目收入",
-      "revenue_ratio": 0.078519,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.00316,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:海上安装及海管铺设收入",
-      "revenue_ratio": 0.073837,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:维修收入",
-      "revenue_ratio": 0.030772,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:陆地建造收入",
-      "revenue_ratio": 0.012297,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:设计收入",
-      "revenue_ratio": 0.010087,
-      "gross_margin": null
-    },
-    {
-      "type": "按地区分类",
-      "item": "国内",
-      "revenue_ratio": 0.733422,
-      "gross_margin": 0.228381
-    },
-    {
-      "type": "按地区分类",
-      "item": "海外",
-      "revenue_ratio": 0.263417,
-      "gross_margin": -0.183226
-    },
-    {
-      "type": "按地区分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.00316,
-      "gross_margin": 0.740988
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:南海",
-      "revenue_ratio": 0.357772,
-      "gross_margin": 0.231807
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:渤海",
-      "revenue_ratio": 0.304545,
-      "gross_margin": 0.253571
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:LNG陆上建造",
-      "revenue_ratio": 0.06424,
-      "gross_margin": 0.110053
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:东海",
-      "revenue_ratio": 0.006866,
-      "gross_margin": 0.039604
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程总承包项目收入",
-      "revenue_ratio": 0.741546,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程非总承包项目收入",
-      "revenue_ratio": 0.134735,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "非海洋工程项目收入",
-      "revenue_ratio": 0.121985,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.001734,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:海上安装及海管铺设收入",
-      "revenue_ratio": 0.050793,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:维修收入",
-      "revenue_ratio": 0.047187,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:陆地建造收入",
-      "revenue_ratio": 0.018648,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:设计收入",
-      "revenue_ratio": 0.018106,
-      "gross_margin": null
-    },
-    {
-      "type": "",
-      "item": "海洋工程行业",
-      "revenue_ratio": 0.935205,
-      "gross_margin": 0.089396
-    },
-    {
-      "type": "",
-      "item": "非海洋工程行业",
-      "revenue_ratio": 0.058179,
-      "gross_margin": 0.087092
-    },
-    {
-      "type": "",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.006536,
-      "gross_margin": 0.610509
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程总承包项目收入",
-      "revenue_ratio": 0.777305,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程非总承包项目收入",
-      "revenue_ratio": 0.186926,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "非海洋工程项目收入",
-      "revenue_ratio": 0.029233,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.006536,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:海上安装及海管铺设收入",
-      "revenue_ratio": 0.120209,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:维修收入",
-      "revenue_ratio": 0.039133,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:陆地建造收入",
-      "revenue_ratio": 0.014505,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:设计收入",
-      "revenue_ratio": 0.013079,
-      "gross_margin": null
-    },
-    {
-      "type": "按地区分类",
-      "item": "国内",
-      "revenue_ratio": 0.728812,
-      "gross_margin": 0.114587
-    },
-    {
-      "type": "按地区分类",
-      "item": "海外",
-      "revenue_ratio": 0.264652,
-      "gross_margin": 0.019487
-    },
-    {
-      "type": "按地区分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.006536,
-      "gross_margin": 0.610509
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:南海",
-      "revenue_ratio": 0.378747,
-      "gross_margin": 0.094601
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:渤海",
-      "revenue_ratio": 0.287544,
-      "gross_margin": 0.157332
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:LNG陆上建造",
-      "revenue_ratio": 0.042344,
-      "gross_margin": 0.136752
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:东海",
-      "revenue_ratio": 0.020177,
-      "gross_margin": -0.161435
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程总承包项目收入",
-      "revenue_ratio": 0.775732,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海上安装及海管铺设收入",
-      "revenue_ratio": 0.109418,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "陆地建造收入",
-      "revenue_ratio": 0.042829,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "非海洋工程项目收入",
-      "revenue_ratio": 0.037727,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "维修收入",
-      "revenue_ratio": 0.020911,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "设计收入",
-      "revenue_ratio": 0.007193,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.006189,
-      "gross_margin": null
-    },
-    {
-      "type": "",
-      "item": "海洋工程行业",
-      "revenue_ratio": 0.624821,
-      "gross_margin": 0.066656
-    },
-    {
-      "type": "",
-      "item": "非海洋工程行业",
-      "revenue_ratio": 0.368982,
-      "gross_margin": 0.451758
-    },
-    {
-      "type": "",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.006195,
-      "gross_margin": 0.503989
-    },
-    {
-      "type": "",
-      "item": "平衡项目",
-      "revenue_ratio": 2e-06,
-      "gross_margin": -0.05766
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程总承包项目收入",
-      "revenue_ratio": 0.512982,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "非海洋工程项目收入",
-      "revenue_ratio": 0.368974,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程非总承包项目收入",
-      "revenue_ratio": 0.111849,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.006195,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:维修收入",
-      "revenue_ratio": 0.044093,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:海上安装及海管铺设收入",
-      "revenue_ratio": 0.033338,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:陆地建造收入",
-      "revenue_ratio": 0.025002,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:设计收入",
-      "revenue_ratio": 0.009416,
-      "gross_margin": null
-    },
-    {
-      "type": "按地区分类",
-      "item": "海外",
-      "revenue_ratio": 0.527187,
-      "gross_margin": 0.371693
-    },
-    {
-      "type": "按地区分类",
-      "item": "国内",
-      "revenue_ratio": 0.466616,
-      "gross_margin": 0.026547
-    },
-    {
-      "type": "按地区分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.006195,
-      "gross_margin": 0.503989
-    },
-    {
-      "type": "按地区分类",
-      "item": "平衡项目",
-      "revenue_ratio": 2e-06,
-      "gross_margin": -0.05766
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:南海",
-      "revenue_ratio": 0.267348,
-      "gross_margin": 0.044144
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:渤海",
-      "revenue_ratio": 0.15323,
-      "gross_margin": 0.017187
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:东海",
-      "revenue_ratio": 0.046037,
-      "gross_margin": -0.044492
-    },
-    {
-      "type": "按产品分类",
-      "item": "非海洋工程项目收入",
-      "revenue_ratio": 0.551465,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程总承包项目收入",
-      "revenue_ratio": 0.358502,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程非总承包项目收入",
-      "revenue_ratio": 0.085788,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.004245,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:维修收入",
-      "revenue_ratio": 0.046361,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:陆地建造收入",
-      "revenue_ratio": 0.029516,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:海上安装及海管铺设收入",
-      "revenue_ratio": 0.005296,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其中:设计收入",
-      "revenue_ratio": 0.004615,
-      "gross_margin": null
-    },
-    {
-      "type": "",
-      "item": "海洋工程行业",
-      "revenue_ratio": null,
-      "gross_margin": 0.084566
-    },
-    {
-      "type": "",
-      "item": "非海洋工",
-      "revenue_ratio": null,
-      "gross_margin": 0.232595
-    },
-    {
-      "type": "按产品分类",
-      "item": "非海洋工程项目收入",
-      "revenue_ratio": 0.474353,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程总承包项目收入",
-      "revenue_ratio": 0.445598,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海洋工程非总承包项目收入",
-      "revenue_ratio": 0.073073,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "维修收入",
-      "revenue_ratio": 0.037976,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "海上安装及海管铺设收入",
-      "revenue_ratio": 0.022504,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "其他(补充)",
-      "revenue_ratio": 0.006976,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "陆地建造收入",
-      "revenue_ratio": 0.006618,
-      "gross_margin": null
-    },
-    {
-      "type": "按产品分类",
-      "item": "设计收入",
-      "revenue_ratio": 0.005974,
-      "gross_margin": null
-    },
-    {
-      "type": "按地区分类",
-      "item": "国内",
-      "revenue_ratio": null,
-      "gross_margin": 0.139939
-    },
-    {
-      "type": "按地区分类",
-      "item": "海外",
-      "revenue_ratio": null,
-      "gross_margin": 0.165977
-    },
-    {
-      "type": "按地区分类",
-      "item": "其他(补充)",
-      "revenue_ratio": null,
-      "gross_margin": 0.567938
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:南海",
-      "revenue_ratio": null,
-      "gross_margin": 0.096798
-    },
-    {
-      "type": "按地区分类",
-      "item": "其中:渤海",
-      "revenue_ratio": null,
-      "gross_margin": 0.109125
     }
   ]
 }
